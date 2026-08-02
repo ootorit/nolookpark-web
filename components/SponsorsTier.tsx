@@ -68,7 +68,11 @@ function VisionConsortiumCard() {
 
 export default function SponsorsTier() {
   return (
-    <section aria-label="協賛" className="bg-cream px-6 py-24 md:px-12 md:py-28">
+    <section
+      id="sponsors"
+      aria-label="協賛"
+      className="bg-cream px-6 py-24 md:px-12 md:py-28"
+    >
       <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-14">
         <Reveal className="flex flex-col items-center gap-4 text-center">
           <SectionHeading jp="協賛" en="SPONSORS" />

@@ -51,7 +51,11 @@ function IconLink({
 
 export default function Organizers() {
   return (
-    <section aria-label="主催者" className="bg-white px-6 py-24 md:px-12 md:py-28">
+    <section
+      id="organizers"
+      aria-label="主催者"
+      className="bg-white px-6 py-24 md:px-12 md:py-28"
+    >
       <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-14">
         <Reveal>
           <SectionHeading jp="主催者" en="ORGANIZERS" />

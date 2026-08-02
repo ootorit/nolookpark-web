@@ -42,6 +42,8 @@ export const NAV_LINKS = [
   { label: "コンセプト", href: "#statement" },
   { label: "開催概要", href: "#details" },
   { label: "コンテンツ", href: "#contents" },
+  { label: "主催者", href: "#organizers" },
+  { label: "協賛", href: "#sponsors" },
   { label: "お問い合わせ", href: "#contact" },
 ] as const;
 

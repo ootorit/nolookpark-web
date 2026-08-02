@@ -33,7 +33,7 @@ export default function Nav() {
         <div className="flex-1" />
 
         {/* Desktop links */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
           {NAV_LINKS.map((l) => (
             <a
               key={l.label}

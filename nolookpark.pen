@@ -39,8 +39,8 @@
                   "content": "「見えない」を楽しみつくそう！",
                   "fontFamily": "$font-heading",
                   "fontSize": 24,
-                  "fontWeight": "700",
-                  "letterSpacing": 6
+                  "fontWeight": "600",
+                  "letterSpacing": 2
                 },
                 {
                   "type": "frame",
@@ -148,8 +148,8 @@
                   "content": "2026.10.24 SAT — 11:00-17:00",
                   "fontFamily": "$font-heading",
                   "fontSize": 18,
-                  "fontWeight": "700",
-                  "letterSpacing": 6
+                  "fontWeight": "600",
+                  "letterSpacing": 2
                 },
                 {
                   "type": "frame",
@@ -175,7 +175,7 @@
                           "content": "@ HOME/WORK VILLAGE（東京・池尻大橋）",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
-                          "fontWeight": "800"
+                          "fontWeight": "700"
                         }
                       ]
                     },
@@ -202,7 +202,7 @@
                           "fontFamily": "$font-body",
                           "fontSize": 16,
                           "fontWeight": "700",
-                          "letterSpacing": 3
+                          "letterSpacing": 1
                         },
                         {
                           "type": "text",
@@ -212,7 +212,7 @@
                           "content": "→",
                           "fontFamily": "$font-heading",
                           "fontSize": 16,
-                          "fontWeight": "700"
+                          "fontWeight": "600"
                         }
                       ]
                     }
@@ -235,13 +235,12 @@
                   "type": "text",
                   "id": "o851bY",
                   "name": "Scroll Text",
-                  "opacity": 0.5,
                   "fill": "$black",
                   "content": "SCROLL",
                   "fontFamily": "$font-heading",
                   "fontSize": 11,
-                  "fontWeight": "normal",
-                  "letterSpacing": 3
+                  "fontWeight": "600",
+                  "letterSpacing": 1
                 },
                 {
                   "type": "frame",
@@ -305,7 +304,7 @@
                       "content": "コンセプト",
                       "fontFamily": "$font-body",
                       "fontSize": 13,
-                      "fontWeight": "500",
+                      "fontWeight": "700",
                       "letterSpacing": 2
                     },
                     {
@@ -316,7 +315,7 @@
                       "content": "開催概要",
                       "fontFamily": "$font-body",
                       "fontSize": 13,
-                      "fontWeight": "500",
+                      "fontWeight": "700",
                       "letterSpacing": 2
                     },
                     {
@@ -327,7 +326,7 @@
                       "content": "コンテンツ",
                       "fontFamily": "$font-body",
                       "fontSize": 13,
-                      "fontWeight": "500",
+                      "fontWeight": "700",
                       "letterSpacing": 2
                     },
                     {
@@ -338,7 +337,7 @@
                       "content": "お問い合わせ",
                       "fontFamily": "$font-body",
                       "fontSize": 13,
-                      "fontWeight": "500",
+                      "fontWeight": "700",
                       "letterSpacing": 2
                     },
                     {
@@ -416,7 +415,7 @@
                       "content": "SponsorA",
                       "fontFamily": "$font-heading",
                       "fontSize": 15,
-                      "fontWeight": "500"
+                      "fontWeight": "600"
                     }
                   ]
                 },
@@ -440,7 +439,7 @@
                       "content": "SponsorB",
                       "fontFamily": "$font-heading",
                       "fontSize": 15,
-                      "fontWeight": "500"
+                      "fontWeight": "600"
                     }
                   ]
                 },
@@ -464,7 +463,7 @@
                       "content": "SponsorC",
                       "fontFamily": "$font-heading",
                       "fontSize": 15,
-                      "fontWeight": "500"
+                      "fontWeight": "600"
                     }
                   ]
                 },
@@ -488,7 +487,7 @@
                       "content": "SponsorD",
                       "fontFamily": "$font-heading",
                       "fontSize": 15,
-                      "fontWeight": "500"
+                      "fontWeight": "600"
                     }
                   ]
                 },
@@ -512,7 +511,7 @@
                       "content": "SponsorE",
                       "fontFamily": "$font-heading",
                       "fontSize": 15,
-                      "fontWeight": "500"
+                      "fontWeight": "600"
                     }
                   ]
                 }
@@ -552,7 +551,6 @@
               "type": "text",
               "id": "QKcEJ",
               "name": "Statement Sub",
-              "opacity": 0.7,
               "fill": "$black",
               "textGrowth": "fixed-width",
               "width": 640,
@@ -561,7 +559,7 @@
               "textAlign": "center",
               "fontFamily": "$font-body",
               "fontSize": 16,
-              "fontWeight": "600"
+              "fontWeight": "700"
             },
             {
               "type": "frame",
@@ -606,7 +604,6 @@
                       "type": "text",
                       "id": "gSOHm",
                       "name": "Podcast Head Sub",
-                      "opacity": 0.7,
                       "fill": "$black",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
@@ -615,7 +612,7 @@
                       "textAlign": "center",
                       "fontFamily": "$font-body",
                       "fontSize": 15,
-                      "fontWeight": "normal"
+                      "fontWeight": "700"
                     }
                   ]
                 },
@@ -690,7 +687,7 @@
                                   "content": "PODCAST",
                                   "fontFamily": "$font-heading",
                                   "fontSize": 11,
-                                  "fontWeight": "700",
+                                  "fontWeight": "600",
                                   "letterSpacing": 2
                                 }
                               ]
@@ -699,12 +696,11 @@
                               "type": "text",
                               "id": "pcOp3",
                               "name": "Podcast Ep",
-                              "opacity": 0.5,
                               "fill": "$white",
                               "content": "EP.01",
                               "fontFamily": "$font-heading",
                               "fontSize": 12,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -724,12 +720,11 @@
                           "type": "text",
                           "id": "ICOxO",
                           "name": "Podcast Meta",
-                          "opacity": 0.5,
                           "fill": "$white",
                           "content": "NO LOOK BROTHERS ／ 24分18秒",
                           "fontFamily": "$font-body",
                           "fontSize": 13,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "frame",
@@ -763,12 +758,11 @@
                               "type": "text",
                               "id": "C5GA8",
                               "name": "Time Current",
-                              "opacity": 0.5,
                               "fill": "$white",
                               "content": "07:42",
                               "fontFamily": "$font-heading",
                               "fontSize": 12,
-                              "fontWeight": "normal"
+                              "fontWeight": "600"
                             },
                             {
                               "type": "frame",
@@ -781,12 +775,11 @@
                               "type": "text",
                               "id": "X6QTsD",
                               "name": "Time Total",
-                              "opacity": 0.5,
                               "fill": "$white",
                               "content": "24:18",
                               "fontFamily": "$font-heading",
                               "fontSize": 12,
-                              "fontWeight": "normal"
+                              "fontWeight": "600"
                             }
                           ]
                         }
@@ -862,40 +855,37 @@
                       "content": "各種配信サービスでも公開中",
                       "fontFamily": "$font-body",
                       "fontSize": 13,
-                      "fontWeight": "normal"
+                      "fontWeight": "700"
                     },
                     {
                       "type": "text",
                       "id": "poI7c",
                       "name": "Platform Spotify",
-                      "opacity": 0.7,
                       "fill": "$black",
                       "content": "Spotify",
                       "fontFamily": "$font-heading",
                       "fontSize": 13,
-                      "fontWeight": "500"
+                      "fontWeight": "600"
                     },
                     {
                       "type": "text",
                       "id": "G2TaG",
                       "name": "Platform Apple Podcasts",
-                      "opacity": 0.7,
                       "fill": "$black",
                       "content": "Apple Podcasts",
                       "fontFamily": "$font-heading",
                       "fontSize": 13,
-                      "fontWeight": "500"
+                      "fontWeight": "600"
                     },
                     {
                       "type": "text",
                       "id": "iuaf0",
                       "name": "Platform YouTube",
-                      "opacity": 0.7,
                       "fill": "$black",
                       "content": "YouTube",
                       "fontFamily": "$font-heading",
                       "fontSize": 13,
-                      "fontWeight": "500"
+                      "fontWeight": "600"
                     }
                   ]
                 }
@@ -945,8 +935,8 @@
                   "content": "EVENT DETAILS",
                   "fontFamily": "$font-heading",
                   "fontSize": 13,
-                  "fontWeight": "700",
-                  "letterSpacing": 4
+                  "fontWeight": "600",
+                  "letterSpacing": 2
                 }
               ]
             },
@@ -1011,7 +1001,7 @@
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
                           "fontSize": 16,
-                          "fontWeight": "600"
+                          "fontWeight": "700"
                         }
                       ]
                     },
@@ -1060,7 +1050,7 @@
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
                           "fontSize": 16,
-                          "fontWeight": "600"
+                          "fontWeight": "700"
                         }
                       ]
                     },
@@ -1109,7 +1099,7 @@
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
                           "fontSize": 16,
-                          "fontWeight": "600"
+                          "fontWeight": "700"
                         }
                       ]
                     },
@@ -1158,7 +1148,7 @@
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
                           "fontSize": 16,
-                          "fontWeight": "600"
+                          "fontWeight": "700"
                         }
                       ]
                     },
@@ -1207,7 +1197,7 @@
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
                           "fontSize": 16,
-                          "fontWeight": "600"
+                          "fontWeight": "700"
                         }
                       ]
                     },
@@ -1256,7 +1246,7 @@
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
                           "fontSize": 16,
-                          "fontWeight": "600"
+                          "fontWeight": "700"
                         }
                       ]
                     }
@@ -1295,7 +1285,7 @@
                       "content": "MAP",
                       "fontFamily": "$font-heading",
                       "fontSize": 15,
-                      "fontWeight": "normal"
+                      "fontWeight": "600"
                     }
                   ]
                 }
@@ -1353,8 +1343,8 @@
                       "content": "CONTENTS",
                       "fontFamily": "$font-heading",
                       "fontSize": 13,
-                      "fontWeight": "700",
-                      "letterSpacing": 4
+                      "fontWeight": "600",
+                      "letterSpacing": 2
                     }
                   ]
                 },
@@ -1362,7 +1352,6 @@
                   "type": "text",
                   "id": "EXmET",
                   "name": "Contents Lead",
-                  "opacity": 0.7,
                   "fill": "$black",
                   "textGrowth": "fixed-width",
                   "width": 680,
@@ -1371,7 +1360,7 @@
                   "textAlign": "center",
                   "fontFamily": "$font-body",
                   "fontSize": 16,
-                  "fontWeight": "normal"
+                  "fontWeight": "700"
                 }
               ]
             },
@@ -1426,7 +1415,7 @@
                               "content": "01",
                               "fontFamily": "$font-heading",
                               "fontSize": 80,
-                              "fontWeight": "700"
+                              "fontWeight": "600"
                             }
                           ]
                         },
@@ -1453,14 +1442,13 @@
                               "content": "DARK PLAYGROUND",
                               "fontFamily": "$font-heading",
                               "fontSize": 18,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             },
                             {
                               "type": "text",
                               "id": "kQ0Dv",
                               "name": "Content Desc 01",
-                              "opacity": 0.7,
                               "fill": "$black",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
@@ -1468,7 +1456,7 @@
                               "lineHeight": 1.8,
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -1510,7 +1498,7 @@
                               "content": "02",
                               "fontFamily": "$font-heading",
                               "fontSize": 80,
-                              "fontWeight": "700"
+                              "fontWeight": "600"
                             }
                           ]
                         },
@@ -1537,14 +1525,13 @@
                               "content": "SOUND KITCHEN",
                               "fontFamily": "$font-heading",
                               "fontSize": 18,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             },
                             {
                               "type": "text",
                               "id": "bgYzp",
                               "name": "Content Desc 02",
-                              "opacity": 0.7,
                               "fill": "$black",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
@@ -1552,7 +1539,7 @@
                               "lineHeight": 1.8,
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -1603,7 +1590,7 @@
                               "content": "03",
                               "fontFamily": "$font-heading",
                               "fontSize": 80,
-                              "fontWeight": "700"
+                              "fontWeight": "600"
                             }
                           ]
                         },
@@ -1630,14 +1617,13 @@
                               "content": "BLIND ART SESSION",
                               "fontFamily": "$font-heading",
                               "fontSize": 18,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             },
                             {
                               "type": "text",
                               "id": "YqBUj",
                               "name": "Content Desc 03",
-                              "opacity": 0.7,
                               "fill": "$black",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
@@ -1645,7 +1631,7 @@
                               "lineHeight": 1.8,
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -1715,19 +1701,18 @@
                               "content": "COMING SOON...",
                               "fontFamily": "$font-heading",
                               "fontSize": 18,
-                              "fontWeight": "700",
-                              "letterSpacing": 4
+                              "fontWeight": "600",
+                              "letterSpacing": 2
                             },
                             {
                               "type": "text",
                               "id": "sVP9z",
                               "name": "CS Sub",
-                              "opacity": 0.6,
                               "fill": "$gray",
                               "content": "他にもコンテンツを準備中！",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -1781,8 +1766,8 @@
                   "content": "ORGANIZERS",
                   "fontFamily": "$font-heading",
                   "fontSize": 13,
-                  "fontWeight": "700",
-                  "letterSpacing": 4
+                  "fontWeight": "600",
+                  "letterSpacing": 2
                 }
               ]
             },
@@ -1835,7 +1820,7 @@
                       "content": "NO LOOK BROTHERS",
                       "fontFamily": "$font-heading",
                       "fontSize": 44,
-                      "fontWeight": "700",
+                      "fontWeight": "600",
                       "letterSpacing": 1
                     }
                   ]
@@ -1844,7 +1829,6 @@
                   "type": "text",
                   "id": "ft8pI",
                   "name": "Organizers Lead",
-                  "opacity": 0.7,
                   "fill": "$black",
                   "textGrowth": "fixed-width",
                   "width": 680,
@@ -1853,7 +1837,7 @@
                   "textAlign": "center",
                   "fontFamily": "$font-body",
                   "fontSize": 16,
-                  "fontWeight": "normal"
+                  "fontWeight": "700"
                 }
               ]
             },
@@ -1901,7 +1885,7 @@
                           "content": "01",
                           "fontFamily": "$font-heading",
                           "fontSize": 80,
-                          "fontWeight": "700"
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -1973,7 +1957,7 @@
                               "content": "TOMOHIRO SAWADA",
                               "fontFamily": "$font-heading",
                               "fontSize": 12,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -1982,7 +1966,6 @@
                           "type": "text",
                           "id": "JKHlZ",
                           "name": "Organizer Desc 01",
-                          "opacity": 0.7,
                           "fill": "$black",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
@@ -1990,7 +1973,7 @@
                           "lineHeight": 1.8,
                           "fontFamily": "$font-body",
                           "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "frame",
@@ -2147,7 +2130,7 @@
                           "content": "02",
                           "fontFamily": "$font-heading",
                           "fontSize": 80,
-                          "fontWeight": "700"
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -2219,7 +2202,7 @@
                               "content": "KENSUKE ISHII",
                               "fontFamily": "$font-heading",
                               "fontSize": 12,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -2228,7 +2211,6 @@
                           "type": "text",
                           "id": "MNt9b",
                           "name": "Organizer Desc 02",
-                          "opacity": 0.7,
                           "fill": "$black",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
@@ -2236,7 +2218,7 @@
                           "lineHeight": 1.8,
                           "fontFamily": "$font-body",
                           "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "frame",
@@ -2393,7 +2375,7 @@
                           "content": "03",
                           "fontFamily": "$font-heading",
                           "fontSize": 80,
-                          "fontWeight": "700"
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -2465,7 +2447,7 @@
                               "content": "KOSUKE TAKAHASHI",
                               "fontFamily": "$font-heading",
                               "fontSize": 12,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -2474,7 +2456,6 @@
                           "type": "text",
                           "id": "v4l5B8",
                           "name": "Organizer Desc 03",
-                          "opacity": 0.7,
                           "fill": "$black",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
@@ -2482,7 +2463,7 @@
                           "lineHeight": 1.8,
                           "fontFamily": "$font-body",
                           "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "frame",
@@ -2649,8 +2630,8 @@
                   "content": "SPONSORS",
                   "fontFamily": "$font-heading",
                   "fontSize": 13,
-                  "fontWeight": "700",
-                  "letterSpacing": 4
+                  "fontWeight": "600",
+                  "letterSpacing": 2
                 }
               ]
             },
@@ -2658,7 +2639,6 @@
               "type": "text",
               "id": "UJeeO",
               "name": "Sponsors Tier Lead",
-              "opacity": 0.7,
               "fill": "$black",
               "textGrowth": "fixed-width",
               "width": 680,
@@ -2667,7 +2647,7 @@
               "textAlign": "center",
               "fontFamily": "$font-body",
               "fontSize": 16,
-              "fontWeight": "normal"
+              "fontWeight": "700"
             },
             {
               "type": "frame",
@@ -2716,14 +2696,13 @@
                           "content": "GOLD SPONSOR",
                           "fontFamily": "$font-heading",
                           "fontSize": 12,
-                          "fontWeight": "700",
-                          "letterSpacing": 3
+                          "fontWeight": "600",
+                          "letterSpacing": 1
                         },
                         {
                           "type": "text",
                           "id": "J0C3U",
                           "name": "Tier Chip JP Gold",
-                          "opacity": 0.6,
                           "fill": "$black",
                           "content": "ゴールド",
                           "fontFamily": "$font-body",
@@ -2822,8 +2801,8 @@
                                   "content": "VISION",
                                   "fontFamily": "$font-heading",
                                   "fontSize": 26,
-                                  "fontWeight": "700",
-                                  "letterSpacing": 3
+                                  "fontWeight": "600",
+                                  "letterSpacing": 1
                                 },
                                 {
                                   "type": "text",
@@ -2833,8 +2812,8 @@
                                   "content": "CONSORTIUM",
                                   "fontFamily": "$font-heading",
                                   "fontSize": 13,
-                                  "fontWeight": "700",
-                                  "letterSpacing": 3.4
+                                  "fontWeight": "600",
+                                  "letterSpacing": 2
                                 }
                               ]
                             }
@@ -2858,25 +2837,23 @@
                           "content": "Vision Consortium",
                           "fontFamily": "$font-heading",
                           "fontSize": 26,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 1
                         },
                         {
                           "type": "text",
                           "id": "vztex",
                           "name": "VC Name JP",
-                          "opacity": 0.5,
                           "fill": "$black",
                           "content": "一般社団法人 ヴィジョン・コンソーシアム",
                           "fontFamily": "$font-body",
                           "fontSize": 13,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "text",
                           "id": "pKhc7",
                           "name": "VC Desc",
-                          "opacity": 0.7,
                           "fill": "$black",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
@@ -2884,7 +2861,7 @@
                           "lineHeight": 1.9,
                           "fontFamily": "$font-body",
                           "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "frame",
@@ -2901,7 +2878,7 @@
                               "content": "vision-consortium.org",
                               "fontFamily": "$font-heading",
                               "fontSize": 13,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 1
                             },
                             {
@@ -2969,14 +2946,13 @@
                           "content": "SILVER SPONSOR",
                           "fontFamily": "$font-heading",
                           "fontSize": 12,
-                          "fontWeight": "700",
-                          "letterSpacing": 3
+                          "fontWeight": "600",
+                          "letterSpacing": 1
                         },
                         {
                           "type": "text",
                           "id": "H7LRzh",
                           "name": "Tier Chip JP Silver",
-                          "opacity": 0.6,
                           "fill": "$black",
                           "content": "シルバー",
                           "fontFamily": "$font-body",
@@ -3021,12 +2997,11 @@
                           "type": "text",
                           "id": "R4ToaY",
                           "name": "Silver Sponsor 1 Label",
-                          "opacity": 0.5,
                           "fill": "$black",
                           "content": "SPONSOR LOGO",
                           "fontFamily": "$font-heading",
                           "fontSize": 13,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         }
                       ]
@@ -3050,12 +3025,11 @@
                           "type": "text",
                           "id": "zh28O",
                           "name": "Silver Sponsor 2 Label",
-                          "opacity": 0.5,
                           "fill": "$black",
                           "content": "SPONSOR LOGO",
                           "fontFamily": "$font-heading",
                           "fontSize": 13,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         }
                       ]
@@ -3079,12 +3053,11 @@
                           "type": "text",
                           "id": "c119R",
                           "name": "Silver Sponsor 3 Label",
-                          "opacity": 0.5,
                           "fill": "$black",
                           "content": "SPONSOR LOGO",
                           "fontFamily": "$font-heading",
                           "fontSize": 13,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         }
                       ]
@@ -3142,14 +3115,13 @@
                           "content": "BRONZE SPONSOR",
                           "fontFamily": "$font-heading",
                           "fontSize": 12,
-                          "fontWeight": "700",
-                          "letterSpacing": 3
+                          "fontWeight": "600",
+                          "letterSpacing": 1
                         },
                         {
                           "type": "text",
                           "id": "Nmx3u",
                           "name": "Tier Chip JP Bronze",
-                          "opacity": 0.6,
                           "fill": "$gray",
                           "content": "ブロンズ",
                           "fontFamily": "$font-body",
@@ -3198,7 +3170,7 @@
                           "content": "LOGO",
                           "fontFamily": "$font-heading",
                           "fontSize": 11,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         }
                       ]
@@ -3226,7 +3198,7 @@
                           "content": "LOGO",
                           "fontFamily": "$font-heading",
                           "fontSize": 11,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         }
                       ]
@@ -3254,7 +3226,7 @@
                           "content": "LOGO",
                           "fontFamily": "$font-heading",
                           "fontSize": 11,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         }
                       ]
@@ -3282,7 +3254,7 @@
                           "content": "LOGO",
                           "fontFamily": "$font-heading",
                           "fontSize": 11,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         }
                       ]
@@ -3310,7 +3282,7 @@
                           "content": "LOGO",
                           "fontFamily": "$font-heading",
                           "fontSize": 11,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         }
                       ]
@@ -3379,8 +3351,8 @@
                       "content": "CONTACT",
                       "fontFamily": "$font-heading",
                       "fontSize": 13,
-                      "fontWeight": "700",
-                      "letterSpacing": 4
+                      "fontWeight": "600",
+                      "letterSpacing": 2
                     }
                   ]
                 },
@@ -3388,7 +3360,6 @@
                   "type": "text",
                   "id": "uve99",
                   "name": "Contact Desc",
-                  "opacity": 0.7,
                   "fill": "$white",
                   "textGrowth": "fixed-width",
                   "width": 600,
@@ -3397,7 +3368,7 @@
                   "textAlign": "center",
                   "fontFamily": "$font-body",
                   "fontSize": 16,
-                  "fontWeight": "normal"
+                  "fontWeight": "700"
                 }
               ]
             },
@@ -3529,12 +3500,11 @@
                               "type": "text",
                               "id": "A80AQ",
                               "name": "Chip Text メディア取材",
-                              "opacity": 0.6,
                               "fill": "$white",
                               "content": "メディア取材",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         },
@@ -3557,12 +3527,11 @@
                               "type": "text",
                               "id": "JiwZb",
                               "name": "Chip Text 協賛・出展",
-                              "opacity": 0.6,
                               "fill": "$white",
                               "content": "協賛・出展",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         },
@@ -3585,12 +3554,11 @@
                               "type": "text",
                               "id": "NFlo5",
                               "name": "Chip Text その他",
-                              "opacity": 0.6,
                               "fill": "$white",
                               "content": "その他",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -3682,7 +3650,7 @@
                               "content": "山田 太郎",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -3718,12 +3686,11 @@
                               "type": "text",
                               "id": "qqJLz",
                               "name": "Optional Company",
-                              "opacity": 0.4,
                               "fill": "$white",
                               "content": "任意",
                               "fontFamily": "$font-body",
                               "fontSize": 11,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         },
@@ -3752,7 +3719,7 @@
                               "content": "株式会社ノールック",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -3844,7 +3811,7 @@
                               "content": "info@example.com",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -3880,12 +3847,11 @@
                               "type": "text",
                               "id": "DDvZ2",
                               "name": "Optional Tel",
-                              "opacity": 0.4,
                               "fill": "$white",
                               "content": "任意",
                               "fontFamily": "$font-body",
                               "fontSize": 11,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         },
@@ -3914,7 +3880,7 @@
                               "content": "03-1234-5678",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -3995,7 +3961,7 @@
                           "content": "取材のご依頼、ご相談内容などをご記入ください。",
                           "fontFamily": "$font-body",
                           "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         }
                       ]
                     }
@@ -4025,12 +3991,11 @@
                       "type": "text",
                       "id": "YRnuO",
                       "name": "Privacy Text",
-                      "opacity": 0.7,
                       "fill": "$white",
                       "content": "プライバシーポリシーに同意のうえ送信します",
                       "fontFamily": "$font-body",
                       "fontSize": 15,
-                      "fontWeight": "normal"
+                      "fontWeight": "700"
                     }
                   ]
                 },
@@ -4064,7 +4029,7 @@
                           "fontFamily": "$font-body",
                           "fontSize": 16,
                           "fontWeight": "700",
-                          "letterSpacing": 3
+                          "letterSpacing": 1
                         },
                         {
                           "type": "text",
@@ -4074,7 +4039,7 @@
                           "content": "→",
                           "fontFamily": "$font-heading",
                           "fontSize": 16,
-                          "fontWeight": "700"
+                          "fontWeight": "600"
                         }
                       ]
                     }
@@ -4107,7 +4072,7 @@
               "content": "© 2026 NO LOOK PARK. All rights reserved.",
               "fontFamily": "$font-heading",
               "fontSize": 12,
-              "fontWeight": "normal"
+              "fontWeight": "600"
             }
           ]
         }
@@ -4252,8 +4217,8 @@
                   "textAlign": "center",
                   "fontFamily": "$font-heading",
                   "fontSize": 13,
-                  "fontWeight": "700",
-                  "letterSpacing": 6
+                  "fontWeight": "600",
+                  "letterSpacing": 2
                 },
                 {
                   "type": "frame",
@@ -4279,7 +4244,7 @@
                           "content": "@ HOME/WORK VILLAGE（東京・池尻大橋）",
                           "fontFamily": "$font-body",
                           "fontSize": 13,
-                          "fontWeight": "800"
+                          "fontWeight": "700"
                         }
                       ]
                     },
@@ -4306,7 +4271,7 @@
                           "fontFamily": "$font-body",
                           "fontSize": 14,
                           "fontWeight": "700",
-                          "letterSpacing": 3
+                          "letterSpacing": 1
                         },
                         {
                           "type": "text",
@@ -4316,7 +4281,7 @@
                           "content": "→",
                           "fontFamily": "$font-heading",
                           "fontSize": 14,
-                          "fontWeight": "700"
+                          "fontWeight": "600"
                         }
                       ]
                     }
@@ -4339,13 +4304,12 @@
                   "type": "text",
                   "id": "WGHw6",
                   "name": "Scroll Text",
-                  "opacity": 0.5,
                   "fill": "$black",
                   "content": "SCROLL",
                   "fontFamily": "$font-heading",
                   "fontSize": 11,
-                  "fontWeight": "normal",
-                  "letterSpacing": 3
+                  "fontWeight": "600",
+                  "letterSpacing": 1
                 },
                 {
                   "type": "frame",
@@ -4422,7 +4386,7 @@
                       "content": "コンセプト",
                       "fontFamily": "$font-body",
                       "fontSize": 13,
-                      "fontWeight": "500",
+                      "fontWeight": "700",
                       "letterSpacing": 2
                     },
                     {
@@ -4436,7 +4400,7 @@
                       "content": "開催概要",
                       "fontFamily": "$font-body",
                       "fontSize": 13,
-                      "fontWeight": "500",
+                      "fontWeight": "700",
                       "letterSpacing": 2
                     },
                     {
@@ -4450,7 +4414,7 @@
                       "content": "コンテンツ",
                       "fontFamily": "$font-body",
                       "fontSize": 13,
-                      "fontWeight": "500",
+                      "fontWeight": "700",
                       "letterSpacing": 2
                     },
                     {
@@ -4464,7 +4428,7 @@
                       "content": "お問い合わせ",
                       "fontFamily": "$font-body",
                       "fontSize": 13,
-                      "fontWeight": "500",
+                      "fontWeight": "700",
                       "letterSpacing": 2
                     },
                     {
@@ -4550,7 +4514,7 @@
                           "content": "SponsorA",
                           "fontFamily": "$font-heading",
                           "fontSize": 14,
-                          "fontWeight": "500"
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -4574,7 +4538,7 @@
                           "content": "SponsorB",
                           "fontFamily": "$font-heading",
                           "fontSize": 14,
-                          "fontWeight": "500"
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -4598,7 +4562,7 @@
                           "content": "SponsorC",
                           "fontFamily": "$font-heading",
                           "fontSize": 14,
-                          "fontWeight": "500"
+                          "fontWeight": "600"
                         }
                       ]
                     }
@@ -4631,7 +4595,7 @@
                           "content": "SponsorD",
                           "fontFamily": "$font-heading",
                           "fontSize": 14,
-                          "fontWeight": "500"
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -4655,7 +4619,7 @@
                           "content": "SponsorE",
                           "fontFamily": "$font-heading",
                           "fontSize": 14,
-                          "fontWeight": "500"
+                          "fontWeight": "600"
                         }
                       ]
                     }
@@ -4697,7 +4661,6 @@
               "type": "text",
               "id": "mtv4Z",
               "name": "Statement Sub",
-              "opacity": 0.7,
               "fill": "$black",
               "textGrowth": "fixed-width",
               "width": "fill_container",
@@ -4706,7 +4669,7 @@
               "textAlign": "center",
               "fontFamily": "$font-body",
               "fontSize": 14,
-              "fontWeight": "normal"
+              "fontWeight": "700"
             },
             {
               "type": "frame",
@@ -4754,7 +4717,6 @@
                       "type": "text",
                       "id": "fCLzU",
                       "name": "Podcast Head Sub",
-                      "opacity": 0.7,
                       "fill": "$black",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
@@ -4763,7 +4725,7 @@
                       "textAlign": "center",
                       "fontFamily": "$font-body",
                       "fontSize": 13,
-                      "fontWeight": "normal"
+                      "fontWeight": "700"
                     }
                   ]
                 },
@@ -4838,7 +4800,7 @@
                                   "content": "PODCAST",
                                   "fontFamily": "$font-heading",
                                   "fontSize": 11,
-                                  "fontWeight": "700",
+                                  "fontWeight": "600",
                                   "letterSpacing": 2
                                 }
                               ]
@@ -4847,12 +4809,11 @@
                               "type": "text",
                               "id": "yEABD",
                               "name": "Podcast Ep",
-                              "opacity": 0.5,
                               "fill": "$white",
                               "content": "EP.01",
                               "fontFamily": "$font-heading",
                               "fontSize": 12,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -4872,12 +4833,11 @@
                           "type": "text",
                           "id": "sbmPr",
                           "name": "Podcast Meta",
-                          "opacity": 0.5,
                           "fill": "$white",
                           "content": "NO LOOK BROTHERS ／ 24分18秒",
                           "fontFamily": "$font-body",
                           "fontSize": 13,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "frame",
@@ -4911,12 +4871,11 @@
                               "type": "text",
                               "id": "yd0Yr",
                               "name": "Time Current",
-                              "opacity": 0.5,
                               "fill": "$white",
                               "content": "07:42",
                               "fontFamily": "$font-heading",
                               "fontSize": 12,
-                              "fontWeight": "normal"
+                              "fontWeight": "600"
                             },
                             {
                               "type": "frame",
@@ -4929,12 +4888,11 @@
                               "type": "text",
                               "id": "lM1UQ",
                               "name": "Time Total",
-                              "opacity": 0.5,
                               "fill": "$white",
                               "content": "24:18",
                               "fontFamily": "$font-heading",
                               "fontSize": 12,
-                              "fontWeight": "normal"
+                              "fontWeight": "600"
                             }
                           ]
                         }
@@ -5013,7 +4971,7 @@
                       "content": "各種配信サービスでも公開中",
                       "fontFamily": "$font-body",
                       "fontSize": 13,
-                      "fontWeight": "normal"
+                      "fontWeight": "700"
                     },
                     {
                       "type": "frame",
@@ -5026,34 +4984,31 @@
                           "type": "text",
                           "id": "YDA9G",
                           "name": "Platform Spotify",
-                          "opacity": 0.7,
                           "fill": "$black",
                           "content": "Spotify",
                           "fontFamily": "$font-heading",
                           "fontSize": 13,
-                          "fontWeight": "500"
+                          "fontWeight": "600"
                         },
                         {
                           "type": "text",
                           "id": "cY1DH",
                           "name": "Platform Apple Podcasts",
-                          "opacity": 0.7,
                           "fill": "$black",
                           "content": "Apple Podcasts",
                           "fontFamily": "$font-heading",
                           "fontSize": 13,
-                          "fontWeight": "500"
+                          "fontWeight": "600"
                         },
                         {
                           "type": "text",
                           "id": "CQvtC",
                           "name": "Platform YouTube",
-                          "opacity": 0.7,
                           "fill": "$black",
                           "content": "YouTube",
                           "fontFamily": "$font-heading",
                           "fontSize": 13,
-                          "fontWeight": "500"
+                          "fontWeight": "600"
                         }
                       ]
                     }
@@ -5105,8 +5060,8 @@
                   "content": "EVENT DETAILS",
                   "fontFamily": "$font-heading",
                   "fontSize": 11,
-                  "fontWeight": "700",
-                  "letterSpacing": 4
+                  "fontWeight": "600",
+                  "letterSpacing": 2
                 }
               ]
             },
@@ -5172,7 +5127,7 @@
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
                           "fontSize": 14,
-                          "fontWeight": "600"
+                          "fontWeight": "700"
                         }
                       ]
                     },
@@ -5221,7 +5176,7 @@
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
                           "fontSize": 14,
-                          "fontWeight": "600"
+                          "fontWeight": "700"
                         }
                       ]
                     },
@@ -5270,7 +5225,7 @@
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
                           "fontSize": 14,
-                          "fontWeight": "600"
+                          "fontWeight": "700"
                         }
                       ]
                     },
@@ -5319,7 +5274,7 @@
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
                           "fontSize": 14,
-                          "fontWeight": "600"
+                          "fontWeight": "700"
                         }
                       ]
                     },
@@ -5368,7 +5323,7 @@
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
                           "fontSize": 14,
-                          "fontWeight": "600"
+                          "fontWeight": "700"
                         }
                       ]
                     },
@@ -5417,7 +5372,7 @@
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
                           "fontSize": 14,
-                          "fontWeight": "600"
+                          "fontWeight": "700"
                         }
                       ]
                     }
@@ -5456,7 +5411,7 @@
                       "content": "MAP",
                       "fontFamily": "$font-heading",
                       "fontSize": 15,
-                      "fontWeight": "normal"
+                      "fontWeight": "600"
                     }
                   ]
                 }
@@ -5515,8 +5470,8 @@
                       "content": "CONTENTS",
                       "fontFamily": "$font-heading",
                       "fontSize": 11,
-                      "fontWeight": "700",
-                      "letterSpacing": 4
+                      "fontWeight": "600",
+                      "letterSpacing": 2
                     }
                   ]
                 },
@@ -5524,7 +5479,6 @@
                   "type": "text",
                   "id": "HVoPk",
                   "name": "Contents Lead",
-                  "opacity": 0.7,
                   "fill": "$black",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
@@ -5533,7 +5487,7 @@
                   "textAlign": "center",
                   "fontFamily": "$font-body",
                   "fontSize": 14,
-                  "fontWeight": "normal"
+                  "fontWeight": "700"
                 }
               ]
             },
@@ -5589,7 +5543,7 @@
                               "content": "01",
                               "fontFamily": "$font-heading",
                               "fontSize": 80,
-                              "fontWeight": "700"
+                              "fontWeight": "600"
                             }
                           ]
                         },
@@ -5616,14 +5570,13 @@
                               "content": "DARK PLAYGROUND",
                               "fontFamily": "$font-heading",
                               "fontSize": 16,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             },
                             {
                               "type": "text",
                               "id": "QBj6s",
                               "name": "Content Desc 01",
-                              "opacity": 0.7,
                               "fill": "$black",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
@@ -5631,7 +5584,7 @@
                               "lineHeight": 1.8,
                               "fontFamily": "$font-body",
                               "fontSize": 14,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -5673,7 +5626,7 @@
                               "content": "02",
                               "fontFamily": "$font-heading",
                               "fontSize": 80,
-                              "fontWeight": "700"
+                              "fontWeight": "600"
                             }
                           ]
                         },
@@ -5700,14 +5653,13 @@
                               "content": "SOUND KITCHEN",
                               "fontFamily": "$font-heading",
                               "fontSize": 16,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             },
                             {
                               "type": "text",
                               "id": "P1RFKa",
                               "name": "Content Desc 02",
-                              "opacity": 0.7,
                               "fill": "$black",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
@@ -5715,7 +5667,7 @@
                               "lineHeight": 1.8,
                               "fontFamily": "$font-body",
                               "fontSize": 14,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -5767,7 +5719,7 @@
                               "content": "03",
                               "fontFamily": "$font-heading",
                               "fontSize": 80,
-                              "fontWeight": "700"
+                              "fontWeight": "600"
                             }
                           ]
                         },
@@ -5794,14 +5746,13 @@
                               "content": "BLIND ART SESSION",
                               "fontFamily": "$font-heading",
                               "fontSize": 16,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             },
                             {
                               "type": "text",
                               "id": "JBer4",
                               "name": "Content Desc 03",
-                              "opacity": 0.7,
                               "fill": "$black",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
@@ -5809,7 +5760,7 @@
                               "lineHeight": 1.8,
                               "fontFamily": "$font-body",
                               "fontSize": 14,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -5877,19 +5828,18 @@
                               "content": "COMING SOON...",
                               "fontFamily": "$font-heading",
                               "fontSize": 16,
-                              "fontWeight": "700",
-                              "letterSpacing": 4
+                              "fontWeight": "600",
+                              "letterSpacing": 2
                             },
                             {
                               "type": "text",
                               "id": "Y6Ke8Q",
                               "name": "CS Sub",
-                              "opacity": 0.6,
                               "fill": "$gray",
                               "content": "他にもコンテンツを準備中！",
                               "fontFamily": "$font-body",
                               "fontSize": 14,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -5943,8 +5893,8 @@
                   "content": "ORGANIZERS",
                   "fontFamily": "$font-heading",
                   "fontSize": 11,
-                  "fontWeight": "700",
-                  "letterSpacing": 4
+                  "fontWeight": "600",
+                  "letterSpacing": 2
                 }
               ]
             },
@@ -5998,7 +5948,7 @@
                       "content": "NO LOOK BROTHERS",
                       "fontFamily": "$font-heading",
                       "fontSize": 24,
-                      "fontWeight": "700",
+                      "fontWeight": "600",
                       "letterSpacing": 1
                     }
                   ]
@@ -6007,7 +5957,6 @@
                   "type": "text",
                   "id": "iMof8",
                   "name": "Organizers Lead",
-                  "opacity": 0.7,
                   "fill": "$black",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
@@ -6016,7 +5965,7 @@
                   "textAlign": "center",
                   "fontFamily": "$font-body",
                   "fontSize": 14,
-                  "fontWeight": "normal"
+                  "fontWeight": "700"
                 }
               ]
             },
@@ -6065,7 +6014,7 @@
                           "content": "01",
                           "fontFamily": "$font-heading",
                           "fontSize": 64,
-                          "fontWeight": "700"
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -6137,7 +6086,7 @@
                               "content": "TOMOHIRO SAWADA",
                               "fontFamily": "$font-heading",
                               "fontSize": 12,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -6146,7 +6095,6 @@
                           "type": "text",
                           "id": "y0qrvN",
                           "name": "Organizer Desc 01",
-                          "opacity": 0.7,
                           "fill": "$black",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
@@ -6154,7 +6102,7 @@
                           "lineHeight": 1.8,
                           "fontFamily": "$font-body",
                           "fontSize": 14,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "frame",
@@ -6311,7 +6259,7 @@
                           "content": "02",
                           "fontFamily": "$font-heading",
                           "fontSize": 64,
-                          "fontWeight": "700"
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -6383,7 +6331,7 @@
                               "content": "KENSUKE ISHII",
                               "fontFamily": "$font-heading",
                               "fontSize": 12,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -6392,7 +6340,6 @@
                           "type": "text",
                           "id": "SY4ef",
                           "name": "Organizer Desc 02",
-                          "opacity": 0.7,
                           "fill": "$black",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
@@ -6400,7 +6347,7 @@
                           "lineHeight": 1.8,
                           "fontFamily": "$font-body",
                           "fontSize": 14,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "frame",
@@ -6557,7 +6504,7 @@
                           "content": "03",
                           "fontFamily": "$font-heading",
                           "fontSize": 64,
-                          "fontWeight": "700"
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -6629,7 +6576,7 @@
                               "content": "KOSUKE TAKAHASHI",
                               "fontFamily": "$font-heading",
                               "fontSize": 12,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -6638,7 +6585,6 @@
                           "type": "text",
                           "id": "Ma39k",
                           "name": "Organizer Desc 03",
-                          "opacity": 0.7,
                           "fill": "$black",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
@@ -6646,7 +6592,7 @@
                           "lineHeight": 1.8,
                           "fontFamily": "$font-body",
                           "fontSize": 14,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "frame",
@@ -6813,8 +6759,8 @@
                   "content": "SPONSORS",
                   "fontFamily": "$font-heading",
                   "fontSize": 11,
-                  "fontWeight": "700",
-                  "letterSpacing": 4
+                  "fontWeight": "600",
+                  "letterSpacing": 2
                 }
               ]
             },
@@ -6822,7 +6768,6 @@
               "type": "text",
               "id": "k74bWI",
               "name": "Sponsors Tier Lead",
-              "opacity": 0.7,
               "fill": "$black",
               "textGrowth": "fixed-width",
               "width": "fill_container",
@@ -6831,7 +6776,7 @@
               "textAlign": "center",
               "fontFamily": "$font-body",
               "fontSize": 14,
-              "fontWeight": "normal"
+              "fontWeight": "700"
             },
             {
               "type": "frame",
@@ -6880,14 +6825,13 @@
                           "content": "GOLD SPONSOR",
                           "fontFamily": "$font-heading",
                           "fontSize": 11,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         },
                         {
                           "type": "text",
                           "id": "wyUNZ",
                           "name": "Tier Chip JP Gold",
-                          "opacity": 0.6,
                           "fill": "$black",
                           "content": "ゴールド",
                           "fontFamily": "$font-body",
@@ -6984,8 +6928,8 @@
                                   "content": "VISION",
                                   "fontFamily": "$font-heading",
                                   "fontSize": 26,
-                                  "fontWeight": "700",
-                                  "letterSpacing": 3
+                                  "fontWeight": "600",
+                                  "letterSpacing": 1
                                 },
                                 {
                                   "type": "text",
@@ -6995,8 +6939,8 @@
                                   "content": "CONSORTIUM",
                                   "fontFamily": "$font-heading",
                                   "fontSize": 13,
-                                  "fontWeight": "700",
-                                  "letterSpacing": 3.4
+                                  "fontWeight": "600",
+                                  "letterSpacing": 2
                                 }
                               ]
                             }
@@ -7020,25 +6964,23 @@
                           "content": "Vision Consortium",
                           "fontFamily": "$font-heading",
                           "fontSize": 20,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 1
                         },
                         {
                           "type": "text",
                           "id": "xczfy",
                           "name": "VC Name JP",
-                          "opacity": 0.5,
                           "fill": "$black",
                           "content": "一般社団法人 ヴィジョン・コンソーシアム",
                           "fontFamily": "$font-body",
                           "fontSize": 13,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "text",
                           "id": "LwNgb",
                           "name": "VC Desc",
-                          "opacity": 0.7,
                           "fill": "$black",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
@@ -7046,7 +6988,7 @@
                           "lineHeight": 1.9,
                           "fontFamily": "$font-body",
                           "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "frame",
@@ -7063,7 +7005,7 @@
                               "content": "vision-consortium.org",
                               "fontFamily": "$font-heading",
                               "fontSize": 13,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 1
                             },
                             {
@@ -7131,14 +7073,13 @@
                           "content": "SILVER SPONSOR",
                           "fontFamily": "$font-heading",
                           "fontSize": 11,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         },
                         {
                           "type": "text",
                           "id": "ajE7B",
                           "name": "Tier Chip JP Silver",
-                          "opacity": 0.6,
                           "fill": "$black",
                           "content": "シルバー",
                           "fontFamily": "$font-body",
@@ -7184,12 +7125,11 @@
                           "type": "text",
                           "id": "Mg5Bs",
                           "name": "Silver Sponsor 1 Label",
-                          "opacity": 0.5,
                           "fill": "$black",
                           "content": "SPONSOR LOGO",
                           "fontFamily": "$font-heading",
                           "fontSize": 12,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         }
                       ]
@@ -7213,12 +7153,11 @@
                           "type": "text",
                           "id": "lVXs2",
                           "name": "Silver Sponsor 2 Label",
-                          "opacity": 0.5,
                           "fill": "$black",
                           "content": "SPONSOR LOGO",
                           "fontFamily": "$font-heading",
                           "fontSize": 12,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         }
                       ]
@@ -7242,12 +7181,11 @@
                           "type": "text",
                           "id": "e5bqJV",
                           "name": "Silver Sponsor 3 Label",
-                          "opacity": 0.5,
                           "fill": "$black",
                           "content": "SPONSOR LOGO",
                           "fontFamily": "$font-heading",
                           "fontSize": 12,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         }
                       ]
@@ -7305,14 +7243,13 @@
                           "content": "BRONZE SPONSOR",
                           "fontFamily": "$font-heading",
                           "fontSize": 11,
-                          "fontWeight": "700",
+                          "fontWeight": "600",
                           "letterSpacing": 2
                         },
                         {
                           "type": "text",
                           "id": "jibnS",
                           "name": "Tier Chip JP Bronze",
-                          "opacity": 0.6,
                           "fill": "$gray",
                           "content": "ブロンズ",
                           "fontFamily": "$font-body",
@@ -7369,7 +7306,7 @@
                               "content": "LOGO",
                               "fontFamily": "$font-heading",
                               "fontSize": 10,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -7397,7 +7334,7 @@
                               "content": "LOGO",
                               "fontFamily": "$font-heading",
                               "fontSize": 10,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -7425,7 +7362,7 @@
                               "content": "LOGO",
                               "fontFamily": "$font-heading",
                               "fontSize": 10,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -7462,7 +7399,7 @@
                               "content": "LOGO",
                               "fontFamily": "$font-heading",
                               "fontSize": 10,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -7490,7 +7427,7 @@
                               "content": "LOGO",
                               "fontFamily": "$font-heading",
                               "fontSize": 10,
-                              "fontWeight": "700",
+                              "fontWeight": "600",
                               "letterSpacing": 2
                             }
                           ]
@@ -7562,8 +7499,8 @@
                       "content": "CONTACT",
                       "fontFamily": "$font-heading",
                       "fontSize": 11,
-                      "fontWeight": "700",
-                      "letterSpacing": 4
+                      "fontWeight": "600",
+                      "letterSpacing": 2
                     }
                   ]
                 },
@@ -7571,7 +7508,6 @@
                   "type": "text",
                   "id": "q69mzV",
                   "name": "Contact Desc",
-                  "opacity": 0.7,
                   "fill": "$white",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
@@ -7580,7 +7516,7 @@
                   "textAlign": "center",
                   "fontFamily": "$font-body",
                   "fontSize": 14,
-                  "fontWeight": "normal"
+                  "fontWeight": "700"
                 }
               ]
             },
@@ -7719,12 +7655,11 @@
                                   "type": "text",
                                   "id": "E5KNzd",
                                   "name": "Chip Text メディア取材",
-                                  "opacity": 0.6,
                                   "fill": "$white",
                                   "content": "メディア取材",
                                   "fontFamily": "$font-body",
                                   "fontSize": 13,
-                                  "fontWeight": "normal"
+                                  "fontWeight": "700"
                                 }
                               ]
                             }
@@ -7755,12 +7690,11 @@
                                   "type": "text",
                                   "id": "jWzVP",
                                   "name": "Chip Text 協賛・出展",
-                                  "opacity": 0.6,
                                   "fill": "$white",
                                   "content": "協賛・出展",
                                   "fontFamily": "$font-body",
                                   "fontSize": 13,
-                                  "fontWeight": "normal"
+                                  "fontWeight": "700"
                                 }
                               ]
                             },
@@ -7783,12 +7717,11 @@
                                   "type": "text",
                                   "id": "giGVz",
                                   "name": "Chip Text その他",
-                                  "opacity": 0.6,
                                   "fill": "$white",
                                   "content": "その他",
                                   "fontFamily": "$font-body",
                                   "fontSize": 13,
-                                  "fontWeight": "normal"
+                                  "fontWeight": "700"
                                 }
                               ]
                             }
@@ -7883,7 +7816,7 @@
                               "content": "山田 太郎",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -7919,12 +7852,11 @@
                               "type": "text",
                               "id": "IcPqb",
                               "name": "Optional Company",
-                              "opacity": 0.4,
                               "fill": "$white",
                               "content": "任意",
                               "fontFamily": "$font-body",
                               "fontSize": 11,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         },
@@ -7953,7 +7885,7 @@
                               "content": "株式会社ノールック",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -8046,7 +7978,7 @@
                               "content": "info@example.com",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -8082,12 +8014,11 @@
                               "type": "text",
                               "id": "n8nbBl",
                               "name": "Optional Tel",
-                              "opacity": 0.4,
                               "fill": "$white",
                               "content": "任意",
                               "fontFamily": "$font-body",
                               "fontSize": 11,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         },
@@ -8116,7 +8047,7 @@
                               "content": "03-1234-5678",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
-                              "fontWeight": "normal"
+                              "fontWeight": "700"
                             }
                           ]
                         }
@@ -8199,7 +8130,7 @@
                           "content": "取材のご依頼、ご相談内容などをご記入ください。",
                           "fontFamily": "$font-body",
                           "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontWeight": "700"
                         }
                       ]
                     }
@@ -8229,12 +8160,11 @@
                       "type": "text",
                       "id": "AlHzg",
                       "name": "Privacy Text",
-                      "opacity": 0.7,
                       "fill": "$white",
                       "content": "プライバシーポリシーに同意のうえ送信します",
                       "fontFamily": "$font-body",
                       "fontSize": 12,
-                      "fontWeight": "normal"
+                      "fontWeight": "700"
                     }
                   ]
                 },
@@ -8268,7 +8198,7 @@
                           "fontFamily": "$font-body",
                           "fontSize": 14,
                           "fontWeight": "700",
-                          "letterSpacing": 3
+                          "letterSpacing": 1
                         },
                         {
                           "type": "text",
@@ -8278,7 +8208,7 @@
                           "content": "→",
                           "fontFamily": "$font-heading",
                           "fontSize": 14,
-                          "fontWeight": "700"
+                          "fontWeight": "600"
                         }
                       ]
                     }
@@ -8311,7 +8241,7 @@
               "content": "© 2026 NO LOOK PARK. All rights reserved.",
               "fontFamily": "$font-heading",
               "fontSize": 12,
-              "fontWeight": "normal"
+              "fontWeight": "600"
             }
           ]
         }
@@ -8333,7 +8263,7 @@
     },
     "gray": {
       "type": "color",
-      "value": "#888888"
+      "value": "#1A1A1A"
     },
     "light-gray": {
       "type": "color",

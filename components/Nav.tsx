@@ -18,7 +18,7 @@ export default function Nav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-30 transition-colors duration-300 ${
-        scrolled ? "bg-brand/95 shadow-sm backdrop-blur-sm" : ""
+        scrolled ? "bg-brand/95 backdrop-blur-sm" : ""
       }`}
     >
       <nav className="mx-auto flex max-w-[1360px] items-center px-6 py-5 md:px-10">

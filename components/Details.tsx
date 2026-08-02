@@ -1,4 +1,4 @@
-import { MapPin } from "lucide-react";
+import { MapPin, ArrowUpRight } from "lucide-react";
 import { EVENT } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
@@ -46,10 +46,15 @@ export default function Details() {
                   href={EVENT.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-[13px] text-brand transition-transform hover:scale-105"
+                  className="group/map mt-1 inline-flex items-center gap-2 rounded-lg border-2 border-ink bg-white/60 px-4 py-2.5 text-[13px] text-ink transition-colors hover:bg-ink hover:text-brand"
                 >
-                  <MapPin size={14} aria-hidden />
+                  <MapPin size={16} aria-hidden />
                   Googleマップで見る
+                  <ArrowUpRight
+                    size={15}
+                    aria-hidden
+                    className="transition-transform group-hover/map:translate-x-0.5 group-hover/map:-translate-y-0.5"
+                  />
                 </a>
               </div>
             </Row>

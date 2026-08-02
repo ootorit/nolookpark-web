@@ -52,6 +52,11 @@ export const NAV_TICKET = "チケット";
 export const SPOTIFY_EMBED_URL =
   "https://open.spotify.com/embed/episode/7makk4oTQel546B0PZlDM5?utm_source=generator";
 
+export const PODCAST = {
+  title: "開催にあたっての思いやアイデアを、ポッドキャストで更新中",
+  sub: "NO LOOK BROTHERS の3人が、企画の裏側や当日までの準備の様子を不定期で配信しています。",
+} as const;
+
 export const CONTENTS = [
   {
     num: "01",

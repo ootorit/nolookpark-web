@@ -1,9 +1,14 @@
-import { STATEMENT_BODY, SPOTIFY_EMBED_URL } from "@/lib/site";
+import { STATEMENT_BODY, SPOTIFY_EMBED_URL, PODCAST } from "@/lib/site";
 import Reveal from "./Reveal";
 
 function PodcastPlayer() {
   return (
-    <div className="w-full max-w-[800px]">
+    <div className="flex w-full max-w-[900px] flex-col gap-6 rounded-[20px] bg-cream p-8 ring-1 ring-inset ring-line md:px-12 md:pb-11 md:pt-12">
+      <div className="flex flex-col items-center gap-2.5 text-center">
+        <h3 className="text-xl tracking-[1px] text-ink">{PODCAST.title}</h3>
+        <p className="text-[15px] leading-[1.9] text-ink">{PODCAST.sub}</p>
+      </div>
+
       <iframe
         title="NO LOOK BROTHERS のポッドキャスト（Spotify）"
         src={SPOTIFY_EMBED_URL}
@@ -14,7 +19,8 @@ function PodcastPlayer() {
         className="w-full rounded-xl"
         style={{ border: 0 }}
       />
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+
+      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
         <span className="text-xs text-ink">各種配信サービスでも公開中</span>
         {["Spotify", "Apple Podcasts", "YouTube"].map((p) => (
           <span key={p} className="font-en text-xs text-ink">
@@ -36,7 +42,7 @@ export default function Statement() {
       <div className="mx-auto flex max-w-[840px] flex-col items-center gap-10 text-center">
         <Reveal>
           <h2 className="text-3xl leading-[1.5] text-ink md:text-[44px] md:leading-[1.6]">
-            「みえない」を楽しみつくそう
+            「みえない」を楽しみつくそう！
           </h2>
         </Reveal>
 

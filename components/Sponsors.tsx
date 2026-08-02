@@ -1,9 +1,10 @@
 import { SPONSORS } from "@/lib/site";
+import Reveal from "./Reveal";
 
 export default function Sponsors() {
   return (
     <section className="bg-cream px-6 py-16 md:px-12">
-      <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-16">
+      <Reveal className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-16">
         {SPONSORS.map((s) => (
           <div
             key={s}
@@ -12,7 +13,7 @@ export default function Sponsors() {
             <span className="font-en text-[13px] font-medium text-muted">{s}</span>
           </div>
         ))}
-      </div>
+      </Reveal>
     </section>
   );
 }

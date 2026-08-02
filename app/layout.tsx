@@ -35,6 +35,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={`${poppins.variable} ${notoSansJP.variable}`}>
+      <head>
+        <noscript>
+          <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
+      </head>
       <body>{children}</body>
     </html>
   );

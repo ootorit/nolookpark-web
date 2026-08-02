@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 const PURPOSES = ["イベントについて", "メディア取材", "協賛・出展", "その他"];
 
@@ -30,15 +31,16 @@ export default function Contact() {
   return (
     <section id="contact" className="bg-ink px-6 py-24 md:px-12 md:py-28">
       <div className="mx-auto flex max-w-[900px] flex-col items-center gap-12">
-        <div className="flex flex-col items-center gap-4 text-center">
+        <Reveal className="flex flex-col items-center gap-4 text-center">
           <SectionHeading jp="お問い合わせ" en="CONTACT" tone="brand" />
           <p className="max-w-[600px] text-base leading-[1.8] text-white/70">
             本イベントに関するお問い合わせは、下記フォームよりご連絡ください。
             <br className="hidden sm:block" />
             内容を確認のうえ、担当者よりご返信いたします。
           </p>
-        </div>
+        </Reveal>
 
+        <Reveal delay={100} className="w-full">
         <form
           onSubmit={(e) => e.preventDefault()}
           className="flex w-full flex-col gap-7 rounded-2xl bg-ink-soft p-6 ring-1 ring-inset ring-line-dark md:p-12"
@@ -122,6 +124,7 @@ export default function Contact() {
             </button>
           </div>
         </form>
+        </Reveal>
       </div>
     </section>
   );

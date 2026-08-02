@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { ORGANIZERS, CO_HOST } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 function XIcon({ size = 16 }: { size?: number }) {
   return (
@@ -52,9 +53,11 @@ export default function Organizers() {
   return (
     <section className="bg-white px-6 py-24 md:px-12 md:py-28">
       <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-14">
-        <SectionHeading jp="主催者" en="ORGANIZERS" />
+        <Reveal>
+          <SectionHeading jp="主催者" en="ORGANIZERS" />
+        </Reveal>
 
-        <div className="flex flex-col items-center gap-5 text-center">
+        <Reveal delay={80} className="flex flex-col items-center gap-5 text-center">
           <div className="flex flex-wrap items-center justify-center gap-4">
             <span className="rounded-full bg-brand px-3.5 py-1.5 text-xs font-bold tracking-[2px] text-ink">
               主催者
@@ -67,12 +70,13 @@ export default function Organizers() {
             「見ないで遊ぶ」を本気でやってみたかった3人組。企画・空間・音、それぞれの得意分野を持ち寄って
             NO LOOK PARK を作っています。
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
-          {ORGANIZERS.map((o) => (
-            <article
+          {ORGANIZERS.map((o, i) => (
+            <Reveal
               key={o.num}
+              delay={i * 100}
               className="overflow-hidden rounded-xl ring-2 ring-inset ring-ink"
             >
               <div
@@ -116,12 +120,12 @@ export default function Organizers() {
                   </div>
                 </div>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
 
         {/* 共催（Vision Consortium）ハイライト */}
-        <div className="flex w-full flex-col items-center gap-6">
+        <Reveal className="flex w-full flex-col items-center gap-6">
           <div className="flex items-center gap-3">
             <span className="rounded-full bg-brand px-3 py-1.5 text-xs font-bold tracking-[2px] text-ink">
               {CO_HOST.chip}
@@ -160,7 +164,7 @@ export default function Organizers() {
               </a>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

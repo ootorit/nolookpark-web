@@ -1,5 +1,6 @@
 import { Headphones, Play, RotateCcw, RotateCw } from "lucide-react";
 import { STATEMENT_BODY } from "@/lib/site";
+import Reveal from "./Reveal";
 
 function PodcastPlayer() {
   return (
@@ -63,19 +64,23 @@ export default function Statement() {
   return (
     <section id="statement" className="bg-white px-6 py-24 md:px-12 md:py-32">
       <div className="mx-auto flex max-w-[840px] flex-col items-center gap-10 text-center">
-        <h2 className="text-3xl font-bold leading-[1.5] text-ink md:text-[44px] md:leading-[1.6]">
-          「みえない」を楽しみつくそう
-        </h2>
+        <Reveal>
+          <h2 className="text-3xl font-bold leading-[1.5] text-ink md:text-[44px] md:leading-[1.6]">
+            「みえない」を楽しみつくそう
+          </h2>
+        </Reveal>
 
-        <div className="flex max-w-[640px] flex-col gap-5 text-base font-semibold leading-[1.8] text-ink/70">
-          {STATEMENT_BODY.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </div>
+        <Reveal delay={100}>
+          <div className="flex max-w-[640px] flex-col gap-5 text-base font-semibold leading-[1.8] text-ink/70">
+            {STATEMENT_BODY.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        </Reveal>
 
-        <div className="mt-4 flex w-full justify-center">
+        <Reveal delay={150} className="mt-4 flex w-full justify-center">
           <PodcastPlayer />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

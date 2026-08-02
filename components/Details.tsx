@@ -1,5 +1,6 @@
 import { EVENT } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -16,9 +17,14 @@ export default function Details() {
   return (
     <section id="details" className="bg-brand px-6 py-24 md:px-12 md:py-28">
       <div className="mx-auto flex max-w-[1000px] flex-col items-center gap-12">
-        <SectionHeading jp="開催概要" en="EVENT DETAILS" />
+        <Reveal>
+          <SectionHeading jp="開催概要" en="EVENT DETAILS" />
+        </Reveal>
 
-        <div className="grid w-full grid-cols-1 gap-12 md:grid-cols-[1fr_400px] md:items-start">
+        <Reveal
+          delay={100}
+          className="grid w-full grid-cols-1 gap-12 md:grid-cols-[1fr_400px] md:items-start"
+        >
           <div className="flex flex-col gap-8">
             <Row label="日程">{EVENT.date}</Row>
             <Row label="時間">{EVENT.time}</Row>
@@ -41,7 +47,7 @@ export default function Details() {
           <div className="flex h-64 items-center justify-center rounded-xl bg-black/5 ring-[3px] ring-inset ring-ink md:h-80">
             <span className="font-en text-sm text-ink/50">MAP</span>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

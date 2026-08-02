@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { ORGANIZERS } from "@/lib/site";
+import { ORGANIZERS, CO_HOST } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 
 function XIcon({ size = 16 }: { size?: number }) {
@@ -52,7 +52,7 @@ export default function Organizers() {
   return (
     <section className="bg-white px-6 py-24 md:px-12 md:py-28">
       <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-14">
-        <SectionHeading className="text-ink">ORGANIZERS</SectionHeading>
+        <SectionHeading jp="主催者" en="ORGANIZERS" />
 
         <div className="flex flex-col items-center gap-5 text-center">
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -118,6 +118,48 @@ export default function Organizers() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* 共催（Vision Consortium）ハイライト */}
+        <div className="flex w-full flex-col items-center gap-6">
+          <div className="flex items-center gap-3">
+            <span className="rounded-full bg-brand px-3 py-1.5 text-xs font-bold tracking-[2px] text-ink">
+              {CO_HOST.chip}
+            </span>
+            <span className="font-en text-[13px] font-bold tracking-[2px] text-muted">
+              {CO_HOST.label}
+            </span>
+          </div>
+
+          <div className="flex w-full flex-col items-center gap-10 rounded-xl bg-cream px-8 py-10 ring-2 ring-inset ring-ink sm:flex-row sm:px-12">
+            <div className="flex h-[140px] w-full shrink-0 items-center justify-center rounded-lg bg-white sm:w-[280px]">
+              <div className="flex items-center gap-3.5">
+                <span className="relative block h-[52px] w-[52px]">
+                  <span className="absolute inset-0 rounded-full bg-ink" />
+                  <span className="absolute left-[15px] top-[15px] h-[22px] w-[22px] rounded-full bg-brand" />
+                </span>
+                <span className="font-en flex flex-col gap-[3px] leading-none text-ink">
+                  <span className="text-[22px] font-bold tracking-[3px]">VISION</span>
+                  <span className="text-xs font-bold tracking-[3.4px]">CONSORTIUM</span>
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-1 flex-col gap-3">
+              <h3 className="font-en text-[26px] font-bold tracking-[1px] text-ink">
+                {CO_HOST.nameEn}
+              </h3>
+              <span className="text-[13px] text-ink/50">{CO_HOST.nameJp}</span>
+              <p className="text-[15px] leading-[1.9] text-ink/70">{CO_HOST.desc}</p>
+              <a
+                href={CO_HOST.href}
+                className="flex w-fit items-center gap-1.5 text-[13px] font-bold tracking-[1px] text-ink transition-opacity hover:opacity-60"
+              >
+                {CO_HOST.linkText}
+                <ArrowUpRight size={14} />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

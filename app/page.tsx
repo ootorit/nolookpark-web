@@ -18,6 +18,7 @@ export default function Home() {
       <Details />
       <Contents />
       <Organizers />
+      <div className="h-1.5 w-full bg-brand" />
       <Contact />
       <Footer />
     </main>

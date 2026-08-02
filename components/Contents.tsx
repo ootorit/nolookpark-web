@@ -6,8 +6,8 @@ export default function Contents() {
     <section id="contents" className="bg-cream px-6 py-24 md:px-12 md:py-28">
       <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-10">
         <div className="flex flex-col items-center gap-4 text-center">
-          <SectionHeading className="text-ink">CONTENTS</SectionHeading>
-          <p className="max-w-[680px] text-[15px] leading-[1.9] text-ink/70">
+          <SectionHeading jp="コンテンツ" en="CONTENTS" />
+          <p className="max-w-[680px] text-base leading-[1.9] text-ink/70">
             視覚を手放すと、遊びはもっと自由になる。
             <br className="hidden sm:block" />
             見えないからこそ楽しいコンテンツが、会場いっぱいに広がります。

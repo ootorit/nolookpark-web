@@ -85,12 +85,23 @@ export const ORGANIZERS = [
 ] as const;
 
 export const STATEMENT_BODY = [
-  "NO LOOK PARKは「みえない」をコンセプトにした新しい体験型イベントです。",
+  "NO LOOK PARKは「みえない」を楽しみ尽くす新しい体験型イベントです。",
   "この時代になっても、目が見えない人の仕事は、ごく限られた選択肢の中にあります。",
   "でも、本当にそうでしょうか。",
   "「みえない」ことから始まる職業や体験は、まだ誰も名前をつけていないだけで、もっとたくさんあるんじゃないか。私たちはそう考えました。",
-  "NO LOOK PARKは、「みえない」を楽しむ公園です。ここには、「みえない」視点から生まれたコンテンツがたくさんあります。",
+  "NO LOOK PARKは、「みえない」を楽しむテーマパークです。ここには、「みえない」視点から生まれたコンテンツがたくさんあります。",
   "この公園に立ち寄って、「みえない」って、こんなに面白いのかと思ってもらえたら。その感覚こそが、未来の当たり前をつくっていくと信じています。",
 ] as const;
 
 export const SPONSORS = ["SponsorA", "SponsorB", "SponsorC", "SponsorD", "SponsorE"] as const;
+
+// 共催団体（Organizers セクション末尾のハイライトカード）
+export const CO_HOST = {
+  chip: "協賛",
+  label: "SUPPORTED BY",
+  nameEn: "Vision Consortium",
+  nameJp: "一般社団法人 ヴィジョン・コンソーシアム",
+  desc: "視覚に頼らない体験デザインを研究・支援する団体。NO LOOK PARK では、コンテンツの安全設計とアクセシビリティ監修をご協力いただいています。",
+  linkText: "vision-consortium.org",
+  href: "#",
+} as const;

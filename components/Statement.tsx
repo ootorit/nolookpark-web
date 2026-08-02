@@ -1,6 +1,5 @@
 import { Headphones, Play, RotateCcw, RotateCw } from "lucide-react";
 import { STATEMENT_BODY } from "@/lib/site";
-import SectionHeading from "./SectionHeading";
 
 function PodcastPlayer() {
   return (
@@ -64,13 +63,11 @@ export default function Statement() {
   return (
     <section id="statement" className="bg-white px-6 py-24 md:px-12 md:py-32">
       <div className="mx-auto flex max-w-[840px] flex-col items-center gap-10 text-center">
-        <SectionHeading>STATEMENT</SectionHeading>
-
         <h2 className="text-3xl font-bold leading-[1.5] text-ink md:text-[44px] md:leading-[1.6]">
           「みえない」を楽しみつくそう
         </h2>
 
-        <div className="flex max-w-[640px] flex-col gap-5 text-[15px] leading-[1.9] text-ink/70">
+        <div className="flex max-w-[640px] flex-col gap-5 text-base font-semibold leading-[1.8] text-ink/70">
           {STATEMENT_BODY.map((p, i) => (
             <p key={i}>{p}</p>
           ))}

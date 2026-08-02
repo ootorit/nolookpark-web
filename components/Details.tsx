@@ -3,7 +3,7 @@ import SectionHeading from "./SectionHeading";
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="flex gap-6">
+    <div className="flex gap-5">
       <div className="w-16 shrink-0 text-[13px] font-bold tracking-[2px] text-ink">
         {label}
       </div>
@@ -16,7 +16,7 @@ export default function Details() {
   return (
     <section id="details" className="bg-brand px-6 py-24 md:px-12 md:py-28">
       <div className="mx-auto flex max-w-[1000px] flex-col items-center gap-12">
-        <SectionHeading className="text-ink">EVENT DETAILS</SectionHeading>
+        <SectionHeading jp="開催概要" en="EVENT DETAILS" />
 
         <div className="grid w-full grid-cols-1 gap-12 md:grid-cols-[1fr_400px] md:items-start">
           <div className="flex flex-col gap-8">

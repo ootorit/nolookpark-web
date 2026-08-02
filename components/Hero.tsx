@@ -7,8 +7,8 @@ function Tile({ src, size }: { src: string; size: "sm" | "lg" }) {
       className={[
         "shrink-0 rounded-[28px] bg-cover bg-center ring-[6px] ring-inset ring-ink",
         size === "lg"
-          ? "h-40 w-40 sm:h-56 sm:w-56 lg:h-[300px] lg:w-[300px]"
-          : "h-32 w-32 sm:h-44 sm:w-44 lg:h-[260px] lg:w-[260px]",
+          ? "h-[136px] w-[136px] sm:h-[190px] sm:w-[190px] lg:h-[255px] lg:w-[255px]"
+          : "h-[108px] w-[108px] sm:h-[150px] sm:w-[150px] lg:h-[221px] lg:w-[221px]",
       ].join(" ")}
       style={{ backgroundImage: `url(${src})` }}
       aria-hidden
@@ -39,7 +39,7 @@ export default function Hero() {
           </Reveal>
           <Reveal variant="zoom" delay={0}>
             <div
-              className="h-40 w-40 shrink-0 bg-contain bg-center bg-no-repeat sm:h-56 sm:w-56 lg:h-[420px] lg:w-[420px]"
+              className="h-[136px] w-[136px] shrink-0 bg-contain bg-center bg-no-repeat sm:h-[190px] sm:w-[190px] lg:h-[357px] lg:w-[357px]"
               style={{ backgroundImage: `url(${IMG.logo})` }}
               aria-label="NO LOOK PARK ロゴ"
               role="img"

@@ -17,7 +17,11 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
 
 export default function Details() {
   return (
-    <section id="details" className="bg-brand px-6 py-24 md:px-12 md:py-28">
+    <section
+      id="details"
+      aria-label="開催概要"
+      className="bg-brand px-6 py-24 md:px-12 md:py-28"
+    >
       <div className="mx-auto flex max-w-[1000px] flex-col items-center gap-12">
         <Reveal>
           <SectionHeading jp="開催概要" en="EVENT DETAILS" />
@@ -46,8 +50,14 @@ export default function Details() {
             <Row label="共催">{EVENT.coHost}</Row>
           </div>
 
-          <div className="flex h-64 items-center justify-center rounded-xl bg-black/5 ring-[3px] ring-inset ring-ink md:h-80">
-            <span className="font-en text-sm text-ink/50">MAP</span>
+          <div
+            role="img"
+            aria-label="会場周辺の地図（準備中）"
+            className="flex h-64 items-center justify-center rounded-xl bg-black/5 ring-[3px] ring-inset ring-ink md:h-80"
+          >
+            <span aria-hidden className="font-en text-sm text-ink/50">
+              MAP
+            </span>
           </div>
         </Reveal>
       </div>

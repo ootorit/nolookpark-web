@@ -51,7 +51,7 @@ function IconLink({
 
 export default function Organizers() {
   return (
-    <section className="bg-white px-6 py-24 md:px-12 md:py-28">
+    <section aria-label="主催者" className="bg-white px-6 py-24 md:px-12 md:py-28">
       <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-14">
         <Reveal>
           <SectionHeading jp="主催者" en="ORGANIZERS" />
@@ -80,10 +80,15 @@ export default function Organizers() {
               className="overflow-hidden rounded-xl [outline:2px_solid_#1A1A1A] [outline-offset:-1px]"
             >
               <div
+                role="img"
+                aria-label={`${o.name} のプロフィール写真（仮）`}
                 className="relative h-80 bg-cover bg-center"
                 style={{ backgroundImage: `url(${o.image})` }}
               >
-                <span className="font-en absolute left-4 top-2 text-[80px] font-bold leading-none text-ink/20">
+                <span
+                  aria-hidden
+                  className="font-en absolute left-4 top-2 text-[80px] font-bold leading-none text-ink/20"
+                >
                   {o.num}
                 </span>
               </div>
@@ -143,8 +148,8 @@ export default function Organizers() {
                   <span className="absolute left-[15px] top-[15px] h-[22px] w-[22px] rounded-full bg-brand" />
                 </span>
                 <span className="font-en flex flex-col gap-[3px] leading-none text-ink">
-                  <span className="text-[22px] font-bold tracking-[3px]">VISION</span>
-                  <span className="text-xs font-bold tracking-[3.4px]">CONSORTIUM</span>
+                  <span className="text-[22px] font-bold tracking-[1px]">VISION</span>
+                  <span className="text-xs font-bold tracking-[2px]">CONSORTIUM</span>
                 </span>
               </div>
             </div>

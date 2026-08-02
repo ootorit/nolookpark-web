@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { NAV_LINKS, IMG } from "@/lib/site";
+import { NAV_LINKS, NAV_TICKET, IMG } from "@/lib/site";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -21,7 +21,10 @@ export default function Nav() {
         scrolled ? "bg-brand/95 backdrop-blur-sm" : ""
       }`}
     >
-      <nav className="mx-auto flex max-w-[1360px] items-center px-6 py-5 md:px-10">
+      <nav
+        aria-label="メインナビゲーション"
+        className="mx-auto flex max-w-[1360px] items-center px-6 py-5 md:px-10"
+      >
         <a href="#top" className="flex items-center" aria-label="NO LOOK PARK ホーム">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={IMG.logo} alt="NO LOOK PARK" className="h-11 w-11 object-contain md:h-14 md:w-14" />
@@ -35,16 +38,16 @@ export default function Nav() {
             <a
               key={l.label}
               href={l.href}
-              className="font-en text-xs font-medium tracking-[2px] text-ink transition-opacity hover:opacity-60"
+              className="text-[13px] font-bold tracking-[1px] text-ink transition-opacity hover:opacity-60"
             >
               {l.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="font-en rounded-full bg-ink px-6 py-2.5 text-xs font-bold tracking-[2px] text-brand transition-transform hover:scale-105"
+            className="rounded-full bg-ink px-6 py-2.5 text-[13px] font-bold tracking-[1px] text-brand transition-transform hover:scale-105"
           >
-            TICKET
+            {NAV_TICKET}
           </a>
         </div>
 
@@ -69,7 +72,7 @@ export default function Nav() {
                 key={l.label}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="font-en text-sm font-medium tracking-[2px] text-white"
+                className="text-sm font-bold tracking-[1px] text-white"
               >
                 {l.label}
               </a>
@@ -77,9 +80,9 @@ export default function Nav() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="font-en mt-1 w-full rounded-full bg-brand py-3 text-center text-sm font-bold tracking-[2px] text-ink"
+              className="mt-1 w-full rounded-full bg-brand py-3 text-center text-sm font-bold tracking-[1px] text-ink"
             >
-              TICKET
+              {NAV_TICKET}
             </a>
           </div>
         </div>

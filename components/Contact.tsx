@@ -6,9 +6,19 @@ import Reveal from "./Reveal";
 
 const PURPOSES = ["イベントについて", "メディア取材", "協賛・出展", "その他"];
 
-function FieldLabel({ label, required }: { label: string; required?: boolean }) {
-  return (
-    <div className="flex items-center gap-2">
+function FieldLabel({
+  label,
+  required,
+  htmlFor,
+  id,
+}: {
+  label: string;
+  required?: boolean;
+  htmlFor?: string;
+  id?: string;
+}) {
+  const content = (
+    <>
       <span className="text-[13px] font-bold tracking-[1px] text-white">{label}</span>
       {required ? (
         <span className="rounded bg-brand px-1.5 py-0.5 text-[10px] font-bold text-ink">
@@ -17,6 +27,18 @@ function FieldLabel({ label, required }: { label: string; required?: boolean }) 
       ) : (
         <span className="text-[10px] text-white/40">任意</span>
       )}
+    </>
+  );
+  if (htmlFor) {
+    return (
+      <label htmlFor={htmlFor} className="flex items-center gap-2">
+        {content}
+      </label>
+    );
+  }
+  return (
+    <div id={id} className="flex items-center gap-2">
+      {content}
     </div>
   );
 }
@@ -29,7 +51,11 @@ export default function Contact() {
   const [agree, setAgree] = useState(false);
 
   return (
-    <section id="contact" className="bg-ink px-6 py-24 md:px-12 md:py-28">
+    <section
+      id="contact"
+      aria-label="お問い合わせ"
+      className="bg-ink px-6 py-24 md:px-12 md:py-28"
+    >
       <div className="mx-auto flex max-w-[900px] flex-col items-center gap-12">
         <Reveal className="flex flex-col items-center gap-4 text-center">
           <SectionHeading jp="お問い合わせ" en="CONTACT" tone="brand" />
@@ -47,14 +73,21 @@ export default function Contact() {
         >
           {/* Purpose */}
           <div className="flex flex-col gap-3.5">
-            <FieldLabel label="お問い合わせ目的" required />
-            <div className="flex flex-wrap gap-2.5">
+            <FieldLabel label="お問い合わせ目的" required id="purpose-label" />
+            <div
+              role="radiogroup"
+              aria-labelledby="purpose-label"
+              aria-required="true"
+              className="flex flex-wrap gap-2.5"
+            >
               {PURPOSES.map((p, i) => {
                 const active = purpose === i;
                 return (
                   <button
                     key={p}
                     type="button"
+                    role="radio"
+                    aria-checked={active}
                     onClick={() => setPurpose(i)}
                     className={[
                       "rounded-full px-4 py-2.5 text-[13px] transition-colors",
@@ -63,7 +96,7 @@ export default function Contact() {
                         : "bg-[#2e2e2e] text-white/60 ring-1 ring-inset ring-line-dark hover:text-white",
                     ].join(" ")}
                   >
-                    {active ? "✓ " : ""}
+                    <span aria-hidden>{active ? "✓ " : ""}</span>
                     {p}
                   </button>
                 );
@@ -73,29 +106,31 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <div className="flex flex-col gap-2">
-              <FieldLabel label="お名前" required />
-              <input className={inputCls} placeholder="山田 太郎" />
+              <FieldLabel label="お名前" required htmlFor="contact-name" />
+              <input id="contact-name" aria-required="true" className={inputCls} placeholder="山田 太郎" />
             </div>
             <div className="flex flex-col gap-2">
-              <FieldLabel label="会社・団体名" />
-              <input className={inputCls} placeholder="株式会社ノールック" />
+              <FieldLabel label="会社・団体名" htmlFor="contact-company" />
+              <input id="contact-company" className={inputCls} placeholder="株式会社ノールック" />
             </div>
           </div>
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <div className="flex flex-col gap-2">
-              <FieldLabel label="メールアドレス" required />
-              <input type="email" className={inputCls} placeholder="info@example.com" />
+              <FieldLabel label="メールアドレス" required htmlFor="contact-email" />
+              <input id="contact-email" type="email" aria-required="true" className={inputCls} placeholder="info@example.com" />
             </div>
             <div className="flex flex-col gap-2">
-              <FieldLabel label="電話番号" />
-              <input type="tel" className={inputCls} placeholder="03-1234-5678" />
+              <FieldLabel label="電話番号" htmlFor="contact-tel" />
+              <input id="contact-tel" type="tel" className={inputCls} placeholder="03-1234-5678" />
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
-            <FieldLabel label="お問い合わせ内容" required />
+            <FieldLabel label="お問い合わせ内容" required htmlFor="contact-message" />
             <textarea
+              id="contact-message"
+              aria-required="true"
               rows={5}
               className="w-full rounded-lg bg-field p-4 text-sm text-white outline-none ring-1 ring-inset ring-line-dark placeholder:text-white/35 focus:ring-brand"
               placeholder="取材のご依頼、ご相談内容などをご記入ください。"
@@ -117,8 +152,11 @@ export default function Contact() {
               type="submit"
               className="group flex items-center gap-3 rounded-full bg-brand px-16 py-[18px] transition-transform hover:scale-105"
             >
-              <span className="text-[15px] font-bold tracking-[3px] text-ink">送信する</span>
-              <span className="font-en text-[15px] font-bold text-ink transition-transform group-hover:translate-x-1">
+              <span className="text-[15px] font-bold tracking-[1px] text-ink">送信する</span>
+              <span
+                aria-hidden
+                className="font-en text-[15px] font-bold text-ink transition-transform group-hover:translate-x-1"
+              >
                 →
               </span>
             </button>

@@ -40,7 +40,15 @@ export default function RootLayout({
           <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
         </noscript>
       </head>
-      <body>{children}</body>
+      <body>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-brand"
+        >
+          本文へスキップ
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

@@ -62,7 +62,11 @@ function PodcastPlayer() {
 
 export default function Statement() {
   return (
-    <section id="statement" className="bg-white px-6 py-24 md:px-12 md:py-32">
+    <section
+      id="statement"
+      aria-label="コンセプト"
+      className="bg-white px-6 py-24 md:px-12 md:py-32"
+    >
       <div className="mx-auto flex max-w-[840px] flex-col items-center gap-10 text-center">
         <Reveal>
           <h2 className="text-3xl font-bold leading-[1.5] text-ink md:text-[44px] md:leading-[1.6]">

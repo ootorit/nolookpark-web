@@ -10,17 +10,19 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="relative">
+    <>
       <Nav />
-      <Hero />
-      <Sponsors />
-      <Statement />
-      <Details />
-      <Contents />
-      <Organizers />
-      <div className="h-1.5 w-full bg-brand" />
-      <Contact />
+      <main id="main" className="relative">
+        <Hero />
+        <Sponsors />
+        <Statement />
+        <Details />
+        <Contents />
+        <Organizers />
+        <div aria-hidden className="h-1.5 w-full bg-brand" />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

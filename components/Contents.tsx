@@ -4,7 +4,11 @@ import Reveal from "./Reveal";
 
 export default function Contents() {
   return (
-    <section id="contents" className="bg-cream px-6 py-24 md:px-12 md:py-28">
+    <section
+      id="contents"
+      aria-label="コンテンツ"
+      className="bg-cream px-6 py-24 md:px-12 md:py-28"
+    >
       <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-10">
         <Reveal className="flex flex-col items-center gap-4 text-center">
           <SectionHeading jp="コンテンツ" en="CONTENTS" />
@@ -23,10 +27,15 @@ export default function Contents() {
               className="overflow-hidden rounded-xl [outline:2px_solid_#1A1A1A] [outline-offset:-1px]"
             >
               <div
+                role="img"
+                aria-label={`${c.title} のイメージ写真（仮）`}
                 className="relative h-64 bg-cover bg-center"
                 style={{ backgroundImage: `url(${c.image})` }}
               >
-                <span className="font-en absolute left-4 top-2 text-[80px] font-bold leading-none text-brand/30">
+                <span
+                  aria-hidden
+                  className="font-en absolute left-4 top-2 text-[80px] font-bold leading-none text-brand/30"
+                >
                   {c.num}
                 </span>
               </div>
@@ -44,9 +53,9 @@ export default function Contents() {
             delay={CONTENTS.length * 150}
             className="flex flex-col overflow-hidden rounded-xl [outline:2px_solid_#1A1A1A] [outline-offset:-1px]"
           >
-            <div className="h-64 bg-gradient-to-b from-brand to-ink" />
+            <div aria-hidden className="h-64 bg-gradient-to-b from-brand to-ink" />
             <div className="flex flex-1 flex-col items-center justify-center gap-3 bg-white px-6 py-8 text-center">
-              <span className="font-en text-lg font-bold tracking-[4px] text-muted">
+              <span className="font-en text-lg font-bold tracking-[2px] text-muted">
                 COMING SOON...
               </span>
               <span className="text-[13px] text-muted/80">他にもコンテンツを準備中！</span>

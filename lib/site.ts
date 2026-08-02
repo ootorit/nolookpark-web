@@ -34,11 +34,13 @@ export const IMG = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "ABOUT", href: "#statement" },
-  { label: "CONTENTS", href: "#contents" },
-  { label: "DETAILS", href: "#details" },
-  { label: "CONTACT", href: "#contact" },
+  { label: "コンセプト", href: "#statement" },
+  { label: "コンテンツ", href: "#contents" },
+  { label: "開催概要", href: "#details" },
+  { label: "お問い合わせ", href: "#contact" },
 ] as const;
+
+export const NAV_TICKET = "チケット";
 
 export const CONTENTS = [
   {

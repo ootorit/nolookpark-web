@@ -46,7 +46,7 @@ export default function Details() {
                   href={EVENT.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/map mt-1 inline-flex items-center gap-2 rounded-lg border-2 border-ink bg-white/60 px-4 py-2.5 text-[13px] text-ink transition-colors hover:bg-ink hover:text-brand"
+                  className="group/map mt-1 inline-flex items-center gap-2 rounded-lg border-2 border-ink px-4 py-2.5 text-[13px] text-ink transition-colors hover:bg-ink hover:text-brand"
                 >
                   <MapPin size={16} aria-hidden />
                   Googleマップで見る

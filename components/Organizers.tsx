@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { ORGANIZERS, CO_HOST } from "@/lib/site";
+import { ORGANIZERS } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
@@ -128,48 +128,6 @@ export default function Organizers() {
             </Reveal>
           ))}
         </div>
-
-        {/* 共催（Vision Consortium）ハイライト */}
-        <Reveal className="flex w-full flex-col items-center gap-6">
-          <div className="flex items-center gap-3">
-            <span className="rounded-full bg-brand px-3 py-1.5 text-xs tracking-[2px] text-ink">
-              {CO_HOST.chip}
-            </span>
-            <span className="font-en text-[13px] tracking-[2px] text-ink">
-              {CO_HOST.label}
-            </span>
-          </div>
-
-          <div className="flex w-full flex-col items-center gap-10 rounded-xl bg-cream px-8 py-10 border-2 border-ink sm:flex-row sm:px-12">
-            <div className="flex h-[140px] w-full shrink-0 items-center justify-center rounded-lg bg-white sm:w-[280px]">
-              <div className="flex items-center gap-3.5">
-                <span className="relative block h-[52px] w-[52px]">
-                  <span className="absolute inset-0 rounded-full bg-ink" />
-                  <span className="absolute left-[15px] top-[15px] h-[22px] w-[22px] rounded-full bg-brand" />
-                </span>
-                <span className="font-en flex flex-col gap-[3px] leading-none text-ink">
-                  <span className="text-[22px] tracking-[1px]">VISION</span>
-                  <span className="text-xs tracking-[2px]">CONSORTIUM</span>
-                </span>
-              </div>
-            </div>
-
-            <div className="flex flex-1 flex-col gap-3">
-              <h3 className="font-en text-[26px] tracking-[1px] text-ink">
-                {CO_HOST.nameEn}
-              </h3>
-              <span className="text-[13px] text-ink">{CO_HOST.nameJp}</span>
-              <p className="text-[15px] leading-[1.9] text-ink">{CO_HOST.desc}</p>
-              <a
-                href={CO_HOST.href}
-                className="flex w-fit items-center gap-1.5 text-[13px] tracking-[1px] text-ink transition-opacity hover:opacity-60"
-              >
-                {CO_HOST.linkText}
-                <ArrowUpRight size={14} />
-              </a>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

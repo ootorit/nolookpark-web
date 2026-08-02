@@ -28,9 +28,20 @@
               "id": "p8n5DL",
               "name": "KV Inner",
               "layout": "vertical",
-              "gap": 48,
+              "gap": 24,
               "alignItems": "center",
               "children": [
+                {
+                  "type": "text",
+                  "id": "Mc0wn",
+                  "name": "KV Date",
+                  "fill": "$black",
+                  "content": "「見えない」を楽しみつくそう！",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 24,
+                  "fontWeight": "700",
+                  "letterSpacing": 6
+                },
                 {
                   "type": "frame",
                   "id": "M8R2qW",
@@ -531,7 +542,7 @@
               "fill": "$black",
               "textGrowth": "fixed-width",
               "width": 800,
-              "content": "「みえない」を楽しみつくそう",
+              "content": "「みえない」を楽しみつくそう！",
               "lineHeight": 1.6,
               "textAlign": "center",
               "fontFamily": "$font-body",
@@ -2546,58 +2557,141 @@
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Tkhaj",
+          "name": "Sponsors Tier Section",
+          "width": "fill_container",
+          "fill": "$off-white",
+          "layout": "vertical",
+          "gap": 56,
+          "padding": [
+            100,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "WZcfx",
+              "name": "Sponsors Tier Heading Group",
+              "layout": "vertical",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "kOltE",
+                  "name": "Sponsors Tier Heading JP",
+                  "fill": "$black",
+                  "content": "協賛",
+                  "fontFamily": "$font-body",
+                  "fontSize": 30,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "CRXqC",
+                  "name": "Sponsors Tier Heading",
+                  "opacity": 0.45,
+                  "fill": "$black",
+                  "content": "SPONSORS",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 13,
+                  "fontWeight": "700",
+                  "letterSpacing": 4
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "UJeeO",
+              "name": "Sponsors Tier Lead",
+              "opacity": 0.7,
+              "fill": "$black",
+              "textGrowth": "fixed-width",
+              "width": 680,
+              "content": "NO LOOK PARK は、以下の企業・団体のご協賛により開催されます。",
+              "lineHeight": 1.9,
+              "textAlign": "center",
+              "fontFamily": "$font-body",
+              "fontSize": 16,
+              "fontWeight": "normal"
             },
             {
               "type": "frame",
-              "id": "Z8o3um",
-              "name": "Vision Consortium Block",
-              "width": "fill_container",
+              "id": "xVaaN",
+              "name": "Tier Gold",
+              "width": 1100,
               "layout": "vertical",
               "gap": 24,
               "alignItems": "center",
               "children": [
                 {
                   "type": "frame",
-                  "id": "W9qyBF",
-                  "name": "VC Label Row",
-                  "gap": 12,
+                  "id": "p1B1h",
+                  "name": "Tier Label Gold",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "justifyContent": "center",
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "frame",
-                      "id": "x93mxy",
-                      "name": "VC Chip",
+                      "id": "sCDsN",
+                      "name": "Tier Rule L Gold",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$light-gray"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "DFnbh",
+                      "name": "Tier Chip Gold",
                       "fill": "$yellow",
                       "cornerRadius": 100,
+                      "gap": 8,
                       "padding": [
-                        6,
-                        12
+                        8,
+                        20
                       ],
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "text",
-                          "id": "xtAMB",
-                          "name": "VC Chip Text",
+                          "id": "nqmSh",
+                          "name": "Tier Chip EN Gold",
                           "fill": "$black",
-                          "content": "協賛",
-                          "fontFamily": "$font-body",
+                          "content": "GOLD SPONSOR",
+                          "fontFamily": "$font-heading",
                           "fontSize": 12,
                           "fontWeight": "700",
-                          "letterSpacing": 2
+                          "letterSpacing": 3
+                        },
+                        {
+                          "type": "text",
+                          "id": "J0C3U",
+                          "name": "Tier Chip JP Gold",
+                          "opacity": 0.6,
+                          "fill": "$black",
+                          "content": "ゴールド",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "700"
                         }
                       ]
                     },
                     {
-                      "type": "text",
-                      "id": "yv4OD",
-                      "name": "VC Label",
-                      "fill": "$gray",
-                      "content": "SUPPORTED BY",
-                      "fontFamily": "$font-heading",
-                      "fontSize": 13,
-                      "fontWeight": "700",
-                      "letterSpacing": 2
+                      "type": "frame",
+                      "id": "cITl4",
+                      "name": "Tier Rule R Gold",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$light-gray"
                     }
                   ]
                 },
@@ -2605,12 +2699,12 @@
                   "type": "frame",
                   "id": "c7iiVw",
                   "name": "VC Card",
-                  "width": 1100,
-                  "fill": "$off-white",
+                  "width": "fill_container",
+                  "fill": "$white",
                   "cornerRadius": 12,
                   "stroke": "$black",
                   "strokeWidth": 2,
-                  "gap": 40,
+                  "gap": 48,
                   "padding": [
                     40,
                     48
@@ -2621,8 +2715,8 @@
                       "type": "frame",
                       "id": "MAERm",
                       "name": "VC Logo Box",
-                      "width": 280,
-                      "height": 140,
+                      "width": 360,
+                      "height": 180,
                       "fill": "$white",
                       "cornerRadius": 8,
                       "layout": "vertical",
@@ -2633,15 +2727,15 @@
                           "type": "frame",
                           "id": "TBcez",
                           "name": "VC Lockup",
-                          "gap": 14,
+                          "gap": 18,
                           "alignItems": "center",
                           "children": [
                             {
                               "type": "frame",
                               "id": "f1P6l5",
                               "name": "VC Mark",
-                              "width": 52,
-                              "height": 52,
+                              "width": 64,
+                              "height": 64,
                               "layout": "none",
                               "children": [
                                 {
@@ -2651,18 +2745,18 @@
                                   "y": 0,
                                   "name": "VC Mark Outer",
                                   "fill": "$black",
-                                  "width": 52,
-                                  "height": 52
+                                  "width": 64,
+                                  "height": 64
                                 },
                                 {
                                   "type": "ellipse",
                                   "id": "uSvyR",
-                                  "x": 15,
-                                  "y": 15,
+                                  "x": 19,
+                                  "y": 19,
                                   "name": "VC Mark Iris",
                                   "fill": "$yellow",
-                                  "width": 22,
-                                  "height": 22
+                                  "width": 26,
+                                  "height": 26
                                 }
                               ]
                             },
@@ -2680,7 +2774,7 @@
                                   "fill": "$black",
                                   "content": "VISION",
                                   "fontFamily": "$font-heading",
-                                  "fontSize": 22,
+                                  "fontSize": 26,
                                   "fontWeight": "700",
                                   "letterSpacing": 3
                                 },
@@ -2691,7 +2785,7 @@
                                   "fill": "$black",
                                   "content": "CONSORTIUM",
                                   "fontFamily": "$font-heading",
-                                  "fontSize": 12,
+                                  "fontSize": 13,
                                   "fontWeight": "700",
                                   "letterSpacing": 3.4
                                 }
@@ -2774,6 +2868,403 @@
                               "fill": "$black"
                             }
                           ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Gz3gv",
+              "name": "Tier Silver",
+              "width": 1100,
+              "layout": "vertical",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "cjVwu",
+                  "name": "Tier Label Silver",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "V8z4q",
+                      "name": "Tier Rule L Silver",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$light-gray"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "z6gano",
+                      "name": "Tier Chip Silver",
+                      "fill": "$light-gray",
+                      "cornerRadius": 100,
+                      "gap": 8,
+                      "padding": [
+                        8,
+                        20
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "P7IMh",
+                          "name": "Tier Chip EN Silver",
+                          "fill": "$black",
+                          "content": "SILVER SPONSOR",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 12,
+                          "fontWeight": "700",
+                          "letterSpacing": 3
+                        },
+                        {
+                          "type": "text",
+                          "id": "H7LRzh",
+                          "name": "Tier Chip JP Silver",
+                          "opacity": 0.6,
+                          "fill": "$black",
+                          "content": "シルバー",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "g9tzu",
+                      "name": "Tier Rule R Silver",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$light-gray"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "PRBA6",
+                  "name": "Silver Row",
+                  "width": "fill_container",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lq8DH",
+                      "name": "Silver Sponsor 1",
+                      "width": "fill_container",
+                      "height": 150,
+                      "fill": "$white",
+                      "cornerRadius": 12,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "R4ToaY",
+                          "name": "Silver Sponsor 1 Label",
+                          "opacity": 0.5,
+                          "fill": "$black",
+                          "content": "SPONSOR LOGO",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 13,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pV4KX",
+                      "name": "Silver Sponsor 2",
+                      "width": "fill_container",
+                      "height": 150,
+                      "fill": "$white",
+                      "cornerRadius": 12,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "zh28O",
+                          "name": "Silver Sponsor 2 Label",
+                          "opacity": 0.5,
+                          "fill": "$black",
+                          "content": "SPONSOR LOGO",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 13,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PoH7J",
+                      "name": "Silver Sponsor 3",
+                      "width": "fill_container",
+                      "height": 150,
+                      "fill": "$white",
+                      "cornerRadius": 12,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "c119R",
+                          "name": "Silver Sponsor 3 Label",
+                          "opacity": 0.5,
+                          "fill": "$black",
+                          "content": "SPONSOR LOGO",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 13,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aRqXO",
+              "name": "Tier Bronze",
+              "width": 1100,
+              "layout": "vertical",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "g6JByy",
+                  "name": "Tier Label Bronze",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "L2pvnz",
+                      "name": "Tier Rule L Bronze",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$light-gray"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "W7uV5",
+                      "name": "Tier Chip Bronze",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 100,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "gap": 8,
+                      "padding": [
+                        8,
+                        20
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PfUWI",
+                          "name": "Tier Chip EN Bronze",
+                          "fill": "$gray",
+                          "content": "BRONZE SPONSOR",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 12,
+                          "fontWeight": "700",
+                          "letterSpacing": 3
+                        },
+                        {
+                          "type": "text",
+                          "id": "Nmx3u",
+                          "name": "Tier Chip JP Bronze",
+                          "opacity": 0.6,
+                          "fill": "$gray",
+                          "content": "ブロンズ",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MiraW",
+                      "name": "Tier Rule R Bronze",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$light-gray"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CRLzN",
+                  "name": "Bronze Row",
+                  "width": "fill_container",
+                  "gap": 15,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Hp6po",
+                      "name": "Bronze Sponsor 1",
+                      "width": "fill_container",
+                      "height": 96,
+                      "fill": "$white",
+                      "cornerRadius": 10,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "g06Ur",
+                          "name": "Bronze Sponsor 1 Label",
+                          "opacity": 0.45,
+                          "fill": "$black",
+                          "content": "LOGO",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 11,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PAFjI",
+                      "name": "Bronze Sponsor 2",
+                      "width": "fill_container",
+                      "height": 96,
+                      "fill": "$white",
+                      "cornerRadius": 10,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "oIY4q",
+                          "name": "Bronze Sponsor 2 Label",
+                          "opacity": 0.45,
+                          "fill": "$black",
+                          "content": "LOGO",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 11,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gNSZf",
+                      "name": "Bronze Sponsor 3",
+                      "width": "fill_container",
+                      "height": 96,
+                      "fill": "$white",
+                      "cornerRadius": 10,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "qYi0N",
+                          "name": "Bronze Sponsor 3 Label",
+                          "opacity": 0.45,
+                          "fill": "$black",
+                          "content": "LOGO",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 11,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "QufHq",
+                      "name": "Bronze Sponsor 4",
+                      "width": "fill_container",
+                      "height": 96,
+                      "fill": "$white",
+                      "cornerRadius": 10,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lNidl",
+                          "name": "Bronze Sponsor 4 Label",
+                          "opacity": 0.45,
+                          "fill": "$black",
+                          "content": "LOGO",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 11,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vqDqS",
+                      "name": "Bronze Sponsor 5",
+                      "width": "fill_container",
+                      "height": 96,
+                      "fill": "$white",
+                      "cornerRadius": 10,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "NWDjJ",
+                          "name": "Bronze Sponsor 5 Label",
+                          "opacity": 0.45,
+                          "fill": "$black",
+                          "content": "LOGO",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 11,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
                         }
                       ]
                     }
@@ -6181,67 +6672,150 @@
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "F4MBZ",
+          "name": "Sponsors Tier Section",
+          "width": "fill_container",
+          "fill": "$off-white",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            64,
+            20
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "tXxab",
+              "name": "Sponsors Tier Heading Group",
+              "layout": "vertical",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "pX4Hk",
+                  "name": "Sponsors Tier Heading JP",
+                  "fill": "$black",
+                  "content": "協賛",
+                  "fontFamily": "$font-body",
+                  "fontSize": 22,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "gOC9f",
+                  "name": "Sponsors Tier Heading",
+                  "opacity": 0.45,
+                  "fill": "$black",
+                  "content": "SPONSORS",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "letterSpacing": 4
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "k74bWI",
+              "name": "Sponsors Tier Lead",
+              "opacity": 0.7,
+              "fill": "$black",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "NO LOOK PARK は、以下の企業・団体のご協賛により開催されます。",
+              "lineHeight": 1.9,
+              "textAlign": "center",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "normal"
             },
             {
               "type": "frame",
-              "id": "DeONk",
-              "name": "Vision Consortium Block",
+              "id": "ucIe5",
+              "name": "Tier Gold",
               "width": "fill_container",
               "layout": "vertical",
-              "gap": 24,
+              "gap": 16,
               "alignItems": "center",
               "children": [
                 {
                   "type": "frame",
-                  "id": "agN3F",
-                  "name": "VC Label Row",
-                  "gap": 12,
+                  "id": "jjDIk",
+                  "name": "Tier Label Gold",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "justifyContent": "center",
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "frame",
-                      "id": "hSVT4",
-                      "name": "VC Chip",
+                      "id": "cGnb5",
+                      "name": "Tier Rule L Gold",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$light-gray"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "FTxV6",
+                      "name": "Tier Chip Gold",
                       "fill": "$yellow",
                       "cornerRadius": 100,
+                      "gap": 6,
                       "padding": [
-                        6,
-                        12
+                        7,
+                        14
                       ],
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "text",
-                          "id": "uSIpl",
-                          "name": "VC Chip Text",
+                          "id": "brP7k",
+                          "name": "Tier Chip EN Gold",
                           "fill": "$black",
-                          "content": "協賛",
-                          "fontFamily": "$font-body",
-                          "fontSize": 12,
+                          "content": "GOLD SPONSOR",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 11,
                           "fontWeight": "700",
                           "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "wyUNZ",
+                          "name": "Tier Chip JP Gold",
+                          "opacity": 0.6,
+                          "fill": "$black",
+                          "content": "ゴールド",
+                          "fontFamily": "$font-body",
+                          "fontSize": 10,
+                          "fontWeight": "700"
                         }
                       ]
                     },
                     {
-                      "type": "text",
-                      "id": "JNIyb",
-                      "name": "VC Label",
-                      "fill": "$gray",
-                      "content": "SUPPORTED BY",
-                      "fontFamily": "$font-heading",
-                      "fontSize": 13,
-                      "fontWeight": "700",
-                      "letterSpacing": 2
+                      "type": "frame",
+                      "id": "vO9f1",
+                      "name": "Tier Rule R Gold",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$light-gray"
                     }
                   ]
                 },
                 {
                   "type": "frame",
-                  "id": "f8pkfN",
+                  "id": "Ye8SW",
                   "name": "VC Card",
                   "width": "fill_container",
-                  "fill": "$off-white",
+                  "fill": "$white",
                   "cornerRadius": 12,
                   "stroke": "$black",
                   "strokeWidth": 2,
@@ -6252,10 +6826,10 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "R48EMs",
+                      "id": "GmzWh",
                       "name": "VC Logo Box",
                       "width": "fill_container",
-                      "height": 120,
+                      "height": 150,
                       "fill": "$white",
                       "cornerRadius": 8,
                       "layout": "vertical",
@@ -6264,67 +6838,67 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "aLPAq",
+                          "id": "hE0wX",
                           "name": "VC Lockup",
-                          "gap": 14,
+                          "gap": 18,
                           "alignItems": "center",
                           "children": [
                             {
                               "type": "frame",
-                              "id": "wMpc6",
+                              "id": "etkFo",
                               "name": "VC Mark",
-                              "width": 52,
-                              "height": 52,
+                              "width": 64,
+                              "height": 64,
                               "layout": "none",
                               "children": [
                                 {
                                   "type": "ellipse",
-                                  "id": "nSuWl",
+                                  "id": "lCnZx",
                                   "x": 0,
                                   "y": 0,
                                   "name": "VC Mark Outer",
                                   "fill": "$black",
-                                  "width": 52,
-                                  "height": 52
+                                  "width": 64,
+                                  "height": 64
                                 },
                                 {
                                   "type": "ellipse",
-                                  "id": "dtuBr",
-                                  "x": 15,
-                                  "y": 15,
+                                  "id": "ApvBR",
+                                  "x": 19,
+                                  "y": 19,
                                   "name": "VC Mark Iris",
                                   "fill": "$yellow",
-                                  "width": 22,
-                                  "height": 22
+                                  "width": 26,
+                                  "height": 26
                                 }
                               ]
                             },
                             {
                               "type": "frame",
-                              "id": "olB7q",
+                              "id": "o1EK6x",
                               "name": "VC Wordmark",
                               "layout": "vertical",
                               "gap": 3,
                               "children": [
                                 {
                                   "type": "text",
-                                  "id": "eiMk2",
+                                  "id": "apDRT",
                                   "name": "VC Wordmark Top",
                                   "fill": "$black",
                                   "content": "VISION",
                                   "fontFamily": "$font-heading",
-                                  "fontSize": 18,
+                                  "fontSize": 26,
                                   "fontWeight": "700",
                                   "letterSpacing": 3
                                 },
                                 {
                                   "type": "text",
-                                  "id": "Ja69E",
+                                  "id": "C6FBz",
                                   "name": "VC Wordmark Bottom",
                                   "fill": "$black",
                                   "content": "CONSORTIUM",
                                   "fontFamily": "$font-heading",
-                                  "fontSize": 12,
+                                  "fontSize": 13,
                                   "fontWeight": "700",
                                   "letterSpacing": 3.4
                                 }
@@ -6336,7 +6910,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "I9YKM",
+                      "id": "J3GNO",
                       "name": "VC Body",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -6344,7 +6918,7 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "SYz15",
+                          "id": "NhcQh",
                           "name": "VC Name",
                           "fill": "$black",
                           "content": "Vision Consortium",
@@ -6355,7 +6929,7 @@
                         },
                         {
                           "type": "text",
-                          "id": "DF57n",
+                          "id": "xczfy",
                           "name": "VC Name JP",
                           "opacity": 0.5,
                           "fill": "$black",
@@ -6366,7 +6940,7 @@
                         },
                         {
                           "type": "text",
-                          "id": "LKlm1",
+                          "id": "LwNgb",
                           "name": "VC Desc",
                           "opacity": 0.7,
                           "fill": "$black",
@@ -6380,14 +6954,14 @@
                         },
                         {
                           "type": "frame",
-                          "id": "L5aO6",
+                          "id": "fbnJg",
                           "name": "VC Link",
                           "gap": 6,
                           "alignItems": "center",
                           "children": [
                             {
                               "type": "text",
-                              "id": "ZGRKb",
+                              "id": "SSiqK",
                               "name": "VC Link Text",
                               "fill": "$black",
                               "content": "vision-consortium.org",
@@ -6398,13 +6972,430 @@
                             },
                             {
                               "type": "icon",
-                              "id": "uk280",
+                              "id": "YXdta",
                               "name": "VC Link Icon",
                               "width": 14,
                               "height": 14,
                               "icon": "arrow-up-right",
                               "library": "lucide",
                               "fill": "$black"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "A6zxS",
+              "name": "Tier Silver",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "NYEsq",
+                  "name": "Tier Label Silver",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "U5qOPS",
+                      "name": "Tier Rule L Silver",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$light-gray"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "GN9KV",
+                      "name": "Tier Chip Silver",
+                      "fill": "$light-gray",
+                      "cornerRadius": 100,
+                      "gap": 6,
+                      "padding": [
+                        7,
+                        14
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PbWJo",
+                          "name": "Tier Chip EN Silver",
+                          "fill": "$black",
+                          "content": "SILVER SPONSOR",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 11,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "ajE7B",
+                          "name": "Tier Chip JP Silver",
+                          "opacity": 0.6,
+                          "fill": "$black",
+                          "content": "シルバー",
+                          "fontFamily": "$font-body",
+                          "fontSize": 10,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "OZaPU",
+                      "name": "Tier Rule R Silver",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$light-gray"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "p5Abkd",
+                  "name": "Silver Row",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "fl7nC",
+                      "name": "Silver Sponsor 1",
+                      "width": "fill_container",
+                      "height": 96,
+                      "fill": "$white",
+                      "cornerRadius": 12,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Mg5Bs",
+                          "name": "Silver Sponsor 1 Label",
+                          "opacity": 0.5,
+                          "fill": "$black",
+                          "content": "SPONSOR LOGO",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 12,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "j94rN",
+                      "name": "Silver Sponsor 2",
+                      "width": "fill_container",
+                      "height": 96,
+                      "fill": "$white",
+                      "cornerRadius": 12,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lVXs2",
+                          "name": "Silver Sponsor 2 Label",
+                          "opacity": 0.5,
+                          "fill": "$black",
+                          "content": "SPONSOR LOGO",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 12,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Bvqyp",
+                      "name": "Silver Sponsor 3",
+                      "width": "fill_container",
+                      "height": 96,
+                      "fill": "$white",
+                      "cornerRadius": 12,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "e5bqJV",
+                          "name": "Silver Sponsor 3 Label",
+                          "opacity": 0.5,
+                          "fill": "$black",
+                          "content": "SPONSOR LOGO",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 12,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "czE4C",
+              "name": "Tier Bronze",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "DdL3T",
+                  "name": "Tier Label Bronze",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "N52DIm",
+                      "name": "Tier Rule L Bronze",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$light-gray"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "KW7Be",
+                      "name": "Tier Chip Bronze",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 100,
+                      "stroke": "$light-gray",
+                      "strokeWidth": 1,
+                      "gap": 6,
+                      "padding": [
+                        7,
+                        14
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "uzn7H",
+                          "name": "Tier Chip EN Bronze",
+                          "fill": "$gray",
+                          "content": "BRONZE SPONSOR",
+                          "fontFamily": "$font-heading",
+                          "fontSize": 11,
+                          "fontWeight": "700",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "jibnS",
+                          "name": "Tier Chip JP Bronze",
+                          "opacity": 0.6,
+                          "fill": "$gray",
+                          "content": "ブロンズ",
+                          "fontFamily": "$font-body",
+                          "fontSize": 10,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "rKfAr",
+                      "name": "Tier Rule R Bronze",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$light-gray"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "P042Cn",
+                  "name": "Bronze Row",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "qEwMH",
+                      "name": "Bronze Row A",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "sHYAq",
+                          "name": "Bronze Sponsor 1",
+                          "width": "fill_container",
+                          "height": 68,
+                          "fill": "$white",
+                          "cornerRadius": 10,
+                          "stroke": "$light-gray",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "y4eij",
+                              "name": "Bronze Sponsor 1 Label",
+                              "opacity": 0.45,
+                              "fill": "$black",
+                              "content": "LOGO",
+                              "fontFamily": "$font-heading",
+                              "fontSize": 10,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "I3TjIK",
+                          "name": "Bronze Sponsor 2",
+                          "width": "fill_container",
+                          "height": 68,
+                          "fill": "$white",
+                          "cornerRadius": 10,
+                          "stroke": "$light-gray",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "jVVVb",
+                              "name": "Bronze Sponsor 2 Label",
+                              "opacity": 0.45,
+                              "fill": "$black",
+                              "content": "LOGO",
+                              "fontFamily": "$font-heading",
+                              "fontSize": 10,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "O0pEx7",
+                          "name": "Bronze Sponsor 3",
+                          "width": "fill_container",
+                          "height": 68,
+                          "fill": "$white",
+                          "cornerRadius": 10,
+                          "stroke": "$light-gray",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "j1XI3",
+                              "name": "Bronze Sponsor 3 Label",
+                              "opacity": 0.45,
+                              "fill": "$black",
+                              "content": "LOGO",
+                              "fontFamily": "$font-heading",
+                              "fontSize": 10,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "doxvf",
+                      "name": "Bronze Row B",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "z71hDP",
+                          "name": "Bronze Sponsor 4",
+                          "width": "fill_container",
+                          "height": 68,
+                          "fill": "$white",
+                          "cornerRadius": 10,
+                          "stroke": "$light-gray",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "WVWhn",
+                              "name": "Bronze Sponsor 4 Label",
+                              "opacity": 0.45,
+                              "fill": "$black",
+                              "content": "LOGO",
+                              "fontFamily": "$font-heading",
+                              "fontSize": 10,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "XEmQh",
+                          "name": "Bronze Sponsor 5",
+                          "width": "fill_container",
+                          "height": 68,
+                          "fill": "$white",
+                          "cornerRadius": 10,
+                          "stroke": "$light-gray",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "K5mRcd",
+                              "name": "Bronze Sponsor 5 Label",
+                              "opacity": 0.45,
+                              "fill": "$black",
+                              "content": "LOGO",
+                              "fontFamily": "$font-heading",
+                              "fontSize": 10,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
                             }
                           ]
                         }

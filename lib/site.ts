@@ -37,14 +37,20 @@ export const IMG = {
   takahashi: "/images/generated-1785630892598.png",
 } as const;
 
+// Order follows the actual on-page section order.
 export const NAV_LINKS = [
   { label: "コンセプト", href: "#statement" },
-  { label: "コンテンツ", href: "#contents" },
   { label: "開催概要", href: "#details" },
+  { label: "コンテンツ", href: "#contents" },
   { label: "お問い合わせ", href: "#contact" },
 ] as const;
 
 export const NAV_TICKET = "チケット";
+
+// Spotify podcast embed. Replace with the real show/episode embed URL
+// (Spotify → Share → Embed → copy the src URL).
+export const SPOTIFY_EMBED_URL =
+  "https://open.spotify.com/embed/episode/7makk4oTQel546B0PZlDM5?utm_source=generator";
 
 export const CONTENTS = [
   {
@@ -101,6 +107,10 @@ export const STATEMENT_BODY = [
 ] as const;
 
 export const SPONSORS = ["SponsorA", "SponsorB", "SponsorC", "SponsorD", "SponsorE"] as const;
+
+// 協賛ティア（プレースホルダー）。Gold は CO_HOST（Vision Consortium）を使用。
+export const SILVER_SPONSORS = ["SPONSOR LOGO", "SPONSOR LOGO", "SPONSOR LOGO"] as const;
+export const BRONZE_SPONSORS = ["LOGO", "LOGO", "LOGO", "LOGO", "LOGO"] as const;
 
 // 共催団体（Organizers セクション末尾のハイライトカード）
 export const CO_HOST = {

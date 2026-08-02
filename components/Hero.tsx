@@ -22,10 +22,10 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[100svh] flex-col items-center justify-center gap-10 overflow-hidden bg-brand px-6 py-28 md:py-32"
     >
-      <div className="flex flex-col items-center gap-8 md:gap-12">
+      <div className="flex flex-col items-center gap-6 md:gap-8">
         <Reveal delay={200}>
-          <p className="font-en text-center text-sm font-bold tracking-[4px] text-ink md:text-2xl md:tracking-[6px]">
-            {EVENT.dateLabel}
+          <p className="text-center text-lg font-bold tracking-[4px] text-ink md:text-2xl md:tracking-[6px]">
+            {EVENT.heroCopy}
           </p>
         </Reveal>
 
@@ -53,7 +53,13 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={950}>
+        <Reveal delay={850}>
+          <p className="font-en text-center text-lg font-bold tracking-[4px] text-ink md:text-2xl md:tracking-[6px]">
+            {EVENT.dateLabel}
+          </p>
+        </Reveal>
+
+        <Reveal delay={1000}>
           <div className="flex flex-col items-center gap-8">
             <p className="text-center text-sm font-extrabold text-ink/70 md:text-lg">
               {EVENT.locationLine}

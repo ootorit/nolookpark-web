@@ -20,7 +20,7 @@ export default function Contents() {
             <Reveal
               key={c.num}
               delay={i * 150}
-              className="overflow-hidden rounded-xl ring-2 ring-inset ring-ink"
+              className="overflow-hidden rounded-xl [outline:2px_solid_#1A1A1A] [outline-offset:-1px]"
             >
               <div
                 className="relative h-64 bg-cover bg-center"
@@ -42,7 +42,7 @@ export default function Contents() {
           {/* Coming soon */}
           <Reveal
             delay={CONTENTS.length * 150}
-            className="flex flex-col overflow-hidden rounded-xl ring-2 ring-inset ring-ink"
+            className="flex flex-col overflow-hidden rounded-xl [outline:2px_solid_#1A1A1A] [outline-offset:-1px]"
           >
             <div className="h-64 bg-gradient-to-b from-brand to-ink" />
             <div className="flex flex-1 flex-col items-center justify-center gap-3 bg-white px-6 py-8 text-center">

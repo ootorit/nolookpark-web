@@ -77,7 +77,7 @@ export default function Organizers() {
             <Reveal
               key={o.num}
               delay={i * 150}
-              className="overflow-hidden rounded-xl ring-2 ring-inset ring-ink"
+              className="overflow-hidden rounded-xl [outline:2px_solid_#1A1A1A] [outline-offset:-1px]"
             >
               <div
                 className="relative h-80 bg-cover bg-center"
@@ -135,7 +135,7 @@ export default function Organizers() {
             </span>
           </div>
 
-          <div className="flex w-full flex-col items-center gap-10 rounded-xl bg-cream px-8 py-10 ring-2 ring-inset ring-ink sm:flex-row sm:px-12">
+          <div className="flex w-full flex-col items-center gap-10 rounded-xl bg-cream px-8 py-10 [outline:2px_solid_#1A1A1A] [outline-offset:-1px] sm:flex-row sm:px-12">
             <div className="flex h-[140px] w-full shrink-0 items-center justify-center rounded-lg bg-white sm:w-[280px]">
               <div className="flex items-center gap-3.5">
                 <span className="relative block h-[52px] w-[52px]">

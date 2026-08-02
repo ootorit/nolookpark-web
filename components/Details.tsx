@@ -1,3 +1,4 @@
+import { MapPin } from "lucide-react";
 import { EVENT } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
@@ -5,12 +6,11 @@ import Reveal from "./Reveal";
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex items-start gap-5">
-      <div className="flex w-[86px] shrink-0 items-center justify-center rounded-full bg-ink py-[7px]">
-        <span className="text-[13px] font-bold tracking-[2px] text-brand">{label}</span>
+      {/* h-7 matches the value's first-line box (16px × 1.75) so their centers line up */}
+      <div className="flex h-7 w-[86px] shrink-0 items-center justify-center rounded-full bg-ink">
+        <span className="text-[13px] tracking-[2px] text-brand">{label}</span>
       </div>
-      <div className="flex-1 text-base font-semibold leading-[1.7] text-ink">
-        {children}
-      </div>
+      <div className="flex-1 text-base leading-[1.75] text-ink">{children}</div>
     </div>
   );
 }
@@ -35,13 +35,30 @@ export default function Details() {
             <Row label="日程">{EVENT.date}</Row>
             <Row label="時間">{EVENT.time}</Row>
             <Row label="会場">
-              {EVENT.venue}
-              <br />
-              {EVENT.venueArea}
+              <div className="flex flex-col items-start gap-2.5">
+                <div>
+                  {EVENT.venue}
+                  <br />
+                  {EVENT.venueArea}
+                </div>
+                <div className="text-[13px]">{EVENT.venueAddress}</div>
+                <a
+                  href={EVENT.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-[13px] text-brand transition-transform hover:scale-105"
+                >
+                  <MapPin size={14} aria-hidden />
+                  Googleマップで見る
+                </a>
+              </div>
             </Row>
             <Row label="料金">
               {EVENT.price.map((line, i) => (
-                <span key={i} className="block">
+                <span
+                  key={i}
+                  className={line.startsWith("※") ? "block text-[13px]" : "block"}
+                >
                   {line}
                 </span>
               ))}
@@ -55,7 +72,7 @@ export default function Details() {
             aria-label="会場周辺の地図（準備中）"
             className="flex h-64 items-center justify-center rounded-xl bg-black/5 ring-[3px] ring-inset ring-ink md:h-80"
           >
-            <span aria-hidden className="font-en text-sm text-ink/50">
+            <span aria-hidden className="font-en text-sm text-ink">
               MAP
             </span>
           </div>

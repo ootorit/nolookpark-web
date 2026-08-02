@@ -10,12 +10,12 @@ export default function SectionHeading({
   const color = tone === "brand" ? "text-brand" : "text-ink";
   return (
     <div className="flex flex-col items-center gap-1.5">
-      <h2 className={`text-[26px] font-bold tracking-[2px] md:text-[30px] ${color}`}>
+      <h2 className={`text-[26px] tracking-[2px] md:text-[30px] ${color}`}>
         {jp}
       </h2>
       <span
         aria-hidden
-        className={`font-en text-[13px] font-bold tracking-[2px] opacity-45 ${color}`}
+        className={`font-en text-[13px] tracking-[2px] opacity-45 ${color}`}
       >
         {en}
       </span>

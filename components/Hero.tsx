@@ -38,13 +38,16 @@ export default function Hero() {
 
       <div className="flex flex-col items-center gap-6 md:gap-8">
         <Reveal delay={200}>
-          <p className="text-center text-lg font-bold tracking-[2px] text-ink md:text-2xl md:tracking-[2px]">
+          <p className="text-center text-lg tracking-[2px] text-ink md:text-2xl md:tracking-[2px]">
             {EVENT.heroCopy}
           </p>
         </Reveal>
 
         {/* Tile strip — logo first, then tiles emerge outward from the center */}
-        <div className="flex items-center justify-center gap-3 md:gap-6">
+        <div className="flex items-center justify-center gap-4 md:gap-8">
+          <Reveal variant="zoom" delay={1050}>
+            <Tile src={IMG.takahashi} size="sm" alt="会場の様子の写真（仮）" />
+          </Reveal>
           <Reveal variant="zoom" delay={700}>
             <Tile src={IMG.kvL2} size="sm" alt="暗闇の中で来場者が遊んでいる様子の写真（仮）" />
           </Reveal>
@@ -64,31 +67,34 @@ export default function Hero() {
           <Reveal variant="zoom" delay={700}>
             <Tile src={IMG.kvR2} size="sm" alt="目隠しでアート制作をする様子の写真（仮）" />
           </Reveal>
+          <Reveal variant="zoom" delay={1050}>
+            <Tile src={IMG.sawada} size="sm" alt="来場者の様子の写真（仮）" />
+          </Reveal>
         </div>
 
-        <Reveal delay={850}>
+        <Reveal delay={1150}>
           <div className="flex flex-col items-center gap-1.5">
-            <p className="font-en text-center text-sm font-bold tracking-[2px] text-ink md:text-lg">
+            <p className="font-en text-center text-sm tracking-[2px] text-ink md:text-lg">
               {EVENT.dateLabel}
             </p>
-            <p className="text-center text-sm font-extrabold text-ink md:text-lg">
+            <p className="text-center text-sm text-ink md:text-lg">
               {EVENT.locationLine}
             </p>
           </div>
         </Reveal>
 
-        <Reveal delay={1000}>
+        <Reveal delay={1300}>
           <div className="flex flex-col items-center gap-8">
             <a
               href="#contact"
               className="group flex items-center gap-3 rounded-full bg-ink px-10 py-4 md:px-14 md:py-[18px]"
             >
-              <span className="text-sm font-bold tracking-[1px] text-brand">
+              <span className="text-sm tracking-[1px] text-brand">
                 チケットを購入する
               </span>
               <span
                 aria-hidden
-                className="font-en text-sm font-bold text-brand transition-transform group-hover:translate-x-1"
+                className="font-en text-sm text-brand transition-transform group-hover:translate-x-1"
               >
                 →
               </span>
@@ -102,7 +108,7 @@ export default function Hero() {
         aria-hidden
         className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
       >
-        <span className="font-en text-[10px] tracking-[1px] text-ink/50">SCROLL</span>
+        <span className="font-en text-[10px] tracking-[1px] text-ink">SCROLL</span>
         <span className="h-8 w-px bg-ink/40" />
       </div>
     </section>

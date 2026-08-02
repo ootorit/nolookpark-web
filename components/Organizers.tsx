@@ -59,14 +59,14 @@ export default function Organizers() {
 
         <Reveal delay={80} className="flex flex-col items-center gap-5 text-center">
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <span className="rounded-full bg-brand px-3.5 py-1.5 text-xs font-bold tracking-[2px] text-ink">
+            <span className="rounded-full bg-brand px-3.5 py-1.5 text-xs tracking-[2px] text-ink">
               主催者
             </span>
-            <h3 className="font-en text-3xl font-bold tracking-[1px] text-ink md:text-[44px]">
+            <h3 className="font-en text-3xl tracking-[1px] text-ink md:text-[44px]">
               NO LOOK BROTHERS
             </h3>
           </div>
-          <p className="max-w-[680px] text-[15px] leading-[1.9] text-ink/70">
+          <p className="max-w-[680px] text-[15px] leading-[1.9] text-ink">
             「見ないで遊ぶ」を本気でやってみたかった3人組。企画・空間・音、それぞれの得意分野を持ち寄って
             NO LOOK PARK を作っています。
           </p>
@@ -77,7 +77,7 @@ export default function Organizers() {
             <Reveal
               key={o.num}
               delay={i * 150}
-              className="overflow-hidden rounded-xl [outline:2px_solid_#1A1A1A] [outline-offset:-1px]"
+              className="overflow-hidden rounded-xl border-2 border-ink"
             >
               <div
                 role="img"
@@ -87,24 +87,24 @@ export default function Organizers() {
               >
                 <span
                   aria-hidden
-                  className="font-en absolute left-4 top-2 text-[80px] font-bold leading-none text-ink/20"
+                  className="font-en absolute left-4 top-2 text-[80px] leading-none text-ink/20"
                 >
                   {o.num}
                 </span>
               </div>
               <div className="flex flex-col gap-2.5 bg-white px-6 pb-7 pt-6">
-                <span className="w-fit rounded-full bg-brand px-3 py-1.5 text-[11px] font-bold tracking-[1px] text-ink">
+                <span className="w-fit rounded-full bg-brand px-3 py-1.5 text-[11px] tracking-[1px] text-ink">
                   肩書き・役職
                 </span>
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[22px] font-bold tracking-[1px] text-ink">
+                  <h4 className="text-[22px] tracking-[1px] text-ink">
                     {o.name}
                   </h4>
-                  <span className="font-en text-[11px] font-bold tracking-[2px] text-ink/45">
+                  <span className="font-en text-[11px] tracking-[2px] text-ink">
                     {o.romaji}
                   </span>
                 </div>
-                <p className="text-[13px] leading-[1.75] text-ink/70">{o.desc}</p>
+                <p className="text-[13px] leading-[1.75] text-ink">{o.desc}</p>
 
                 <div className="mt-3.5 flex flex-col gap-3.5">
                   <div className="h-px w-full bg-line" />
@@ -117,7 +117,7 @@ export default function Organizers() {
                     </IconLink>
                     <a
                       href="#"
-                      className="flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-bold tracking-[1px] text-ink ring-[1.5px] ring-inset ring-ink transition-colors hover:bg-ink hover:text-white"
+                      className="flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] tracking-[1px] text-ink ring-[1.5px] ring-inset ring-ink transition-colors hover:bg-ink hover:text-white"
                     >
                       公式サイト
                       <ArrowUpRight size={13} />
@@ -132,15 +132,15 @@ export default function Organizers() {
         {/* 共催（Vision Consortium）ハイライト */}
         <Reveal className="flex w-full flex-col items-center gap-6">
           <div className="flex items-center gap-3">
-            <span className="rounded-full bg-brand px-3 py-1.5 text-xs font-bold tracking-[2px] text-ink">
+            <span className="rounded-full bg-brand px-3 py-1.5 text-xs tracking-[2px] text-ink">
               {CO_HOST.chip}
             </span>
-            <span className="font-en text-[13px] font-bold tracking-[2px] text-muted">
+            <span className="font-en text-[13px] tracking-[2px] text-ink">
               {CO_HOST.label}
             </span>
           </div>
 
-          <div className="flex w-full flex-col items-center gap-10 rounded-xl bg-cream px-8 py-10 [outline:2px_solid_#1A1A1A] [outline-offset:-1px] sm:flex-row sm:px-12">
+          <div className="flex w-full flex-col items-center gap-10 rounded-xl bg-cream px-8 py-10 border-2 border-ink sm:flex-row sm:px-12">
             <div className="flex h-[140px] w-full shrink-0 items-center justify-center rounded-lg bg-white sm:w-[280px]">
               <div className="flex items-center gap-3.5">
                 <span className="relative block h-[52px] w-[52px]">
@@ -148,21 +148,21 @@ export default function Organizers() {
                   <span className="absolute left-[15px] top-[15px] h-[22px] w-[22px] rounded-full bg-brand" />
                 </span>
                 <span className="font-en flex flex-col gap-[3px] leading-none text-ink">
-                  <span className="text-[22px] font-bold tracking-[1px]">VISION</span>
-                  <span className="text-xs font-bold tracking-[2px]">CONSORTIUM</span>
+                  <span className="text-[22px] tracking-[1px]">VISION</span>
+                  <span className="text-xs tracking-[2px]">CONSORTIUM</span>
                 </span>
               </div>
             </div>
 
             <div className="flex flex-1 flex-col gap-3">
-              <h3 className="font-en text-[26px] font-bold tracking-[1px] text-ink">
+              <h3 className="font-en text-[26px] tracking-[1px] text-ink">
                 {CO_HOST.nameEn}
               </h3>
-              <span className="text-[13px] text-ink/50">{CO_HOST.nameJp}</span>
-              <p className="text-[15px] leading-[1.9] text-ink/70">{CO_HOST.desc}</p>
+              <span className="text-[13px] text-ink">{CO_HOST.nameJp}</span>
+              <p className="text-[15px] leading-[1.9] text-ink">{CO_HOST.desc}</p>
               <a
                 href={CO_HOST.href}
-                className="flex w-fit items-center gap-1.5 text-[13px] font-bold tracking-[1px] text-ink transition-opacity hover:opacity-60"
+                className="flex w-fit items-center gap-1.5 text-[13px] tracking-[1px] text-ink transition-opacity hover:opacity-60"
               >
                 {CO_HOST.linkText}
                 <ArrowUpRight size={14} />

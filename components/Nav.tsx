@@ -38,14 +38,14 @@ export default function Nav() {
             <a
               key={l.label}
               href={l.href}
-              className="text-[13px] font-bold tracking-[1px] text-ink transition-opacity hover:opacity-60"
+              className="text-[13px] tracking-[1px] text-ink transition-opacity hover:opacity-60"
             >
               {l.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="rounded-full bg-ink px-6 py-2.5 text-[13px] font-bold tracking-[1px] text-brand transition-transform hover:scale-105"
+            className="rounded-full bg-ink px-6 py-2.5 text-[13px] tracking-[1px] text-brand transition-transform hover:scale-105"
           >
             {NAV_TICKET}
           </a>
@@ -72,7 +72,7 @@ export default function Nav() {
                 key={l.label}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-sm font-bold tracking-[1px] text-white"
+                className="text-sm tracking-[1px] text-white"
               >
                 {l.label}
               </a>
@@ -80,7 +80,7 @@ export default function Nav() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-1 w-full rounded-full bg-brand py-3 text-center text-sm font-bold tracking-[1px] text-ink"
+              className="mt-1 w-full rounded-full bg-brand py-3 text-center text-sm tracking-[1px] text-ink"
             >
               {NAV_TICKET}
             </a>

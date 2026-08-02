@@ -4,13 +4,13 @@ import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["600"],
   variable: "--font-poppins",
   display: "swap",
 });
 
 const notoSansJP = Noto_Sans_JP({
-  weight: ["400", "500", "700", "900"],
+  weight: ["700"],
   variable: "--font-noto",
   display: "swap",
   preload: false,

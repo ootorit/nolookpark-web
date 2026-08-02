@@ -26,11 +26,14 @@ body {
   background: #ffffff;
   color: var(--color-ink);
   font-family: var(--font-noto), system-ui, sans-serif;
+  font-weight: 700;
   -webkit-font-smoothing: antialiased;
 }
 
+/* Latin text: Poppins SemiBold. Japanese text defaults to Noto Sans JP Bold. */
 .font-en {
   font-family: var(--font-poppins), system-ui, sans-serif;
+  font-weight: 600;
 }
 
 /* --- Scroll reveal ---------------------------------------------------- */

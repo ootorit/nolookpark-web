@@ -19,13 +19,13 @@ function FieldLabel({
 }) {
   const content = (
     <>
-      <span className="text-[13px] font-bold tracking-[1px] text-white">{label}</span>
+      <span className="text-[13px] tracking-[1px] text-white">{label}</span>
       {required ? (
-        <span className="rounded bg-brand px-1.5 py-0.5 text-[10px] font-bold text-ink">
+        <span className="rounded bg-brand px-1.5 py-0.5 text-[10px] text-ink">
           必須
         </span>
       ) : (
-        <span className="text-[10px] text-white/40">任意</span>
+        <span className="text-[10px] text-white">任意</span>
       )}
     </>
   );
@@ -59,7 +59,7 @@ export default function Contact() {
       <div className="mx-auto flex max-w-[900px] flex-col items-center gap-12">
         <Reveal className="flex flex-col items-center gap-4 text-center">
           <SectionHeading jp="お問い合わせ" en="CONTACT" tone="brand" />
-          <p className="max-w-[600px] text-base leading-[1.8] text-white/70">
+          <p className="max-w-[600px] text-base leading-[1.8] text-white">
             本イベントに関するお問い合わせは、下記フォームよりご連絡ください。
             <br className="hidden sm:block" />
             内容を確認のうえ、担当者よりご返信いたします。
@@ -92,8 +92,8 @@ export default function Contact() {
                     className={[
                       "rounded-full px-4 py-2.5 text-[13px] transition-colors",
                       active
-                        ? "bg-brand font-bold text-ink ring-2 ring-inset ring-brand"
-                        : "bg-[#2e2e2e] text-white/60 ring-1 ring-inset ring-line-dark hover:text-white",
+                        ? "bg-brand text-ink ring-2 ring-inset ring-brand"
+                        : "bg-[#2e2e2e] text-white ring-1 ring-inset ring-line-dark hover:text-white",
                     ].join(" ")}
                   >
                     <span aria-hidden>{active ? "✓ " : ""}</span>
@@ -137,7 +137,7 @@ export default function Contact() {
             />
           </div>
 
-          <label className="flex items-center justify-center gap-2.5 text-[13px] text-white/70">
+          <label className="flex items-center justify-center gap-2.5 text-[13px] text-white">
             <input
               type="checkbox"
               checked={agree}
@@ -152,10 +152,10 @@ export default function Contact() {
               type="submit"
               className="group flex items-center gap-3 rounded-full bg-brand px-16 py-[18px] transition-transform hover:scale-105"
             >
-              <span className="text-[15px] font-bold tracking-[1px] text-ink">送信する</span>
+              <span className="text-[15px] tracking-[1px] text-ink">送信する</span>
               <span
                 aria-hidden
-                className="font-en text-[15px] font-bold text-ink transition-transform group-hover:translate-x-1"
+                className="font-en text-[15px] text-ink transition-transform group-hover:translate-x-1"
               >
                 →
               </span>

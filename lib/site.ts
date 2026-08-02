@@ -3,11 +3,15 @@
 export const EVENT = {
   name: "NO LOOK PARK",
   heroCopy: "「見えない」を楽しみつくそう！",
-  dateLabel: "2026.10.24 SAT — 11:00-19:00",
+  dateLabel: "2026.10.24 SAT — 11:00-17:00",
   date: "2026年10月24日（土）",
-  time: "11:00 - 19:00",
+  time: "11:00 - 17:00",
   venue: "HOME/WORK VILLAGE",
   venueArea: "東京・池尻大橋",
+  venueAddress: "東京都世田谷区池尻 ◯-◯-◯（住所は確定次第掲載）",
+  mapUrl:
+    "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent("HOME/WORK VILLAGE 池尻大橋"),
   locationLine: "@ HOME/WORK VILLAGE（東京・池尻大橋）",
   organizer: "NO LOOK BROTHERS（澤田智洋／石井健介／高橋鴻介）",
   coHost: "ビジョン・コンソーシアム",

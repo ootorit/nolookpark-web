@@ -5,7 +5,7 @@ export default function Sponsors() {
   const items = [...SPONSORS, ...SPONSORS];
 
   return (
-    <section aria-label="協賛" className="overflow-hidden bg-cream py-16">
+    <section aria-label="協賛" className="overflow-hidden bg-cream py-7">
       <div className="flex w-max animate-marquee">
         {items.map((s, i) => (
           <div
@@ -13,7 +13,7 @@ export default function Sponsors() {
             className="mr-10 flex h-14 w-32 shrink-0 items-center justify-center rounded-lg bg-[#e5e5e5] md:mr-16 md:w-36"
             aria-hidden={i >= SPONSORS.length}
           >
-            <span className="font-en text-[13px] font-medium text-muted">{s}</span>
+            <span className="font-en text-[13px] text-ink">{s}</span>
           </div>
         ))}
       </div>

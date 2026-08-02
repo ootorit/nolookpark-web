@@ -23,29 +23,37 @@ export default function Hero() {
       className="relative flex min-h-[100svh] flex-col items-center justify-center gap-10 overflow-hidden bg-brand px-6 py-28 md:py-32"
     >
       <div className="flex flex-col items-center gap-8 md:gap-12">
-        <Reveal>
+        <Reveal delay={200}>
           <p className="font-en text-center text-sm font-bold tracking-[4px] text-ink md:text-2xl md:tracking-[6px]">
             {EVENT.dateLabel}
           </p>
         </Reveal>
 
-        {/* Tile strip */}
-        <Reveal delay={120}>
-          <div className="flex items-center justify-center gap-3 md:gap-6">
+        {/* Tile strip — logo first, then tiles emerge outward from the center */}
+        <div className="flex items-center justify-center gap-3 md:gap-6">
+          <Reveal variant="zoom" delay={700}>
             <Tile src={IMG.kvL2} size="sm" />
+          </Reveal>
+          <Reveal variant="zoom" delay={350}>
             <Tile src={IMG.kvL1} size="lg" />
+          </Reveal>
+          <Reveal variant="zoom" delay={0}>
             <div
               className="h-40 w-40 shrink-0 bg-contain bg-center bg-no-repeat sm:h-56 sm:w-56 lg:h-[420px] lg:w-[420px]"
               style={{ backgroundImage: `url(${IMG.logo})` }}
               aria-label="NO LOOK PARK ロゴ"
               role="img"
             />
+          </Reveal>
+          <Reveal variant="zoom" delay={350}>
             <Tile src={IMG.kvR1} size="lg" />
+          </Reveal>
+          <Reveal variant="zoom" delay={700}>
             <Tile src={IMG.kvR2} size="sm" />
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
 
-        <Reveal delay={240}>
+        <Reveal delay={950}>
           <div className="flex flex-col items-center gap-8">
             <p className="text-center text-sm font-extrabold text-ink/70 md:text-lg">
               {EVENT.locationLine}

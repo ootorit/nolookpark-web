@@ -76,7 +76,7 @@ export default function Organizers() {
           {ORGANIZERS.map((o, i) => (
             <Reveal
               key={o.num}
-              delay={i * 100}
+              delay={i * 150}
               className="overflow-hidden rounded-xl ring-2 ring-inset ring-ink"
             >
               <div

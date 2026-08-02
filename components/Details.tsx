@@ -5,10 +5,12 @@ import Reveal from "./Reveal";
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex gap-5">
-      <div className="w-16 shrink-0 text-[13px] font-bold tracking-[2px] text-ink">
-        {label}
+      <div className="flex w-[86px] shrink-0 items-center justify-center rounded-full bg-ink py-[7px]">
+        <span className="text-[13px] font-bold tracking-[2px] text-brand">{label}</span>
       </div>
-      <div className="flex-1 text-[15px] leading-[1.75] text-ink">{children}</div>
+      <div className="flex-1 text-base font-semibold leading-[1.7] text-ink">
+        {children}
+      </div>
     </div>
   );
 }

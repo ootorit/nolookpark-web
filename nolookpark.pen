@@ -190,7 +190,7 @@
                           "fill": "$yellow",
                           "content": "チケットを購入する",
                           "fontFamily": "$font-body",
-                          "fontSize": 15,
+                          "fontSize": 16,
                           "fontWeight": "700",
                           "letterSpacing": 3
                         },
@@ -201,7 +201,7 @@
                           "fill": "$yellow",
                           "content": "→",
                           "fontFamily": "$font-heading",
-                          "fontSize": 15,
+                          "fontSize": 16,
                           "fontWeight": "700"
                         }
                       ]
@@ -229,7 +229,7 @@
                   "fill": "$black",
                   "content": "SCROLL",
                   "fontFamily": "$font-heading",
-                  "fontSize": 10,
+                  "fontSize": 11,
                   "fontWeight": "normal",
                   "letterSpacing": 3
                 },
@@ -294,7 +294,7 @@
                       "fill": "$black",
                       "content": "ABOUT",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "500",
                       "letterSpacing": 2
                     },
@@ -305,7 +305,7 @@
                       "fill": "$black",
                       "content": "CONTENTS",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "500",
                       "letterSpacing": 2
                     },
@@ -316,7 +316,7 @@
                       "fill": "$black",
                       "content": "DETAILS",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "500",
                       "letterSpacing": 2
                     },
@@ -327,7 +327,7 @@
                       "fill": "$black",
                       "content": "CONTACT",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "500",
                       "letterSpacing": 2
                     },
@@ -351,7 +351,7 @@
                           "fill": "$yellow",
                           "content": "TICKET",
                           "fontFamily": "$font-heading",
-                          "fontSize": 12,
+                          "fontSize": 13,
                           "fontWeight": "700",
                           "letterSpacing": 2
                         }
@@ -405,7 +405,7 @@
                       "fill": "$gray",
                       "content": "SponsorA",
                       "fontFamily": "$font-heading",
-                      "fontSize": 13,
+                      "fontSize": 15,
                       "fontWeight": "500"
                     }
                   ]
@@ -429,7 +429,7 @@
                       "fill": "$gray",
                       "content": "SponsorB",
                       "fontFamily": "$font-heading",
-                      "fontSize": 13,
+                      "fontSize": 15,
                       "fontWeight": "500"
                     }
                   ]
@@ -453,7 +453,7 @@
                       "fill": "$gray",
                       "content": "SponsorC",
                       "fontFamily": "$font-heading",
-                      "fontSize": 13,
+                      "fontSize": 15,
                       "fontWeight": "500"
                     }
                   ]
@@ -477,7 +477,7 @@
                       "fill": "$gray",
                       "content": "SponsorD",
                       "fontFamily": "$font-heading",
-                      "fontSize": 13,
+                      "fontSize": 15,
                       "fontWeight": "500"
                     }
                   ]
@@ -501,7 +501,7 @@
                       "fill": "$gray",
                       "content": "SponsorE",
                       "fontFamily": "$font-heading",
-                      "fontSize": 13,
+                      "fontSize": 15,
                       "fontWeight": "500"
                     }
                   ]
@@ -526,17 +526,6 @@
           "children": [
             {
               "type": "text",
-              "id": "Q5NWhu",
-              "name": "Statement Heading",
-              "fill": "$black",
-              "content": "STATEMENT",
-              "fontFamily": "$font-heading",
-              "fontSize": 32,
-              "fontWeight": "700",
-              "letterSpacing": 1.5
-            },
-            {
-              "type": "text",
               "id": "yxNEU",
               "name": "Statement Main",
               "fill": "$black",
@@ -557,12 +546,12 @@
               "fill": "$black",
               "textGrowth": "fixed-width",
               "width": 640,
-              "content": "NO LOOK PARKは「みえない」をコンセプトにした\n新しい体験型イベントです。\n\nこの時代になっても、目が見えない人の仕事は、\nごく限られた選択肢の中にあります。\n\nでも、本当にそうでしょうか。\n\n 「みえない」ことから始まる職業や体験は、\nまだ誰も名前をつけていないだけで、もっとたくさんあるんじゃないか。\n私たちはそう考えました。\n\nNO LOOK PARKは、「みえない」を楽しむ公園です。 \nここには、「みえない」視点から生まれたコンテンツがたくさんあります。\n\nそして、そのすべてを、視覚障害のある人たちの視点から生まれてきました。\nこの公園に立ち寄って、「みえない」って、\nこんなに面白いのかと思ってもらえたら。その感覚こそが、\n未来の当たり前をつくっていくと信じています。",
+              "content": "NO LOOK PARKは「みえない」を楽しみ尽くす\n新しい体験型イベントです。\n\nこの時代になっても、目が見えない人の仕事は、\nごく限られた選択肢の中にあります。\n\nでも、本当にそうでしょうか。\n\n 「みえない」ことから始まる職業や体験は、\nまだ誰も名前をつけていないだけで、もっとたくさんあるんじゃないか。\n私たちはそう考えました。\n\nNO LOOK PARKは、「みえない」を楽しむテーマパークです。 \nここには、「みえない」視点から生まれたコンテンツがたくさんあります。\n\nそして、そのすべてを、視覚障害のある人たちの視点から生まれてきました。\nこの公園に立ち寄って、「みえない」って、\nこんなに面白いのかと思ってもらえたら。その感覚こそが、\n未来の当たり前をつくっていくと信じています。",
               "lineHeight": 1.8,
               "textAlign": "center",
               "fontFamily": "$font-body",
-              "fontSize": 15,
-              "fontWeight": "normal"
+              "fontSize": 16,
+              "fontWeight": "600"
             },
             {
               "type": "frame",
@@ -642,7 +631,7 @@
                                   "fill": "$black",
                                   "content": "PODCAST",
                                   "fontFamily": "$font-heading",
-                                  "fontSize": 10,
+                                  "fontSize": 11,
                                   "fontWeight": "700",
                                   "letterSpacing": 2
                                 }
@@ -656,7 +645,7 @@
                               "fill": "$white",
                               "content": "EP.01",
                               "fontFamily": "$font-heading",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 2
                             }
@@ -681,7 +670,7 @@
                           "fill": "$white",
                           "content": "NO LOOK BROTHERS ／ 24分18秒",
                           "fontFamily": "$font-body",
-                          "fontSize": 12,
+                          "fontSize": 13,
                           "fontWeight": "normal"
                         },
                         {
@@ -720,7 +709,7 @@
                               "fill": "$white",
                               "content": "07:42",
                               "fontFamily": "$font-heading",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "normal"
                             },
                             {
@@ -738,7 +727,7 @@
                               "fill": "$white",
                               "content": "24:18",
                               "fontFamily": "$font-heading",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "normal"
                             }
                           ]
@@ -814,7 +803,7 @@
                       "fill": "$black",
                       "content": "各種配信サービスでも公開中",
                       "fontFamily": "$font-body",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "normal"
                     },
                     {
@@ -825,7 +814,7 @@
                       "fill": "$black",
                       "content": "Spotify",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "500"
                     },
                     {
@@ -836,7 +825,7 @@
                       "fill": "$black",
                       "content": "Apple Podcasts",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "500"
                     },
                     {
@@ -847,7 +836,7 @@
                       "fill": "$black",
                       "content": "YouTube",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "500"
                     }
                   ]
@@ -871,15 +860,37 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "fv02k",
-              "name": "Details Heading",
-              "fill": "$black",
-              "content": "EVENT DETAILS",
-              "fontFamily": "$font-heading",
-              "fontSize": 32,
-              "fontWeight": "700",
-              "letterSpacing": 1.5
+              "type": "frame",
+              "id": "r0ml5",
+              "name": "Details Heading Group",
+              "layout": "vertical",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "kLjPr",
+                  "name": "Details Heading JP",
+                  "fill": "$black",
+                  "content": "開催概要",
+                  "fontFamily": "$font-body",
+                  "fontSize": 30,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "fv02k",
+                  "name": "Details Heading",
+                  "opacity": 0.45,
+                  "fill": "$black",
+                  "content": "EVENT DETAILS",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 13,
+                  "fontWeight": "700",
+                  "letterSpacing": 4
+                }
+              ]
             },
             {
               "type": "frame",
@@ -902,20 +913,34 @@
                       "id": "Z0ymN0",
                       "name": "Info 日程",
                       "width": "fill_container",
-                      "gap": 24,
+                      "gap": 20,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "RvmQk",
-                          "name": "日程 Label",
+                          "type": "frame",
+                          "id": "bI1yM",
+                          "name": "Label Capsule",
+                          "width": 86,
                           "fill": "$black",
-                          "textGrowth": "fixed-width",
-                          "width": 72,
-                          "content": "日程",
-                          "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "700",
-                          "letterSpacing": 2
+                          "cornerRadius": 100,
+                          "padding": [
+                            7,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "RvmQk",
+                              "name": "日程 Label",
+                              "fill": "$yellow",
+                              "content": "日程",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -927,8 +952,8 @@
                           "content": "2026年10月24日（土）",
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
-                          "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontSize": 16,
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -937,20 +962,34 @@
                       "id": "f8vDZ6",
                       "name": "Info 時間",
                       "width": "fill_container",
-                      "gap": 24,
+                      "gap": 20,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "I4A3LP",
-                          "name": "時間 Label",
+                          "type": "frame",
+                          "id": "pscu7",
+                          "name": "Label Capsule",
+                          "width": 86,
                           "fill": "$black",
-                          "textGrowth": "fixed-width",
-                          "width": 72,
-                          "content": "時間",
-                          "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "700",
-                          "letterSpacing": 2
+                          "cornerRadius": 100,
+                          "padding": [
+                            7,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "I4A3LP",
+                              "name": "時間 Label",
+                              "fill": "$yellow",
+                              "content": "時間",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -962,8 +1001,8 @@
                           "content": "11:00 - 19:00",
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
-                          "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontSize": 16,
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -972,20 +1011,34 @@
                       "id": "vPdZo",
                       "name": "Info 会場",
                       "width": "fill_container",
-                      "gap": 24,
+                      "gap": 20,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "Y6kBK",
-                          "name": "会場 Label",
+                          "type": "frame",
+                          "id": "vCUOT",
+                          "name": "Label Capsule",
+                          "width": 86,
                           "fill": "$black",
-                          "textGrowth": "fixed-width",
-                          "width": 72,
-                          "content": "会場",
-                          "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "700",
-                          "letterSpacing": 2
+                          "cornerRadius": 100,
+                          "padding": [
+                            7,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Y6kBK",
+                              "name": "会場 Label",
+                              "fill": "$yellow",
+                              "content": "会場",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -997,8 +1050,8 @@
                           "content": "HOME/WORK VILLAGE\n東京・池尻大橋",
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
-                          "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontSize": 16,
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -1007,20 +1060,34 @@
                       "id": "meZ1r",
                       "name": "Info 料金",
                       "width": "fill_container",
-                      "gap": 24,
+                      "gap": 20,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "opINf",
-                          "name": "料金 Label",
+                          "type": "frame",
+                          "id": "fhgDn",
+                          "name": "Label Capsule",
+                          "width": 86,
                           "fill": "$black",
-                          "textGrowth": "fixed-width",
-                          "width": 72,
-                          "content": "料金",
-                          "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "700",
-                          "letterSpacing": 2
+                          "cornerRadius": 100,
+                          "padding": [
+                            7,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "opINf",
+                              "name": "料金 Label",
+                              "fill": "$yellow",
+                              "content": "料金",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -1032,8 +1099,8 @@
                           "content": "一般: ¥1,000\nファミリー: ¥2,000\n※ 小学生以下無料\n※ ファミリーチケットは同一世帯の方は一律2000円で参加いただけます。",
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
-                          "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontSize": 16,
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -1042,20 +1109,34 @@
                       "id": "U1RjWZ",
                       "name": "Info 主催",
                       "width": "fill_container",
-                      "gap": 24,
+                      "gap": 20,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "v4Sc8",
-                          "name": "主催 Label",
+                          "type": "frame",
+                          "id": "a5gat",
+                          "name": "Label Capsule",
+                          "width": 86,
                           "fill": "$black",
-                          "textGrowth": "fixed-width",
-                          "width": 72,
-                          "content": "主催",
-                          "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "700",
-                          "letterSpacing": 2
+                          "cornerRadius": 100,
+                          "padding": [
+                            7,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "v4Sc8",
+                              "name": "主催 Label",
+                              "fill": "$yellow",
+                              "content": "主催",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -1067,8 +1148,8 @@
                           "content": "NO LOOK BROTHERS（澤田智洋／石井健介／高橋鴻介）",
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
-                          "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontSize": 16,
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -1077,20 +1158,34 @@
                       "id": "AROaF",
                       "name": "Info 共催",
                       "width": "fill_container",
-                      "gap": 24,
+                      "gap": 20,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "DQW4D",
-                          "name": "共催 Label",
+                          "type": "frame",
+                          "id": "KChKC",
+                          "name": "Label Capsule",
+                          "width": 86,
                           "fill": "$black",
-                          "textGrowth": "fixed-width",
-                          "width": 72,
-                          "content": "共催",
-                          "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "700",
-                          "letterSpacing": 2
+                          "cornerRadius": 100,
+                          "padding": [
+                            7,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "DQW4D",
+                              "name": "共催 Label",
+                              "fill": "$yellow",
+                              "content": "共催",
+                              "fontFamily": "$font-body",
+                              "fontSize": 13,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -1102,8 +1197,8 @@
                           "content": "ビジョン・コンソーシアム",
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
-                          "fontSize": 15,
-                          "fontWeight": "normal"
+                          "fontSize": 16,
+                          "fontWeight": "600"
                         }
                       ]
                     }
@@ -1141,7 +1236,7 @@
                       "fill": "$gray",
                       "content": "MAP",
                       "fontFamily": "$font-heading",
-                      "fontSize": 14,
+                      "fontSize": 15,
                       "fontWeight": "normal"
                     }
                   ]
@@ -1173,15 +1268,37 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "text",
-                  "id": "tn1rq",
-                  "name": "Contents Heading",
-                  "fill": "$black",
-                  "content": "CONTENTS",
-                  "fontFamily": "$font-heading",
-                  "fontSize": 32,
-                  "fontWeight": "700",
-                  "letterSpacing": 1.5
+                  "type": "frame",
+                  "id": "zzgua",
+                  "name": "Contents Heading Group",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "P7g4iZ",
+                      "name": "Contents Heading JP",
+                      "fill": "$black",
+                      "content": "コンテンツ",
+                      "fontFamily": "$font-body",
+                      "fontSize": 30,
+                      "fontWeight": "700",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "tn1rq",
+                      "name": "Contents Heading",
+                      "opacity": 0.45,
+                      "fill": "$black",
+                      "content": "CONTENTS",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 13,
+                      "fontWeight": "700",
+                      "letterSpacing": 4
+                    }
+                  ]
                 },
                 {
                   "type": "text",
@@ -1195,7 +1312,7 @@
                   "lineHeight": 1.9,
                   "textAlign": "center",
                   "fontFamily": "$font-body",
-                  "fontSize": 15,
+                  "fontSize": 16,
                   "fontWeight": "normal"
                 }
               ]
@@ -1292,7 +1409,7 @@
                               "content": "完全暗闘の遊び場。視覚を遮断した空間で、触覚と聴覚だけを頼りに遊具を探索する体験型アトラクション。",
                               "lineHeight": 1.8,
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -1376,7 +1493,7 @@
                               "content": "音だけで料理する「聴くレストラン」。食材が焼ける音、切る音、混ぜる音──耳で味わう新感覚フードコート。",
                               "lineHeight": 1.8,
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -1469,7 +1586,7 @@
                               "content": "目隠しアート制作ワークショップ。触覚と想像力だけで作品を生み出す、新しいクリエイティブ体験。",
                               "lineHeight": 1.8,
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -1482,7 +1599,7 @@
                       "name": "Content Coming Soon",
                       "clip": true,
                       "width": "fill_container",
-                      "height": 417,
+                      "height": 425,
                       "cornerRadius": 12,
                       "stroke": "$black",
                       "strokeWidth": 2,
@@ -1551,7 +1668,7 @@
                               "fill": "$gray",
                               "content": "他にもコンテンツを準備中！",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -1579,15 +1696,37 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "uvfCy",
-              "name": "Organizers Heading",
-              "fill": "$black",
-              "content": "ORGANIZERS",
-              "fontFamily": "$font-heading",
-              "fontSize": 32,
-              "fontWeight": "700",
-              "letterSpacing": 1.5
+              "type": "frame",
+              "id": "aAj1B",
+              "name": "Organizers Heading Group",
+              "layout": "vertical",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "mcwcW",
+                  "name": "Organizers Heading JP",
+                  "fill": "$black",
+                  "content": "主催者",
+                  "fontFamily": "$font-body",
+                  "fontSize": 30,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "uvfCy",
+                  "name": "Organizers Heading",
+                  "opacity": 0.45,
+                  "fill": "$black",
+                  "content": "ORGANIZERS",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 13,
+                  "fontWeight": "700",
+                  "letterSpacing": 4
+                }
+              ]
             },
             {
               "type": "frame",
@@ -1624,7 +1763,7 @@
                           "fill": "$black",
                           "content": "主催者",
                           "fontFamily": "$font-body",
-                          "fontSize": 12,
+                          "fontSize": 13,
                           "fontWeight": "700",
                           "letterSpacing": 2
                         }
@@ -1655,7 +1794,7 @@
                   "lineHeight": 1.9,
                   "textAlign": "center",
                   "fontFamily": "$font-body",
-                  "fontSize": 15,
+                  "fontSize": 16,
                   "fontWeight": "normal"
                 }
               ]
@@ -1742,7 +1881,7 @@
                               "fill": "$black",
                               "content": "肩書き・役職",
                               "fontFamily": "$font-body",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             }
@@ -1775,7 +1914,7 @@
                               "fill": "$black",
                               "content": "TOMOHIRO SAWADA",
                               "fontFamily": "$font-heading",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 2
                             }
@@ -1792,7 +1931,7 @@
                           "content": "プロフィール文が入ります。ご経歴や NO LOOK PARK での役割などを2〜3行でご記入ください。",
                           "lineHeight": 1.8,
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
+                          "fontSize": 15,
                           "fontWeight": "normal"
                         },
                         {
@@ -1890,7 +2029,7 @@
                                       "fill": "$black",
                                       "content": "公式サイト",
                                       "fontFamily": "$font-body",
-                                      "fontSize": 11,
+                                      "fontSize": 12,
                                       "fontWeight": "700",
                                       "letterSpacing": 1
                                     },
@@ -1988,7 +2127,7 @@
                               "fill": "$black",
                               "content": "肩書き・役職",
                               "fontFamily": "$font-body",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             }
@@ -2021,7 +2160,7 @@
                               "fill": "$black",
                               "content": "KENSUKE ISHII",
                               "fontFamily": "$font-heading",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 2
                             }
@@ -2038,7 +2177,7 @@
                           "content": "プロフィール文が入ります。ご経歴や NO LOOK PARK での役割などを2〜3行でご記入ください。",
                           "lineHeight": 1.8,
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
+                          "fontSize": 15,
                           "fontWeight": "normal"
                         },
                         {
@@ -2136,7 +2275,7 @@
                                       "fill": "$black",
                                       "content": "公式サイト",
                                       "fontFamily": "$font-body",
-                                      "fontSize": 11,
+                                      "fontSize": 12,
                                       "fontWeight": "700",
                                       "letterSpacing": 1
                                     },
@@ -2234,7 +2373,7 @@
                               "fill": "$black",
                               "content": "肩書き・役職",
                               "fontFamily": "$font-body",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             }
@@ -2267,7 +2406,7 @@
                               "fill": "$black",
                               "content": "KOSUKE TAKAHASHI",
                               "fontFamily": "$font-heading",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 2
                             }
@@ -2284,7 +2423,7 @@
                           "content": "プロフィール文が入ります。ご経歴や NO LOOK PARK での役割などを2〜3行でご記入ください。",
                           "lineHeight": 1.8,
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
+                          "fontSize": 15,
                           "fontWeight": "normal"
                         },
                         {
@@ -2382,7 +2521,7 @@
                                       "fill": "$black",
                                       "content": "公式サイト",
                                       "fontFamily": "$font-body",
-                                      "fontSize": 11,
+                                      "fontSize": 12,
                                       "fontWeight": "700",
                                       "letterSpacing": 1
                                     },
@@ -2443,7 +2582,7 @@
                           "fill": "$black",
                           "content": "協賛",
                           "fontFamily": "$font-body",
-                          "fontSize": 11,
+                          "fontSize": 12,
                           "fontWeight": "700",
                           "letterSpacing": 2
                         }
@@ -2456,7 +2595,7 @@
                       "fill": "$gray",
                       "content": "SUPPORTED BY",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "700",
                       "letterSpacing": 2
                     }
@@ -2552,7 +2691,7 @@
                                   "fill": "$black",
                                   "content": "CONSORTIUM",
                                   "fontFamily": "$font-heading",
-                                  "fontSize": 11,
+                                  "fontSize": 12,
                                   "fontWeight": "700",
                                   "letterSpacing": 3.4
                                 }
@@ -2589,7 +2728,7 @@
                           "fill": "$black",
                           "content": "一般社団法人 ヴィジョン・コンソーシアム",
                           "fontFamily": "$font-body",
-                          "fontSize": 12,
+                          "fontSize": 13,
                           "fontWeight": "normal"
                         },
                         {
@@ -2603,7 +2742,7 @@
                           "content": "視覚に頼らない体験デザインを研究・支援する団体。NO LOOK PARK では、コンテンツの安全設計とアクセシビリティ監修をご協力いただいています。",
                           "lineHeight": 1.9,
                           "fontFamily": "$font-body",
-                          "fontSize": 14,
+                          "fontSize": 15,
                           "fontWeight": "normal"
                         },
                         {
@@ -2620,7 +2759,7 @@
                               "fill": "$black",
                               "content": "vision-consortium.org",
                               "fontFamily": "$font-heading",
-                              "fontSize": 12,
+                              "fontSize": 13,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             },
@@ -2675,15 +2814,37 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "text",
-                  "id": "G53yFv",
-                  "name": "Contact Heading",
-                  "fill": "$yellow",
-                  "content": "CONTACT",
-                  "fontFamily": "$font-heading",
-                  "fontSize": 32,
-                  "fontWeight": "700",
-                  "letterSpacing": 1.5
+                  "type": "frame",
+                  "id": "E2oooO",
+                  "name": "Contact Heading Group",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "SoZo2",
+                      "name": "Contact Heading JP",
+                      "fill": "$yellow",
+                      "content": "お問い合わせ",
+                      "fontFamily": "$font-body",
+                      "fontSize": 30,
+                      "fontWeight": "700",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "G53yFv",
+                      "name": "Contact Heading",
+                      "opacity": 0.45,
+                      "fill": "$yellow",
+                      "content": "CONTACT",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 13,
+                      "fontWeight": "700",
+                      "letterSpacing": 4
+                    }
+                  ]
                 },
                 {
                   "type": "text",
@@ -2697,7 +2858,7 @@
                   "lineHeight": 1.8,
                   "textAlign": "center",
                   "fontFamily": "$font-body",
-                  "fontSize": 15,
+                  "fontSize": 16,
                   "fontWeight": "normal"
                 }
               ]
@@ -2737,7 +2898,7 @@
                           "fill": "$white",
                           "content": "お問い合わせ目的",
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
+                          "fontSize": 15,
                           "fontWeight": "700",
                           "letterSpacing": 1
                         },
@@ -2760,7 +2921,7 @@
                               "fill": "$black",
                               "content": "必須",
                               "fontFamily": "$font-body",
-                              "fontSize": 10,
+                              "fontSize": 11,
                               "fontWeight": "700"
                             }
                           ]
@@ -2806,7 +2967,7 @@
                               "fill": "$black",
                               "content": "イベントについて",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 15,
                               "fontWeight": "700"
                             }
                           ]
@@ -2834,7 +2995,7 @@
                               "fill": "$white",
                               "content": "メディア取材",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -2862,7 +3023,7 @@
                               "fill": "$white",
                               "content": "協賛・出展",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -2890,7 +3051,7 @@
                               "fill": "$white",
                               "content": "その他",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -2928,7 +3089,7 @@
                               "fill": "$white",
                               "content": "お名前",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 15,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             },
@@ -2951,7 +3112,7 @@
                                   "fill": "$black",
                                   "content": "必須",
                                   "fontFamily": "$font-body",
-                                  "fontSize": 10,
+                                  "fontSize": 11,
                                   "fontWeight": "700"
                                 }
                               ]
@@ -2982,7 +3143,7 @@
                               "fill": "$white",
                               "content": "山田 太郎",
                               "fontFamily": "$font-body",
-                              "fontSize": 14,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -3011,7 +3172,7 @@
                               "fill": "$white",
                               "content": "会社・団体名",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 15,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             },
@@ -3023,7 +3184,7 @@
                               "fill": "$white",
                               "content": "任意",
                               "fontFamily": "$font-body",
-                              "fontSize": 10,
+                              "fontSize": 11,
                               "fontWeight": "normal"
                             }
                           ]
@@ -3052,7 +3213,7 @@
                               "fill": "$white",
                               "content": "株式会社ノールック",
                               "fontFamily": "$font-body",
-                              "fontSize": 14,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -3090,7 +3251,7 @@
                               "fill": "$white",
                               "content": "メールアドレス",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 15,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             },
@@ -3113,7 +3274,7 @@
                                   "fill": "$black",
                                   "content": "必須",
                                   "fontFamily": "$font-body",
-                                  "fontSize": 10,
+                                  "fontSize": 11,
                                   "fontWeight": "700"
                                 }
                               ]
@@ -3144,7 +3305,7 @@
                               "fill": "$white",
                               "content": "info@example.com",
                               "fontFamily": "$font-body",
-                              "fontSize": 14,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -3173,7 +3334,7 @@
                               "fill": "$white",
                               "content": "電話番号",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 15,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             },
@@ -3185,7 +3346,7 @@
                               "fill": "$white",
                               "content": "任意",
                               "fontFamily": "$font-body",
-                              "fontSize": 10,
+                              "fontSize": 11,
                               "fontWeight": "normal"
                             }
                           ]
@@ -3214,7 +3375,7 @@
                               "fill": "$white",
                               "content": "03-1234-5678",
                               "fontFamily": "$font-body",
-                              "fontSize": 14,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -3245,7 +3406,7 @@
                           "fill": "$white",
                           "content": "お問い合わせ内容",
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
+                          "fontSize": 15,
                           "fontWeight": "700",
                           "letterSpacing": 1
                         },
@@ -3268,7 +3429,7 @@
                               "fill": "$black",
                               "content": "必須",
                               "fontFamily": "$font-body",
-                              "fontSize": 10,
+                              "fontSize": 11,
                               "fontWeight": "700"
                             }
                           ]
@@ -3295,7 +3456,7 @@
                           "fill": "$white",
                           "content": "取材のご依頼、ご相談内容などをご記入ください。",
                           "fontFamily": "$font-body",
-                          "fontSize": 14,
+                          "fontSize": 15,
                           "fontWeight": "normal"
                         }
                       ]
@@ -3330,7 +3491,7 @@
                       "fill": "$white",
                       "content": "プライバシーポリシーに同意のうえ送信します",
                       "fontFamily": "$font-body",
-                      "fontSize": 13,
+                      "fontSize": 15,
                       "fontWeight": "normal"
                     }
                   ]
@@ -3363,7 +3524,7 @@
                           "fill": "$black",
                           "content": "送信する",
                           "fontFamily": "$font-body",
-                          "fontSize": 15,
+                          "fontSize": 16,
                           "fontWeight": "700",
                           "letterSpacing": 3
                         },
@@ -3374,7 +3535,7 @@
                           "fill": "$black",
                           "content": "→",
                           "fontFamily": "$font-heading",
-                          "fontSize": 15,
+                          "fontSize": 16,
                           "fontWeight": "700"
                         }
                       ]
@@ -3407,7 +3568,7 @@
               "fill": "$white",
               "content": "© 2026 NO LOOK PARK. All rights reserved.",
               "fontFamily": "$font-heading",
-              "fontSize": 11,
+              "fontSize": 12,
               "fontWeight": "normal"
             }
           ]
@@ -3445,19 +3606,6 @@
               "gap": 48,
               "alignItems": "center",
               "children": [
-                {
-                  "type": "text",
-                  "id": "VNX2r",
-                  "name": "KV Date",
-                  "fill": "$black",
-                  "content": "2026.10.24 SAT\n11:00-19:00",
-                  "lineHeight": 1.6,
-                  "textAlign": "center",
-                  "fontFamily": "$font-heading",
-                  "fontSize": 19,
-                  "fontWeight": "700",
-                  "letterSpacing": 6
-                },
                 {
                   "type": "frame",
                   "id": "Tarni",
@@ -3557,6 +3705,19 @@
                   ]
                 },
                 {
+                  "type": "text",
+                  "id": "VNX2r",
+                  "name": "KV Date",
+                  "fill": "$black",
+                  "content": "2026.10.24 SAT\n11:00-19:00",
+                  "lineHeight": 1.6,
+                  "textAlign": "center",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 19,
+                  "fontWeight": "700",
+                  "letterSpacing": 6
+                },
+                {
                   "type": "frame",
                   "id": "xnkt9",
                   "name": "KV Bottom",
@@ -3580,7 +3741,7 @@
                           "fill": "$black",
                           "content": "@ HOME/WORK VILLAGE（東京・池尻大橋）",
                           "fontFamily": "$font-body",
-                          "fontSize": 12,
+                          "fontSize": 13,
                           "fontWeight": "800"
                         }
                       ]
@@ -3606,7 +3767,7 @@
                           "fill": "$yellow",
                           "content": "チケットを購入する",
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "700",
                           "letterSpacing": 3
                         },
@@ -3617,7 +3778,7 @@
                           "fill": "$yellow",
                           "content": "→",
                           "fontFamily": "$font-heading",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "700"
                         }
                       ]
@@ -3645,7 +3806,7 @@
                   "fill": "$black",
                   "content": "SCROLL",
                   "fontFamily": "$font-heading",
-                  "fontSize": 10,
+                  "fontSize": 11,
                   "fontWeight": "normal",
                   "letterSpacing": 3
                 },
@@ -3723,7 +3884,7 @@
                       "fill": "$black",
                       "content": "ABOUT",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "500",
                       "letterSpacing": 2
                     },
@@ -3737,7 +3898,7 @@
                       "fill": "$black",
                       "content": "CONTENTS",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "500",
                       "letterSpacing": 2
                     },
@@ -3751,7 +3912,7 @@
                       "fill": "$black",
                       "content": "DETAILS",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "500",
                       "letterSpacing": 2
                     },
@@ -3765,7 +3926,7 @@
                       "fill": "$black",
                       "content": "CONTACT",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "500",
                       "letterSpacing": 2
                     },
@@ -3789,7 +3950,7 @@
                           "fill": "$yellow",
                           "content": "TICKET",
                           "fontFamily": "$font-heading",
-                          "fontSize": 11,
+                          "fontSize": 12,
                           "fontWeight": "700",
                           "letterSpacing": 2
                         }
@@ -3851,7 +4012,7 @@
                           "fill": "$gray",
                           "content": "SponsorA",
                           "fontFamily": "$font-heading",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "500"
                         }
                       ]
@@ -3875,7 +4036,7 @@
                           "fill": "$gray",
                           "content": "SponsorB",
                           "fontFamily": "$font-heading",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "500"
                         }
                       ]
@@ -3899,7 +4060,7 @@
                           "fill": "$gray",
                           "content": "SponsorC",
                           "fontFamily": "$font-heading",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "500"
                         }
                       ]
@@ -3932,7 +4093,7 @@
                           "fill": "$gray",
                           "content": "SponsorD",
                           "fontFamily": "$font-heading",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "500"
                         }
                       ]
@@ -3956,7 +4117,7 @@
                           "fill": "$gray",
                           "content": "SponsorE",
                           "fontFamily": "$font-heading",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "500"
                         }
                       ]
@@ -3983,17 +4144,6 @@
           "children": [
             {
               "type": "text",
-              "id": "t4Ag82",
-              "name": "Statement Heading",
-              "fill": "$black",
-              "content": "STATEMENT",
-              "fontFamily": "$font-heading",
-              "fontSize": 24,
-              "fontWeight": "700",
-              "letterSpacing": 1
-            },
-            {
-              "type": "text",
               "id": "TIKsB",
               "name": "Statement Main",
               "fill": "$black",
@@ -4018,7 +4168,7 @@
               "lineHeight": 1.8,
               "textAlign": "center",
               "fontFamily": "$font-body",
-              "fontSize": 13,
+              "fontSize": 14,
               "fontWeight": "normal"
             },
             {
@@ -4100,7 +4250,7 @@
                                   "fill": "$black",
                                   "content": "PODCAST",
                                   "fontFamily": "$font-heading",
-                                  "fontSize": 10,
+                                  "fontSize": 11,
                                   "fontWeight": "700",
                                   "letterSpacing": 2
                                 }
@@ -4114,7 +4264,7 @@
                               "fill": "$white",
                               "content": "EP.01",
                               "fontFamily": "$font-heading",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 2
                             }
@@ -4139,7 +4289,7 @@
                           "fill": "$white",
                           "content": "NO LOOK BROTHERS ／ 24分18秒",
                           "fontFamily": "$font-body",
-                          "fontSize": 12,
+                          "fontSize": 13,
                           "fontWeight": "normal"
                         },
                         {
@@ -4178,7 +4328,7 @@
                               "fill": "$white",
                               "content": "07:42",
                               "fontFamily": "$font-heading",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "normal"
                             },
                             {
@@ -4196,7 +4346,7 @@
                               "fill": "$white",
                               "content": "24:18",
                               "fontFamily": "$font-heading",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "normal"
                             }
                           ]
@@ -4275,7 +4425,7 @@
                       "fill": "$black",
                       "content": "各種配信サービスでも公開中",
                       "fontFamily": "$font-body",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "normal"
                     },
                     {
@@ -4293,7 +4443,7 @@
                           "fill": "$black",
                           "content": "Spotify",
                           "fontFamily": "$font-heading",
-                          "fontSize": 12,
+                          "fontSize": 13,
                           "fontWeight": "500"
                         },
                         {
@@ -4304,7 +4454,7 @@
                           "fill": "$black",
                           "content": "Apple Podcasts",
                           "fontFamily": "$font-heading",
-                          "fontSize": 12,
+                          "fontSize": 13,
                           "fontWeight": "500"
                         },
                         {
@@ -4315,7 +4465,7 @@
                           "fill": "$black",
                           "content": "YouTube",
                           "fontFamily": "$font-heading",
-                          "fontSize": 12,
+                          "fontSize": 13,
                           "fontWeight": "500"
                         }
                       ]
@@ -4341,15 +4491,37 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "N8Vpyy",
-              "name": "Details Heading",
-              "fill": "$black",
-              "content": "EVENT DETAILS",
-              "fontFamily": "$font-heading",
-              "fontSize": 24,
-              "fontWeight": "700",
-              "letterSpacing": 1
+              "type": "frame",
+              "id": "ld81L",
+              "name": "Details Heading Group",
+              "layout": "vertical",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "sjywM",
+                  "name": "Details Heading JP",
+                  "fill": "$black",
+                  "content": "開催概要",
+                  "fontFamily": "$font-body",
+                  "fontSize": 22,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "N8Vpyy",
+                  "name": "Details Heading",
+                  "opacity": 0.45,
+                  "fill": "$black",
+                  "content": "EVENT DETAILS",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "letterSpacing": 4
+                }
+              ]
             },
             {
               "type": "frame",
@@ -4373,20 +4545,34 @@
                       "id": "TqZ8P",
                       "name": "Info 日程",
                       "width": "fill_container",
-                      "gap": 14,
+                      "gap": 12,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "PZC0P",
-                          "name": "日程 Label",
+                          "type": "frame",
+                          "id": "FqI0l",
+                          "name": "Label Capsule",
+                          "width": 66,
                           "fill": "$black",
-                          "textGrowth": "fixed-width",
-                          "width": 52,
-                          "content": "日程",
-                          "fontFamily": "$font-body",
-                          "fontSize": 12,
-                          "fontWeight": "700",
-                          "letterSpacing": 2
+                          "cornerRadius": 100,
+                          "padding": [
+                            6,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "PZC0P",
+                              "name": "日程 Label",
+                              "fill": "$yellow",
+                              "content": "日程",
+                              "fontFamily": "$font-body",
+                              "fontSize": 11,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -4398,8 +4584,8 @@
                           "content": "2026年10月24日（土）",
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "normal"
+                          "fontSize": 14,
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -4408,20 +4594,34 @@
                       "id": "Xosat",
                       "name": "Info 時間",
                       "width": "fill_container",
-                      "gap": 14,
+                      "gap": 12,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "EUQOv",
-                          "name": "時間 Label",
+                          "type": "frame",
+                          "id": "JZFHt",
+                          "name": "Label Capsule",
+                          "width": 66,
                           "fill": "$black",
-                          "textGrowth": "fixed-width",
-                          "width": 52,
-                          "content": "時間",
-                          "fontFamily": "$font-body",
-                          "fontSize": 12,
-                          "fontWeight": "700",
-                          "letterSpacing": 2
+                          "cornerRadius": 100,
+                          "padding": [
+                            6,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "EUQOv",
+                              "name": "時間 Label",
+                              "fill": "$yellow",
+                              "content": "時間",
+                              "fontFamily": "$font-body",
+                              "fontSize": 11,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -4433,8 +4633,8 @@
                           "content": "11:00 - 19:00",
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "normal"
+                          "fontSize": 14,
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -4443,20 +4643,34 @@
                       "id": "vuSFx",
                       "name": "Info 会場",
                       "width": "fill_container",
-                      "gap": 14,
+                      "gap": 12,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "TyMH0",
-                          "name": "会場 Label",
+                          "type": "frame",
+                          "id": "KAJsF",
+                          "name": "Label Capsule",
+                          "width": 66,
                           "fill": "$black",
-                          "textGrowth": "fixed-width",
-                          "width": 52,
-                          "content": "会場",
-                          "fontFamily": "$font-body",
-                          "fontSize": 12,
-                          "fontWeight": "700",
-                          "letterSpacing": 2
+                          "cornerRadius": 100,
+                          "padding": [
+                            6,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "TyMH0",
+                              "name": "会場 Label",
+                              "fill": "$yellow",
+                              "content": "会場",
+                              "fontFamily": "$font-body",
+                              "fontSize": 11,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -4468,8 +4682,8 @@
                           "content": "HOME/WORK VILLAGE\n東京・池尻大橋",
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "normal"
+                          "fontSize": 14,
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -4478,20 +4692,34 @@
                       "id": "alOZh",
                       "name": "Info 料金",
                       "width": "fill_container",
-                      "gap": 14,
+                      "gap": 12,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "CNTKn",
-                          "name": "料金 Label",
+                          "type": "frame",
+                          "id": "TRcBE",
+                          "name": "Label Capsule",
+                          "width": 66,
                           "fill": "$black",
-                          "textGrowth": "fixed-width",
-                          "width": 52,
-                          "content": "料金",
-                          "fontFamily": "$font-body",
-                          "fontSize": 12,
-                          "fontWeight": "700",
-                          "letterSpacing": 2
+                          "cornerRadius": 100,
+                          "padding": [
+                            6,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "CNTKn",
+                              "name": "料金 Label",
+                              "fill": "$yellow",
+                              "content": "料金",
+                              "fontFamily": "$font-body",
+                              "fontSize": 11,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -4503,8 +4731,8 @@
                           "content": "一般: ¥1,000\nファミリー: ¥2,000\n※ 小学生以下無料\n※ ファミリーチケットは同一世帯の方は一律2000円で参加いただけます。",
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "normal"
+                          "fontSize": 14,
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -4513,20 +4741,34 @@
                       "id": "atLgc",
                       "name": "Info 主催",
                       "width": "fill_container",
-                      "gap": 14,
+                      "gap": 12,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "X2FxR",
-                          "name": "主催 Label",
+                          "type": "frame",
+                          "id": "e21pJi",
+                          "name": "Label Capsule",
+                          "width": 66,
                           "fill": "$black",
-                          "textGrowth": "fixed-width",
-                          "width": 52,
-                          "content": "主催",
-                          "fontFamily": "$font-body",
-                          "fontSize": 12,
-                          "fontWeight": "700",
-                          "letterSpacing": 2
+                          "cornerRadius": 100,
+                          "padding": [
+                            6,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "X2FxR",
+                              "name": "主催 Label",
+                              "fill": "$yellow",
+                              "content": "主催",
+                              "fontFamily": "$font-body",
+                              "fontSize": 11,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -4538,8 +4780,8 @@
                           "content": "NO LOOK BROTHERS（澤田智洋／石井健介／高橋鴻介）",
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "normal"
+                          "fontSize": 14,
+                          "fontWeight": "600"
                         }
                       ]
                     },
@@ -4548,20 +4790,34 @@
                       "id": "NwFge",
                       "name": "Info 共催",
                       "width": "fill_container",
-                      "gap": 14,
+                      "gap": 12,
                       "children": [
                         {
-                          "type": "text",
-                          "id": "tSy7s",
-                          "name": "共催 Label",
+                          "type": "frame",
+                          "id": "c6fSa",
+                          "name": "Label Capsule",
+                          "width": 66,
                           "fill": "$black",
-                          "textGrowth": "fixed-width",
-                          "width": 52,
-                          "content": "共催",
-                          "fontFamily": "$font-body",
-                          "fontSize": 12,
-                          "fontWeight": "700",
-                          "letterSpacing": 2
+                          "cornerRadius": 100,
+                          "padding": [
+                            6,
+                            0
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "tSy7s",
+                              "name": "共催 Label",
+                              "fill": "$yellow",
+                              "content": "共催",
+                              "fontFamily": "$font-body",
+                              "fontSize": 11,
+                              "fontWeight": "700",
+                              "letterSpacing": 2
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -4573,8 +4829,8 @@
                           "content": "ビジョン・コンソーシアム",
                           "lineHeight": 1.7,
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
-                          "fontWeight": "normal"
+                          "fontSize": 14,
+                          "fontWeight": "600"
                         }
                       ]
                     }
@@ -4612,7 +4868,7 @@
                       "fill": "$gray",
                       "content": "MAP",
                       "fontFamily": "$font-heading",
-                      "fontSize": 14,
+                      "fontSize": 15,
                       "fontWeight": "normal"
                     }
                   ]
@@ -4645,15 +4901,37 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "text",
-                  "id": "z43fef",
-                  "name": "Contents Heading",
-                  "fill": "$black",
-                  "content": "CONTENTS",
-                  "fontFamily": "$font-heading",
-                  "fontSize": 24,
-                  "fontWeight": "700",
-                  "letterSpacing": 1
+                  "type": "frame",
+                  "id": "Xq52T",
+                  "name": "Contents Heading Group",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "cKkRS",
+                      "name": "Contents Heading JP",
+                      "fill": "$black",
+                      "content": "コンテンツ",
+                      "fontFamily": "$font-body",
+                      "fontSize": 22,
+                      "fontWeight": "700",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "z43fef",
+                      "name": "Contents Heading",
+                      "opacity": 0.45,
+                      "fill": "$black",
+                      "content": "CONTENTS",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 4
+                    }
+                  ]
                 },
                 {
                   "type": "text",
@@ -4667,7 +4945,7 @@
                   "lineHeight": 1.9,
                   "textAlign": "center",
                   "fontFamily": "$font-body",
-                  "fontSize": 13,
+                  "fontSize": 14,
                   "fontWeight": "normal"
                 }
               ]
@@ -4765,7 +5043,7 @@
                               "content": "完全暗闘の遊び場。視覚を遮断した空間で、触覚と聴覚だけを頼りに遊具を探索する体験型アトラクション。",
                               "lineHeight": 1.8,
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 14,
                               "fontWeight": "normal"
                             }
                           ]
@@ -4849,7 +5127,7 @@
                               "content": "音だけで料理する「聴くレストラン」。食材が焼ける音、切る音、混ぜる音──耳で味わう新感覚フードコート。",
                               "lineHeight": 1.8,
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 14,
                               "fontWeight": "normal"
                             }
                           ]
@@ -4943,7 +5221,7 @@
                               "content": "目隠しアート制作ワークショップ。触覚と想像力だけで作品を生み出す、新しいクリエイティブ体験。",
                               "lineHeight": 1.8,
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 14,
                               "fontWeight": "normal"
                             }
                           ]
@@ -5023,7 +5301,7 @@
                               "fill": "$gray",
                               "content": "他にもコンテンツを準備中！",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 14,
                               "fontWeight": "normal"
                             }
                           ]
@@ -5051,15 +5329,37 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "smiRF",
-              "name": "Organizers Heading",
-              "fill": "$black",
-              "content": "ORGANIZERS",
-              "fontFamily": "$font-heading",
-              "fontSize": 24,
-              "fontWeight": "700",
-              "letterSpacing": 1
+              "type": "frame",
+              "id": "RNlcY",
+              "name": "Organizers Heading Group",
+              "layout": "vertical",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "M94Euw",
+                  "name": "Organizers Heading JP",
+                  "fill": "$black",
+                  "content": "主催者",
+                  "fontFamily": "$font-body",
+                  "fontSize": 22,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "smiRF",
+                  "name": "Organizers Heading",
+                  "opacity": 0.45,
+                  "fill": "$black",
+                  "content": "ORGANIZERS",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "letterSpacing": 4
+                }
+              ]
             },
             {
               "type": "frame",
@@ -5097,7 +5397,7 @@
                           "fill": "$black",
                           "content": "主催者",
                           "fontFamily": "$font-body",
-                          "fontSize": 12,
+                          "fontSize": 13,
                           "fontWeight": "700",
                           "letterSpacing": 2
                         }
@@ -5128,7 +5428,7 @@
                   "lineHeight": 1.9,
                   "textAlign": "center",
                   "fontFamily": "$font-body",
-                  "fontSize": 13,
+                  "fontSize": 14,
                   "fontWeight": "normal"
                 }
               ]
@@ -5216,7 +5516,7 @@
                               "fill": "$black",
                               "content": "肩書き・役職",
                               "fontFamily": "$font-body",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             }
@@ -5249,7 +5549,7 @@
                               "fill": "$black",
                               "content": "TOMOHIRO SAWADA",
                               "fontFamily": "$font-heading",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 2
                             }
@@ -5266,7 +5566,7 @@
                           "content": "プロフィール文が入ります。ご経歴や NO LOOK PARK での役割などを2〜3行でご記入ください。",
                           "lineHeight": 1.8,
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "normal"
                         },
                         {
@@ -5364,7 +5664,7 @@
                                       "fill": "$black",
                                       "content": "公式サイト",
                                       "fontFamily": "$font-body",
-                                      "fontSize": 11,
+                                      "fontSize": 12,
                                       "fontWeight": "700",
                                       "letterSpacing": 1
                                     },
@@ -5462,7 +5762,7 @@
                               "fill": "$black",
                               "content": "肩書き・役職",
                               "fontFamily": "$font-body",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             }
@@ -5495,7 +5795,7 @@
                               "fill": "$black",
                               "content": "KENSUKE ISHII",
                               "fontFamily": "$font-heading",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 2
                             }
@@ -5512,7 +5812,7 @@
                           "content": "プロフィール文が入ります。ご経歴や NO LOOK PARK での役割などを2〜3行でご記入ください。",
                           "lineHeight": 1.8,
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "normal"
                         },
                         {
@@ -5610,7 +5910,7 @@
                                       "fill": "$black",
                                       "content": "公式サイト",
                                       "fontFamily": "$font-body",
-                                      "fontSize": 11,
+                                      "fontSize": 12,
                                       "fontWeight": "700",
                                       "letterSpacing": 1
                                     },
@@ -5708,7 +6008,7 @@
                               "fill": "$black",
                               "content": "肩書き・役職",
                               "fontFamily": "$font-body",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             }
@@ -5741,7 +6041,7 @@
                               "fill": "$black",
                               "content": "KOSUKE TAKAHASHI",
                               "fontFamily": "$font-heading",
-                              "fontSize": 11,
+                              "fontSize": 12,
                               "fontWeight": "700",
                               "letterSpacing": 2
                             }
@@ -5758,7 +6058,7 @@
                           "content": "プロフィール文が入ります。ご経歴や NO LOOK PARK での役割などを2〜3行でご記入ください。",
                           "lineHeight": 1.8,
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "normal"
                         },
                         {
@@ -5856,7 +6156,7 @@
                                       "fill": "$black",
                                       "content": "公式サイト",
                                       "fontFamily": "$font-body",
-                                      "fontSize": 11,
+                                      "fontSize": 12,
                                       "fontWeight": "700",
                                       "letterSpacing": 1
                                     },
@@ -5917,7 +6217,7 @@
                           "fill": "$black",
                           "content": "協賛",
                           "fontFamily": "$font-body",
-                          "fontSize": 11,
+                          "fontSize": 12,
                           "fontWeight": "700",
                           "letterSpacing": 2
                         }
@@ -5930,7 +6230,7 @@
                       "fill": "$gray",
                       "content": "SUPPORTED BY",
                       "fontFamily": "$font-heading",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "700",
                       "letterSpacing": 2
                     }
@@ -6024,7 +6324,7 @@
                                   "fill": "$black",
                                   "content": "CONSORTIUM",
                                   "fontFamily": "$font-heading",
-                                  "fontSize": 11,
+                                  "fontSize": 12,
                                   "fontWeight": "700",
                                   "letterSpacing": 3.4
                                 }
@@ -6061,7 +6361,7 @@
                           "fill": "$black",
                           "content": "一般社団法人 ヴィジョン・コンソーシアム",
                           "fontFamily": "$font-body",
-                          "fontSize": 12,
+                          "fontSize": 13,
                           "fontWeight": "normal"
                         },
                         {
@@ -6075,7 +6375,7 @@
                           "content": "視覚に頼らない体験デザインを研究・支援する団体。NO LOOK PARK では、コンテンツの安全設計とアクセシビリティ監修をご協力いただいています。",
                           "lineHeight": 1.9,
                           "fontFamily": "$font-body",
-                          "fontSize": 14,
+                          "fontSize": 15,
                           "fontWeight": "normal"
                         },
                         {
@@ -6092,7 +6392,7 @@
                               "fill": "$black",
                               "content": "vision-consortium.org",
                               "fontFamily": "$font-heading",
-                              "fontSize": 12,
+                              "fontSize": 13,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             },
@@ -6148,15 +6448,37 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "text",
-                  "id": "qvTud",
-                  "name": "Contact Heading",
-                  "fill": "$yellow",
-                  "content": "CONTACT",
-                  "fontFamily": "$font-heading",
-                  "fontSize": 24,
-                  "fontWeight": "700",
-                  "letterSpacing": 1
+                  "type": "frame",
+                  "id": "Veebh",
+                  "name": "Contact Heading Group",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "d5zZt",
+                      "name": "Contact Heading JP",
+                      "fill": "$yellow",
+                      "content": "お問い合わせ",
+                      "fontFamily": "$font-body",
+                      "fontSize": 22,
+                      "fontWeight": "700",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "qvTud",
+                      "name": "Contact Heading",
+                      "opacity": 0.45,
+                      "fill": "$yellow",
+                      "content": "CONTACT",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "letterSpacing": 4
+                    }
+                  ]
                 },
                 {
                   "type": "text",
@@ -6170,7 +6492,7 @@
                   "lineHeight": 1.8,
                   "textAlign": "center",
                   "fontFamily": "$font-body",
-                  "fontSize": 13,
+                  "fontSize": 14,
                   "fontWeight": "normal"
                 }
               ]
@@ -6210,7 +6532,7 @@
                           "fill": "$white",
                           "content": "お問い合わせ目的",
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "700",
                           "letterSpacing": 1
                         },
@@ -6233,7 +6555,7 @@
                               "fill": "$black",
                               "content": "必須",
                               "fontFamily": "$font-body",
-                              "fontSize": 10,
+                              "fontSize": 11,
                               "fontWeight": "700"
                             }
                           ]
@@ -6419,7 +6741,7 @@
                               "fill": "$white",
                               "content": "お名前",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 14,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             },
@@ -6442,7 +6764,7 @@
                                   "fill": "$black",
                                   "content": "必須",
                                   "fontFamily": "$font-body",
-                                  "fontSize": 10,
+                                  "fontSize": 11,
                                   "fontWeight": "700"
                                 }
                               ]
@@ -6473,7 +6795,7 @@
                               "fill": "$white",
                               "content": "山田 太郎",
                               "fontFamily": "$font-body",
-                              "fontSize": 14,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -6502,7 +6824,7 @@
                               "fill": "$white",
                               "content": "会社・団体名",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 14,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             },
@@ -6514,7 +6836,7 @@
                               "fill": "$white",
                               "content": "任意",
                               "fontFamily": "$font-body",
-                              "fontSize": 10,
+                              "fontSize": 11,
                               "fontWeight": "normal"
                             }
                           ]
@@ -6543,7 +6865,7 @@
                               "fill": "$white",
                               "content": "株式会社ノールック",
                               "fontFamily": "$font-body",
-                              "fontSize": 14,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -6582,7 +6904,7 @@
                               "fill": "$white",
                               "content": "メールアドレス",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 14,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             },
@@ -6605,7 +6927,7 @@
                                   "fill": "$black",
                                   "content": "必須",
                                   "fontFamily": "$font-body",
-                                  "fontSize": 10,
+                                  "fontSize": 11,
                                   "fontWeight": "700"
                                 }
                               ]
@@ -6636,7 +6958,7 @@
                               "fill": "$white",
                               "content": "info@example.com",
                               "fontFamily": "$font-body",
-                              "fontSize": 14,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -6665,7 +6987,7 @@
                               "fill": "$white",
                               "content": "電話番号",
                               "fontFamily": "$font-body",
-                              "fontSize": 13,
+                              "fontSize": 14,
                               "fontWeight": "700",
                               "letterSpacing": 1
                             },
@@ -6677,7 +6999,7 @@
                               "fill": "$white",
                               "content": "任意",
                               "fontFamily": "$font-body",
-                              "fontSize": 10,
+                              "fontSize": 11,
                               "fontWeight": "normal"
                             }
                           ]
@@ -6706,7 +7028,7 @@
                               "fill": "$white",
                               "content": "03-1234-5678",
                               "fontFamily": "$font-body",
-                              "fontSize": 14,
+                              "fontSize": 15,
                               "fontWeight": "normal"
                             }
                           ]
@@ -6737,7 +7059,7 @@
                           "fill": "$white",
                           "content": "お問い合わせ内容",
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "700",
                           "letterSpacing": 1
                         },
@@ -6760,7 +7082,7 @@
                               "fill": "$black",
                               "content": "必須",
                               "fontFamily": "$font-body",
-                              "fontSize": 10,
+                              "fontSize": 11,
                               "fontWeight": "700"
                             }
                           ]
@@ -6789,7 +7111,7 @@
                           "width": "fill_container",
                           "content": "取材のご依頼、ご相談内容などをご記入ください。",
                           "fontFamily": "$font-body",
-                          "fontSize": 14,
+                          "fontSize": 15,
                           "fontWeight": "normal"
                         }
                       ]
@@ -6857,7 +7179,7 @@
                           "fill": "$black",
                           "content": "送信する",
                           "fontFamily": "$font-body",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "700",
                           "letterSpacing": 3
                         },
@@ -6868,7 +7190,7 @@
                           "fill": "$black",
                           "content": "→",
                           "fontFamily": "$font-heading",
-                          "fontSize": 13,
+                          "fontSize": 14,
                           "fontWeight": "700"
                         }
                       ]
@@ -6901,7 +7223,7 @@
               "fill": "$white",
               "content": "© 2026 NO LOOK PARK. All rights reserved.",
               "fontFamily": "$font-heading",
-              "fontSize": 11,
+              "fontSize": 12,
               "fontWeight": "normal"
             }
           ]

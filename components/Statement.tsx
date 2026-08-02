@@ -70,7 +70,7 @@ export default function Statement() {
           </h2>
         </Reveal>
 
-        <Reveal delay={100}>
+        <Reveal delay={150}>
           <div className="flex max-w-[640px] flex-col gap-5 text-base font-semibold leading-[1.8] text-ink/70">
             {STATEMENT_BODY.map((p, i) => (
               <p key={i}>{p}</p>
@@ -78,7 +78,7 @@ export default function Statement() {
           </div>
         </Reveal>
 
-        <Reveal delay={150} className="mt-4 flex w-full justify-center">
+        <Reveal delay={300} className="mt-4 flex w-full justify-center">
           <PodcastPlayer />
         </Reveal>
       </div>

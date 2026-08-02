@@ -1,14 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, IMG } from "@/lib/site";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-30">
+    <header
+      className={`fixed inset-x-0 top-0 z-30 transition-colors duration-300 ${
+        scrolled ? "bg-brand/95 shadow-sm backdrop-blur-sm" : ""
+      }`}
+    >
       <nav className="mx-auto flex max-w-[1360px] items-center px-6 py-5 md:px-10">
         <a href="#top" className="flex items-center" aria-label="NO LOOK PARK ホーム">
           {/* eslint-disable-next-line @next/next/no-img-element */}

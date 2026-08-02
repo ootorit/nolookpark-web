@@ -7,6 +7,8 @@ type RevealProps = {
   className?: string;
   /** Delay before the reveal transition starts (ms). Useful for staggering. */
   delay?: number;
+  /** "up" (default) slides up; "zoom" scales up from center. */
+  variant?: "up" | "zoom";
 };
 
 /**
@@ -14,7 +16,12 @@ type RevealProps = {
  * No-op (renders visible immediately) when reduced motion is preferred
  * or IntersectionObserver is unavailable.
  */
-export default function Reveal({ children, className = "", delay = 0 }: RevealProps) {
+export default function Reveal({
+  children,
+  className = "",
+  delay = 0,
+  variant = "up",
+}: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -46,7 +53,9 @@ export default function Reveal({ children, className = "", delay = 0 }: RevealPr
   return (
     <div
       ref={ref}
-      className={`reveal ${visible ? "is-visible" : ""} ${className}`}
+      className={`reveal ${variant === "zoom" ? "reveal-zoom" : ""} ${
+        visible ? "is-visible" : ""
+      } ${className}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

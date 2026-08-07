@@ -32,9 +32,13 @@ export const IMG = {
   darkPlayground: "/images/generated-1785555838975.png",
   soundKitchen: "/images/generated-1785555841069.png",
   blindArt: "/images/generated-1785555841928.png",
-  sawada: "/images/generated-1785630891232.png",
-  ishii: "/images/generated-1785630892604.png",
-  takahashi: "/images/generated-1785630892598.png",
+  // 主催者プロフィール（実写）
+  sawada: "/images/sawada_profile.jpg",
+  ishii: "/images/ishii_profile.jpg",
+  takahashi: "/images/kosuke_profile.jpg",
+  // ヒーロー外側タイル（従来の生成画像を流用）
+  heroTileL: "/images/generated-1785630891232.png",
+  heroTileR: "/images/generated-1785630892598.png",
 } as const;
 
 // Order follows the actual on-page section order.
@@ -55,8 +59,8 @@ export const SPOTIFY_EMBED_URL =
   "https://open.spotify.com/embed/episode/7makk4oTQel546B0PZlDM5?utm_source=generator";
 
 export const PODCAST = {
-  title: "開催にあたっての思いやアイデアを、ポッドキャストで更新中",
-  sub: "NO LOOK BROTHERS の3人が、企画の裏側や当日までの準備の様子を不定期で配信しています。",
+  title: "イベントの裏側を、ポッドキャストで更新中",
+  sub: "NO LOOK BROTHERS の3人が、開催への想いやアイデア、企画の裏側や当日までの準備の様子を不定期で配信しています。",
 } as const;
 
 export const CONTENTS = [

@@ -85,7 +85,7 @@ export default function Organizers() {
             >
               <div
                 role="img"
-                aria-label={`${o.name} のプロフィール写真（仮）`}
+                aria-label={`${o.name} のプロフィール写真`}
                 className="relative h-80 bg-cover bg-center"
                 style={{ backgroundImage: `url(${o.image})` }}
               >

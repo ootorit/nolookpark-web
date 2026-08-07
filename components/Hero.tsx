@@ -17,8 +17,8 @@ function Tile({
       className={[
         "shrink-0 rounded-[28px] bg-cover bg-center ring-[6px] ring-inset ring-ink",
         size === "lg"
-          ? "h-[136px] w-[136px] sm:h-[190px] sm:w-[190px] lg:h-[255px] lg:w-[255px]"
-          : "h-[108px] w-[108px] sm:h-[150px] sm:w-[150px] lg:h-[221px] lg:w-[221px]",
+          ? "h-[150px] w-[150px] sm:h-[208px] sm:w-[208px] lg:h-[280px] lg:w-[280px]"
+          : "h-[120px] w-[120px] sm:h-[164px] sm:w-[164px] lg:h-[242px] lg:w-[242px]",
       ].join(" ")}
       style={{ backgroundImage: `url(${src})` }}
     />
@@ -46,7 +46,7 @@ export default function Hero() {
         {/* Tile strip — logo first, then tiles emerge outward from the center */}
         <div className="flex items-center justify-center gap-4 md:gap-8">
           <Reveal variant="zoom" delay={1050}>
-            <Tile src={IMG.takahashi} size="sm" alt="会場の様子の写真（仮）" />
+            <Tile src={IMG.heroTileL} size="sm" alt="会場の様子の写真（仮）" />
           </Reveal>
           <Reveal variant="zoom" delay={700}>
             <Tile src={IMG.kvL2} size="sm" alt="暗闇の中で来場者が遊んでいる様子の写真（仮）" />
@@ -57,7 +57,7 @@ export default function Hero() {
           <Reveal variant="zoom" delay={0}>
             <div
               aria-hidden
-              className="h-[136px] w-[136px] shrink-0 bg-contain bg-center bg-no-repeat sm:h-[190px] sm:w-[190px] lg:h-[357px] lg:w-[357px]"
+              className="h-[150px] w-[150px] shrink-0 bg-contain bg-center bg-no-repeat sm:h-[208px] sm:w-[208px] lg:h-[392px] lg:w-[392px]"
               style={{ backgroundImage: `url(${IMG.logo})` }}
             />
           </Reveal>
@@ -68,7 +68,7 @@ export default function Hero() {
             <Tile src={IMG.kvR2} size="sm" alt="目隠しでアート制作をする様子の写真（仮）" />
           </Reveal>
           <Reveal variant="zoom" delay={1050}>
-            <Tile src={IMG.sawada} size="sm" alt="来場者の様子の写真（仮）" />
+            <Tile src={IMG.heroTileR} size="sm" alt="来場者の様子の写真（仮）" />
           </Reveal>
         </div>
 

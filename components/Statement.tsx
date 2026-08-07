@@ -19,15 +19,6 @@ function PodcastPlayer() {
         className="w-full rounded-xl"
         style={{ border: 0 }}
       />
-
-      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-        <span className="text-xs text-ink">各種配信サービスでも公開中</span>
-        {["Spotify", "Apple Podcasts", "YouTube"].map((p) => (
-          <span key={p} className="font-en text-xs text-ink">
-            {p}
-          </span>
-        ))}
-      </div>
     </div>
   );
 }

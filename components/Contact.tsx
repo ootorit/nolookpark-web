@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useActionState } from "react";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import { sendContactEmail, type ContactState } from "@/app/actions";
 
 const PURPOSES = ["イベントについて", "メディア取材", "協賛・出展", "その他"];
 
@@ -46,9 +47,12 @@ function FieldLabel({
 const inputCls =
   "h-[52px] w-full rounded-lg bg-field px-4 text-sm text-white outline-none ring-1 ring-inset ring-line-dark placeholder:text-white/35 focus:ring-brand";
 
+const initialState: ContactState = { status: "idle" };
+
 export default function Contact() {
   const [purpose, setPurpose] = useState(0);
   const [agree, setAgree] = useState(false);
+  const [state, formAction, pending] = useActionState(sendContactEmail, initialState);
 
   return (
     <section
@@ -65,101 +69,124 @@ export default function Contact() {
         </Reveal>
 
         <Reveal delay={100} className="w-full">
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className="flex w-full flex-col gap-7 rounded-2xl bg-ink-soft p-6 ring-1 ring-inset ring-line-dark md:p-12"
-        >
-          {/* Purpose */}
-          <div className="flex flex-col gap-3.5">
-            <FieldLabel label="お問い合わせ目的" required id="purpose-label" />
-            <div
-              role="radiogroup"
-              aria-labelledby="purpose-label"
-              aria-required="true"
-              className="flex flex-wrap gap-2.5"
-            >
-              {PURPOSES.map((p, i) => {
-                const active = purpose === i;
-                return (
-                  <button
-                    key={p}
-                    type="button"
-                    role="radio"
-                    aria-checked={active}
-                    onClick={() => setPurpose(i)}
-                    className={[
-                      "rounded-full px-4 py-2.5 text-[13px] transition-colors",
-                      active
-                        ? "bg-brand text-ink ring-2 ring-inset ring-brand"
-                        : "bg-[#2e2e2e] text-white ring-1 ring-inset ring-line-dark hover:text-white",
-                    ].join(" ")}
-                  >
-                    <span aria-hidden>{active ? "✓ " : ""}</span>
-                    {p}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            <div className="flex flex-col gap-2">
-              <FieldLabel label="お名前" required htmlFor="contact-name" />
-              <input id="contact-name" aria-required="true" className={inputCls} placeholder="山田 太郎" />
-            </div>
-            <div className="flex flex-col gap-2">
-              <FieldLabel label="会社・団体名" htmlFor="contact-company" />
-              <input id="contact-company" className={inputCls} placeholder="株式会社ノールック" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            <div className="flex flex-col gap-2">
-              <FieldLabel label="メールアドレス" required htmlFor="contact-email" />
-              <input id="contact-email" type="email" aria-required="true" className={inputCls} placeholder="info@example.com" />
-            </div>
-            <div className="flex flex-col gap-2">
-              <FieldLabel label="電話番号" htmlFor="contact-tel" />
-              <input id="contact-tel" type="tel" className={inputCls} placeholder="03-1234-5678" />
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <FieldLabel label="お問い合わせ内容" required htmlFor="contact-message" />
-            <textarea
-              id="contact-message"
-              aria-required="true"
-              rows={5}
-              className="w-full rounded-lg bg-field p-4 text-sm text-white outline-none ring-1 ring-inset ring-line-dark placeholder:text-white/35 focus:ring-brand"
-              placeholder="取材のご依頼、ご相談内容などをご記入ください。"
-            />
-          </div>
-
-          <label className="flex items-center justify-center gap-2.5 text-[13px] text-white">
-            <input
-              type="checkbox"
-              checked={agree}
-              onChange={(e) => setAgree(e.target.checked)}
-              className="h-[18px] w-[18px] accent-brand"
-            />
-            プライバシーポリシーに同意のうえ送信します
-          </label>
-
-          <div className="flex justify-center">
-            <button
-              type="submit"
-              className="group flex items-center gap-3 rounded-full bg-brand px-16 py-[18px] transition-transform hover:scale-105"
-            >
-              <span className="text-[15px] tracking-[1px] text-ink">送信する</span>
-              <span
-                aria-hidden
-                className="font-en text-[15px] text-ink transition-transform group-hover:translate-x-1"
-              >
-                →
+          {state.status === "success" ? (
+            <div className="flex w-full flex-col items-center gap-4 rounded-2xl bg-ink-soft p-10 text-center ring-1 ring-inset ring-line-dark md:p-12">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-brand text-2xl text-ink">
+                ✓
               </span>
-            </button>
-          </div>
-        </form>
+              <p className="text-base leading-[1.8] text-white">{state.message}</p>
+            </div>
+          ) : (
+            <form
+              action={formAction}
+              className="flex w-full flex-col gap-7 rounded-2xl bg-ink-soft p-6 ring-1 ring-inset ring-line-dark md:p-12"
+            >
+              {/* Purpose */}
+              <div className="flex flex-col gap-3.5">
+                <FieldLabel label="お問い合わせ目的" required id="purpose-label" />
+                <input type="hidden" name="purpose" value={PURPOSES[purpose]} />
+                <div
+                  role="radiogroup"
+                  aria-labelledby="purpose-label"
+                  aria-required="true"
+                  className="flex flex-wrap gap-2.5"
+                >
+                  {PURPOSES.map((p, i) => {
+                    const active = purpose === i;
+                    return (
+                      <button
+                        key={p}
+                        type="button"
+                        role="radio"
+                        aria-checked={active}
+                        onClick={() => setPurpose(i)}
+                        className={[
+                          "rounded-full px-4 py-2.5 text-[13px] transition-colors",
+                          active
+                            ? "bg-brand text-ink ring-2 ring-inset ring-brand"
+                            : "bg-[#2e2e2e] text-white ring-1 ring-inset ring-line-dark hover:text-white",
+                        ].join(" ")}
+                      >
+                        <span aria-hidden>{active ? "✓ " : ""}</span>
+                        {p}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div className="flex flex-col gap-2">
+                  <FieldLabel label="お名前" required htmlFor="contact-name" />
+                  <input id="contact-name" name="name" aria-required="true" className={inputCls} placeholder="山田 太郎" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <FieldLabel label="会社・団体名" htmlFor="contact-company" />
+                  <input id="contact-company" name="company" className={inputCls} placeholder="株式会社ノールック" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div className="flex flex-col gap-2">
+                  <FieldLabel label="メールアドレス" required htmlFor="contact-email" />
+                  <input id="contact-email" name="email" type="email" aria-required="true" className={inputCls} placeholder="info@example.com" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <FieldLabel label="電話番号" htmlFor="contact-tel" />
+                  <input id="contact-tel" name="tel" type="tel" className={inputCls} placeholder="03-1234-5678" />
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <FieldLabel label="お問い合わせ内容" required htmlFor="contact-message" />
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  aria-required="true"
+                  rows={5}
+                  className="w-full rounded-lg bg-field p-4 text-sm text-white outline-none ring-1 ring-inset ring-line-dark placeholder:text-white/35 focus:ring-brand"
+                  placeholder="取材のご依頼、ご相談内容などをご記入ください。"
+                />
+              </div>
+
+              <label className="flex items-center justify-center gap-2.5 text-[13px] text-white">
+                <input
+                  type="checkbox"
+                  name="agree"
+                  checked={agree}
+                  onChange={(e) => setAgree(e.target.checked)}
+                  className="h-[18px] w-[18px] accent-brand"
+                />
+                プライバシーポリシーに同意のうえ送信します
+              </label>
+
+              {state.status === "error" && (
+                <p className="text-center text-[13px] text-brand" role="alert">
+                  {state.message}
+                </p>
+              )}
+
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  disabled={pending}
+                  className="group flex items-center gap-3 rounded-full bg-brand px-16 py-[18px] transition-transform hover:scale-105 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  <span className="text-[15px] tracking-[1px] text-ink">
+                    {pending ? "送信中…" : "送信する"}
+                  </span>
+                  {!pending && (
+                    <span
+                      aria-hidden
+                      className="font-en text-[15px] text-ink transition-transform group-hover:translate-x-1"
+                    >
+                      →
+                    </span>
+                  )}
+                </button>
+              </div>
+            </form>
+          )}
         </Reveal>
       </div>
     </section>

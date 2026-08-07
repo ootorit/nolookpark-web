@@ -14,8 +14,8 @@ function Tile({
       className={[
         "shrink-0 rounded-[28px] bg-cover bg-center ring-[6px] ring-inset ring-ink",
         size === "lg"
-          ? "h-[150px] w-[150px] sm:h-[208px] sm:w-[208px] lg:h-[280px] lg:w-[280px]"
-          : "h-[120px] w-[120px] sm:h-[164px] sm:w-[164px] lg:h-[242px] lg:w-[242px]",
+          ? "h-[170px] w-[170px] sm:h-[232px] sm:w-[232px] lg:h-[320px] lg:w-[320px]"
+          : "h-[135px] w-[135px] sm:h-[186px] sm:w-[186px] lg:h-[276px] lg:w-[276px]",
       ].join(" ")}
       style={{ backgroundImage: `url(${src})` }}
     />
@@ -54,7 +54,7 @@ export default function Hero() {
           <Reveal variant="zoom" delay={0}>
             <div
               aria-hidden
-              className="h-[150px] w-[150px] shrink-0 bg-contain bg-center bg-no-repeat sm:h-[208px] sm:w-[208px] lg:h-[392px] lg:w-[392px]"
+              className="h-[210px] w-[210px] shrink-0 bg-contain bg-center bg-no-repeat sm:h-[280px] sm:w-[280px] lg:h-[392px] lg:w-[392px]"
               style={{ backgroundImage: `url(${IMG.logo})` }}
             />
           </Reveal>
@@ -103,7 +103,7 @@ export default function Hero() {
       {/* Scroll hint */}
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
+        className="pointer-events-none absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
       >
         <span className="font-en text-[10px] tracking-[1px] text-ink">SCROLL</span>
         <span className="h-8 w-px bg-ink/40" />

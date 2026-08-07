@@ -13,7 +13,7 @@ export default function Contents() {
         <Reveal className="flex flex-col items-center gap-4 text-center">
           <SectionHeading jp="コンテンツ" en="CONTENTS" />
           <p className="max-w-[680px] text-base leading-[1.9] text-ink">
-            視覚を手放すと、遊びはもっと自由になる。
+            視覚を手放すと、もっと自由になれる。
             <br className="hidden sm:block" />
             みえないからこそ楽しいコンテンツが、会場いっぱいに広がります。
           </p>

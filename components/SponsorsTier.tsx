@@ -92,7 +92,7 @@ export default function SponsorsTier() {
               <div
                 key={i}
                 aria-hidden
-                className="flex h-[150px] flex-1 items-center justify-center rounded-xl bg-white ring-1 ring-inset ring-line"
+                className="flex min-h-[150px] flex-1 items-center justify-center rounded-xl bg-white ring-1 ring-inset ring-line"
               >
                 <span className="font-en text-[13px] tracking-[2px] text-ink opacity-50">
                   {label}

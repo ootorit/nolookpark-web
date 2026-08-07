@@ -1,4 +1,5 @@
-import { MapPin, ArrowUpRight } from "lucide-react";
+import { MapPin, ArrowUpRight, Phone, TrainFront, Bus, Car } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { EVENT, IMG } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
@@ -11,6 +12,28 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
         <span className="text-[13px] tracking-[2px] text-brand">{label}</span>
       </div>
       <div className="flex-1 text-base leading-[1.75] text-ink">{children}</div>
+    </div>
+  );
+}
+
+function AccessItem({
+  icon: Icon,
+  label,
+  children,
+}: {
+  icon: LucideIcon;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex gap-4">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ink text-brand">
+        <Icon size={18} aria-hidden />
+      </span>
+      <div className="flex flex-col gap-1 pt-1">
+        <span className="text-[13px] tracking-[1px] text-ink">{label}</span>
+        <div className="text-[14px] leading-[1.7] text-ink">{children}</div>
+      </div>
     </div>
   );
 }
@@ -36,12 +59,10 @@ export default function Details() {
             <Row label="時間">{EVENT.time}</Row>
             <Row label="会場">
               <div className="flex flex-col items-start gap-2.5">
-                <div>
-                  {EVENT.venue}
-                  <br />
-                  {EVENT.venueArea}
+                <div>{EVENT.venue}</div>
+                <div className="text-[13px]">
+                  {EVENT.venuePostal} {EVENT.venueAddress}
                 </div>
-                <div className="text-[13px]">{EVENT.venueAddress}</div>
                 <a
                   href={EVENT.mapUrl}
                   target="_blank"
@@ -76,15 +97,55 @@ export default function Details() {
             <div
               role="img"
               aria-label="HOME/WORK VILLAGE の会場写真"
-              className="h-52 rounded-xl bg-cover bg-center [outline:3px_solid_#1A1A1A] [outline-offset:-1.5px] md:h-56"
+              className="aspect-[3/2] w-full rounded-xl bg-cover bg-center [outline:3px_solid_#1A1A1A] [outline-offset:-1.5px]"
               style={{ backgroundImage: `url(${IMG.venuePhoto1})` }}
             />
             <div
               role="img"
               aria-label="HOME/WORK VILLAGE の会場写真"
-              className="h-32 rounded-xl bg-cover bg-center [outline:3px_solid_#1A1A1A] [outline-offset:-1.5px]"
+              className="aspect-[3/2] w-full rounded-xl bg-cover bg-center [outline:3px_solid_#1A1A1A] [outline-offset:-1.5px]"
               style={{ backgroundImage: `url(${IMG.venuePhoto2})` }}
             />
+          </div>
+        </Reveal>
+
+        {/* アクセス */}
+        <Reveal delay={150} className="w-full">
+          <div className="flex flex-col gap-8 rounded-2xl bg-white p-8 [outline:2px_solid_#1A1A1A] [outline-offset:-1px] md:p-10">
+            <div className="flex items-center gap-3">
+              <span className="text-lg tracking-[1px] text-ink">アクセス</span>
+              <span className="font-en text-[11px] tracking-[2px] text-ink opacity-45">
+                ACCESS
+              </span>
+            </div>
+            <div className="grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2">
+              <AccessItem icon={Phone} label="電話">
+                <a
+                  href={`tel:${EVENT.venueTel.replace(/-/g, "")}`}
+                  className="transition-opacity hover:opacity-60"
+                >
+                  {EVENT.venueTel}
+                </a>
+                <span className="ml-2 text-[13px] opacity-70">
+                  （{EVENT.venueTelNote}）
+                </span>
+              </AccessItem>
+              <AccessItem icon={TrainFront} label="電車">
+                {EVENT.access.train.map((l, i) => (
+                  <div key={i}>{l}</div>
+                ))}
+              </AccessItem>
+              <AccessItem icon={Bus} label="バス">
+                {EVENT.access.bus.map((l, i) => (
+                  <div key={i}>{l}</div>
+                ))}
+              </AccessItem>
+              <AccessItem icon={Car} label="車">
+                {EVENT.access.car.map((l, i) => (
+                  <div key={i}>{l}</div>
+                ))}
+              </AccessItem>
+            </div>
           </div>
         </Reveal>
       </div>

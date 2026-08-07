@@ -34,13 +34,17 @@ function InstagramIcon({ size = 16 }: { size?: number }) {
 function IconLink({
   children,
   label,
+  href,
 }: {
   children: React.ReactNode;
   label: string;
+  href: string;
 }) {
   return (
     <a
-      href="#"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={label}
       className="flex h-9 w-9 items-center justify-center rounded-full ring-[1.5px] ring-inset ring-ink transition-colors hover:bg-ink hover:text-white"
     >
@@ -62,17 +66,13 @@ export default function Organizers() {
         </Reveal>
 
         <Reveal delay={80} className="flex flex-col items-center gap-5 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <span className="rounded-full bg-brand px-3.5 py-1.5 text-xs tracking-[2px] text-ink">
-              主催者
-            </span>
-            <h3 className="font-en text-3xl tracking-[1px] text-ink md:text-[44px]">
-              NO LOOK BROTHERS
-            </h3>
-          </div>
+          <h3 className="font-en text-3xl tracking-[1px] text-ink md:text-[44px]">
+            NO LOOK BROTHERS
+          </h3>
           <p className="max-w-[680px] text-[15px] leading-[1.9] text-ink">
-            「見ないで遊ぶ」を本気でやってみたかった3人組。企画・空間・音、それぞれの得意分野を持ち寄って
-            NO LOOK PARK を作っています。
+            「見ない」を起点にアイデアを考える3人組。
+            <br className="hidden sm:block" />
+            それぞれの得意分野を持ち寄って NO LOOK PARK を作っています。
           </p>
         </Reveal>
 
@@ -86,19 +86,12 @@ export default function Organizers() {
               <div
                 role="img"
                 aria-label={`${o.name} のプロフィール写真`}
-                className="relative h-80 bg-cover bg-center"
+                className="h-80 bg-cover bg-center"
                 style={{ backgroundImage: `url(${o.image})` }}
-              >
-                <span
-                  aria-hidden
-                  className="font-en absolute left-4 top-2 text-[80px] leading-none text-ink/20"
-                >
-                  {o.num}
-                </span>
-              </div>
+              />
               <div className="flex flex-col gap-2.5 bg-white px-6 pb-7 pt-6">
                 <span className="w-fit rounded-full bg-brand px-3 py-1.5 text-[11px] tracking-[1px] text-ink">
-                  肩書き・役職
+                  {o.role}
                 </span>
                 <div className="flex flex-col gap-1">
                   <h4 className="text-[22px] tracking-[1px] text-ink">
@@ -113,18 +106,23 @@ export default function Organizers() {
                 <div className="mt-3.5 flex flex-col gap-3.5">
                   <div className="h-px w-full bg-line" />
                   <div className="flex items-center gap-2">
-                    <IconLink label={`${o.name} X`}>
+                    <IconLink label={`${o.name} の X`} href={o.links.x}>
                       <XIcon />
                     </IconLink>
-                    <IconLink label={`${o.name} Instagram`}>
+                    <IconLink
+                      label={`${o.name} の Instagram`}
+                      href={o.links.instagram}
+                    >
                       <InstagramIcon />
                     </IconLink>
                     <a
-                      href="#"
+                      href={o.links.site}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] tracking-[1px] text-ink ring-[1.5px] ring-inset ring-ink transition-colors hover:bg-ink hover:text-white"
                     >
                       公式サイト
-                      <ArrowUpRight size={13} />
+                      <ArrowUpRight size={13} aria-hidden />
                     </a>
                   </div>
                 </div>

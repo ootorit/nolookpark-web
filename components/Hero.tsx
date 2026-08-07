@@ -33,7 +33,7 @@ export default function Hero() {
       className="relative flex min-h-[100svh] flex-col items-center justify-center gap-10 overflow-hidden bg-brand px-6 py-28 md:py-32"
     >
       <h1 className="sr-only">
-        NO LOOK PARK — 「見えない」を楽しみつくす体験型イベント
+        NO LOOK PARK — 「みえない」を楽しみつくす体験型イベント
       </h1>
 
       <div className="flex flex-col items-center gap-6 md:gap-8">

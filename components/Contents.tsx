@@ -15,7 +15,7 @@ export default function Contents() {
           <p className="max-w-[680px] text-base leading-[1.9] text-ink">
             視覚を手放すと、遊びはもっと自由になる。
             <br className="hidden sm:block" />
-            見えないからこそ楽しいコンテンツが、会場いっぱいに広がります。
+            みえないからこそ楽しいコンテンツが、会場いっぱいに広がります。
           </p>
         </Reveal>
 
@@ -24,25 +24,42 @@ export default function Contents() {
             <Reveal
               key={c.num}
               delay={i * 150}
-              className="overflow-hidden rounded-xl border-2 border-ink"
+              className="flex flex-col overflow-hidden rounded-xl border-2 border-ink"
             >
-              <div
-                role="img"
-                aria-label={`${c.title} のイメージ写真（仮）`}
-                className="relative h-64 bg-cover bg-center"
-                style={{ backgroundImage: `url(${c.image})` }}
-              >
-                <span
-                  aria-hidden
-                  className="font-en absolute left-4 top-2 text-[80px] leading-none text-brand/30"
+              {c.image ? (
+                <div
+                  role="img"
+                  aria-label={`${c.title} のイメージ写真`}
+                  className="relative h-64 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${c.image})` }}
                 >
-                  {c.num}
-                </span>
-              </div>
-              <div className="flex flex-col gap-3 bg-white px-6 pb-7 pt-6">
-                <h3 className="font-en text-lg tracking-[2px] text-ink">
-                  {c.title}
-                </h3>
+                  <span
+                    aria-hidden
+                    className="font-en absolute left-4 top-2 text-[80px] leading-none text-brand/30"
+                  >
+                    {c.num}
+                  </span>
+                </div>
+              ) : (
+                <div
+                  aria-hidden
+                  className="relative flex h-64 items-center justify-center bg-[#ececec]"
+                >
+                  <span className="font-en absolute left-4 top-2 text-[80px] leading-none text-ink/10">
+                    {c.num}
+                  </span>
+                  <span className="text-[13px] tracking-[1px] text-ink opacity-40">
+                    画像準備中
+                  </span>
+                </div>
+              )}
+              <div className="flex flex-1 flex-col gap-2 bg-white px-6 pb-7 pt-6">
+                <div className="flex flex-col gap-0.5">
+                  <h3 className="text-lg tracking-[1px] text-ink">{c.title}</h3>
+                  <span className="text-[12px] text-ink opacity-60">
+                    with {c.withNames}
+                  </span>
+                </div>
                 <p className="text-[13px] leading-[1.75] text-ink">{c.desc}</p>
               </div>
             </Reveal>

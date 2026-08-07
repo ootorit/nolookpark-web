@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { CO_HOST, SILVER_SPONSORS, BRONZE_SPONSORS } from "@/lib/site";
+import { CO_HOST, SILVER_SPONSORS, BRONZE_SPONSORS, IMG } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
@@ -35,17 +35,13 @@ function TierLabel({
 function VisionConsortiumCard() {
   return (
     <div className="flex w-full flex-col items-center gap-10 rounded-xl bg-white px-8 py-10 [outline:2px_solid_#1A1A1A] [outline-offset:-1px] sm:flex-row sm:gap-12 sm:px-12">
-      <div className="flex h-[180px] w-full shrink-0 items-center justify-center rounded-lg bg-white sm:w-[360px]">
-        <div className="flex items-center gap-[18px]">
-          <span className="relative block h-16 w-16" aria-hidden>
-            <span className="absolute inset-0 rounded-full bg-ink" />
-            <span className="absolute left-[19px] top-[19px] h-[26px] w-[26px] rounded-full bg-brand" />
-          </span>
-          <span className="font-en flex flex-col gap-[3px] leading-none text-ink">
-            <span className="text-[26px] tracking-[2px]">VISION</span>
-            <span className="text-[13px] tracking-[2px]">CONSORTIUM</span>
-          </span>
-        </div>
+      <div className="flex h-[180px] w-full shrink-0 items-center justify-center rounded-lg bg-white p-8 sm:w-[360px]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={IMG.visionConsortiumLogo}
+          alt={`${CO_HOST.nameEn} のロゴ`}
+          className="max-h-full max-w-full object-contain"
+        />
       </div>
 
       <div className="flex flex-1 flex-col gap-3">

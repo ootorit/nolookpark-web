@@ -39,6 +39,11 @@ export const IMG = {
   // ヒーロー外側タイル（従来の生成画像を流用）
   heroTileL: "/images/generated-1785630891232.png",
   heroTileR: "/images/generated-1785630892598.png",
+  // 会場（HOME/WORK VILLAGE）写真
+  venuePhoto1: "/images/hwv_01.jpg",
+  venuePhoto2: "/images/hwv_02.jpg",
+  // 協賛ロゴ
+  visionConsortiumLogo: "/images/logo_vision-cons.png",
 } as const;
 
 // Order follows the actual on-page section order.

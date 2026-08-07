@@ -1,5 +1,5 @@
 import { MapPin, ArrowUpRight } from "lucide-react";
-import { EVENT } from "@/lib/site";
+import { EVENT, IMG } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
@@ -72,14 +72,19 @@ export default function Details() {
             <Row label="共催">{EVENT.coHost}</Row>
           </div>
 
-          <div
-            role="img"
-            aria-label="会場周辺の地図（準備中）"
-            className="flex h-64 items-center justify-center rounded-xl bg-black/5 ring-[3px] ring-inset ring-ink md:h-80"
-          >
-            <span aria-hidden className="font-en text-sm text-ink">
-              MAP
-            </span>
+          <div className="flex flex-col gap-3">
+            <div
+              role="img"
+              aria-label="HOME/WORK VILLAGE の会場写真"
+              className="h-52 rounded-xl bg-cover bg-center [outline:3px_solid_#1A1A1A] [outline-offset:-1.5px] md:h-56"
+              style={{ backgroundImage: `url(${IMG.venuePhoto1})` }}
+            />
+            <div
+              role="img"
+              aria-label="HOME/WORK VILLAGE の会場写真"
+              className="h-32 rounded-xl bg-cover bg-center [outline:3px_solid_#1A1A1A] [outline-offset:-1.5px]"
+              style={{ backgroundImage: `url(${IMG.venuePhoto2})` }}
+            />
           </div>
         </Reveal>
       </div>

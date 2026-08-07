@@ -1,19 +1,37 @@
-import { SPONSORS } from "@/lib/site";
+import { SPONSORS, IMG, CO_HOST } from "@/lib/site";
+
+type MarqueeItem = { name: string; logo?: string };
+
+const BASE: MarqueeItem[] = [
+  { name: CO_HOST.nameEn, logo: IMG.visionConsortiumLogo },
+  ...SPONSORS.map((s) => ({ name: s })),
+];
 
 export default function Sponsors() {
   // Duplicate the list so the -50% translate loops seamlessly.
-  const items = [...SPONSORS, ...SPONSORS];
+  const items = [...BASE, ...BASE];
 
   return (
     <section aria-label="協賛" className="overflow-hidden bg-cream py-7">
       <div className="flex w-max animate-marquee">
-        {items.map((s, i) => (
+        {items.map((item, i) => (
           <div
             key={i}
-            className="mr-10 flex h-14 w-32 shrink-0 items-center justify-center rounded-lg bg-[#e5e5e5] md:mr-16 md:w-36"
-            aria-hidden={i >= SPONSORS.length}
+            className="mr-10 flex h-14 shrink-0 items-center justify-center rounded-lg bg-white px-5 ring-1 ring-inset ring-line md:mr-16"
+            aria-hidden={i >= BASE.length}
           >
-            <span className="font-en text-[13px] text-ink">{s}</span>
+            {item.logo ? (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                src={item.logo}
+                alt={`${item.name} のロゴ`}
+                className="max-h-9 w-auto object-contain"
+              />
+            ) : (
+              <span className="font-en w-24 text-center text-[13px] text-ink md:w-28">
+                {item.name}
+              </span>
+            )}
           </div>
         ))}
       </div>

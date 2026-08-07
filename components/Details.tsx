@@ -96,13 +96,13 @@ export default function Details() {
           <div className="flex flex-col gap-3">
             <div
               role="img"
-              aria-label="HOME/WORK VILLAGE の会場写真"
+              aria-label="HOME/WORK VILLAGE の外観の写真"
               className="aspect-[3/2] w-full rounded-xl bg-cover bg-center [outline:3px_solid_#1A1A1A] [outline-offset:-1.5px]"
               style={{ backgroundImage: `url(${IMG.venuePhoto1})` }}
             />
             <div
               role="img"
-              aria-label="HOME/WORK VILLAGE の会場写真"
+              aria-label="HOME/WORK VILLAGE の内観の写真"
               className="aspect-[3/2] w-full rounded-xl bg-cover bg-center [outline:3px_solid_#1A1A1A] [outline-offset:-1.5px]"
               style={{ backgroundImage: `url(${IMG.venuePhoto2})` }}
             />
@@ -114,7 +114,10 @@ export default function Details() {
           <div className="flex flex-col gap-8 rounded-2xl bg-white p-8 [outline:2px_solid_#1A1A1A] [outline-offset:-1px] md:p-10">
             <div className="flex items-center gap-3">
               <span className="text-lg tracking-[1px] text-ink">アクセス</span>
-              <span className="font-en text-[11px] tracking-[2px] text-ink opacity-45">
+              <span
+                aria-hidden
+                className="font-en text-[11px] tracking-[2px] text-ink opacity-45"
+              >
                 ACCESS
               </span>
             </div>

@@ -1,4 +1,4 @@
-import { CONTENTS } from "@/lib/site";
+import { CONTENTS, IMG } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
@@ -29,25 +29,15 @@ export default function Contents() {
               {c.image ? (
                 <div
                   role="img"
-                  aria-label={`${c.title} のイメージ写真`}
+                  aria-label={c.alt}
                   className="relative h-64 bg-cover bg-center"
                   style={{ backgroundImage: `url(${c.image})` }}
-                >
-                  <span
-                    aria-hidden
-                    className="font-en absolute left-4 top-2 text-[80px] leading-none text-brand/30"
-                  >
-                    {c.num}
-                  </span>
-                </div>
+                />
               ) : (
                 <div
                   aria-hidden
                   className="relative flex h-64 items-center justify-center bg-[#ececec]"
                 >
-                  <span className="font-en absolute left-4 top-2 text-[80px] leading-none text-ink/10">
-                    {c.num}
-                  </span>
                   <span className="text-[13px] tracking-[1px] text-ink opacity-40">
                     画像準備中
                   </span>
@@ -70,7 +60,17 @@ export default function Contents() {
             delay={CONTENTS.length * 150}
             className="flex flex-col overflow-hidden rounded-xl border-2 border-ink"
           >
-            <div aria-hidden className="h-64 bg-gradient-to-b from-brand to-ink" />
+            <div
+              aria-hidden
+              className="flex h-64 items-center justify-center bg-gradient-to-b from-brand to-ink"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={IMG.logo}
+                alt=""
+                className="h-28 w-28 object-contain"
+              />
+            </div>
             <div className="flex flex-1 flex-col items-center justify-center gap-3 bg-white px-6 py-8 text-center">
               <span className="font-en text-lg tracking-[2px] text-ink">
                 COMING SOON...

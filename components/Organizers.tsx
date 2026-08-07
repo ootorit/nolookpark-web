@@ -85,7 +85,7 @@ export default function Organizers() {
             >
               <div
                 role="img"
-                aria-label={`${o.name} のプロフィール写真`}
+                aria-label={`${o.name}の画像`}
                 className="h-80 bg-cover bg-center"
                 style={{ backgroundImage: `url(${o.image})` }}
               />
@@ -97,7 +97,10 @@ export default function Organizers() {
                   <h4 className="text-[22px] tracking-[1px] text-ink">
                     {o.name}
                   </h4>
-                  <span className="font-en text-[11px] tracking-[2px] text-ink">
+                  <span
+                    aria-hidden
+                    className="font-en text-[11px] tracking-[2px] text-ink"
+                  >
                     {o.romaji}
                   </span>
                 </div>

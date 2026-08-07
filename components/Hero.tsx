@@ -4,16 +4,13 @@ import Reveal from "./Reveal";
 function Tile({
   src,
   size,
-  alt,
 }: {
   src: string;
   size: "sm" | "lg";
-  alt: string;
 }) {
   return (
     <div
-      role="img"
-      aria-label={alt}
+      aria-hidden
       className={[
         "shrink-0 rounded-[28px] bg-cover bg-center ring-[6px] ring-inset ring-ink",
         size === "lg"
@@ -46,13 +43,13 @@ export default function Hero() {
         {/* Tile strip — logo first, then tiles emerge outward from the center */}
         <div className="flex items-center justify-center gap-4 md:gap-8">
           <Reveal variant="zoom" delay={1050}>
-            <Tile src={IMG.heroTileL} size="sm" alt="会場の様子の写真（仮）" />
+            <Tile src={IMG.contentWhiteLetter} size="sm" />
           </Reveal>
           <Reveal variant="zoom" delay={700}>
-            <Tile src={IMG.kvL2} size="sm" alt="暗闇の中で来場者が遊んでいる様子の写真（仮）" />
+            <Tile src={IMG.contentTesagurido} size="sm" />
           </Reveal>
           <Reveal variant="zoom" delay={350}>
-            <Tile src={IMG.kvL1} size="lg" alt="光る遊具のある暗い遊び場の写真（仮）" />
+            <Tile src={IMG.contentTouchpark} size="lg" />
           </Reveal>
           <Reveal variant="zoom" delay={0}>
             <div
@@ -62,19 +59,19 @@ export default function Hero() {
             />
           </Reveal>
           <Reveal variant="zoom" delay={350}>
-            <Tile src={IMG.kvR1} size="lg" alt="音で料理を楽しむ様子の写真（仮）" />
+            <Tile src={IMG.contentYubibo} size="lg" />
           </Reveal>
           <Reveal variant="zoom" delay={700}>
-            <Tile src={IMG.kvR2} size="sm" alt="目隠しでアート制作をする様子の写真（仮）" />
+            <Tile src={IMG.contentNinnin} size="sm" />
           </Reveal>
           <Reveal variant="zoom" delay={1050}>
-            <Tile src={IMG.heroTileR} size="sm" alt="来場者の様子の写真（仮）" />
+            <Tile src={IMG.contentTouchmatch} size="sm" />
           </Reveal>
         </div>
 
         <Reveal delay={1150}>
           <div className="flex flex-col items-center gap-1.5">
-            <p className="font-en text-center text-sm tracking-[2px] text-ink md:text-lg">
+            <p className="text-center text-base text-ink md:text-xl">
               {EVENT.dateLabel}
             </p>
             <p className="text-center text-sm text-ink md:text-lg">

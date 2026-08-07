@@ -17,14 +17,14 @@ function TierLabel({
       ? "bg-brand text-ink"
       : variant === "silver"
         ? "bg-[#e5e5e5] text-ink"
-        : "bg-white text-[#888888] ring-1 ring-inset ring-line";
+        : "bg-[#cd7f32] text-white";
   return (
     <div className="flex w-full items-center gap-4">
       <span className="h-px flex-1 bg-line" />
       <span
         className={`flex items-center gap-2 rounded-full px-5 py-2 ${chip}`}
       >
-        <span className="font-en text-xs tracking-[2px]">{en}</span>
+        <span aria-hidden className="font-en text-xs tracking-[2px]">{en}</span>
         <span className="text-[11px] opacity-70">{jp}</span>
       </span>
       <span className="h-px flex-1 bg-line" />
@@ -45,13 +45,14 @@ function VisionConsortiumCard() {
       </div>
 
       <div className="flex flex-1 flex-col gap-3">
-        <h3 className="font-en text-[26px] tracking-[1px] text-ink">
-          {CO_HOST.nameEn}
+        <h3 className="text-[26px] tracking-[1px] text-ink">
+          {CO_HOST.nameJp}
         </h3>
-        <span className="text-[13px] text-ink opacity-60">{CO_HOST.nameJp}</span>
         <p className="text-[15px] leading-[1.9] text-ink">{CO_HOST.desc}</p>
         <a
           href={CO_HOST.href}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex w-fit items-center gap-1.5 text-[13px] text-ink transition-opacity hover:opacity-60"
         >
           {CO_HOST.linkText}
@@ -90,6 +91,7 @@ export default function SponsorsTier() {
             {SILVER_SPONSORS.map((label, i) => (
               <div
                 key={i}
+                aria-hidden
                 className="flex h-[150px] flex-1 items-center justify-center rounded-xl bg-white ring-1 ring-inset ring-line"
               >
                 <span className="font-en text-[13px] tracking-[2px] text-ink opacity-50">
@@ -107,9 +109,10 @@ export default function SponsorsTier() {
             {BRONZE_SPONSORS.map((label, i) => (
               <div
                 key={i}
+                aria-hidden
                 className="flex h-24 items-center justify-center rounded-[10px] bg-white ring-1 ring-inset ring-line"
               >
-                <span className="font-en text-[11px] tracking-[2px] text-ink opacity-45">
+                <span className="text-[13px] tracking-[2px] text-[#888888]">
                   {label}
                 </span>
               </div>

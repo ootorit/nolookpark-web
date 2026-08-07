@@ -61,8 +61,6 @@ export default function Contact() {
           <SectionHeading jp="お問い合わせ" en="CONTACT" tone="brand" />
           <p className="max-w-[600px] text-base leading-[1.8] text-white">
             本イベントに関するお問い合わせは、下記フォームよりご連絡ください。
-            <br className="hidden sm:block" />
-            内容を確認のうえ、担当者よりご返信いたします。
           </p>
         </Reveal>
 

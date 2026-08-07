@@ -13,10 +13,10 @@ function PodcastPlayer() {
         title="NO LOOK BROTHERS のポッドキャスト（Spotify）"
         src={SPOTIFY_EMBED_URL}
         width="100%"
-        height="232"
+        height="352"
         loading="lazy"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        className="w-full rounded-xl"
+        className="h-[352px] w-full rounded-xl md:h-[232px]"
         style={{ border: 0 }}
       />
     </div>

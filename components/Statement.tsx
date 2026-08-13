@@ -33,7 +33,7 @@ export default function Statement() {
       <div className="mx-auto flex max-w-[840px] flex-col items-center gap-10 text-center">
         <Reveal>
           <h2 className="text-3xl leading-[1.5] text-ink md:text-[44px] md:leading-[1.6]">
-            「みえない」を楽しみつくそう！
+            「みえない」を楽しみつくそう！！
           </h2>
         </Reveal>
 

@@ -2,7 +2,7 @@
 
 export const EVENT = {
   name: "NO LOOK PARK",
-  heroCopy: "「みえない」を楽しみつくそう！",
+  heroCopy: "「みえない」を楽しみつくそう！！",
   dateLabel: "2026年10月24日（土）11:00-17:00",
   date: "2026年10月24日（土）",
   time: "11:00 - 17:00",

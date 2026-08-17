@@ -43,10 +43,10 @@ export default function Hero() {
         {/* Tile strip — logo first, then tiles emerge outward from the center */}
         <div className="flex items-center justify-center gap-4 md:gap-8">
           <Reveal variant="zoom" delay={1050}>
-            <Tile src={IMG.contentTesagurido} size="sm" />
+            <Tile src={IMG.contentTouchpark} size="sm" />
           </Reveal>
           <Reveal variant="zoom" delay={700}>
-            <Tile src={IMG.contentTouchpark} size="sm" />
+            <Tile src={IMG.contentTesagurido} size="sm" />
           </Reveal>
           <Reveal variant="zoom" delay={350}>
             <Tile src={IMG.contentTouchmatch} size="lg" />
@@ -65,7 +65,7 @@ export default function Hero() {
             <Tile src={IMG.contentYubibo} size="sm" />
           </Reveal>
           <Reveal variant="zoom" delay={1050}>
-            <Tile src={IMG.contentTesagurido} size="sm" />
+            <Tile src={IMG.contentTouchpark} size="sm" />
           </Reveal>
         </div>
 

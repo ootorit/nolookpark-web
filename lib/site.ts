@@ -48,7 +48,7 @@ export const IMG = {
   // コンテンツ キービジュアル
   contentTesagurido: "/images/tesagurido_keyshot.jpg",
   contentTouchmatch: "/images/touchmatch_keyshot.jpg",
-  contentWhiteLetter: "/images/whiteletter_keyshot.webp",
+  contentBrailleRelay: "/images/braillerelay_keyshot.jpg",
   contentNinnin: "/images/ninnin_keyshot.jpg",
   contentTouchpark: "/images/touchpark_keyvisual.jpg",
   contentYubibo: "/images/yubibo_keyvisual.jpg",
@@ -95,11 +95,11 @@ export const CONTENTS = [
   },
   {
     num: "03",
-    title: "WHITE LETTER",
-    withNames: "FULLWONDER",
-    image: IMG.contentWhiteLetter,
-    alt: "点字の打たれた白い手紙の画像",
-    desc: "見てのとおり、まっしろな手紙。実は点字が書かれていて、パッとは読めません。添えられた「点字表」を見ながら、ひと文字ずつじっくり読む。「遅い」コミュニケーションだからこそ、言葉が深く伝わります。",
+    title: "コツコツ！点字ブロックリレー",
+    withNames: "世界ゆるスポーツ協会",
+    image: IMG.contentBrailleRelay,
+    alt: "目隠しをした子どもが白杖を使い、床に並べた黄色い点字ブロックのコースを進む様子。隣で黄色いTシャツのスタッフがマイクでサポートし、周りの観客が見守っている。",
+    desc: "「コツコツ！点字ブロックリレー」は目隠しをして、2種類の点字ブロックでできたコースをリレーする競技。2つのチームに分かれ、お互いにリレーのコースを作りあい、相手が作ったコースを早く走破できたチームが勝ちになります。ブロックは、直進できる「GOGOブロック」と、停止＆方向転換が必要な「STOPブロック」の2種類。2種類のブロックの意味を理解＆駆使して、クリアがより難しいコースを作るのがコツです。さぁ、凸凹を足で感じ取って素早くゴールし、点字ブロックの奥深さを体感しましょう！",
   },
 ] as const;
 

@@ -43,7 +43,7 @@ export default function Hero() {
         {/* Tile strip — logo first, then tiles emerge outward from the center */}
         <div className="flex items-center justify-center gap-4 md:gap-8">
           <Reveal variant="zoom" delay={1050}>
-            <Tile src={IMG.contentWhiteLetter} size="sm" />
+            <Tile src={IMG.contentBrailleRelay} size="sm" />
           </Reveal>
           <Reveal variant="zoom" delay={700}>
             <Tile src={IMG.contentTesagurido} size="sm" />

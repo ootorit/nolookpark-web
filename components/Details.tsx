@@ -97,13 +97,13 @@ export default function Details() {
             <div
               role="img"
               aria-label="HOME/WORK VILLAGE の外観の写真"
-              className="aspect-[3/2] w-full rounded-xl bg-cover bg-center [outline:3px_solid_#1A1A1A] [outline-offset:-1.5px]"
+              className="aspect-[3/2] w-full rounded-xl bg-cover bg-center [outline:2px_solid_#1A1A1A] [outline-offset:-1px]"
               style={{ backgroundImage: `url(${IMG.venuePhoto1})` }}
             />
             <div
               role="img"
               aria-label="HOME/WORK VILLAGE の内観の写真"
-              className="aspect-[3/2] w-full rounded-xl bg-cover bg-center [outline:3px_solid_#1A1A1A] [outline-offset:-1.5px]"
+              className="aspect-[3/2] w-full rounded-xl bg-cover bg-center [outline:2px_solid_#1A1A1A] [outline-offset:-1px]"
               style={{ backgroundImage: `url(${IMG.venuePhoto2})` }}
             />
           </div>

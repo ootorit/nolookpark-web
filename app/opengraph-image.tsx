@@ -29,8 +29,8 @@ export default function OpengraphImage() {
   const brailleRelay = dataUri("public/images/braillerelay_keyshot.jpg", "image/jpeg");
   const yubibo = dataUri("public/images/yubibo_keyvisual.jpg", "image/jpeg");
 
-  const small = tile(150, 20, 5);
-  const medium = tile(214, 26, 6);
+  const small = tile(140, 18, 5);
+  const medium = tile(200, 24, 6);
 
   return new ImageResponse(
     (
@@ -50,8 +50,8 @@ export default function OpengraphImage() {
         <img src={touchmatch} style={medium} alt="" />
         <img
           src={logo}
-          width={312}
-          height={312}
+          width={404}
+          height={404}
           style={{ objectFit: "contain" }}
           alt="NO LOOK PARK"
         />

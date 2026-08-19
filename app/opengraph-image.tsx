@@ -12,21 +12,44 @@ function dataUri(path: string, mime: string) {
   return `data:${mime};base64,${buf.toString("base64")}`;
 }
 
+const KV = {
+  tesagurido: "public/images/tesagurido_keyshot.jpg",
+  touchmatch: "public/images/touchmatch_keyshot.jpg",
+  braille: "public/images/braillerelay_keyshot.jpg",
+  yubibo: "public/images/yubibo_keyvisual.jpg",
+  dekabo: "public/images/dekabo_keyshot.jpg",
+  touchpark: "public/images/touchpark_keyshot.jpg",
+  blindblend: "public/images/blindblend_keyshot.jpg",
+} as const;
+
 export default function OpengraphImage() {
   const logo = dataUri("public/images/logo@2x.png", "image/png");
 
-  // 全作品のキービジュアルを、ロゴ中心の周囲にバラバラのサイズ・角度で配置
-  const tiles = [
-    { src: "public/images/tesagurido_keyshot.jpg", size: 150, left: 92, top: 66, rot: -6 },
-    { src: "public/images/touchmatch_keyshot.jpg", size: 168, left: 852, top: 48, rot: 6 },
-    { src: "public/images/braillerelay_keyshot.jpg", size: 140, left: 1012, top: 248, rot: -5 },
-    { src: "public/images/yubibo_keyvisual.jpg", size: 156, left: 838, top: 424, rot: 7 },
-    { src: "public/images/dekabo_keyshot.jpg", size: 158, left: 160, top: 412, rot: -7 },
-    { src: "public/images/touchpark_keyshot.jpg", size: 122, left: 34, top: 236, rot: 5 },
-    { src: "public/images/blindblend_keyshot.jpg", size: 134, left: 508, top: 478, rot: -4 },
-  ].map((t) => ({ ...t, uri: dataUri(t.src, "image/jpeg") }));
+  // 4列 × 3行の均等グリッド（中央列はロゴ用に空ける）に、全作品を配置。
+  // サイズと角度だけ少しずつ変えて散らしつつ、余白のリズムは揃える。端は見切れてOK。
+  const cells: {
+    cx: number;
+    cy: number;
+    s: number;
+    rot: number;
+    kv: keyof typeof KV;
+  }[] = [
+    { cx: 90, cy: 95, s: 200, rot: -5, kv: "tesagurido" },
+    { cx: 330, cy: 95, s: 182, rot: 4, kv: "touchmatch" },
+    { cx: 870, cy: 95, s: 192, rot: -4, kv: "braille" },
+    { cx: 1110, cy: 95, s: 204, rot: 5, kv: "yubibo" },
+    { cx: 90, cy: 315, s: 188, rot: 3, kv: "dekabo" },
+    { cx: 330, cy: 315, s: 172, rot: -3, kv: "touchpark" },
+    { cx: 870, cy: 315, s: 176, rot: 4, kv: "blindblend" },
+    { cx: 1110, cy: 315, s: 196, rot: -5, kv: "tesagurido" },
+    { cx: 90, cy: 535, s: 196, rot: 5, kv: "braille" },
+    { cx: 330, cy: 535, s: 186, rot: -4, kv: "yubibo" },
+    { cx: 870, cy: 535, s: 200, rot: 4, kv: "dekabo" },
+    { cx: 1110, cy: 535, s: 184, rot: -5, kv: "touchmatch" },
+  ];
 
-  const logoSize = 300;
+  const tiles = cells.map((c) => ({ ...c, uri: dataUri(KV[c.kv], "image/jpeg") }));
+  const logoSize = 330;
 
   return new ImageResponse(
     (
@@ -44,16 +67,16 @@ export default function OpengraphImage() {
           <img
             key={i}
             src={t.uri}
-            width={t.size}
-            height={t.size}
+            width={t.s}
+            height={t.s}
             alt=""
             style={{
               position: "absolute",
-              left: t.left,
-              top: t.top,
-              width: t.size,
-              height: t.size,
-              borderRadius: Math.round(t.size * 0.16),
+              left: t.cx - t.s / 2,
+              top: t.cy - t.s / 2,
+              width: t.s,
+              height: t.s,
+              borderRadius: Math.round(t.s * 0.16),
               border: "5px solid #1A1A1A",
               objectFit: "cover",
               transform: `rotate(${t.rot}deg)`,

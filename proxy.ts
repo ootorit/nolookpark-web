@@ -6,8 +6,9 @@ import type { NextRequest } from "next/server";
 //   BASIC_AUTH_USER / BASIC_AUTH_PASSWORD
 // (Next.js 16 では Middleware は Proxy に改名。Node.js ランタイムで動作)
 export function proxy(request: NextRequest) {
-  const user = process.env.BASIC_AUTH_USER;
-  const pass = process.env.BASIC_AUTH_PASSWORD;
+  // 貼り付け時の末尾空白・改行に強くするため trim する
+  const user = process.env.BASIC_AUTH_USER?.trim();
+  const pass = process.env.BASIC_AUTH_PASSWORD?.trim();
 
   // 認証情報が未設定なら、公開前として全体をロック(fail-closed)
   if (!user || !pass) {

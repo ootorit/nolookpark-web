@@ -12,24 +12,25 @@ function dataUri(path: string, mime: string) {
   return `data:${mime};base64,${buf.toString("base64")}`;
 }
 
-export default function OpengraphImage() {
-  const logo = dataUri("public/images/logo@2x.png", "image/png");
-  const left = [
-    dataUri("public/images/tesagurido_keyshot.jpg", "image/jpeg"),
-    dataUri("public/images/touchmatch_keyshot.jpg", "image/jpeg"),
-  ];
-  const right = [
-    dataUri("public/images/braillerelay_keyshot.jpg", "image/jpeg"),
-    dataUri("public/images/yubibo_keyvisual.jpg", "image/jpeg"),
-  ];
-
-  const tile = {
-    width: 188,
-    height: 188,
-    borderRadius: 26,
-    border: "6px solid #1A1A1A",
+function tile(size: number, radius: number, border: number) {
+  return {
+    width: size,
+    height: size,
+    borderRadius: radius,
+    border: `${border}px solid #1A1A1A`,
     objectFit: "cover" as const,
   };
+}
+
+export default function OpengraphImage() {
+  const logo = dataUri("public/images/logo@2x.png", "image/png");
+  const tesagurido = dataUri("public/images/tesagurido_keyshot.jpg", "image/jpeg");
+  const touchmatch = dataUri("public/images/touchmatch_keyshot.jpg", "image/jpeg");
+  const brailleRelay = dataUri("public/images/braillerelay_keyshot.jpg", "image/jpeg");
+  const yubibo = dataUri("public/images/yubibo_keyvisual.jpg", "image/jpeg");
+
+  const small = tile(150, 20, 5);
+  const medium = tile(214, 26, 6);
 
   return new ImageResponse(
     (
@@ -40,24 +41,22 @@ export default function OpengraphImage() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          gap: 24,
+          gap: 26,
           backgroundColor: "#FFD600",
         }}
       >
         {/* eslint-disable @next/next/no-img-element */}
-        {left.map((src, i) => (
-          <img key={`l${i}`} src={src} style={tile} alt="" />
-        ))}
+        <img src={tesagurido} style={small} alt="" />
+        <img src={touchmatch} style={medium} alt="" />
         <img
           src={logo}
-          width={300}
-          height={300}
+          width={312}
+          height={312}
           style={{ objectFit: "contain" }}
           alt="NO LOOK PARK"
         />
-        {right.map((src, i) => (
-          <img key={`r${i}`} src={src} style={tile} alt="" />
-        ))}
+        <img src={brailleRelay} style={medium} alt="" />
+        <img src={yubibo} style={small} alt="" />
         {/* eslint-enable @next/next/no-img-element */}
       </div>
     ),

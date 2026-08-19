@@ -12,51 +12,68 @@ function dataUri(path: string, mime: string) {
   return `data:${mime};base64,${buf.toString("base64")}`;
 }
 
-function tile(size: number, radius: number, border: number) {
-  return {
-    width: size,
-    height: size,
-    borderRadius: radius,
-    border: `${border}px solid #1A1A1A`,
-    objectFit: "cover" as const,
-  };
-}
-
 export default function OpengraphImage() {
   const logo = dataUri("public/images/logo@2x.png", "image/png");
-  const tesagurido = dataUri("public/images/tesagurido_keyshot.jpg", "image/jpeg");
-  const touchmatch = dataUri("public/images/touchmatch_keyshot.jpg", "image/jpeg");
-  const brailleRelay = dataUri("public/images/braillerelay_keyshot.jpg", "image/jpeg");
-  const yubibo = dataUri("public/images/yubibo_keyvisual.jpg", "image/jpeg");
 
-  const small = tile(140, 18, 5);
-  const medium = tile(200, 24, 6);
+  // 全作品のキービジュアルを、ロゴ中心の周囲にバラバラのサイズ・角度で配置
+  const tiles = [
+    { src: "public/images/tesagurido_keyshot.jpg", size: 150, left: 92, top: 66, rot: -6 },
+    { src: "public/images/touchmatch_keyshot.jpg", size: 168, left: 852, top: 48, rot: 6 },
+    { src: "public/images/braillerelay_keyshot.jpg", size: 140, left: 1012, top: 248, rot: -5 },
+    { src: "public/images/yubibo_keyvisual.jpg", size: 156, left: 838, top: 424, rot: 7 },
+    { src: "public/images/dekabo_keyshot.jpg", size: 158, left: 160, top: 412, rot: -7 },
+    { src: "public/images/touchpark_keyshot.jpg", size: 122, left: 34, top: 236, rot: 5 },
+    { src: "public/images/blindblend_keyshot.jpg", size: 134, left: 508, top: 478, rot: -4 },
+  ].map((t) => ({ ...t, uri: dataUri(t.src, "image/jpeg") }));
+
+  const logoSize = 300;
 
   return new ImageResponse(
     (
       <div
         style={{
+          position: "relative",
           width: "100%",
           height: "100%",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 26,
           backgroundColor: "#FFD600",
         }}
       >
         {/* eslint-disable @next/next/no-img-element */}
-        <img src={tesagurido} style={small} alt="" />
-        <img src={touchmatch} style={medium} alt="" />
+        {tiles.map((t, i) => (
+          <img
+            key={i}
+            src={t.uri}
+            width={t.size}
+            height={t.size}
+            alt=""
+            style={{
+              position: "absolute",
+              left: t.left,
+              top: t.top,
+              width: t.size,
+              height: t.size,
+              borderRadius: Math.round(t.size * 0.16),
+              border: "5px solid #1A1A1A",
+              objectFit: "cover",
+              transform: `rotate(${t.rot}deg)`,
+            }}
+          />
+        ))}
         <img
           src={logo}
-          width={404}
-          height={404}
-          style={{ objectFit: "contain" }}
+          width={logoSize}
+          height={logoSize}
           alt="NO LOOK PARK"
+          style={{
+            position: "absolute",
+            left: (1200 - logoSize) / 2,
+            top: (630 - logoSize) / 2,
+            width: logoSize,
+            height: logoSize,
+            objectFit: "contain",
+          }}
         />
-        <img src={brailleRelay} style={medium} alt="" />
-        <img src={yubibo} style={small} alt="" />
         {/* eslint-enable @next/next/no-img-element */}
       </div>
     ),

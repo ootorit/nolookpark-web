@@ -7,9 +7,29 @@ export const alt = "NO LOOK PARK — 「みえない」を楽しみつくす体�
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+function dataUri(path: string, mime: string) {
+  const buf = readFileSync(join(process.cwd(), path));
+  return `data:${mime};base64,${buf.toString("base64")}`;
+}
+
 export default function OpengraphImage() {
-  const logo = readFileSync(join(process.cwd(), "public/images/logo@2x.png"));
-  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+  const logo = dataUri("public/images/logo@2x.png", "image/png");
+  const left = [
+    dataUri("public/images/tesagurido_keyshot.jpg", "image/jpeg"),
+    dataUri("public/images/touchmatch_keyshot.jpg", "image/jpeg"),
+  ];
+  const right = [
+    dataUri("public/images/braillerelay_keyshot.jpg", "image/jpeg"),
+    dataUri("public/images/yubibo_keyvisual.jpg", "image/jpeg"),
+  ];
+
+  const tile = {
+    width: 188,
+    height: 188,
+    borderRadius: 26,
+    border: "6px solid #1A1A1A",
+    objectFit: "cover" as const,
+  };
 
   return new ImageResponse(
     (
@@ -20,17 +40,25 @@ export default function OpengraphImage() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          gap: 24,
           backgroundColor: "#FFD600",
         }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {/* eslint-disable @next/next/no-img-element */}
+        {left.map((src, i) => (
+          <img key={`l${i}`} src={src} style={tile} alt="" />
+        ))}
         <img
-          src={logoSrc}
-          width={460}
-          height={460}
+          src={logo}
+          width={300}
+          height={300}
           style={{ objectFit: "contain" }}
           alt="NO LOOK PARK"
         />
+        {right.map((src, i) => (
+          <img key={`r${i}`} src={src} style={tile} alt="" />
+        ))}
+        {/* eslint-enable @next/next/no-img-element */}
       </div>
     ),
     { ...size },

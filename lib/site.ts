@@ -50,8 +50,10 @@ export const IMG = {
   contentTouchmatch: "/images/touchmatch_keyshot.jpg",
   contentBrailleRelay: "/images/braillerelay_keyshot.jpg",
   contentNinnin: "/images/ninnin_keyshot.jpg",
-  contentTouchpark: "/images/touchpark_keyvisual.jpg",
+  contentTouchpark: "/images/touchpark_keyshot.jpg",
   contentYubibo: "/images/yubibo_keyvisual.jpg",
+  contentDekabo: "/images/dekabo_keyshot.jpg",
+  contentBlindBlend: "/images/blindblend_keyshot.jpg",
 } as const;
 
 // Order follows the actual on-page section order.
@@ -113,8 +115,8 @@ export const CONTENTS = [
     num: "05",
     title: "DEKABO",
     withNames: "MAGNET & Skyさくら",
-    image: null,
-    alt: "",
+    image: IMG.contentDekabo,
+    alt: "砂地の広場で、子どもや大人が長い棒を体で支え合いながら遊ぶ様子。奥にはテントや砂遊びをする子どもたちがいる。",
     desc: "YUBIBOの全身版。指先だけでなく体全体を使い、みんなでバランスを取りながら楽しむ、ダイナミックな協力型の触覚ゲームです。",
   },
   {
@@ -122,15 +124,15 @@ export const CONTENTS = [
     title: "TOUCH PARK",
     withNames: "MAGNET & Skyさくら",
     image: IMG.contentTouchpark,
-    alt: "砂地の広場に組まれた手すりの遊具コースで、小さな子どもがカラフルなクッションの段差をのぼり、奥では子どもや大人が手すりをたどって進んでいる様子。",
+    alt: "砂地の広場に張りめぐらされた手すりの遊具コースを、参加者が手でたどりながら進む様子。足元にはカラフルなクッションが置かれ、奥にはテントが立つ。",
     desc: "触覚だけで楽しむ、手すりを使った遊具。目を閉じたまま、手の感触と案内をたよりに迷路のような空間を進みます。見慣れた場所が、まったく新しい「感覚の遊び場」に変わります。",
   },
   {
     num: "07",
     title: "BLIND BLEND",
     withNames: "石井健介 & 高橋鴻介",
-    image: null,
-    alt: "",
+    image: IMG.contentBlindBlend,
+    alt: "木の空間で、進行役が話し、アイマスクをつけた参加者たちがテーブルを囲む様子。机には茶葉のパックやカップが並ぶ、ハーブティーのブレンド体験。",
     desc: "視覚をOFFにして、茶葉の形・匂い・味・音、そこで生まれる会話から、みんなでハーブティーをブレンドするワークショップ。自分の感覚に向き合い、他者との違いを楽しむ豊かな時間です。",
   },
 ] as const;

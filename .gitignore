@@ -42,3 +42,6 @@ next-env.d.ts
 
 # 最適化前の元画像（ローカル保管用・リポジトリには含めない）
 /image-originals
+
+# local source-image drop (app uses public/images/)
+/images/

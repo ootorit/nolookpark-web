@@ -1,4 +1,4 @@
-import { EVENT, IMG } from "@/lib/site";
+import { EVENT, IMG, TICKET_URL } from "@/lib/site";
 import Reveal from "./Reveal";
 
 function Tile({
@@ -83,7 +83,9 @@ export default function Hero() {
         <Reveal delay={1300}>
           <div className="flex flex-col items-center gap-8">
             <a
-              href="#contact"
+              href={TICKET_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 rounded-full bg-ink px-10 py-4 md:px-14 md:py-[18px]"
             >
               <span className="text-sm tracking-[1px] text-brand">

@@ -69,6 +69,9 @@ export const NAV_LINKS = [
 
 export const NAV_TICKET = "チケット";
 
+// チケット購入先（Peatix）
+export const TICKET_URL = "https://nolookpark2026.peatix.com";
+
 // Spotify podcast embed. Replace with the real show/episode embed URL
 // (Spotify → Share → Embed → copy the src URL).
 export const SPOTIFY_EMBED_URL =

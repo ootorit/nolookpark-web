@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { NAV_LINKS, NAV_TICKET, IMG } from "@/lib/site";
+import { NAV_LINKS, NAV_TICKET, TICKET_URL, IMG } from "@/lib/site";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -44,7 +44,9 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#contact"
+            href={TICKET_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-ink px-6 py-2.5 text-[13px] tracking-[1px] text-brand transition-transform hover:scale-105"
           >
             {NAV_TICKET}
@@ -78,7 +80,9 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="#contact"
+              href={TICKET_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-1 w-full rounded-full bg-brand py-3 text-center text-sm tracking-[1px] text-ink"
             >

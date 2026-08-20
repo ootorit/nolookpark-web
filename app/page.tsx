@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Sponsors from "@/components/Sponsors";
 import Statement from "@/components/Statement";
 import Details from "@/components/Details";
 import Contents from "@/components/Contents";
@@ -15,7 +14,6 @@ export default function Home() {
       <Nav />
       <main id="main" className="relative">
         <Hero />
-        <Sponsors />
         <Statement />
         <Details />
         <Contents />

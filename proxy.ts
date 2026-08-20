@@ -1,12 +1,20 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { AUTH_COOKIE, expectedToken } from "./lib/auth";
 
-// 公開前のBasic認証ゲート。
-// 認証情報は公開リポジトリに直書きせず、環境変数から読む:
+// 公開前ゲート（Cookie方式）。
+// HTTP Basic認証はブラウザ/セキュリティソフトにフィッシングと誤判定され警告されるため、
+// 通常のログインフォーム + Cookie で認証する方式にしている。
+// 認証情報は公開リポジトリに直書きせず環境変数から読む:
 //   BASIC_AUTH_USER / BASIC_AUTH_PASSWORD
-// (Next.js 16 では Middleware は Proxy に改名。Node.js ランタイムで動作)
 export function proxy(request: NextRequest) {
-  // 貼り付け時の末尾空白・改行に強くするため trim する
+  const { pathname } = request.nextUrl;
+
+  // ログイン画面（とそのServer Action POST）は常に許可
+  if (pathname === "/login") {
+    return NextResponse.next();
+  }
+
   const user = process.env.BASIC_AUTH_USER?.trim();
   const pass = process.env.BASIC_AUTH_PASSWORD?.trim();
 
@@ -18,27 +26,19 @@ export function proxy(request: NextRequest) {
     });
   }
 
-  const auth = request.headers.get("authorization");
-  if (auth?.startsWith("Basic ")) {
-    const decoded = Buffer.from(auth.slice(6), "base64").toString("utf-8");
-    const sep = decoded.indexOf(":");
-    const u = decoded.slice(0, sep);
-    const p = decoded.slice(sep + 1);
-    if (u === user && p === pass) {
-      return NextResponse.next();
-    }
+  const cookie = request.cookies.get(AUTH_COOKIE)?.value;
+  if (cookie && cookie === expectedToken(user, pass)) {
+    return NextResponse.next();
   }
 
-  return new NextResponse("Authentication required", {
-    status: 401,
-    headers: {
-      "WWW-Authenticate": 'Basic realm="NO LOOK PARK", charset="UTF-8"',
-      "content-type": "text/plain; charset=utf-8",
-    },
-  });
+  // 未認証 → ログイン画面へ
+  const url = request.nextUrl.clone();
+  url.pathname = "/login";
+  url.search = "";
+  return NextResponse.redirect(url);
 }
 
 export const config = {
-  // Next 内部の静的アセットと favicon 以外の全リクエストを認証対象にする
+  // Next 内部の静的アセットと favicon 以外の全リクエストを対象にする
   matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
 };

@@ -2,8 +2,10 @@
 
 export const EVENT = {
   name: "NO LOOK PARK",
-  heroCopy: "「みえない」を楽しみつくそう！！",
+  heroCopy: "「見えない」を楽しみつくそう！",
   dateLabel: "2026年10月24日（土）11:00-17:00",
+  // ヒーローの文字組み用（数字を大きく、年月日（土）を小さく表示）
+  dateParts: { year: "2026", month: "10", day: "24", dow: "土", time: "11:00-17:00" },
   date: "2026年10月24日（土）",
   time: "11:00 - 17:00",
   venue: "HOME/WORK VILLAGE",
@@ -45,7 +47,7 @@ export const IMG = {
   venuePhoto2: "/images/hwv_02.jpg",
   // 協賛ロゴ
   visionConsortiumLogo: "/images/logo_vision-cons.png",
-  santenLogo: "/images/santen_logo.jpg",
+  santenLogo: "/images/santen_logo.png",
   // コンテンツ キービジュアル
   contentTesagurido: "/images/tesagurido_keyshot.jpg",
   contentTouchmatch: "/images/touchmatch_keyshot.jpg",
@@ -195,22 +197,14 @@ export const STATEMENT_BODY = [
 // トップのスポンサーマーキー。logo があれば画像、なければ文字プレースホルダーで表示。
 export const SPONSORS: { name: string; logo?: string }[] = [
   { name: "参天製薬", logo: IMG.santenLogo },
-  { name: "SponsorA" },
-  { name: "SponsorB" },
-  { name: "SponsorC" },
-  { name: "SponsorD" },
-  { name: "SponsorE" },
 ];
 
 // 協賛ティア。Gold は CO_HOST（Vision Consortium）を使用。
-export const SILVER_SPONSORS = ["SPONSOR LOGO", "SPONSOR LOGO", "SPONSOR LOGO"] as const;
+// シルバーは現在スポンサー未定のため非表示（要素を追加すると自動的に表示される）。
+export const SILVER_SPONSORS: { name: string; logo?: string }[] = [];
 // logo があれば画像、なければ文字プレースホルダー。
 export const BRONZE_SPONSORS: { name: string; logo?: string }[] = [
   { name: "参天製薬", logo: IMG.santenLogo },
-  { name: "ロゴ" },
-  { name: "ロゴ" },
-  { name: "ロゴ" },
-  { name: "ロゴ" },
 ];
 
 // 共催団体（Organizers セクション末尾のハイライトカード）

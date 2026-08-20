@@ -70,9 +70,15 @@ export default function Hero() {
         </div>
 
         <Reveal delay={1150}>
-          <div className="flex flex-col items-center gap-1.5">
-            <p className="text-center text-base text-ink md:text-xl">
-              {EVENT.dateLabel}
+          <div className="flex flex-col items-center gap-2">
+            <p className="flex flex-wrap items-baseline justify-center font-bold tracking-[1px] text-ink text-2xl md:text-[34px]">
+              <span>{EVENT.dateParts.year}</span>
+              <span className="text-[0.6em]">年</span>
+              <span>{EVENT.dateParts.month}</span>
+              <span className="text-[0.6em]">月</span>
+              <span>{EVENT.dateParts.day}</span>
+              <span className="text-[0.6em]">日（{EVENT.dateParts.dow}）</span>
+              <span className="ml-2.5">{EVENT.dateParts.time}</span>
             </p>
             <p className="text-center text-sm text-ink md:text-lg">
               {EVENT.locationLine}

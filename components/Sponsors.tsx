@@ -2,14 +2,18 @@ import { SPONSORS, IMG, CO_HOST } from "@/lib/site";
 
 type MarqueeItem = { name: string; logo?: string };
 
-const BASE: MarqueeItem[] = [
+// 実スポンサーのみ（Vision Consortium + SPONSORS）。
+const REAL: MarqueeItem[] = [
   { name: CO_HOST.nameEn, logo: IMG.visionConsortiumLogo },
   ...SPONSORS,
 ];
 
+// スポンサーが少なくても帯を満たしてシームレスに流れるよう、
+// 一列ぶん（HALF）を十分な幅まで繰り返し、それを2つ並べて -50% ループさせる。
+const HALF: MarqueeItem[] = Array.from({ length: 6 }, () => REAL).flat();
+
 export default function Sponsors() {
-  // Duplicate the list so the -50% translate loops seamlessly.
-  const items = [...BASE, ...BASE];
+  const items = [...HALF, ...HALF];
 
   return (
     <section aria-label="協賛" className="overflow-hidden bg-cream py-7">
@@ -19,7 +23,7 @@ export default function Sponsors() {
             <div
               key={i}
               className="mr-10 flex h-20 shrink-0 items-center justify-center md:mr-16"
-              aria-hidden={i >= BASE.length}
+              aria-hidden={i >= REAL.length}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -32,7 +36,7 @@ export default function Sponsors() {
             <div
               key={i}
               className="mr-10 flex h-14 shrink-0 items-center justify-center rounded-lg bg-white px-5 ring-1 ring-inset ring-line md:mr-16"
-              aria-hidden={i >= BASE.length}
+              aria-hidden={i >= REAL.length}
             >
               <span className="font-en w-24 text-center text-[13px] text-ink md:w-28">
                 {item.name}

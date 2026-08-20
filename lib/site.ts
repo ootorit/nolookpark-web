@@ -9,6 +9,7 @@ export const EVENT = {
   date: "2026年10月24日（土）",
   time: "11:00 - 17:00",
   venue: "HOME/WORK VILLAGE",
+  venueUrl: "https://homeworkvillage.com/",
   venueArea: "東京・池尻大橋",
   venuePostal: "〒154-0001",
   venueAddress: "東京都世田谷区池尻2-4-5",

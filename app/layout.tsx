@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 const notoSansJP = Noto_Sans_JP({
-  weight: ["700"],
+  weight: ["700", "900"],
   variable: "--font-noto",
   display: "swap",
   preload: false,

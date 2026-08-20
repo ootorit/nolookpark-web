@@ -59,7 +59,14 @@ export default function Details() {
             <Row label="時間">{EVENT.time}</Row>
             <Row label="会場">
               <div className="flex flex-col items-start gap-2.5">
-                <div>{EVENT.venue}</div>
+                <a
+                  href={EVENT.venueUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
+                >
+                  {EVENT.venue}
+                </a>
                 <div className="text-[13px]">
                   {EVENT.venuePostal} {EVENT.venueAddress}
                 </div>

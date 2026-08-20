@@ -45,6 +45,7 @@ export const IMG = {
   venuePhoto2: "/images/hwv_02.jpg",
   // 協賛ロゴ
   visionConsortiumLogo: "/images/logo_vision-cons.png",
+  santenLogo: "/images/santen_logo.jpg",
   // コンテンツ キービジュアル
   contentTesagurido: "/images/tesagurido_keyshot.jpg",
   contentTouchmatch: "/images/touchmatch_keyshot.jpg",
@@ -188,11 +189,26 @@ export const STATEMENT_BODY = [
   "この公園に立ち寄って、「みえない」って、こんなに面白いのかと思ってもらえたら。その感覚こそが、未来の当たり前をつくっていくと信じています。",
 ] as const;
 
-export const SPONSORS = ["SponsorA", "SponsorB", "SponsorC", "SponsorD", "SponsorE"] as const;
+// トップのスポンサーマーキー。logo があれば画像、なければ文字プレースホルダーで表示。
+export const SPONSORS: { name: string; logo?: string }[] = [
+  { name: "参天製薬", logo: IMG.santenLogo },
+  { name: "SponsorA" },
+  { name: "SponsorB" },
+  { name: "SponsorC" },
+  { name: "SponsorD" },
+  { name: "SponsorE" },
+];
 
-// 協賛ティア（プレースホルダー）。Gold は CO_HOST（Vision Consortium）を使用。
+// 協賛ティア。Gold は CO_HOST（Vision Consortium）を使用。
 export const SILVER_SPONSORS = ["SPONSOR LOGO", "SPONSOR LOGO", "SPONSOR LOGO"] as const;
-export const BRONZE_SPONSORS = ["ロゴ", "ロゴ", "ロゴ", "ロゴ", "ロゴ"] as const;
+// logo があれば画像、なければ文字プレースホルダー。
+export const BRONZE_SPONSORS: { name: string; logo?: string }[] = [
+  { name: "参天製薬", logo: IMG.santenLogo },
+  { name: "ロゴ" },
+  { name: "ロゴ" },
+  { name: "ロゴ" },
+  { name: "ロゴ" },
+];
 
 // 共催団体（Organizers セクション末尾のハイライトカード）
 export const CO_HOST = {

@@ -4,7 +4,7 @@ type MarqueeItem = { name: string; logo?: string };
 
 const BASE: MarqueeItem[] = [
   { name: CO_HOST.nameEn, logo: IMG.visionConsortiumLogo },
-  ...SPONSORS.map((s) => ({ name: s })),
+  ...SPONSORS,
 ];
 
 export default function Sponsors() {

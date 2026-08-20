@@ -106,17 +106,31 @@ export default function SponsorsTier() {
         <Reveal className="flex w-full flex-col items-center gap-6">
           <TierLabel en="BRONZE SPONSOR" jp="ブロンズ" variant="bronze" />
           <div className="grid w-full grid-cols-2 gap-[15px] sm:grid-cols-5">
-            {BRONZE_SPONSORS.map((label, i) => (
-              <div
-                key={i}
-                aria-hidden
-                className="flex h-24 items-center justify-center rounded-[10px] bg-white ring-1 ring-inset ring-line"
-              >
-                <span className="text-[13px] tracking-[2px] text-[#888888]">
-                  {label}
-                </span>
-              </div>
-            ))}
+            {BRONZE_SPONSORS.map((s, i) =>
+              s.logo ? (
+                <div
+                  key={i}
+                  className="flex h-24 items-center justify-center rounded-[10px] bg-white px-4 ring-1 ring-inset ring-line"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={s.logo}
+                    alt={`${s.name} のロゴ`}
+                    className="max-h-12 max-w-full object-contain"
+                  />
+                </div>
+              ) : (
+                <div
+                  key={i}
+                  aria-hidden
+                  className="flex h-24 items-center justify-center rounded-[10px] bg-white ring-1 ring-inset ring-line"
+                >
+                  <span className="text-[13px] tracking-[2px] text-[#888888]">
+                    {s.name}
+                  </span>
+                </div>
+              )
+            )}
           </div>
         </Reveal>
       </div>

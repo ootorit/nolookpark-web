@@ -72,7 +72,7 @@ export const NAV_TICKET = "チケット";
 // Spotify podcast embed. Replace with the real show/episode embed URL
 // (Spotify → Share → Embed → copy the src URL).
 export const SPOTIFY_EMBED_URL =
-  "https://open.spotify.com/embed/episode/7makk4oTQel546B0PZlDM5?utm_source=generator";
+  "https://open.spotify.com/embed/episode/4gwpEfzgdsEedyfN7abx8c?utm_source=generator";
 
 export const PODCAST = {
   title: "イベントの裏側を、ポッドキャストで更新中",

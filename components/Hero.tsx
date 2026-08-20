@@ -35,7 +35,7 @@ export default function Hero() {
 
       <div className="flex flex-col items-center gap-6 md:gap-8">
         <Reveal delay={200}>
-          <p className="text-center text-lg tracking-[2px] text-ink md:text-2xl md:tracking-[2px]">
+          <p className="text-center text-2xl font-bold tracking-[2px] text-ink md:text-[44px] md:tracking-[3px]">
             {EVENT.heroCopy}
           </p>
         </Reveal>

@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { CO_HOST, SPONSOR_LOGOS, IMG } from "@/lib/site";
+import { CO_HOST, SPONSOR_LOGOS, COLLABORATORS, IMG } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
@@ -112,6 +112,21 @@ export default function SponsorsTier() {
               )
             )}
           </div>
+        </Reveal>
+
+        {/* 協力 */}
+        <Reveal className="flex w-full flex-col items-center gap-6">
+          <GroupLabel en="COOPERATION" jp="協力" variant="sponsor" />
+          <ul className="flex max-w-[760px] flex-wrap items-center justify-center gap-x-7 gap-y-3">
+            {COLLABORATORS.map((name) => (
+              <li
+                key={name}
+                className="text-[15px] tracking-[0.5px] text-ink"
+              >
+                {name}
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </div>
     </section>

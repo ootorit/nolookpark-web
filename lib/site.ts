@@ -239,6 +239,16 @@ export const SPONSOR_LOGOS: { name: string; logo?: string }[] = [
   { name: "参天製薬", logo: IMG.santenLogo },
 ];
 
+// 協力（各コンテンツを提供・制作している人・団体のクレジット）。
+// 主催者（NO LOOK BROTHERS：澤田智洋／石井健介／高橋鴻介）は別掲のため含めていない。
+export const COLLABORATORS = [
+  "MAGNET",
+  "Skyさくら",
+  "世界ゆるスポーツ協会",
+  "JellyJellyGames",
+  "FULLWONDER",
+] as const;
+
 // 共催団体（Organizers セクション末尾のハイライトカード）
 export const CO_HOST = {
   chip: "共催",

@@ -35,7 +35,7 @@ export default function Hero() {
 
       <div className="flex flex-col items-center gap-6 md:gap-8">
         <Reveal delay={200}>
-          <p className="text-center text-2xl font-black tracking-[2px] text-ink md:text-[34px]">
+          <p className="text-center text-xl font-black tracking-normal text-ink md:text-[34px] md:tracking-[2px]">
             {EVENT.heroCopy}
           </p>
         </Reveal>
@@ -71,7 +71,7 @@ export default function Hero() {
 
         <Reveal delay={1150}>
           <div className="flex flex-col items-center gap-2">
-            <p className="flex flex-wrap items-baseline justify-center font-bold tracking-[1px] text-ink text-2xl md:text-[34px]">
+            <p className="flex flex-wrap items-baseline justify-center font-bold tracking-[1px] text-ink text-xl md:text-[34px]">
               <span>{EVENT.dateParts.year}</span>
               <span className="text-[0.6em]">年</span>
               <span>{EVENT.dateParts.month}</span>

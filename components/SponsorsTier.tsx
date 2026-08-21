@@ -1,23 +1,21 @@
 import { ArrowUpRight } from "lucide-react";
-import { CO_HOST, SILVER_SPONSORS, BRONZE_SPONSORS, IMG } from "@/lib/site";
+import { CO_HOST, SPONSOR_LOGOS, IMG } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
-function TierLabel({
+function GroupLabel({
   en,
   jp,
   variant,
 }: {
   en: string;
   jp: string;
-  variant: "gold" | "silver" | "bronze";
+  variant: "cohost" | "sponsor";
 }) {
   const chip =
-    variant === "gold"
+    variant === "cohost"
       ? "bg-brand text-ink"
-      : variant === "silver"
-        ? "bg-[#e5e5e5] text-ink"
-        : "bg-[#cd7f32] text-white";
+      : "bg-white text-ink ring-1 ring-inset ring-line";
   return (
     <div className="flex w-full items-center gap-4">
       <span className="h-px flex-1 bg-line" />
@@ -67,62 +65,28 @@ export default function SponsorsTier() {
   return (
     <section
       id="sponsors"
-      aria-label="協賛"
+      aria-label="共催・協賛"
       className="bg-cream px-6 py-24 md:px-12 md:py-28"
     >
       <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-14">
         <Reveal className="flex flex-col items-center gap-4 text-center">
-          <SectionHeading jp="協賛" en="SPONSORS" />
+          <SectionHeading jp="共催・協賛" en="SUPPORTERS" />
           <p className="max-w-[680px] text-base leading-[1.9] text-ink">
-            NO LOOK PARK は、以下の企業・団体のご協賛により開催されます。
+            NO LOOK PARK は、以下の企業・団体の共催・ご協賛により開催されます。
           </p>
         </Reveal>
 
-        {/* Gold */}
+        {/* 共催 */}
         <Reveal className="flex w-full flex-col items-center gap-6">
-          <TierLabel en="GOLD SPONSOR" jp="ゴールド" variant="gold" />
+          <GroupLabel en="CO-HOST" jp="共催" variant="cohost" />
           <VisionConsortiumCard />
         </Reveal>
 
-        {/* Silver — スポンサー未定のため非表示。SILVER_SPONSORS に追加すると表示される */}
-        {SILVER_SPONSORS.length > 0 && (
-          <Reveal className="flex w-full flex-col items-center gap-6">
-            <TierLabel en="SILVER SPONSOR" jp="シルバー" variant="silver" />
-            <div className="flex w-full flex-wrap justify-center gap-5">
-              {SILVER_SPONSORS.map((s, i) =>
-                s.logo ? (
-                  <div
-                    key={i}
-                    className="flex min-h-[150px] w-full items-center justify-center rounded-xl bg-white px-6 ring-1 ring-inset ring-line sm:w-[300px]"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={s.logo}
-                      alt={`${s.name} のロゴ`}
-                      className="max-h-16 max-w-full object-contain"
-                    />
-                  </div>
-                ) : (
-                  <div
-                    key={i}
-                    aria-hidden
-                    className="flex min-h-[150px] w-full items-center justify-center rounded-xl bg-white ring-1 ring-inset ring-line sm:w-[300px]"
-                  >
-                    <span className="font-en text-[13px] tracking-[2px] text-ink opacity-50">
-                      {s.name}
-                    </span>
-                  </div>
-                )
-              )}
-            </div>
-          </Reveal>
-        )}
-
-        {/* Bronze */}
+        {/* 協賛 */}
         <Reveal className="flex w-full flex-col items-center gap-6">
-          <TierLabel en="BRONZE SPONSOR" jp="ブロンズ" variant="bronze" />
+          <GroupLabel en="SPONSOR" jp="協賛" variant="sponsor" />
           <div className="flex w-full flex-wrap justify-center gap-[15px]">
-            {BRONZE_SPONSORS.map((s, i) =>
+            {SPONSOR_LOGOS.map((s, i) =>
               s.logo ? (
                 <div
                   key={i}

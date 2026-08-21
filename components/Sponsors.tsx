@@ -16,7 +16,7 @@ export default function Sponsors() {
   const items = [...HALF, ...HALF];
 
   return (
-    <section aria-label="協賛" className="overflow-hidden bg-cream py-7">
+    <section aria-label="共催・協賛" className="overflow-hidden bg-cream py-7">
       <div className="flex w-max items-center animate-marquee">
         {items.map((item, i) =>
           item.logo ? (

@@ -66,7 +66,7 @@ export const NAV_LINKS = [
   { label: "開催概要", href: "#details" },
   { label: "コンテンツ", href: "#contents" },
   { label: "主催者", href: "#organizers" },
-  { label: "協賛", href: "#sponsors" },
+  { label: "共催・協賛", href: "#sponsors" },
   { label: "お問い合わせ", href: "#contact" },
 ] as const;
 
@@ -200,17 +200,15 @@ export const SPONSORS: { name: string; logo?: string }[] = [
   { name: "参天製薬", logo: IMG.santenLogo },
 ];
 
-// 協賛ティア。Gold は CO_HOST（Vision Consortium）を使用。
-// シルバーは現在スポンサー未定のため非表示（要素を追加すると自動的に表示される）。
-export const SILVER_SPONSORS: { name: string; logo?: string }[] = [];
-// logo があれば画像、なければ文字プレースホルダー。
-export const BRONZE_SPONSORS: { name: string; logo?: string }[] = [
+// 共催・協賛セクション。共催は CO_HOST（Vision Consortium）を使用。
+// こちらは協賛（logo があれば画像、なければ文字プレースホルダー）。
+export const SPONSOR_LOGOS: { name: string; logo?: string }[] = [
   { name: "参天製薬", logo: IMG.santenLogo },
 ];
 
 // 共催団体（Organizers セクション末尾のハイライトカード）
 export const CO_HOST = {
-  chip: "協賛",
+  chip: "共催",
   label: "SUPPORTED BY",
   nameEn: "Vision Consortium",
   nameJp: "ビジョン・コンソーシアム",

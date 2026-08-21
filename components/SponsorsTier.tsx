@@ -121,7 +121,7 @@ export default function SponsorsTier() {
             {COLLABORATORS.map((name) => (
               <li
                 key={name}
-                className="text-[15px] tracking-[0.5px] text-ink"
+                className="text-[17px] tracking-[0.5px] text-ink"
               >
                 {name}
               </li>

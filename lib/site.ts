@@ -57,6 +57,7 @@ export const IMG = {
   contentTouchpark: "/images/touchpark_keyshot.jpg",
   contentYubibo: "/images/yubibo_keyvisual.jpg",
   contentDekabo: "/images/dekabo_keyshot.jpg",
+  contentShodo: "/images/shodo_keyshot.jpg",
   contentBlindBlend: "/images/blindblend_keyshot.jpg",
 } as const;
 
@@ -138,6 +139,8 @@ export const CONTENTS: {
     num: "06",
     title: "ノールック書道",
     withNames: "FULLWONDER",
+    image: IMG.contentShodo,
+    alt: "濃紺の敷き布の上に座った2人が、それぞれ目の前の白い和紙に筆で大きく墨をのせている様子を真上から見た写真。和紙は黄色と緑の文鎮でとめられている。",
     desc: "視覚に頼らず、身体感覚と内なる感覚を頼りに書いていく新しいジャンルの書道。思い切って、自由に、あなたらしく！",
   },
   {

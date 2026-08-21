@@ -242,11 +242,11 @@ export const SPONSOR_LOGOS: { name: string; logo?: string }[] = [
 // 協力（各コンテンツを提供・制作している人・団体のクレジット）。
 // 主催者（NO LOOK BROTHERS：澤田智洋／石井健介／高橋鴻介）は別掲のため含めていない。
 export const COLLABORATORS = [
+  "世界ゆるスポーツ協会",
+  "FULLWONDER",
   "MAGNET",
   "Skyさくら",
-  "世界ゆるスポーツ協会",
   "JellyJellyGames",
-  "FULLWONDER",
 ] as const;
 
 // 共催団体（Organizers セクション末尾のハイライトカード）

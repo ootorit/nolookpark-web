@@ -24,7 +24,54 @@ function PodcastPlayer() {
   );
 }
 
+// ハイライトが伸び始めるまでの間（本文が現れてから少し遅れて引く）と、
+// 2本目以降をずらす幅。伸びる速さ自体は globals.css の .hl。
+const HIGHLIGHT_DELAY = 400;
+const HIGHLIGHT_STEP = 300;
+
+/** 段落の中の改行を <br> にする（原稿の改行位置をそのまま出す） */
+function renderLines(text: string) {
+  return text.split("\n").map((line, i) => (
+    <Fragment key={i}>
+      {i > 0 && <br />}
+      {line}
+    </Fragment>
+  ));
+}
+
+/**
+ * `==…==` で囲まれたところに黄色のマーカーを引く。
+ * 行をまたいで囲めるよう、段落をいったん改行つなぎの1本の文字列にしてから分ける。
+ * box-decoration-break は Next の CSS 圧縮で -webkit- が落ちるため、
+ * ここでインラインで当てる（Safari で行ごとにマーカーが引かれなくなるのを防ぐ）。
+ */
+function renderParagraph(lines: readonly string[], nextHighlight: () => number) {
+  return lines
+    .join("\n")
+    .split("==")
+    .map((part, i) => {
+      if (i % 2 === 0) return <Fragment key={i}>{renderLines(part)}</Fragment>;
+      const order = nextHighlight();
+      return (
+        <mark
+          key={i}
+          className="hl"
+          style={{
+            WebkitBoxDecorationBreak: "clone",
+            boxDecorationBreak: "clone",
+            transitionDelay: `${HIGHLIGHT_DELAY + order * HIGHLIGHT_STEP}ms`,
+          }}
+        >
+          {renderLines(part)}
+        </mark>
+      );
+    });
+}
+
 export default function Statement() {
+  let highlights = 0;
+  const nextHighlight = () => highlights++;
+
   return (
     <section
       id="statement"
@@ -41,14 +88,7 @@ export default function Statement() {
         <Reveal delay={150}>
           <div className="flex max-w-[640px] flex-col gap-5 text-base leading-[1.8] text-ink">
             {STATEMENT_BODY.map((lines, i) => (
-              <p key={i}>
-                {lines.map((line, j) => (
-                  <Fragment key={j}>
-                    {j > 0 && <br />}
-                    {line}
-                  </Fragment>
-                ))}
-              </p>
+              <p key={i}>{renderParagraph(lines, nextHighlight)}</p>
             ))}
           </div>
         </Reveal>

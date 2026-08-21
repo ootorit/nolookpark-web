@@ -57,6 +57,22 @@ body {
   transform: none;
 }
 
+/* --- Marker highlight (ステートメントの黄色いマーカー) ----------------- */
+/* 見えたところで左から右へ伸びる。伸びるのは背景の幅だけなので文字は動かない。 */
+.hl {
+  color: inherit;
+  background-color: transparent;
+  background-image: linear-gradient(transparent 58%, var(--color-brand) 58%);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  padding: 0 0.08em;
+  transition: background-size 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible .hl {
+  background-size: 100% 100%;
+}
+
 /* --- Infinite marquee (sponsor logos, right → left) ------------------- */
 @keyframes marquee {
   from {
@@ -85,5 +101,10 @@ body {
   }
   .animate-marquee {
     animation: none !important;
+  }
+  /* マーカーは動かさず、最初から引かれた状態で出す */
+  .hl {
+    transition: none !important;
+    background-size: 100% 100% !important;
   }
 }

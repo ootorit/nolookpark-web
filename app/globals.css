@@ -19,6 +19,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* ヒーローのタイル列が画面幅を超えて横パン（左ずれ・見切れ）するのを防ぐ。
+     clip はスクロールコンテナを作らないので sticky ナビに影響しない。 */
+  overflow-x: clip;
 }
 
 body {
@@ -27,6 +30,7 @@ body {
   font-family: var(--font-poppins), var(--font-noto), system-ui, sans-serif;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 /* 欧文見出し向け（Poppins SemiBold）。和文が混じっても Noto にフォールバック。 */

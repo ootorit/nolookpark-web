@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { STATEMENT_BODY, SPOTIFY_EMBED_URL, PODCAST } from "@/lib/site";
 import Reveal from "./Reveal";
 
@@ -39,8 +40,15 @@ export default function Statement() {
 
         <Reveal delay={150}>
           <div className="flex max-w-[640px] flex-col gap-5 text-base leading-[1.8] text-ink">
-            {STATEMENT_BODY.map((p, i) => (
-              <p key={i}>{p}</p>
+            {STATEMENT_BODY.map((lines, i) => (
+              <p key={i}>
+                {lines.map((line, j) => (
+                  <Fragment key={j}>
+                    {j > 0 && <br />}
+                    {line}
+                  </Fragment>
+                ))}
+              </p>
             ))}
           </div>
         </Reveal>

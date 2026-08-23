@@ -75,7 +75,7 @@ export const NAV_LINKS = [
   { label: "お問い合わせ", href: "#contact" },
 ] as const;
 
-export const NAV_TICKET = "チケット";
+export const NAV_TICKET = "チケットを購入";
 
 // チケット購入先（Peatix）
 export const TICKET_URL = "https://nolookpark2026.peatix.com";

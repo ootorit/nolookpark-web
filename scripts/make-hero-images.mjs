@@ -189,4 +189,5 @@ await generate(1280, 670, path.join(ROOT, "public/images/note-header.png"), {
 const peatixCard = await buildFullCard(410);
 await generate(1300, 640, path.join(ROOT, "public/images/peatix-header.png"), {
   card: peatixCard,
+  zoom: 1.1,
 });

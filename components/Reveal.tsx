@@ -7,6 +7,8 @@ type RevealProps = {
   className?: string;
   /** Delay before the reveal transition starts (ms). Useful for staggering. */
   delay?: number;
+  /** Override the transition duration (ms). Defaults to the CSS value (1.2s). */
+  duration?: number;
   /** "up" (default) slides up; "zoom" scales up from center. */
   variant?: "up" | "zoom";
 };
@@ -20,6 +22,7 @@ export default function Reveal({
   children,
   className = "",
   delay = 0,
+  duration,
   variant = "up",
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -56,7 +59,14 @@ export default function Reveal({
       className={`reveal ${variant === "zoom" ? "reveal-zoom" : ""} ${
         visible ? "is-visible" : ""
       } ${className}`}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+      style={
+        delay || duration
+          ? {
+              ...(delay ? { transitionDelay: `${delay}ms` } : {}),
+              ...(duration ? { transitionDuration: `${duration}ms` } : {}),
+            }
+          : undefined
+      }
     >
       {children}
     </div>

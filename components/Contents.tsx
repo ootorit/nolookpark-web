@@ -23,7 +23,8 @@ export default function Contents() {
           {CONTENTS.map((c, i) => (
             <Reveal
               key={c.num}
-              delay={i * 150}
+              delay={i * 60}
+              duration={700}
               className="flex flex-col overflow-hidden rounded-xl border-2 border-ink"
             >
               {c.image ? (
@@ -57,7 +58,8 @@ export default function Contents() {
 
           {/* Coming soon */}
           <Reveal
-            delay={CONTENTS.length * 150}
+            delay={CONTENTS.length * 60}
+            duration={700}
             className="flex flex-col overflow-hidden rounded-xl border-2 border-ink"
           >
             <div

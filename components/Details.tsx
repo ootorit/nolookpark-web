@@ -52,7 +52,7 @@ export default function Details() {
 
         <Reveal
           delay={100}
-          className="grid w-full grid-cols-1 gap-12 md:grid-cols-[1fr_400px] md:items-start"
+          className="grid w-full grid-cols-1 gap-12 lg:grid-cols-[1fr_400px] lg:items-start"
         >
           <div className="flex flex-col gap-8">
             <Row label="日程">{EVENT.date}</Row>
@@ -63,7 +63,7 @@ export default function Details() {
                   href={EVENT.venueUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
+                  className="underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
                 >
                   {EVENT.venue}
                 </a>

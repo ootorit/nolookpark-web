@@ -87,14 +87,14 @@ export default function Statement() {
             字面の中心がそろうように、行ごとに光学補正をかけている。
             数値は canvas の actualBoundingBox 実測値（1行目 +0.271em / 2行目 -0.192em）。
           */}
-          <h2 className="text-3xl leading-[1.5] text-ink md:text-[44px] md:leading-[1.6]">
+          <h2 className="text-[26px] font-medium leading-[1.5] text-ink md:text-[44px] md:leading-[1.6]">
             <span className="block translate-x-[-0.271em]">「みえない」を</span>
             <span className="block translate-x-[0.192em]">楽しみつくそう！</span>
           </h2>
         </Reveal>
 
         <Reveal delay={150}>
-          <div className="flex max-w-[640px] flex-col gap-5 text-base leading-[1.8] text-ink">
+          <div className="flex max-w-[640px] flex-col gap-5 text-base leading-[1.9] text-ink md:text-lg">
             {STATEMENT_BODY.map((lines, i) => (
               <p key={i}>{renderParagraph(lines, nextHighlight)}</p>
             ))}

@@ -45,3 +45,6 @@ next-env.d.ts
 
 # local source-image drop (app uses public/images/)
 /images/
+
+# OGP/Peatix 生成用のローカルフォント（ビルド不要・画像は生成済みをコミット）
+/scripts/fonts

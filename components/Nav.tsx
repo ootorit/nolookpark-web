@@ -10,8 +10,7 @@ export default function Nav() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const onScroll = () =>
-      setShow(window.scrollY > window.innerHeight * 0.9);
+    const onScroll = () => setShow(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll, { passive: true });
@@ -41,7 +40,7 @@ export default function Nav() {
         <div className="flex-1" />
 
         {/* Desktop links */}
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {NAV_LINKS.map((l) => (
             <a
               key={l.label}
@@ -65,7 +64,7 @@ export default function Nav() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-ink text-brand md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-ink text-brand lg:hidden"
           aria-label={open ? "メニューを閉じる" : "メニューを開く"}
           aria-expanded={open}
         >
@@ -75,7 +74,7 @@ export default function Nav() {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="mx-6 rounded-2xl bg-ink px-6 py-6 md:hidden">
+        <div className="mx-6 rounded-2xl bg-ink px-6 py-6 lg:hidden">
           <div className="flex flex-col gap-5">
             {NAV_LINKS.map((l) => (
               <a

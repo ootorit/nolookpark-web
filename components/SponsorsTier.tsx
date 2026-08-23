@@ -32,8 +32,8 @@ function GroupLabel({
 
 function VisionConsortiumCard() {
   return (
-    <div className="flex w-full flex-col items-center gap-10 rounded-xl bg-white px-8 py-10 [outline:2px_solid_#1A1A1A] [outline-offset:-1px] sm:flex-row sm:gap-12 sm:px-12">
-      <div className="flex h-[180px] w-full shrink-0 items-center justify-center rounded-lg bg-white p-8 sm:w-[360px]">
+    <div className="flex w-full flex-col items-center gap-10 rounded-xl bg-white px-8 py-10 [outline:2px_solid_#1A1A1A] [outline-offset:-1px] lg:flex-row lg:gap-12 lg:px-12">
+      <div className="flex h-[180px] w-full shrink-0 items-center justify-center rounded-lg bg-white p-8 lg:w-[360px]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={IMG.visionConsortiumLogo}
@@ -90,7 +90,7 @@ export default function SponsorsTier() {
               s.logo ? (
                 <div
                   key={i}
-                  className="flex h-24 w-[46%] items-center justify-center rounded-[10px] bg-white px-4 ring-1 ring-inset ring-line sm:w-[200px]"
+                  className="flex h-24 w-[46%] items-center justify-center rounded-[10px] bg-white px-4 [outline:2px_solid_#1A1A1A] [outline-offset:-1px] sm:w-[200px]"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -102,10 +102,9 @@ export default function SponsorsTier() {
               ) : (
                 <div
                   key={i}
-                  aria-hidden
-                  className="flex h-24 w-[46%] items-center justify-center rounded-[10px] bg-white ring-1 ring-inset ring-line sm:w-[200px]"
+                  className="flex h-24 w-[46%] items-center justify-center rounded-[10px] bg-white px-4 [outline:2px_solid_#1A1A1A] [outline-offset:-1px] sm:w-[200px]"
                 >
-                  <span className="text-[13px] tracking-[2px] text-[#888888]">
+                  <span className="font-en text-xl font-semibold tracking-[1px] text-ink">
                     {s.name}
                   </span>
                 </div>

@@ -22,11 +22,14 @@ export const EVENT = {
     train: ["東急田園都市線", "池尻大橋駅 徒歩10分", "三軒茶屋駅 徒歩16分"],
     bus: ["三宿 徒歩4分"],
     car: [
+      "バリアフリー駐車場をご用意しています。空きがあれば当日即時ご利用いただけますが、台数に限りがあるため1ヶ月前からご予約を受け付けています。",
+      "ご予約・ご相談は 03-6450-8131 までお電話ください。",
       "一般駐車場はございません。近隣のコインパーキングをご利用ください。",
-      "バリアフリー駐車場はご用意がございます。",
     ],
   },
   locationLine: "@ HOME/WORK VILLAGE（東京・池尻大橋）",
+  // スマホでは市区名を省いた短縮表記を使う。
+  locationLineShort: "@ HOME/WORK VILLAGE（池尻大橋）",
   organizer: "NO LOOK BROTHERS（澤田智洋／石井健介／高橋鴻介）",
   coHost: "ビジョン・コンソーシアム",
   price: [
@@ -199,7 +202,7 @@ export const ORGANIZERS = [
       instagram: "https://www.instagram.com/ootori_t/",
       site: "https://ootori.co",
     },
-    desc: "異なる文化や人の間によい関わりを生みだすものづくりを行う発明家。点字と文字が一体になった書体「Braille Neue」や、触覚コミュニケーションゲーム「YUBIBO」、顔で遊ぶスポーツ「Facial Sports」などを発明。",
+    desc: "人と人をつなぐ発明家。点字と文字が一体になった書体「Braille Neue」や、触覚コミュニケーションゲーム「YUBIBO」、顔で遊ぶスポーツ「Facial Sports」などを発明。",
   },
 ] as const;
 
@@ -234,12 +237,14 @@ export const STATEMENT_BODY = [
 // トップのスポンサーマーキー。logo があれば画像、なければ文字プレースホルダーで表示。
 export const SPONSORS: { name: string; logo?: string }[] = [
   { name: "参天製薬", logo: IMG.santenLogo },
+  { name: "PLUS" },
 ];
 
 // 共催・協賛セクション。共催は CO_HOST（Vision Consortium）を使用。
-// こちらは協賛（logo があれば画像、なければ文字プレースホルダー）。
+// こちらは協賛（logo があれば画像、なければ社名テキストで表示）。
 export const SPONSOR_LOGOS: { name: string; logo?: string }[] = [
   { name: "参天製薬", logo: IMG.santenLogo },
+  { name: "PLUS" },
 ];
 
 // 協力（各コンテンツを提供・制作している人・団体のクレジット）。

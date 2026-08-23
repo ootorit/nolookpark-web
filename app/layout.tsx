@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nolookpark-web.vercel.app"),
   title: "NO LOOK PARK｜「みえない」を楽しみつくす体験型イベント",
   description:
-    "NO LOOK PARKは「みえない」をコンセプトにした新しい体験型イベント。2026年10月24日（土）、東京・池尻大橋 HOME/WORK VILLAGEにて開催。",
+    "2026.10.24 SAT｜東京・池尻大橋。NO LOOK PARKへようこそ！ここは、みえない状態で（アイマスクを配ります）、ゲームをしたり、駄菓子を買ったり、お茶をブレンドしたりする場所。",
   openGraph: {
     title: "NO LOOK PARK｜「みえない」を楽しみつくす",
     description:
-      "2026.10.24 SAT｜東京・池尻大橋。視覚を手放すと、遊びはもっと自由になる。",
+      "2026.10.24 SAT｜東京・池尻大橋。NO LOOK PARKへようこそ！ここは、みえない状態で（アイマスクを配ります）、ゲームをしたり、駄菓子を買ったり、お茶をブレンドしたりする場所。",
     type: "website",
   },
 };

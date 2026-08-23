@@ -1,9 +1,13 @@
-import sharp from "sharp";
 import { fileURLToPath } from "node:url";
 import { copyFileSync } from "node:fs";
 import path from "node:path";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+// テキストを Poppins（欧文・数字）＋ Noto Sans JP（和文）で描画するため、
+// librsvg/fontconfig にフォントの場所を教える。sharp の native 初期化前に
+// 環境変数を立てる必要があるので、sharp は動的 import する。
+process.env.FONTCONFIG_FILE = path.join(ROOT, "scripts/fonts.conf");
+const sharp = (await import("sharp")).default;
 const IMG = (f) => path.join(ROOT, "public/images", f);
 
 // ヒーローと同じ壁面写真（コンテンツKV＋追加素材）。
@@ -67,7 +71,7 @@ const backing = (size) =>
 
 // ロゴのみ（キャッチ・日時・場所なし）。ロゴを大きく中央に。
 async function buildLogoCard(size) {
-  const L = Math.round(size * 0.82);
+  const L = Math.round(size * 0.9);
   const logo = await logoBuf(L);
   return sharp(backing(size))
     .composite([{ input: logo, left: Math.round((size - L) / 2), top: Math.round((size - L) / 2) }])
@@ -88,7 +92,7 @@ async function buildFullCard(size) {
   <rect width="${size}" height="${size}" rx="${Math.round(size * 0.05)}" ry="${Math.round(size * 0.05)}" fill="${YELLOW}"/>
   <text x="${cx}" y="${Math.round(size * 0.12)}" text-anchor="middle" font-family="${FONT}" font-weight="900" font-size="${head}" fill="${INK}">「みえない」を楽しみつくそう！</text>
   <text x="${cx}" y="${Math.round(size * 0.84)}" text-anchor="middle" font-family="${FONT}" font-weight="700" fill="${INK}"><tspan font-size="${big}">2026</tspan><tspan font-size="${unit}">年</tspan><tspan font-size="${big}">10</tspan><tspan font-size="${unit}">月</tspan><tspan font-size="${big}">24</tspan><tspan font-size="${unit}">日（土）</tspan><tspan font-size="${big}" dx="7">11:00-17:00</tspan></text>
-  <text x="${cx}" y="${Math.round(size * 0.92)}" text-anchor="middle" font-family="${FONT}" font-weight="400" font-size="${loc}" fill="${INK}">${esc("@ HOME/WORK VILLAGE（東京・池尻大橋）")}</text>
+  <text x="${cx}" y="${Math.round(size * 0.92)}" text-anchor="middle" font-family="${FONT}" font-weight="700" font-size="${loc}" fill="${INK}">${esc("@ HOME/WORK VILLAGE（東京・池尻大橋）")}</text>
 </svg>`);
   const L = Math.round(size * 0.52);
   const logo = await logoBuf(L);
@@ -137,21 +141,8 @@ async function generate(width, height, outPath, { card }) {
     .extract({ left: cropLeft, top: cropTop, width, height })
     .toBuffer();
 
-  // 画面下部のみ黄色グラデ（トーン合わせ）
-  const grad = Buffer.from(`
-<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="g" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stop-color="#FFD600" stop-opacity="0.7"/>
-      <stop offset="26%" stop-color="#FFD600" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <rect width="${width}" height="${height}" fill="url(#g)"/>
-</svg>`);
-
   await sharp(mosaic)
     .composite([
-      { input: grad, left: 0, top: 0 },
       {
         input: card,
         left: cStart * (TILE + GAP) - cropLeft,

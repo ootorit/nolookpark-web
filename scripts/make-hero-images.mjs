@@ -91,8 +91,8 @@ async function buildFullCard(size) {
 <svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg">
   <rect width="${size}" height="${size}" rx="${Math.round(size * 0.05)}" ry="${Math.round(size * 0.05)}" fill="${YELLOW}"/>
   <text x="${cx}" y="${Math.round(size * 0.12)}" text-anchor="middle" font-family="${FONT}" font-weight="900" font-size="${head}" fill="${INK}">「みえない」を楽しみつくそう！</text>
-  <text x="${cx}" y="${Math.round(size * 0.84)}" text-anchor="middle" font-family="${FONT}" font-weight="700" fill="${INK}"><tspan font-size="${big}">2026</tspan><tspan font-size="${unit}">年</tspan><tspan font-size="${big}">10</tspan><tspan font-size="${unit}">月</tspan><tspan font-size="${big}">24</tspan><tspan font-size="${unit}">日（土）</tspan><tspan font-size="${big}" dx="7">11:00-17:00</tspan></text>
-  <text x="${cx}" y="${Math.round(size * 0.9)}" text-anchor="middle" font-family="${FONT}" font-weight="700" font-size="${loc}" fill="${INK}">${esc("@ HOME/WORK VILLAGE（東京・池尻大橋）")}</text>
+  <text x="${cx}" y="${Math.round(size * 0.865)}" text-anchor="middle" font-family="${FONT}" font-weight="700" fill="${INK}"><tspan font-size="${big}">2026</tspan><tspan font-size="${unit}">年</tspan><tspan font-size="${big}">10</tspan><tspan font-size="${unit}">月</tspan><tspan font-size="${big}">24</tspan><tspan font-size="${unit}">日（土）</tspan><tspan font-size="${big}" dx="7">11:00-17:00</tspan></text>
+  <text x="${cx}" y="${Math.round(size * 0.925)}" text-anchor="middle" font-family="${FONT}" font-weight="700" font-size="${loc}" fill="${INK}">${esc("@ HOME/WORK VILLAGE（東京・池尻大橋）")}</text>
 </svg>`);
   const L = Math.round(size * 0.58);
   const logo = await logoBuf(L);

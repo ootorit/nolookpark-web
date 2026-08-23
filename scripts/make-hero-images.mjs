@@ -76,19 +76,24 @@ async function buildLogoCard(size) {
 }
 
 // キャッチ・ロゴ・日時・場所の入ったカード（Peatix用）。
+// 日付は数字を大きく、年月日（土）を小さく（ヒーローと同じ文字組み）。
 async function buildFullCard(size) {
+  const cx = size / 2;
+  const head = Math.round(size * 0.058); // キャッチ
+  const big = Math.round(size * 0.06); // 日付の数字
+  const unit = Math.round(big * 0.62); // 年月日（土）
+  const loc = Math.round(size * 0.032); // 会場
   const svg = Buffer.from(`
 <svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg">
   <rect width="${size}" height="${size}" rx="${Math.round(size * 0.05)}" ry="${Math.round(size * 0.05)}" fill="${YELLOW}"/>
-  <text x="${size / 2}" y="58" text-anchor="middle" font-family="${FONT}" font-weight="900" font-size="25" fill="${INK}">「みえない」を楽しみつくそう！</text>
-  <text x="${size / 2}" y="356" text-anchor="middle" font-family="${FONT}" font-weight="700" font-size="20" fill="${INK}">2026年10月24日（土）11:00-17:00</text>
-  <text x="${size / 2}" y="386" text-anchor="middle" font-family="${FONT}" font-weight="400" font-size="13" fill="${INK}">${esc("@ HOME/WORK VILLAGE（東京・池尻大橋）")}</text>
+  <text x="${cx}" y="${Math.round(size * 0.12)}" text-anchor="middle" font-family="${FONT}" font-weight="900" font-size="${head}" fill="${INK}">「みえない」を楽しみつくそう！</text>
+  <text x="${cx}" y="${Math.round(size * 0.84)}" text-anchor="middle" font-family="${FONT}" font-weight="700" fill="${INK}"><tspan font-size="${big}">2026</tspan><tspan font-size="${unit}">年</tspan><tspan font-size="${big}">10</tspan><tspan font-size="${unit}">月</tspan><tspan font-size="${big}">24</tspan><tspan font-size="${unit}">日（土）</tspan><tspan font-size="${big}" dx="7">11:00-17:00</tspan></text>
+  <text x="${cx}" y="${Math.round(size * 0.92)}" text-anchor="middle" font-family="${FONT}" font-weight="400" font-size="${loc}" fill="${INK}">${esc("@ HOME/WORK VILLAGE（東京・池尻大橋）")}</text>
 </svg>`);
-  const L = Math.round(size * 0.55);
+  const L = Math.round(size * 0.52);
   const logo = await logoBuf(L);
-  // ロゴは中央やや上。日時テキスト(y356)と重ならない位置に収める。
   return sharp(svg)
-    .composite([{ input: logo, left: Math.round((size - L) / 2), top: 92 }])
+    .composite([{ input: logo, left: Math.round((size - L) / 2), top: Math.round(size * 0.2) }])
     .png()
     .toBuffer();
 }
@@ -98,13 +103,26 @@ async function generate(width, height, outPath, { card }) {
   const rows = evenCover(height);
   const gridW = cols * TILE + (cols - 1) * GAP;
   const gridH = rows * TILE + (rows - 1) * GAP;
+  const cropLeft = Math.floor((gridW - width) / 2);
+  const cropTop = Math.floor((gridH - height) / 2);
+
+  // カードは正方形で、グリッドの整数セル（2×2 など）にぴったり合わせる。
+  // ヒーローと同様、その中央セルは画像を敷かず黄色のまま空けてカードを重ねる
+  // （ロゴ・黄色ボックスがグリッドに綺麗に収まる）。
+  const cardSize = (await sharp(card).metadata()).width;
+  const cardCells = Math.round((cardSize + GAP) / (TILE + GAP));
+  const cStart = cols / 2 - cardCells / 2;
+  const rStart = rows / 2 - cardCells / 2;
 
   const tiles = [];
   let k = 0;
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
-      const buf = await roundedTile(PHOTOS[(k * 5) % PHOTOS.length]);
+      const isCenter =
+        c >= cStart && c < cStart + cardCells && r >= rStart && r < rStart + cardCells;
       k++;
+      if (isCenter) continue; // 中央セルは空ける
+      const buf = await roundedTile(PHOTOS[((k - 1) * 5) % PHOTOS.length]);
       tiles.push({ input: buf, left: c * (TILE + GAP), top: r * (TILE + GAP) });
     }
   }
@@ -116,12 +134,7 @@ async function generate(width, height, outPath, { card }) {
     .toBuffer();
 
   const mosaic = await sharp(grid)
-    .extract({
-      left: Math.floor((gridW - width) / 2),
-      top: Math.floor((gridH - height) / 2),
-      width,
-      height,
-    })
+    .extract({ left: cropLeft, top: cropTop, width, height })
     .toBuffer();
 
   // 画面下部のみ黄色グラデ（トーン合わせ）
@@ -141,8 +154,8 @@ async function generate(width, height, outPath, { card }) {
       { input: grad, left: 0, top: 0 },
       {
         input: card,
-        left: Math.round((width - (await sharp(card).metadata()).width) / 2),
-        top: Math.round((height - (await sharp(card).metadata()).height) / 2),
+        left: cStart * (TILE + GAP) - cropLeft,
+        top: rStart * (TILE + GAP) - cropTop,
       },
     ])
     .png()
@@ -152,13 +165,13 @@ async function generate(width, height, outPath, { card }) {
 }
 
 // OGP：ロゴのみ・拡大して中央（キャッチ/日時/場所なし）
-const ogpCard = await buildLogoCard(470);
+const ogpCard = await buildLogoCard(410);
 const ogpPath = path.join(ROOT, "app/opengraph-image.png");
 await generate(1200, 630, ogpPath, { card: ogpCard });
 copyFileSync(ogpPath, path.join(ROOT, "app/twitter-image.png"));
 
 // note ヘッダー：ロゴのみ（1280×670）
-const noteCard = await buildLogoCard(500);
+const noteCard = await buildLogoCard(410);
 await generate(1280, 670, path.join(ROOT, "public/images/note-header.png"), {
   card: noteCard,
 });

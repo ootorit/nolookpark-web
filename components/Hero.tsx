@@ -1,25 +1,41 @@
-import { EVENT, IMG, TICKET_URL } from "@/lib/site";
+import { EVENT, IMG } from "@/lib/site";
 import Reveal from "./Reveal";
 
-function Tile({
-  src,
-  size,
-}: {
-  src: string;
-  size: "sm" | "lg";
-}) {
-  return (
-    <div
-      aria-hidden
-      className={[
-        "shrink-0 rounded-[28px] bg-cover bg-center ring-[6px] ring-inset ring-ink",
-        size === "lg"
-          ? "h-[170px] w-[170px] sm:h-[232px] sm:w-[232px] lg:h-[320px] lg:w-[320px]"
-          : "h-[135px] w-[135px] sm:h-[186px] sm:w-[186px] lg:h-[276px] lg:w-[276px]",
-      ].join(" ")}
-      style={{ backgroundImage: `url(${src})` }}
-    />
-  );
+// アートウォール用の写真。9点を敷き詰めて壁面モザイクをつくる。
+const PHOTOS = [
+  IMG.contentTesagurido,
+  IMG.contentTouchmatch,
+  IMG.contentBrailleRelay,
+  IMG.contentYubibo,
+  IMG.contentDekabo,
+  IMG.contentShodo,
+  IMG.contentTouchpark,
+  IMG.contentBlindBlend,
+  IMG.contentNinnin,
+];
+
+// 一部タイルに重ねる作品ラベル（各1回だけ表示）。
+const LABELS: Record<string, string> = {
+  [IMG.contentTouchpark]: "TOUCH PARK",
+  [IMG.contentBlindBlend]: "BLIND BLEND",
+  [IMG.contentYubibo]: "YUBIBO",
+};
+
+// 正方形タイルを固定サイズで敷き詰め、画面より大きいグリッドを中央寄せして
+// はみ出しをトリムする。列×行は偶数にして中央がちょうど 2×2 になるようにする。
+const COLS = 12;
+const ROWS = 10;
+const MOSAIC_TILES: { src: string; label?: string }[] = Array.from(
+  { length: COLS * ROWS },
+  (_, i) => ({ src: PHOTOS[(i * 7) % PHOTOS.length] })
+);
+const usedLabels = new Set<string>();
+for (const tile of MOSAIC_TILES) {
+  const label = LABELS[tile.src];
+  if (label && !usedLabels.has(label)) {
+    tile.label = label;
+    usedLabels.add(label);
+  }
 }
 
 export default function Hero() {
@@ -27,83 +43,81 @@ export default function Hero() {
     <section
       id="top"
       aria-label="トップ"
-      className="relative flex min-h-[100svh] flex-col items-center justify-center gap-10 overflow-hidden bg-brand px-6 py-28 md:py-32"
+      className="relative min-h-[100svh] overflow-hidden bg-ink [--gap:6px] [--tile:116px] sm:[--tile:150px] md:[--gap:8px] md:[--tile:200px] lg:[--tile:240px]"
     >
       <h1 className="sr-only">
         NO LOOK PARK — 「みえない」を楽しみつくす体験型イベント
       </h1>
 
-      <div className="flex flex-col items-center gap-6 md:gap-8">
-        <Reveal delay={200}>
-          <p className="text-center text-xl font-black tracking-normal text-ink md:text-[34px] md:tracking-[2px]">
-            {EVENT.heroCopy}
-          </p>
-        </Reveal>
-
-        {/* Tile strip — logo first, then tiles emerge outward from the center */}
-        <div className="flex items-center justify-center gap-4 md:gap-8">
-          <Reveal variant="zoom" delay={1050}>
-            <Tile src={IMG.contentTouchpark} size="sm" />
-          </Reveal>
-          <Reveal variant="zoom" delay={700}>
-            <Tile src={IMG.contentTesagurido} size="sm" />
-          </Reveal>
-          <Reveal variant="zoom" delay={350}>
-            <Tile src={IMG.contentTouchmatch} size="lg" />
-          </Reveal>
-          <Reveal variant="zoom" delay={0}>
-            <div
-              aria-hidden
-              className="h-[210px] w-[210px] shrink-0 bg-contain bg-center bg-no-repeat sm:h-[280px] sm:w-[280px] lg:h-[392px] lg:w-[392px]"
-              style={{ backgroundImage: `url(${IMG.logo})` }}
-            />
-          </Reveal>
-          <Reveal variant="zoom" delay={350}>
-            <Tile src={IMG.contentBrailleRelay} size="lg" />
-          </Reveal>
-          <Reveal variant="zoom" delay={700}>
-            <Tile src={IMG.contentYubibo} size="sm" />
-          </Reveal>
-          <Reveal variant="zoom" delay={1050}>
-            <Tile src={IMG.contentTouchpark} size="sm" />
-          </Reveal>
-        </div>
-
-        <Reveal delay={1150}>
-          <div className="flex flex-col items-center gap-2">
-            <p className="flex flex-wrap items-baseline justify-center font-bold tracking-[1px] text-ink text-xl md:text-[34px]">
-              <span>{EVENT.dateParts.year}</span>
-              <span className="text-[0.6em]">年</span>
-              <span>{EVENT.dateParts.month}</span>
-              <span className="text-[0.6em]">月</span>
-              <span>{EVENT.dateParts.day}</span>
-              <span className="text-[0.6em]">日（{EVENT.dateParts.dow}）</span>
-              <span className="ml-2.5">{EVENT.dateParts.time}</span>
-            </p>
-            <p className="text-center text-sm text-ink md:text-lg">
-              {EVENT.locationLine}
-            </p>
+      {/* アートウォール（固定サイズの正方形タイル・中央基準でトリム） */}
+      <div
+        aria-hidden
+        className="absolute left-1/2 top-1/2 grid -translate-x-1/2 -translate-y-1/2"
+        style={{
+          gridTemplateColumns: `repeat(${COLS}, var(--tile))`,
+          gap: "var(--gap)",
+        }}
+      >
+        {MOSAIC_TILES.map((tile, i) => (
+          <div
+            key={i}
+            className="relative h-[var(--tile)] w-[var(--tile)] overflow-hidden rounded-2xl bg-cover bg-center"
+            style={{ backgroundImage: `url(${tile.src})` }}
+          >
+            {tile.label && (
+              <span className="absolute bottom-2 left-2 font-en text-[10px] font-medium tracking-[1.5px] text-white/90 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]">
+                {tile.label}
+              </span>
+            )}
           </div>
-        </Reveal>
+        ))}
+      </div>
 
-        <Reveal delay={1300}>
-          <div className="flex flex-col items-center gap-8">
-            <a
-              href={TICKET_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-3 rounded-full bg-ink px-10 py-4 md:px-14 md:py-[18px]"
-            >
-              <span className="text-sm tracking-[1px] text-brand">
-                チケットを購入する
-              </span>
-              <span
-                aria-hidden
-                className="font-en text-sm text-brand transition-transform group-hover:translate-x-1"
-              >
-                →
-              </span>
-            </a>
+      {/* 周辺フェード（ビネット）＋下側の落とし込み */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 75% 70% at 50% 45%, rgba(26,26,26,0) 34%, rgba(26,26,26,0.62) 100%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/80 to-transparent"
+      />
+
+      {/* 中央カード（2×2タイル分の正方形）：タグライン・ロゴ・日付 */}
+      <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+        <Reveal variant="zoom">
+          <div
+            className="flex flex-col items-center justify-center gap-[3.5%] rounded-2xl bg-brand px-[7%] [box-shadow:0_18px_48px_rgba(0,0,0,0.5)]"
+            style={{
+              width: "calc(2 * var(--tile) + var(--gap))",
+              height: "calc(2 * var(--tile) + var(--gap))",
+            }}
+          >
+            <p className="whitespace-nowrap text-center text-[13px] font-black leading-tight tracking-normal text-ink sm:text-base md:text-xl lg:text-[26px]">
+              {EVENT.heroCopy}
+            </p>
+
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={IMG.logo} alt="NO LOOK PARK" className="w-[70%]" />
+
+            <div className="flex flex-col items-center gap-1">
+              <p className="flex flex-wrap items-baseline justify-center text-[15px] font-bold tracking-[0.5px] text-ink sm:text-lg md:text-xl lg:text-[22px]">
+                <span>{EVENT.dateParts.year}</span>
+                <span className="text-[0.6em]">年</span>
+                <span>{EVENT.dateParts.month}</span>
+                <span className="text-[0.6em]">月</span>
+                <span>{EVENT.dateParts.day}</span>
+                <span className="text-[0.6em]">日（{EVENT.dateParts.dow}）</span>
+                <span className="ml-1.5">{EVENT.dateParts.time}</span>
+              </p>
+              <p className="text-center text-[9px] text-ink sm:text-[10px] md:text-xs">
+                {EVENT.locationLine}
+              </p>
+            </div>
           </div>
         </Reveal>
       </div>
@@ -113,8 +127,10 @@ export default function Hero() {
         aria-hidden
         className="pointer-events-none absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
       >
-        <span className="font-en text-[10px] tracking-[1px] text-ink">SCROLL</span>
-        <span className="h-8 w-px bg-ink/40" />
+        <span className="font-en text-[10px] tracking-[1px] text-brand">
+          SCROLL
+        </span>
+        <span className="h-8 w-px bg-brand/50" />
       </div>
     </section>
   );

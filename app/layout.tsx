@@ -17,6 +17,7 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nolookpark-web.vercel.app"),
   title: "NO LOOK PARK｜「みえない」を楽しみつくす体験型イベント",
   description:
     "NO LOOK PARKは「みえない」をコンセプトにした新しい体験型イベント。2026年10月24日（土）、東京・池尻大橋 HOME/WORK VILLAGEにて開催。",

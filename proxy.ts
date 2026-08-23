@@ -1,12 +1,16 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
-import { AUTH_COOKIE, expectedToken } from "./lib/auth";
+// import type { NextRequest } from "next/server";
+// import { AUTH_COOKIE, expectedToken } from "./lib/auth";
 
-// 公開前ゲート（Cookie方式）。
-// HTTP Basic認証はブラウザ/セキュリティソフトにフィッシングと誤判定され警告されるため、
-// 通常のログインフォーム + Cookie で認証する方式にしている。
-// 認証情報は公開リポジトリに直書きせず環境変数から読む:
+// 公開前ゲートは一時的に無効化（パスワード画面をスキップして直接トップを表示）。
+// 再開する場合は下の proxy 実装を差し替え、環境変数
 //   BASIC_AUTH_USER / BASIC_AUTH_PASSWORD
+// を設定する。
+export function proxy() {
+  return NextResponse.next();
+}
+
+/* --- 公開前ゲート（Cookie方式）: 再開時はこちらを有効化する ---
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -37,6 +41,7 @@ export function proxy(request: NextRequest) {
   url.search = "";
   return NextResponse.redirect(url);
 }
+*/
 
 export const config = {
   // Next 内部の静的アセットと favicon 以外の全リクエストを対象にする

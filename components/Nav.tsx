@@ -6,19 +6,27 @@ import { NAV_LINKS, NAV_TICKET, TICKET_URL, IMG } from "@/lib/site";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  // 初期（ヒーロー）ビューでは隠し、2番目のセクションに入ったら現れる。
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () =>
+      setShow(window.scrollY > window.innerHeight * 0.9);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-30 transition-colors duration-300 ${
-        scrolled ? "bg-brand/95 backdrop-blur-sm" : ""
+      className={`fixed inset-x-0 top-0 z-30 bg-brand/95 backdrop-blur-sm transition-[transform,opacity] duration-300 ${
+        show
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none -translate-y-full opacity-0"
       }`}
     >
       <nav

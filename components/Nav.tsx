@@ -72,7 +72,7 @@ export default function Nav() {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="mx-6 rounded-2xl bg-ink px-6 py-6 lg:hidden">
+        <div className="mx-6 mb-6 rounded-2xl bg-ink px-6 py-6 lg:hidden">
           <div className="flex flex-col gap-5">
             {NAV_LINKS.map((l) => (
               <a

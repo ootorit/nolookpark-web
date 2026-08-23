@@ -121,17 +121,6 @@ export default function Hero() {
           </div>
         </Reveal>
       </div>
-
-      {/* Scroll hint */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
-      >
-        <span className="font-en text-[10px] tracking-[1px] text-brand">
-          SCROLL
-        </span>
-        <span className="h-8 w-px bg-brand/50" />
-      </div>
     </section>
   );
 }

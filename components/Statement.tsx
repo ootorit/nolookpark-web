@@ -80,10 +80,16 @@ export default function Statement() {
     >
       <div className="mx-auto flex max-w-[840px] flex-col items-center gap-10 text-center">
         <Reveal>
+          {/*
+            行頭の「 と行末の！ は、送り幅の中で字面が片側に寄っている。
+            そのままボックスを中央ぞろえにすると、1行目は右へ・2行目は左へ
+            ずれて見える（44px で実測すると2行の字面中心が約20pxずれる）。
+            字面の中心がそろうように、行ごとに光学補正をかけている。
+            数値は canvas の actualBoundingBox 実測値（1行目 +0.271em / 2行目 -0.192em）。
+          */}
           <h2 className="text-3xl leading-[1.5] text-ink md:text-[44px] md:leading-[1.6]">
-            「みえない」を
-            <br />
-            楽しみつくそう！
+            <span className="block translate-x-[-0.271em]">「みえない」を</span>
+            <span className="block translate-x-[0.192em]">楽しみつくそう！</span>
           </h2>
         </Reveal>
 

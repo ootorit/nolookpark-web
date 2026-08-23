@@ -22,10 +22,8 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-30 bg-brand/95 backdrop-blur-sm transition-[transform,opacity] duration-300 ${
-        show
-          ? "translate-y-0 opacity-100"
-          : "pointer-events-none -translate-y-full opacity-0"
+      className={`fixed inset-x-0 top-0 z-30 bg-brand/95 backdrop-blur-sm transition-opacity duration-500 ${
+        show ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
       <nav

@@ -244,9 +244,9 @@ export const SPONSORS: { name: string; logo?: string }[] = [
 
 // 共催・協賛セクション。共催は CO_HOST（Vision Consortium）を使用。
 // こちらは協賛（logo があれば画像、なければ社名テキストで表示）。
-export const SPONSOR_LOGOS: { name: string; logo?: string }[] = [
-  { name: "参天製薬", logo: IMG.santenLogo },
-  { name: "PLUS", logo: IMG.smartschoolLogo },
+export const SPONSOR_LOGOS: { name: string; logo?: string; href?: string }[] = [
+  { name: "参天製薬", logo: IMG.santenLogo, href: "https://www.santen.com/ja" },
+  { name: "PLUS", logo: IMG.smartschoolLogo, href: "https://www.smartschool.jp/" },
 ];
 
 // 協力（各コンテンツを提供・制作している人・団体のクレジット）。

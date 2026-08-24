@@ -73,6 +73,18 @@ body {
   background-size: 100% 100%;
 }
 
+/* モバイルではマーカーを引かない。
+   狭い幅だと囲んだ範囲が何行にもまたがり、行ごとに黄色が引き直されて
+   面が細切れになる。文字も読みづらくなるので、素の本文のまま見せる。
+   md（768px）以上でだけ引く。 */
+@media (max-width: 767px) {
+  .hl,
+  .reveal.is-visible .hl {
+    background-image: none;
+    padding: 0;
+  }
+}
+
 /* --- Infinite marquee (sponsor logos, right → left) ------------------- */
 @keyframes marquee {
   from {
@@ -120,30 +132,8 @@ body {
 }
 
 /* スクロール誘導のドット */
-@keyframes scrollDot {
-  0% { transform: translateY(-120%); opacity: 0; }
-  30% { opacity: 1; }
-  100% { transform: translateY(340%); opacity: 0; }
-}
-.scroll-dot {
-  animation: scrollDot 1.6s ease-in-out infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero-tile { animation: none !important; opacity: 1 !important; transform: none !important; }
-  .scroll-dot { animation: none !important; opacity: 1 !important; }
-}
-
-/* スクロール誘導のシェブロン（45度回転を保ったまま上下に弾む） */
-@keyframes scrollChevron {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
-}
-.scroll-chevron {
-  animation: scrollChevron 1.4s ease-in-out infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .scroll-chevron { animation: none !important; }
 }
 
 /* --- フォーム入力時の自動ズーム防止 ------------------------------------ */

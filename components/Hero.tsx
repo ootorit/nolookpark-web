@@ -180,28 +180,6 @@ export default function Hero() {
         </Reveal>
       </div>
 
-      {/* スクロール誘導（黒・下向きシェブロン） */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2"
-      >
-        <span className="font-en text-[11px] font-semibold tracking-[2px] text-ink [text-shadow:0_0_10px_#FFD600,0_0_18px_#FFD600]">
-          SCROLL
-        </span>
-        <svg
-          className="scroll-chevron text-ink [filter:drop-shadow(0_0_6px_#FFD600)]"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M6 9l6 6 6-6" />
-        </svg>
-      </div>
     </section>
   );
 }

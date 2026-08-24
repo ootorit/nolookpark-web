@@ -53,6 +53,7 @@ export const IMG = {
   // 協賛ロゴ
   visionConsortiumLogo: "/images/logo_vision-cons.png",
   santenLogo: "/images/santen_logo.png",
+  smartschoolLogo: "/images/smartschool_logo.png",
   // コンテンツ キービジュアル
   contentTesagurido: "/images/tesagurido_keyshot.jpg",
   contentTouchmatch: "/images/touchmatch_keyshot.jpg",
@@ -238,14 +239,14 @@ export const STATEMENT_BODY = [
 // トップのスポンサーマーキー。logo があれば画像、なければ文字プレースホルダーで表示。
 export const SPONSORS: { name: string; logo?: string }[] = [
   { name: "参天製薬", logo: IMG.santenLogo },
-  { name: "PLUS" },
+  { name: "PLUS", logo: IMG.smartschoolLogo },
 ];
 
 // 共催・協賛セクション。共催は CO_HOST（Vision Consortium）を使用。
 // こちらは協賛（logo があれば画像、なければ社名テキストで表示）。
 export const SPONSOR_LOGOS: { name: string; logo?: string }[] = [
   { name: "参天製薬", logo: IMG.santenLogo },
-  { name: "PLUS" },
+  { name: "PLUS", logo: IMG.smartschoolLogo },
 ];
 
 // 協力（各コンテンツを提供・制作している人・団体のクレジット）。

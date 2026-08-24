@@ -2,9 +2,10 @@ import { EVENT, IMG, TICKET_URL } from "@/lib/site";
 import Reveal from "./Reveal";
 
 // アートウォール用の写真。コンテンツKV＋追加素材を敷き詰めて壁面モザイクをつくる。
-const WALL_EXTRA = Array.from(
-  { length: 12 },
-  (_, i) => `/images/wall/wall-${String(i + 1).padStart(2, "0")}.jpg`
+// wall-02 / wall-05 は NINNIN のロボットが写り込んでいるため除外している
+// （出展が未確定なのでトップビューには出さない）。
+const WALL_EXTRA = [1, 3, 4, 6, 7, 8, 9, 10, 11, 12].map(
+  (n) => `/images/wall/wall-${String(n).padStart(2, "0")}.jpg`
 );
 const PHOTOS = [
   IMG.contentTesagurido,
@@ -15,7 +16,6 @@ const PHOTOS = [
   IMG.contentShodo,
   IMG.contentTouchpark,
   IMG.contentBlindBlend,
-  IMG.contentNinnin,
   ...WALL_EXTRA,
 ];
 
@@ -49,9 +49,10 @@ const MOSAIC_TILES: {
   // 中心からの距離でディレイを付け、中央から咲くように出す。
   const dist = Math.hypot(col - CENTER_C, row - CENTER_R);
   const center = (col === C0 || col === C1) && (row === R0 || row === R1);
-  // PHOTOS.length(21) と互いに素な 5 でずらし、隣接タイルの重複を避ける。
+  // PHOTOS.length(18) と互いに素な 7 でずらし、隣接タイルの重複を避ける。
+  // 横隣は 7、縦隣は 12*7%18=12 ずれるので、同じ写真が並ぶことはない。
   return {
-    src: PHOTOS[(i * 5) % PHOTOS.length],
+    src: PHOTOS[(i * 7) % PHOTOS.length],
     delay: Math.round(dist * 45),
     center,
   };

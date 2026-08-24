@@ -52,7 +52,7 @@ export default function Nav() {
             href={TICKET_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-ink px-6 py-2.5 text-[13px] tracking-[1px] text-brand transition-transform hover:scale-105"
+            className="rounded-full bg-ink px-7 py-3 text-sm tracking-[1px] text-brand transition-transform hover:scale-105"
           >
             {NAV_TICKET}
           </a>

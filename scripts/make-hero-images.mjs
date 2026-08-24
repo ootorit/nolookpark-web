@@ -11,6 +11,8 @@ const sharp = (await import("sharp")).default;
 const IMG = (f) => path.join(ROOT, "public/images", f);
 
 // ヒーローと同じ壁面写真（コンテンツKV＋追加素材）。
+// NINNIN のロボットが写る ninnin_keyshot / wall-02 / wall-05 は
+// 出展未確定のため除外し、ヒーロー（Hero.tsx）と同じ18点に揃える。
 const PHOTOS = [
   "tesagurido_keyshot.jpg",
   "touchmatch_keyshot.jpg",
@@ -20,8 +22,9 @@ const PHOTOS = [
   "shodo_keyshot.jpg",
   "touchpark_keyshot.jpg",
   "blindblend_keyshot.jpg",
-  "ninnin_keyshot.jpg",
-  ...Array.from({ length: 12 }, (_, i) => `wall/wall-${String(i + 1).padStart(2, "0")}.jpg`),
+  ...[1, 3, 4, 6, 7, 8, 9, 10, 11, 12].map(
+    (n) => `wall/wall-${String(n).padStart(2, "0")}.jpg`
+  ),
 ].map(IMG);
 
 const TILE = 200;

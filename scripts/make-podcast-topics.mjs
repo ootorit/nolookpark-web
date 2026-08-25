@@ -10,7 +10,7 @@ const sharp = (await import("sharp")).default;
 const SIZE = 1080;
 const YELLOW = "#FFD600";
 const INK = "#1A1A1A";
-const FONT = "'Noto Sans JP', Poppins";
+const FONT = "'Noto Sans JP'";
 const WEIGHT = 900;
 
 // ロゴと同じ雰囲気の黒い角丸フレーム
@@ -81,9 +81,9 @@ async function main() {
     console.warn("⚠ logo not found:", LOGO_PATH, "→ ロゴなしで生成");
   }
 
-  // テキストエリア（ロゴがあればその下）
-  const logoTop = INSET + 24;
-  const textTop = hasLogo ? logoTop + logoH + 24 : INSET + PAD;
+  // テキストエリア（ロゴがあればその下）。ロゴ上部の余白を広めにとる。
+  const logoTop = INSET + 78;
+  const textTop = hasLogo ? logoTop + logoH + 30 : INSET + PAD;
   const textBottom = SIZE - INSET - PAD;
   const textAreaH = textBottom - textTop;
 
@@ -106,19 +106,19 @@ async function main() {
     textTop + (textAreaH - blockH) / 2 + fs * 0.82
   );
   const tspans = lines
-    .map((ln, i) => `<tspan x="${CX}" y="${firstBaseline + i * lineGap}">${esc(ln)}</tspan>`)
+    .map((ln, i) => `<tspan x="${AREA_L}" y="${firstBaseline + i * lineGap}">${esc(ln)}</tspan>`)
     .join("");
 
   const svg = Buffer.from(`
 <svg width="${SIZE}" height="${SIZE}" xmlns="http://www.w3.org/2000/svg">
   <rect width="${SIZE}" height="${SIZE}" fill="${YELLOW}"/>
   <rect x="${INSET}" y="${INSET}" width="${SIZE - 2 * INSET}" height="${SIZE - 2 * INSET}" rx="${RADIUS}" ry="${RADIUS}" fill="none" stroke="${INK}" stroke-width="${STROKE}"/>
-  <text font-family="${FONT}" font-weight="${WEIGHT}" font-size="${fs}" fill="${INK}" text-anchor="middle">${tspans}</text>
+  <text font-family="${FONT}" font-weight="${WEIGHT}" font-size="${fs}" fill="${INK}" text-anchor="start">${tspans}</text>
 </svg>`);
 
   const composites = [];
   if (logoBuf) {
-    composites.push({ input: logoBuf, left: Math.round((SIZE - logoW) / 2), top: logoTop });
+    composites.push({ input: logoBuf, left: AREA_L, top: logoTop });
   }
   const out = path.join(ROOT, "public/images/podcast-topics.png");
   await sharp(svg).composite(composites).png().toFile(out);

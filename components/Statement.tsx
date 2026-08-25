@@ -29,19 +29,36 @@ function PodcastPlayer() {
 const HIGHLIGHT_DELAY = 400;
 const HIGHLIGHT_STEP = 300;
 
+// 原稿の行つなぎに使う内部記号。SOFT は md 以上でだけ改行、HARD はどの幅でも改行。
+const SOFT_BREAK = "\n";
+const HARD_BREAK = "\u0001";
+// 原稿側で行末に付ける印。この行の後ろはモバイルでも必ず改行する。
+const HARD_MARK = "//";
+
 /**
- * 段落の中の改行を <br> にする（原稿の改行位置をそのまま出す）。
- * ただしモバイルでは改行を効かせない。原稿の改行はPC幅で読みやすいように
- * 切ってあるので、狭い画面ではその行がさらに折り返し、2〜4文字の端切れが
- * 中央に浮いて読みにくくなる。md 未満では素の文章として流す。
+ * 原稿の行を1本の文字列にまとめる。
+ * 既定の改行は「PC幅で読みやすい位置」に切ってあるだけなので、モバイルでは
+ * 効かせない（狭い画面でさらに折り返して2〜4文字の端切れが出るため）。
+ * ただし文の切れ目としてどの幅でも改行したいところは、原稿の行末に `//` を付ける。
  */
+function joinLines(lines: readonly string[]) {
+  return lines
+    .map((line, i) => {
+      const hard = line.endsWith(HARD_MARK);
+      const text = hard ? line.slice(0, -HARD_MARK.length) : line;
+      if (i === lines.length - 1) return text;
+      return text + (hard ? HARD_BREAK : SOFT_BREAK);
+    })
+    .join("");
+}
+
+/** まとめた文字列を <br> に戻す。SOFT は md 以上でだけ効かせる。 */
 function renderLines(text: string) {
-  return text.split("\n").map((line, i) => (
-    <Fragment key={i}>
-      {i > 0 && <br className="hidden md:inline" />}
-      {line}
-    </Fragment>
-  ));
+  return text.split(/([\n\u0001])/).map((part, i) => {
+    if (part === SOFT_BREAK) return <br key={i} className="hidden md:inline" />;
+    if (part === HARD_BREAK) return <br key={i} />;
+    return <Fragment key={i}>{part}</Fragment>;
+  });
 }
 
 /**
@@ -51,8 +68,7 @@ function renderLines(text: string) {
  * ここでインラインで当てる（Safari で行ごとにマーカーが引かれなくなるのを防ぐ）。
  */
 function renderParagraph(lines: readonly string[], nextHighlight: () => number) {
-  return lines
-    .join("\n")
+  return joinLines(lines)
     .split("==")
     .map((part, i) => {
       if (i % 2 === 0) return <Fragment key={i}>{renderLines(part)}</Fragment>;
@@ -99,7 +115,10 @@ export default function Statement() {
         </Reveal>
 
         <Reveal delay={150}>
-          <div className="flex max-w-[640px] flex-col gap-5 text-base leading-[1.9] text-ink md:text-lg">
+          {/* モバイルは左揃え。日本語の複数行は行頭がそろっているほうが目で追いやすく、
+              中央揃えだと行ごとに書き出しが動いて読みにくい。
+              md 以上は原稿の改行位置で切れるので中央揃えのまま。 */}
+          <div className="flex max-w-[640px] flex-col gap-5 text-left text-base leading-[1.9] text-ink md:text-center md:text-lg">
             {STATEMENT_BODY.map((lines, i) => (
               <p key={i}>{renderParagraph(lines, nextHighlight)}</p>
             ))}

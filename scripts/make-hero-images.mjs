@@ -211,4 +211,5 @@ await generate(1300, 640, path.join(ROOT, "public/images/peatix-header.png"), {
 const v45DateCard = await buildFullCard(620, { showDate: true });
 await generate(1080, 1350, path.join(ROOT, "public/images/poster-4x5-date.png"), {
   card: v45DateCard,
+  zoom: 1.08,
 });

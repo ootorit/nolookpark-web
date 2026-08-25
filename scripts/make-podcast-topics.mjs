@@ -105,8 +105,13 @@ async function main() {
   const firstBaseline = Math.round(
     textTop + (textAreaH - blockH) / 2 + fs * 0.82
   );
+  // 両端揃え（最終行以外は幅いっぱいに伸ばして左右マージンを揃える）
   const tspans = lines
-    .map((ln, i) => `<tspan x="${AREA_L}" y="${firstBaseline + i * lineGap}">${esc(ln)}</tspan>`)
+    .map((ln, i) => {
+      const justify = i < lines.length - 1 && [...ln].length > 1;
+      const attr = justify ? ` textLength="${TEXT_W}" lengthAdjust="spacing"` : "";
+      return `<tspan x="${AREA_L}" y="${firstBaseline + i * lineGap}"${attr}>${esc(ln)}</tspan>`;
+    })
     .join("");
 
   const svg = Buffer.from(`

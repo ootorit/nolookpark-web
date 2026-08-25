@@ -118,7 +118,7 @@ async function main() {
 
   const composites = [];
   if (logoBuf) {
-    composites.push({ input: logoBuf, left: AREA_L, top: logoTop });
+    composites.push({ input: logoBuf, left: Math.round((SIZE - logoW) / 2), top: logoTop });
   }
   const out = path.join(ROOT, "public/images/podcast-topics.png");
   await sharp(svg).composite(composites).png().toFile(out);

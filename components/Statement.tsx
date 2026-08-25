@@ -29,11 +29,16 @@ function PodcastPlayer() {
 const HIGHLIGHT_DELAY = 400;
 const HIGHLIGHT_STEP = 300;
 
-/** 段落の中の改行を <br> にする（原稿の改行位置をそのまま出す） */
+/**
+ * 段落の中の改行を <br> にする（原稿の改行位置をそのまま出す）。
+ * ただしモバイルでは改行を効かせない。原稿の改行はPC幅で読みやすいように
+ * 切ってあるので、狭い画面ではその行がさらに折り返し、2〜4文字の端切れが
+ * 中央に浮いて読みにくくなる。md 未満では素の文章として流す。
+ */
 function renderLines(text: string) {
   return text.split("\n").map((line, i) => (
     <Fragment key={i}>
-      {i > 0 && <br />}
+      {i > 0 && <br className="hidden md:inline" />}
       {line}
     </Fragment>
   ));

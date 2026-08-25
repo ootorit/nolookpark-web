@@ -112,20 +112,25 @@ async function buildFullCard(size, { showDate = true } = {}) {
 }
 
 async function generate(width, height, outPath, { card, zoom = 1 }) {
-  const cols = evenCover(width);
-  const rows = evenCover(height);
+  // カードは正方形で、グリッドの整数セル（2×2, 3×3 など）にぴったり合わせる。
+  // カードのセル数と同じ偶奇で列・行を広げると、中央にカードがぴったり収まる。
+  const cardSize = (await sharp(card).metadata()).width;
+  const cardCells = Math.round((cardSize + GAP) / (TILE + GAP));
+  const cover = (target) => {
+    let n = cardCells;
+    while (n * TILE + (n - 1) * GAP < target) n += 2;
+    return n;
+  };
+  const cols = cover(width);
+  const rows = cover(height);
   const gridW = cols * TILE + (cols - 1) * GAP;
   const gridH = rows * TILE + (rows - 1) * GAP;
   const cropLeft = Math.floor((gridW - width) / 2);
   const cropTop = Math.floor((gridH - height) / 2);
 
-  // カードは正方形で、グリッドの整数セル（2×2 など）にぴったり合わせる。
-  // ヒーローと同様、その中央セルは画像を敷かず黄色のまま空けてカードを重ねる
-  // （ロゴ・黄色ボックスがグリッドに綺麗に収まる）。
-  const cardSize = (await sharp(card).metadata()).width;
-  const cardCells = Math.round((cardSize + GAP) / (TILE + GAP));
-  const cStart = cols / 2 - cardCells / 2;
-  const rStart = rows / 2 - cardCells / 2;
+  // ヒーローと同様、中央のカード用セルは画像を敷かず黄色のまま空けてカードを重ねる。
+  const cStart = (cols - cardCells) / 2;
+  const rStart = (rows - cardCells) / 2;
 
   const tiles = [];
   let k = 0;
@@ -201,14 +206,9 @@ await generate(1300, 640, path.join(ROOT, "public/images/peatix-header.png"), {
   zoom: 1.1,
 });
 
-// 4:5 縦型（Instagram / HOME/WORK VILLAGE 掲載用）1080×1350
-// 日時あり
-const v45DateCard = await buildFullCard(830, { showDate: true });
+// 4:5 縦型（Instagram / HOME/WORK VILLAGE 掲載用）1080×1350。
+// カードは 3×3（620px）に小さくして、体験写真（アートウォール）を多めに見せる。
+const v45DateCard = await buildFullCard(620, { showDate: true });
 await generate(1080, 1350, path.join(ROOT, "public/images/poster-4x5-date.png"), {
   card: v45DateCard,
-});
-// 日時なし（キャッチ＋ロゴ＋会場、ロゴ大きめ）
-const v45NoDateCard = await buildFullCard(830, { showDate: false });
-await generate(1080, 1350, path.join(ROOT, "public/images/poster-4x5-nodate.png"), {
-  card: v45NoDateCard,
 });

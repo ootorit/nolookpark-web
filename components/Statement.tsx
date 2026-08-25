@@ -29,36 +29,19 @@ function PodcastPlayer() {
 const HIGHLIGHT_DELAY = 400;
 const HIGHLIGHT_STEP = 300;
 
-// 原稿の行つなぎに使う内部記号。SOFT は md 以上でだけ改行、HARD はどの幅でも改行。
-const SOFT_BREAK = "\n";
-const HARD_BREAK = "\u0001";
-// 原稿側で行末に付ける印。この行の後ろはモバイルでも必ず改行する。
-const HARD_MARK = "//";
-
 /**
- * 原稿の行を1本の文字列にまとめる。
- * 既定の改行は「PC幅で読みやすい位置」に切ってあるだけなので、モバイルでは
- * 効かせない（狭い画面でさらに折り返して2〜4文字の端切れが出るため）。
- * ただし文の切れ目としてどの幅でも改行したいところは、原稿の行末に `//` を付ける。
+ * 段落の中の改行を <br> にする。
+ * 原稿の改行は「PC幅で読みやすい位置」に切ってあるだけなので、モバイルでは
+ * 効かせない（狭い画面でさらに折り返して2〜4文字の端切れが中央に浮く）。
+ * どうしても切りたい文の切れ目は、原稿側で段落を分ける。
  */
-function joinLines(lines: readonly string[]) {
-  return lines
-    .map((line, i) => {
-      const hard = line.endsWith(HARD_MARK);
-      const text = hard ? line.slice(0, -HARD_MARK.length) : line;
-      if (i === lines.length - 1) return text;
-      return text + (hard ? HARD_BREAK : SOFT_BREAK);
-    })
-    .join("");
-}
-
-/** まとめた文字列を <br> に戻す。SOFT は md 以上でだけ効かせる。 */
 function renderLines(text: string) {
-  return text.split(/([\n\u0001])/).map((part, i) => {
-    if (part === SOFT_BREAK) return <br key={i} className="hidden md:inline" />;
-    if (part === HARD_BREAK) return <br key={i} />;
-    return <Fragment key={i}>{part}</Fragment>;
-  });
+  return text.split("\n").map((line, i) => (
+    <Fragment key={i}>
+      {i > 0 && <br className="hidden md:inline" />}
+      {line}
+    </Fragment>
+  ));
 }
 
 /**
@@ -68,7 +51,8 @@ function renderLines(text: string) {
  * ここでインラインで当てる（Safari で行ごとにマーカーが引かれなくなるのを防ぐ）。
  */
 function renderParagraph(lines: readonly string[], nextHighlight: () => number) {
-  return joinLines(lines)
+  return lines
+    .join("\n")
     .split("==")
     .map((part, i) => {
       if (i % 2 === 0) return <Fragment key={i}>{renderLines(part)}</Fragment>;
@@ -97,20 +81,29 @@ export default function Statement() {
     <section
       id="statement"
       aria-label="コンセプト"
-      className="bg-white px-6 py-24 md:px-12 md:py-32"
+      // 固定ナビ（84px）がセクション上部に重なるぶん、モバイルは上の余白を少し足す。
+      // py-24（96px）だと詰まって見え、pt-36（144px）だと空きすぎたので 128px。
+      className="bg-white px-6 pb-24 pt-32 md:px-12 md:py-32"
     >
       <div className="mx-auto flex max-w-[840px] flex-col items-center gap-10 text-center">
-        <Reveal>
+        {/* モバイルは左揃えなので、ラッパーごと幅いっぱいに広げて
+            本文の左端とそろえる（items-center のままだと見出しだけ中央に寄る）。 */}
+        <Reveal className="self-stretch md:self-auto">
           {/*
-            行頭の「 と行末の！ は、送り幅の中で字面が片側に寄っている。
-            そのままボックスを中央ぞろえにすると、1行目は右へ・2行目は左へ
-            ずれて見える（44px で実測すると2行の字面中心が約20pxずれる）。
-            字面の中心がそろうように、行ごとに光学補正をかけている。
-            数値は canvas の actualBoundingBox 実測値（1行目 +0.271em / 2行目 -0.192em）。
+            行頭の「 と行末の！ は、送り幅の中で字面が片側に寄っている（実測で
+            「 の左に 0.641em、！ の右に 0.411em の空き）。素直に置くと行がずれて
+            見えるので、配置に合わせて光学補正をかける。
+
+            モバイル（左揃え）: 1行目だけ 0.614em 左へ出して、2行の字面の左端をそろえる。
+                                いわゆる約物のぶら下げ。
+            PC（中央揃え）:     字面の中心がそろうように 1行目 -0.271em / 2行目 +0.192em。
+            数値はいずれも canvas の actualBoundingBox 実測値。
           */}
-          <h2 className="text-[26px] font-medium leading-[1.5] text-ink md:text-[44px] md:leading-[1.6]">
-            <span className="block translate-x-[-0.271em]">「みえない」を</span>
-            <span className="block translate-x-[0.192em]">楽しみつくそう！</span>
+          <h2 className="text-left text-[26px] font-medium leading-[1.5] text-ink md:self-auto md:text-center md:text-[44px] md:leading-[1.6]">
+            <span className="block translate-x-[-0.614em] md:translate-x-[-0.271em]">
+              「みえない」を
+            </span>
+            <span className="block md:translate-x-[0.192em]">楽しみつくそう！</span>
           </h2>
         </Reveal>
 

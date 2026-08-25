@@ -73,18 +73,6 @@ body {
   background-size: 100% 100%;
 }
 
-/* モバイルではマーカーを引かない。
-   狭い幅だと囲んだ範囲が何行にもまたがり、行ごとに黄色が引き直されて
-   面が細切れになる。文字も読みづらくなるので、素の本文のまま見せる。
-   md（768px）以上でだけ引く。 */
-@media (max-width: 767px) {
-  .hl,
-  .reveal.is-visible .hl {
-    background-image: none;
-    padding: 0;
-  }
-}
-
 /* --- Infinite marquee (sponsor logos, right → left) ------------------- */
 @keyframes marquee {
   from {

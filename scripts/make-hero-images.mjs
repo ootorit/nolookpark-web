@@ -82,25 +82,31 @@ async function buildLogoCard(size) {
     .toBuffer();
 }
 
-// キャッチ・ロゴ・日時・場所の入ったカード（Peatix用）。
+// キャッチ・ロゴ・（日時）・場所の入ったカード（Peatix・縦型用）。
 // 日付は数字を大きく、年月日（土）を小さく（ヒーローと同じ文字組み）。
-async function buildFullCard(size) {
+// showDate=false で日時行を省き、ロゴを少し大きくする。
+async function buildFullCard(size, { showDate = true } = {}) {
   const cx = size / 2;
   const head = Math.round(size * 0.058); // キャッチ
   const big = Math.round(size * 0.06); // 日付の数字
   const unit = Math.round(big * 0.62); // 年月日（土）
   const loc = Math.round(size * 0.032); // 会場
+  const dateText = showDate
+    ? `<text x="${cx}" y="${Math.round(size * 0.885)}" text-anchor="middle" font-family="${FONT}" font-weight="700" fill="${INK}"><tspan font-size="${big}">2026</tspan><tspan font-size="${unit}">年</tspan><tspan font-size="${big}">10</tspan><tspan font-size="${unit}">月</tspan><tspan font-size="${big}">24</tspan><tspan font-size="${unit}">日（土）</tspan><tspan font-size="${big}" dx="7">11:00-17:00</tspan></text>`
+    : "";
+  const venueY = showDate ? 0.945 : 0.92;
   const svg = Buffer.from(`
 <svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg">
   <rect width="${size}" height="${size}" rx="${Math.round(size * 0.05)}" ry="${Math.round(size * 0.05)}" fill="${YELLOW}"/>
   <text x="${cx}" y="${Math.round(size * 0.12)}" text-anchor="middle" font-family="${FONT}" font-weight="900" font-size="${head}" fill="${INK}">「みえない」を楽しみつくそう！</text>
-  <text x="${cx}" y="${Math.round(size * 0.885)}" text-anchor="middle" font-family="${FONT}" font-weight="700" fill="${INK}"><tspan font-size="${big}">2026</tspan><tspan font-size="${unit}">年</tspan><tspan font-size="${big}">10</tspan><tspan font-size="${unit}">月</tspan><tspan font-size="${big}">24</tspan><tspan font-size="${unit}">日（土）</tspan><tspan font-size="${big}" dx="7">11:00-17:00</tspan></text>
-  <text x="${cx}" y="${Math.round(size * 0.945)}" text-anchor="middle" font-family="${FONT}" font-weight="700" font-size="${loc}" fill="${INK}">${esc("@ HOME/WORK VILLAGE（東京・池尻大橋）")}</text>
+  ${dateText}
+  <text x="${cx}" y="${Math.round(size * venueY)}" text-anchor="middle" font-family="${FONT}" font-weight="700" font-size="${loc}" fill="${INK}">${esc("@ HOME/WORK VILLAGE（東京・池尻大橋）")}</text>
 </svg>`);
-  const L = Math.round(size * 0.61);
+  const L = Math.round(size * (showDate ? 0.61 : 0.62));
   const logo = await logoBuf(L);
+  const top = Math.round(size * (showDate ? 0.185 : 0.22));
   return sharp(svg)
-    .composite([{ input: logo, left: Math.round((size - L) / 2), top: Math.round(size * 0.185) }])
+    .composite([{ input: logo, left: Math.round((size - L) / 2), top }])
     .png()
     .toBuffer();
 }
@@ -193,4 +199,16 @@ const peatixCard = await buildFullCard(410);
 await generate(1300, 640, path.join(ROOT, "public/images/peatix-header.png"), {
   card: peatixCard,
   zoom: 1.1,
+});
+
+// 4:5 縦型（Instagram / HOME/WORK VILLAGE 掲載用）1080×1350
+// 日時あり
+const v45DateCard = await buildFullCard(830, { showDate: true });
+await generate(1080, 1350, path.join(ROOT, "public/images/poster-4x5-date.png"), {
+  card: v45DateCard,
+});
+// 日時なし（キャッチ＋ロゴ＋会場、ロゴ大きめ）
+const v45NoDateCard = await buildFullCard(830, { showDate: false });
+await generate(1080, 1350, path.join(ROOT, "public/images/poster-4x5-nodate.png"), {
+  card: v45NoDateCard,
 });

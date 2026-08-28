@@ -29,10 +29,22 @@ const LOGO_H = 300;
 const esc = (s) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-// 1トピック＝1行のブロックにする（改行位置をそろえる）。
-// 末尾に区切りの「 /」を付けて、スラッシュ区切りの見た目は保つ。
-function wrap(topics) {
-  return topics.map((t, i) => (i < topics.length - 1 ? t + " /" : t));
+// 意図的な改行は入れず、幅（maxChars）を超えそうになったら折り返す自然な流し込み。
+// なるべく区切り「 / 」の直後で折り返す。
+function wrap(text, maxChars) {
+  const chars = [...text];
+  const lines = [];
+  let line = "";
+  for (let i = 0; i < chars.length; i++) {
+    line += chars[i];
+    const justClosedSlash = chars[i] === " " && chars[i - 1] === "/";
+    if ((justClosedSlash && line.length >= maxChars * 0.6) || line.length >= maxChars) {
+      lines.push(line.trim());
+      line = "";
+    }
+  }
+  if (line.trim()) lines.push(line.trim());
+  return lines;
 }
 
 // ロゴを一度だけ用意
@@ -56,25 +68,29 @@ async function render(topics, outName) {
   const textBottom = SIZE - INSET - PAD;
   const textAreaH = textBottom - textTop;
 
-  // 1トピック1行。横幅（最長トピック）と高さ（行数）の両方に収まる最大サイズ。
-  const lines = wrap(topics);
-  const maxLen = Math.max(...lines.map((l) => [...l].length));
-  let fs = 22;
-  for (let s = 72; s >= 20; s -= 1) {
+  // テキストエリアを埋める最大フォントサイズを選ぶ（幅で自動改行）
+  let chosen = { fs: 24, lines: [JOINED] };
+  for (let s = 72; s >= 22; s -= 1) {
+    const maxChars = Math.max(6, Math.floor(TEXT_W / (s * 0.98)));
+    const lines = wrap(JOINED, maxChars);
     const blockH = (lines.length - 1) * s * 1.5 + s;
-    const widthOK = maxLen * s * 0.98 <= TEXT_W;
-    if (blockH <= textAreaH && widthOK) {
-      fs = s;
+    if (blockH <= textAreaH) {
+      chosen = { fs: s, lines };
       break;
     }
   }
+  const { fs, lines } = chosen;
   const lineGap = Math.round(fs * 1.5);
   const blockH = (lines.length - 1) * lineGap + fs;
   const firstBaseline = Math.round(textTop + (textAreaH - blockH) / 2 + fs * 0.82);
 
-  // 左揃え（改行位置＝各トピックの区切りでそろう）
+  // 両端揃え（最終行以外は幅いっぱいに伸ばして左右マージンをそろえる）
   const tspans = lines
-    .map((ln, i) => `<tspan x="${AREA_L}" y="${firstBaseline + i * lineGap}">${esc(ln)}</tspan>`)
+    .map((ln, i) => {
+      const justify = i < lines.length - 1 && [...ln].length > 1;
+      const attr = justify ? ` textLength="${TEXT_W}" lengthAdjust="spacing"` : "";
+      return `<tspan x="${AREA_L}" y="${firstBaseline + i * lineGap}"${attr}>${esc(ln)}</tspan>`;
+    })
     .join("");
 
   const svg = Buffer.from(`

@@ -84,12 +84,17 @@ async function render(topics, outName) {
   const blockH = (lines.length - 1) * lineGap + fs;
   const firstBaseline = Math.round(textTop + (textAreaH - blockH) / 2 + fs * 0.82);
 
+  // テキスト全体を少し右へ寄せる（左の余白を増やす）
+  const OFFSET_X = 24;
+  const tx = AREA_L + OFFSET_X;
   // 両端揃え（最終行以外は幅いっぱいに伸ばして左右マージンをそろえる）
   const tspans = lines
     .map((ln, i) => {
       const justify = i < lines.length - 1 && [...ln].length > 1;
-      const attr = justify ? ` textLength="${TEXT_W}" lengthAdjust="spacing"` : "";
-      return `<tspan x="${AREA_L}" y="${firstBaseline + i * lineGap}"${attr}>${esc(ln)}</tspan>`;
+      const attr = justify
+        ? ` textLength="${TEXT_W - OFFSET_X}" lengthAdjust="spacing"`
+        : "";
+      return `<tspan x="${tx}" y="${firstBaseline + i * lineGap}"${attr}>${esc(ln)}</tspan>`;
     })
     .join("");
 

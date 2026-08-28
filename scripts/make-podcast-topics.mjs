@@ -29,21 +29,10 @@ const LOGO_H = 300;
 const esc = (s) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-// maxChars で折り返し（" / " の直後で優先的に改行）
-function wrap(text, maxChars) {
-  const chars = [...text];
-  const lines = [];
-  let line = "";
-  for (let i = 0; i < chars.length; i++) {
-    line += chars[i];
-    const justClosedSlash = chars[i] === " " && chars[i - 1] === "/";
-    if ((justClosedSlash && line.length >= maxChars * 0.6) || line.length >= maxChars) {
-      lines.push(line.trim());
-      line = "";
-    }
-  }
-  if (line.trim()) lines.push(line.trim());
-  return lines;
+// 1トピック＝1行のブロックにする（改行位置をそろえる）。
+// 末尾に区切りの「 /」を付けて、スラッシュ区切りの見た目は保つ。
+function wrap(topics) {
+  return topics.map((t, i) => (i < topics.length - 1 ? t + " /" : t));
 }
 
 // ロゴを一度だけ用意
@@ -67,30 +56,25 @@ async function render(topics, outName) {
   const textBottom = SIZE - INSET - PAD;
   const textAreaH = textBottom - textTop;
 
-  // テキストエリアを埋める最大フォントサイズを選ぶ
-  let chosen = { fs: 24, lines: [JOINED] };
-  for (let fs = 72; fs >= 22; fs -= 1) {
-    const maxChars = Math.max(6, Math.floor(TEXT_W / (fs * 0.98)));
-    const lines = wrap(JOINED, maxChars);
-    const lineGap = fs * 1.5;
-    const blockH = (lines.length - 1) * lineGap + fs;
-    if (blockH <= textAreaH) {
-      chosen = { fs, lines };
+  // 1トピック1行。横幅（最長トピック）と高さ（行数）の両方に収まる最大サイズ。
+  const lines = wrap(topics);
+  const maxLen = Math.max(...lines.map((l) => [...l].length));
+  let fs = 22;
+  for (let s = 72; s >= 20; s -= 1) {
+    const blockH = (lines.length - 1) * s * 1.5 + s;
+    const widthOK = maxLen * s * 0.98 <= TEXT_W;
+    if (blockH <= textAreaH && widthOK) {
+      fs = s;
       break;
     }
   }
-  const { fs, lines } = chosen;
   const lineGap = Math.round(fs * 1.5);
   const blockH = (lines.length - 1) * lineGap + fs;
   const firstBaseline = Math.round(textTop + (textAreaH - blockH) / 2 + fs * 0.82);
 
-  // 両端揃え（最終行以外は幅いっぱいに伸ばして左右マージンを揃える）
+  // 左揃え（改行位置＝各トピックの区切りでそろう）
   const tspans = lines
-    .map((ln, i) => {
-      const justify = i < lines.length - 1 && [...ln].length > 1;
-      const attr = justify ? ` textLength="${TEXT_W}" lengthAdjust="spacing"` : "";
-      return `<tspan x="${AREA_L}" y="${firstBaseline + i * lineGap}"${attr}>${esc(ln)}</tspan>`;
-    })
+    .map((ln, i) => `<tspan x="${AREA_L}" y="${firstBaseline + i * lineGap}">${esc(ln)}</tspan>`)
     .join("");
 
   const svg = Buffer.from(`
@@ -128,11 +112,11 @@ const EP2 = [
   "小さい声で、みんなの耳を奪っていく",
   "自分で扉を開けに行く",
   "触覚は、思ったより平等らしい",
-  "触覚日記から生まれたゲーム",
+  "触覚日記から生まれた「たっちまっち」",
   "会話って、けっこう適当",
-  "ゆびぼうは、指の概念を塗り替える",
+  "「YUBIBO」は、指の概念を塗り替える",
   "マテリアルとマジック",
-  "DEKABOは、その場に前衛芸術を出現させる",
+  "「DEKABO」は、その場に前衛芸術を出現させる",
   "ノールックというスパイスを、堂々と持っていていい",
   "隠し味は、いつだってノールック",
 ];

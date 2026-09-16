@@ -44,6 +44,8 @@ export const EVENT = {
 
 // 参加同意書（PDF・1枚）。当日持参が必要なので、事前に印刷・記入してもらう。
 // 実体は public/agreement.pdf。download 属性で配布用のファイル名を付けて渡す。
+// ※ 現在サイト上には出していない（Details の開催概要から同意書カードを外した）。
+//    再掲するときは Details.tsx にダウンロードカードを戻すだけでよい。
 // ファイル名を ASCII にしているのは、日本語名だと Chromium が download 属性を
 // 無視して拡張子なしの "download" で保存してしまうため。
 export const AGREEMENT = {

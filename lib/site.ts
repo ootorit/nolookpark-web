@@ -41,6 +41,16 @@ export const EVENT = {
   ],
 } as const;
 
+// 参加同意書（PDF・1枚）。当日持参が必要なので、事前に印刷・記入してもらう。
+// 実体は public/agreement.pdf。download 属性で配布用のファイル名を付けて渡す。
+// ファイル名を ASCII にしているのは、日本語名だと Chromium が download 属性を
+// 無視して拡張子なしの "download" で保存してしまうため。
+export const AGREEMENT = {
+  url: "/agreement.pdf",
+  fileName: "NO_LOOK_PARK_agreement.pdf",
+  note: "ご記入のうえ、イベント当日に必ずお持ちください。未成年の方は保護者の同意署名が必要です。",
+} as const;
+
 export const IMG = {
   logo: "/images/logo@2x.png",
   // 主催者プロフィール（実写）

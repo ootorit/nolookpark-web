@@ -1,6 +1,6 @@
-import { MapPin, ArrowUpRight, Phone, TrainFront, Bus, Car, FileDown } from "lucide-react";
+import { MapPin, ArrowUpRight, Phone, TrainFront, Bus, Car } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { EVENT, IMG, AGREEMENT } from "@/lib/site";
+import { EVENT, IMG } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
@@ -159,35 +159,6 @@ export default function Details() {
                 ))}
               </AccessItem>
             </div>
-          </div>
-        </Reveal>
-
-        {/* 参加同意書（PDF） */}
-        <Reveal delay={200} className="w-full">
-          <div className="flex flex-col gap-6 rounded-2xl bg-white p-8 [outline:2px_solid_#1A1A1A] [outline-offset:-1px] md:flex-row md:items-center md:justify-between md:p-10">
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3">
-                <span className="text-lg tracking-[1px] text-ink">参加同意書</span>
-                <span
-                  aria-hidden
-                  className="font-en text-[11px] tracking-[2px] text-ink opacity-45"
-                >
-                  AGREEMENT
-                </span>
-              </div>
-              <p className="text-[14px] leading-[1.7] text-ink">{AGREEMENT.note}</p>
-            </div>
-            <a
-              href={AGREEMENT.url}
-              download={AGREEMENT.fileName}
-              className="group/pdf inline-flex shrink-0 items-center justify-center gap-2 self-start rounded-lg border-2 border-ink px-5 py-3 text-[13px] text-ink transition-colors hover:bg-ink hover:text-brand md:self-auto"
-            >
-              <FileDown size={16} aria-hidden />
-              参加同意書をダウンロード
-              <span aria-hidden className="opacity-55">
-                PDF
-              </span>
-            </a>
           </div>
         </Reveal>
       </div>

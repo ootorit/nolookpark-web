@@ -32,13 +32,24 @@ export const EVENT = {
   locationLineShort: "@ HOME/WORK VILLAGE（池尻大橋）",
   organizer: "NO LOOK BROTHERS（澤田智洋／石井健介／高橋鴻介）",
   coHost: "ビジョン・コンソーシアム",
+  // ラベルと金額を分けて持つ。スマホだと1行に収まらず、繋げて1本の文字列に
+  // すると行末で「500」と「円」に割れてしまうため、金額側だけ折り返さない。
   price: [
-    "大人: ¥1,000",
-    "こども: ¥500",
-    "ファミリー: ¥2,000",
-    "※ 未就学児は無料です。",
-    "※ ファミリーチケットは同一世帯の方が6人まで、一律¥2,000でご参加いただけるお得なチケットです。",
+    { label: "大人（大学生以上）", amount: "1,000円" },
+    { label: "こども（小学生〜高校生）", amount: "500円" },
+    { label: "ファミリー（同一世帯6名まで一律）", amount: "2,000円" },
   ],
+  priceNotes: ["※ 未就学児は無料です。"],
+} as const;
+
+// 参加同意書（PDF・1枚）。当日持参が必要なので、事前に印刷・記入してもらう。
+// 実体は public/agreement.pdf。download 属性で配布用のファイル名を付けて渡す。
+// ファイル名を ASCII にしているのは、日本語名だと Chromium が download 属性を
+// 無視して拡張子なしの "download" で保存してしまうため。
+export const AGREEMENT = {
+  url: "/agreement.pdf",
+  fileName: "NO_LOOK_PARK_agreement.pdf",
+  note: "ご記入のうえ、イベント当日に必ずお持ちください。未成年の方は保護者の同意署名が必要です。",
 } as const;
 
 export const IMG = {

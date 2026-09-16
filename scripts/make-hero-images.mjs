@@ -200,6 +200,19 @@ function refine(cells, plan) {
   return best;
 }
 
+// 出力。入稿用のポスターは JPEG（PNG だと 2.4MB 前後で重く、入稿先の上限に
+// かかることがある）。黄色地に黒文字が乗るので、色にじみが出ないよう
+// クロマサブサンプリングは 4:4:4 のままにする。
+async function write(buf, outPath) {
+  const img = sharp(buf);
+  if (/\.jpe?g$/i.test(outPath)) {
+    return img
+      .jpeg({ quality: 92, chromaSubsampling: "4:4:4", mozjpeg: true })
+      .toFile(outPath);
+  }
+  return img.toFile(outPath);
+}
+
 async function generate(width, height, outPath, { card, zoom = 1 }) {
   // カードは正方形で、グリッドの整数セル（2×2, 3×3 など）にぴったり合わせる。
   // カードのセル数と同じ偶奇で列・行を広げると、中央にカードがぴったり収まる。
@@ -279,7 +292,7 @@ async function generate(width, height, outPath, { card, zoom = 1 }) {
       .toBuffer();
   }
 
-  await sharp(out).toFile(outPath);
+  await write(out, outPath);
   console.log(`generated ${outPath} (${width}x${height}, grid ${cols}x${rows}, zoom ${zoom})`);
 }
 
@@ -306,14 +319,14 @@ await generate(1300, 640, path.join(ROOT, "public/images/peatix-header.png"), {
 // 4:5 縦型（Instagram / HOME/WORK VILLAGE 掲載用）1080×1350。
 // カードは 3×3（620px）に小さくして、体験写真（アートウォール）を多めに見せる。
 const v45DateCard = await buildFullCard(620, { showDate: true });
-await generate(1080, 1350, path.join(ROOT, "public/images/poster-4x5-date.png"), {
+await generate(1080, 1350, path.join(ROOT, "public/images/poster-4x5-date.jpg"), {
   card: v45DateCard,
   zoom: 1.08,
 });
 
 // 5:4 横型 1350×1080。上の縦型と同じ内容・同じカード（3×3）で、天地を入れ替えた版。
 const h54DateCard = await buildFullCard(620, { showDate: true });
-await generate(1350, 1080, path.join(ROOT, "public/images/poster-5x4-date.png"), {
+await generate(1350, 1080, path.join(ROOT, "public/images/poster-5x4-date.jpg"), {
   card: h54DateCard,
   zoom: 1.08,
 });

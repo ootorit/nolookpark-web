@@ -111,6 +111,95 @@ async function buildFullCard(size, { showDate = true } = {}) {
     .toBuffer();
 }
 
+// 写真の割り当て。写真より升目のほうが多いので重複は避けられないが、
+// 「同じ写真ばかり見える」状態にならないよう2点を守る：
+//   1. 使用回数を均等にする（PHOTOS を1周ずつ使い切る「パス」に区切る）。
+//   2. 同じ写真どうしをできるだけ引き離す（各升目には、そのパスの残りのうち
+//      既に置かれた同じ写真から最も遠いものを選ぶ）。
+// 1周目は全員未配置なので、従来どおり 5 とびの順番がそのまま出る。
+function planPhotos(cells) {
+  const n = PHOTOS.length;
+  const placed = Array.from({ length: n }, () => []);
+  const plan = [];
+  let pool = [];
+  let pass = 0;
+  for (const cell of cells) {
+    if (pool.length === 0) {
+      // PHOTOS.length と互いに素な 5 とびで並べ、パスごとに開始位置をずらす。
+      pool = Array.from({ length: n }, (_, j) => (pass + j * 5) % n);
+      pass++;
+    }
+    let bestAt = 0;
+    let bestDist = -1;
+    for (let i = 0; i < pool.length; i++) {
+      let d = Infinity;
+      for (const q of placed[pool[i]]) {
+        const dd = Math.hypot(q.c - cell.c, q.r - cell.r);
+        if (dd < d) d = dd;
+      }
+      if (d > bestDist) {
+        bestDist = d;
+        bestAt = i;
+      }
+    }
+    const photo = pool[bestAt];
+    pool.splice(bestAt, 1);
+    plan.push(photo);
+    placed[photo].push(cell);
+  }
+  return refine(cells, plan);
+}
+
+// 同じ写真どうしの距離を昇順に並べたもの。これを辞書順で大きくしていけば、
+// 「いちばん近い重複」から順に引き離せる。
+function dupDistances(cells, plan) {
+  const groups = Array.from({ length: PHOTOS.length }, () => []);
+  plan.forEach((photo, i) => groups[photo].push(cells[i]));
+  const ds = [];
+  for (const g of groups) {
+    for (let i = 0; i < g.length; i++) {
+      for (let j = i + 1; j < g.length; j++) {
+        ds.push(Math.hypot(g[i].c - g[j].c, g[i].r - g[j].r));
+      }
+    }
+  }
+  return ds.sort((a, b) => a - b);
+}
+
+const isBetter = (a, b) => {
+  for (let i = 0; i < Math.min(a.length, b.length); i++) {
+    if (Math.abs(a[i] - b[i]) > 1e-9) return a[i] > b[i];
+  }
+  return false;
+};
+
+// 2枚を入れ替えて改善するならそうする、を改善が止まるまで繰り返す。
+// 使用回数は入れ替えでは変わらないので、均等さを保ったまま重複だけが遠ざかる。
+function refine(cells, plan) {
+  let best = plan.slice();
+  let bestD = dupDistances(cells, best);
+  for (let round = 0; round < 200; round++) {
+    let improved = false;
+    for (let i = 0; i < best.length && !improved; i++) {
+      for (let j = i + 1; j < best.length; j++) {
+        if (best[i] === best[j]) continue;
+        const cand = best.slice();
+        cand[i] = best[j];
+        cand[j] = best[i];
+        const candD = dupDistances(cells, cand);
+        if (isBetter(candD, bestD)) {
+          best = cand;
+          bestD = candD;
+          improved = true;
+          break;
+        }
+      }
+    }
+    if (!improved) break;
+  }
+  return best;
+}
+
 async function generate(width, height, outPath, { card, zoom = 1 }) {
   // カードは正方形で、グリッドの整数セル（2×2, 3×3 など）にぴったり合わせる。
   // カードのセル数と同じ偶奇で列・行を広げると、中央にカードがぴったり収まる。
@@ -132,17 +221,25 @@ async function generate(width, height, outPath, { card, zoom = 1 }) {
   const cStart = (cols - cardCells) / 2;
   const rStart = (rows - cardCells) / 2;
 
-  const tiles = [];
-  let k = 0;
+  const cells = [];
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
       const isCenter =
         c >= cStart && c < cStart + cardCells && r >= rStart && r < rStart + cardCells;
-      k++;
       if (isCenter) continue; // 中央セルは空ける
-      const buf = await roundedTile(PHOTOS[((k - 1) * 5) % PHOTOS.length]);
-      tiles.push({ input: buf, left: c * (TILE + GAP), top: r * (TILE + GAP) });
+      cells.push({ c, r });
     }
+  }
+
+  const tiles = [];
+  const plan = planPhotos(cells);
+  for (let i = 0; i < cells.length; i++) {
+    const buf = await roundedTile(PHOTOS[plan[i]]);
+    tiles.push({
+      input: buf,
+      left: cells[i].c * (TILE + GAP),
+      top: cells[i].r * (TILE + GAP),
+    });
   }
   const grid = await sharp({
     create: { width: gridW, height: gridH, channels: 4, background: YELLOW },
@@ -211,5 +308,12 @@ await generate(1300, 640, path.join(ROOT, "public/images/peatix-header.png"), {
 const v45DateCard = await buildFullCard(620, { showDate: true });
 await generate(1080, 1350, path.join(ROOT, "public/images/poster-4x5-date.png"), {
   card: v45DateCard,
+  zoom: 1.08,
+});
+
+// 5:4 横型 1350×1080。上の縦型と同じ内容・同じカード（3×3）で、天地を入れ替えた版。
+const h54DateCard = await buildFullCard(620, { showDate: true });
+await generate(1350, 1080, path.join(ROOT, "public/images/poster-5x4-date.png"), {
+  card: h54DateCard,
   zoom: 1.08,
 });

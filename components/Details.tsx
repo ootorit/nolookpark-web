@@ -87,12 +87,15 @@ export default function Details() {
               </div>
             </Row>
             <Row label="料金">
-              {EVENT.price.map((line, i) => (
-                <span
-                  key={i}
-                  className={line.startsWith("※") ? "block text-[13px]" : "block"}
-                >
-                  {line}
+              {EVENT.price.map((p) => (
+                <span key={p.label} className="block">
+                  {p.label}
+                  <span className="whitespace-nowrap">：{p.amount}</span>
+                </span>
+              ))}
+              {EVENT.priceNotes.map((note) => (
+                <span key={note} className="block text-[13px]">
+                  {note}
                 </span>
               ))}
             </Row>

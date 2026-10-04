@@ -330,3 +330,18 @@ await generate(1350, 1080, path.join(ROOT, "public/images/poster-5x4-date.jpg"),
   card: h54DateCard,
   zoom: 1.08,
 });
+
+// 3:4 縦型 1080×1440。上の 4:5 より一段縦長。
+const v34DateCard = await buildFullCard(620, { showDate: true });
+await generate(1080, 1440, path.join(ROOT, "public/images/poster-3x4-date.jpg"), {
+  card: v34DateCard,
+  zoom: 1.08,
+});
+
+// 9:16 縦型（16:9 を縦にしたストーリーズ・リール比）1080×1920。
+// 縦に細長く、カードの上下に写真が大きく余るので、カードは他の縦型と同寸のまま。
+const v916DateCard = await buildFullCard(620, { showDate: true });
+await generate(1080, 1920, path.join(ROOT, "public/images/poster-9x16-date.jpg"), {
+  card: v916DateCard,
+  zoom: 1.08,
+});

@@ -341,10 +341,10 @@ await generate(1080, 1440, path.join(ROOT, "public/images/poster-3x4-date.jpg"),
 // 9:16 縦型（16:9 を縦にしたストーリーズ・リール比）1080×1920。
 // 縦に細長いぶん画面に入るタイルが多く、ズーム 1.08 のままだと36枚が見えて
 // そのうち16枚ぶんが重複になる。カードは他の縦型と同じ 620px に揃えたまま、
-// ズームだけ 1.20 に上げて外周を落とすと、見えるタイルは26枚・重複は8枚まで
-// 減り、3:4 とほぼ同じ見え方になる。
+// ズームだけ 1.3 に上げて外周を落とす。半分以上見えているタイルは12枚まで減り、
+// タイル1枚あたりも大きく写る。
 const v916DateCard = await buildFullCard(620, { showDate: true });
 await generate(1080, 1920, path.join(ROOT, "public/images/poster-9x16-date.jpg"), {
   card: v916DateCard,
-  zoom: 1.2,
+  zoom: 1.3,
 });

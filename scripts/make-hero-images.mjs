@@ -332,10 +332,13 @@ await generate(1350, 1080, path.join(ROOT, "public/images/poster-5x4-date.jpg"),
 });
 
 // 3:4 縦型 1080×1440。上の 4:5 より一段縦長。
+// 9:16 と同じく、ズームで外周を落として重複を目立たなくする。1.08 だと
+// 26枚中8枚ぶんが重複になるが、1.25 まで寄せると半分以上見えているタイルは
+// 16枚・重複ゼロになる。1.3 を超えるとタイルが6枚まで減って写真が消える。
 const v34DateCard = await buildFullCard(620, { showDate: true });
 await generate(1080, 1440, path.join(ROOT, "public/images/poster-3x4-date.jpg"), {
   card: v34DateCard,
-  zoom: 1.08,
+  zoom: 1.25,
 });
 
 // 9:16 縦型（16:9 を縦にしたストーリーズ・リール比）1080×1920。

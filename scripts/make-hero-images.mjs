@@ -339,8 +339,10 @@ await generate(1080, 1440, path.join(ROOT, "public/images/poster-3x4-date.jpg"),
 });
 
 // 9:16 縦型（16:9 を縦にしたストーリーズ・リール比）1080×1920。
-// 縦に細長く、カードの上下に写真が大きく余るので、カードは他の縦型と同寸のまま。
-const v916DateCard = await buildFullCard(620, { showDate: true });
+// 縦に細長いぶん升目が増え、620px（3×3）のカードだと 68 タイルに写真18点を
+// 3〜4回ずつ使うことになり、重複が目立つ。カードを 830px（4×4）に上げると
+// グリッドが 6×10 に減り、タイルは 44、1枚あたり 2〜3回に収まる。
+const v916DateCard = await buildFullCard(830, { showDate: true });
 await generate(1080, 1920, path.join(ROOT, "public/images/poster-9x16-date.jpg"), {
   card: v916DateCard,
   zoom: 1.08,

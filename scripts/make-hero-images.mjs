@@ -339,11 +339,12 @@ await generate(1080, 1440, path.join(ROOT, "public/images/poster-3x4-date.jpg"),
 });
 
 // 9:16 縦型（16:9 を縦にしたストーリーズ・リール比）1080×1920。
-// 縦に細長いぶん升目が増え、620px（3×3）のカードだと 68 タイルに写真18点を
-// 3〜4回ずつ使うことになり、重複が目立つ。カードを 830px（4×4）に上げると
-// グリッドが 6×10 に減り、タイルは 44、1枚あたり 2〜3回に収まる。
-const v916DateCard = await buildFullCard(830, { showDate: true });
+// 縦に細長いぶん画面に入るタイルが多く、ズーム 1.08 のままだと36枚が見えて
+// そのうち16枚ぶんが重複になる。カードは他の縦型と同じ 620px に揃えたまま、
+// ズームだけ 1.20 に上げて外周を落とすと、見えるタイルは26枚・重複は8枚まで
+// 減り、3:4 とほぼ同じ見え方になる。
+const v916DateCard = await buildFullCard(620, { showDate: true });
 await generate(1080, 1920, path.join(ROOT, "public/images/poster-9x16-date.jpg"), {
   card: v916DateCard,
-  zoom: 1.08,
+  zoom: 1.2,
 });

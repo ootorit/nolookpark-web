@@ -27,6 +27,18 @@ const PHOTOS = [
   ),
 ].map(IMG);
 
+// 見た目が強く似ている写真は、別の写真でも「同じものがまた出ている」ように
+// 見えてしまう。TOUCH MATCH のキービジュアルとそのカード（wall-03）は、
+// どちらも彩度の高い同じ青（hue 189 / sat 0.43・0.48）で、残り16点が
+// 落ち着いた暖色・無彩色なので、並ぶと一段と目につく。
+// 配置を決めるときだけ同じ仲間として扱い、できるだけ引き離す。
+const SIMILAR_GROUPS = [["touchmatch_keyshot.jpg", "wall/wall-03.jpg"]];
+const GROUP_OF = PHOTOS.map((abs, i) => {
+  const rel = path.relative(path.join(ROOT, "public/images"), abs);
+  const g = SIMILAR_GROUPS.findIndex((grp) => grp.includes(rel));
+  return g === -1 ? `photo:${i}` : `similar:${g}`;
+});
+
 const TILE = 200;
 const GAP = 10;
 const RAD = 18;
@@ -119,7 +131,7 @@ async function buildFullCard(size, { showDate = true } = {}) {
 // 1周目は全員未配置なので、従来どおり 5 とびの順番がそのまま出る。
 function planPhotos(cells) {
   const n = PHOTOS.length;
-  const placed = Array.from({ length: n }, () => []);
+  const placed = new Map(); // 仲間ごとの配置済みセル
   const plan = [];
   let pool = [];
   let pass = 0;
@@ -133,7 +145,7 @@ function planPhotos(cells) {
     let bestDist = -1;
     for (let i = 0; i < pool.length; i++) {
       let d = Infinity;
-      for (const q of placed[pool[i]]) {
+      for (const q of placed.get(GROUP_OF[pool[i]]) ?? []) {
         const dd = Math.hypot(q.c - cell.c, q.r - cell.r);
         if (dd < d) d = dd;
       }
@@ -145,18 +157,25 @@ function planPhotos(cells) {
     const photo = pool[bestAt];
     pool.splice(bestAt, 1);
     plan.push(photo);
-    placed[photo].push(cell);
+    const key = GROUP_OF[photo];
+    if (!placed.has(key)) placed.set(key, []);
+    placed.get(key).push(cell);
   }
   return refine(cells, plan);
 }
 
-// 同じ写真どうしの距離を昇順に並べたもの。これを辞書順で大きくしていけば、
-// 「いちばん近い重複」から順に引き離せる。
+// 同じ写真どうし（および上の SIMILAR_GROUPS で似ているとした組どうし）の
+// 距離を昇順に並べたもの。これを辞書順で大きくしていけば、「いちばん近い
+// 重複」から順に引き離せる。
 function dupDistances(cells, plan) {
-  const groups = Array.from({ length: PHOTOS.length }, () => []);
-  plan.forEach((photo, i) => groups[photo].push(cells[i]));
+  const groups = new Map();
+  plan.forEach((photo, i) => {
+    const key = GROUP_OF[photo];
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(cells[i]);
+  });
   const ds = [];
-  for (const g of groups) {
+  for (const g of groups.values()) {
     for (let i = 0; i < g.length; i++) {
       for (let j = i + 1; j < g.length; j++) {
         ds.push(Math.hypot(g[i].c - g[j].c, g[i].r - g[j].r));
@@ -332,22 +351,15 @@ await generate(1350, 1080, path.join(ROOT, "public/images/poster-5x4-date.jpg"),
 });
 
 // 3:4 縦型 1080×1440。上の 4:5 より一段縦長。
-// 9:16 と同じく、ズームで外周を落として重複を目立たなくする。1.08 だと
-// 26枚中8枚ぶんが重複になるが、1.25 まで寄せると半分以上見えているタイルは
-// 16枚・重複ゼロになる。1.3 を超えるとタイルが6枚まで減って写真が消える。
 const v34DateCard = await buildFullCard(620, { showDate: true });
 await generate(1080, 1440, path.join(ROOT, "public/images/poster-3x4-date.jpg"), {
   card: v34DateCard,
-  zoom: 1.25,
+  zoom: 1.08,
 });
 
 // 9:16 縦型（16:9 を縦にしたストーリーズ・リール比）1080×1920。
-// 縦に細長いぶん画面に入るタイルが多く、ズーム 1.08 のままだと36枚が見えて
-// そのうち16枚ぶんが重複になる。カードは他の縦型と同じ 620px に揃えたまま、
-// ズームだけ 1.3 に上げて外周を落とす。半分以上見えているタイルは12枚まで減り、
-// タイル1枚あたりも大きく写る。
 const v916DateCard = await buildFullCard(620, { showDate: true });
 await generate(1080, 1920, path.join(ROOT, "public/images/poster-9x16-date.jpg"), {
   card: v916DateCard,
-  zoom: 1.3,
+  zoom: 1.08,
 });

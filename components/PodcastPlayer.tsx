@@ -4,10 +4,15 @@ import { useState } from "react";
 import { PODCAST, PODCAST_EPISODES } from "@/lib/site";
 
 /**
- * NO LOOK RADIO の全エピソードを、小さな箱1つに収める。
- * Spotify のコンパクトプレーヤー（高さ152px）とエピソード一覧を、PCでは横並び、
- * モバイルでは縦積みにする。PCで縦に積むと箱が550px近くになり場所を取るため。
+ * NO LOOK RADIO の全エピソードを、黄色いカード1枚に収める。
+ * Spotify のプレーヤーと、白い角丸ボックスに入れたエピソード一覧を、
+ * PCでは横並び（高さをそろえる）、モバイルでは縦積みにする。
  * 一覧の回を押すとプレーヤーがその回に切り替わる（ページ内で完結）。
+ *
+ * プレーヤーの高さ: モバイルは Spotify のコンパクト版（152px）。
+ * PCは一覧ボックス（見出し＋4行で約210px）と高さをそろえるため、
+ * Spotify の標準サイズ 232px にして、一覧ボックスをそれに合わせて伸ばす。
+ * 152〜232px の中間の高さは Spotify 側のレイアウトが崩れるので使わない。
  */
 export default function PodcastPlayer() {
   // 最初は #1 を選んでおく（はじめての人には第1回から聴いてほしい）。
@@ -30,8 +35,9 @@ export default function PodcastPlayer() {
       </div>
 
       {/* 列幅を minmax(0,1fr) にしないと、グリッドの列が一覧の長いタイトルの幅まで
-          広がり、プレーヤーごとカードの外へはみ出す（モバイルで右側が切れていた） */}
-      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-6">
+          広がり、プレーヤーごとカードの外へはみ出す（モバイルで右側が切れていた）。
+          PCは items-stretch でプレーヤーと一覧ボックスの高さをそろえる */}
+      <div className="grid grid-cols-[minmax(0,1fr)] items-stretch gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-6">
         <div className="w-full min-w-0 max-w-full overflow-hidden rounded-xl">
           <iframe
             key={current.id}
@@ -41,12 +47,13 @@ export default function PodcastPlayer() {
             height="152"
             loading="lazy"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            className="block h-[152px] w-full max-w-full"
+            className="block h-[152px] w-full max-w-full md:h-[232px]"
             style={{ border: 0 }}
           />
         </div>
 
-        <div className="min-w-0 text-left">
+        {/* エピソード一覧。角丸はプレーヤー（rounded-xl = 12px）とそろえる */}
+        <div className="min-w-0 rounded-xl bg-white px-5 py-4 text-left md:flex md:flex-col">
           <p
             id="podcast-episodes"
             className="text-xs tracking-[1px] text-ink/70"
@@ -55,29 +62,32 @@ export default function PodcastPlayer() {
           </p>
           <ul
             aria-labelledby="podcast-episodes"
-            className="mt-1.5 divide-y divide-white border-y border-white"
+            // PCではプレーヤーの高さまで伸ばした分を4行で等分し、下に空きを作らない
+            className="mt-1 divide-y divide-[#eee] md:flex md:flex-1 md:flex-col"
           >
             {PODCAST_EPISODES.map((ep) => {
               const active = ep.id === current.id;
               return (
-                <li key={ep.id}>
+                <li key={ep.id} className="md:flex md:flex-1">
                   <button
                     type="button"
                     onClick={() => setCurrentId(ep.id)}
                     aria-pressed={active}
-                    className={`flex w-full min-w-0 items-baseline gap-4 py-2 text-left text-sm leading-[1.6] transition-colors hover:bg-white/40 ${
+                    className={`flex w-full min-w-0 items-baseline gap-4 py-2 md:items-center text-left text-sm leading-[1.6] transition-colors hover:bg-cream ${
                       active ? "font-bold text-ink" : "text-ink/80"
                     }`}
                   >
                     <span className="w-7 shrink-0 tabular-nums">{ep.num}</span>
                     <span
-                      className="min-w-0 flex-1 overflow-hidden [overflow-wrap:anywhere]"
-                      // 2行で省略。-webkit- 系は CSS に書くと圧縮時に消えることがあるのでインラインで当てる
+                      // モバイルは2行、PCは1行で末尾を「…」に。行数は --clamp で切り替える。
+                      // -webkit- 系は CSS に書くと圧縮時に消えることがあるのでインラインで当てる
+                      className="min-w-0 flex-1 overflow-hidden [--clamp:2] [overflow-wrap:anywhere] md:[--clamp:1]"
                       style={{
                         display: "-webkit-box",
-                        WebkitLineClamp: 2,
+                        WebkitLineClamp: "var(--clamp)",
                         WebkitBoxOrient: "vertical",
                       }}
+                      title={ep.title}
                     >
                       {ep.title}
                     </span>

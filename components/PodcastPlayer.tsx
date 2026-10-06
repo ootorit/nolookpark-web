@@ -19,7 +19,7 @@ export default function PodcastPlayer() {
   if (!current) return null;
 
   return (
-    <div className="flex w-full max-w-[900px] flex-col gap-4 rounded-[20px] bg-brand p-5 md:gap-5 md:px-8 md:py-7">
+    <div className="box-border flex w-full max-w-[900px] min-w-0 flex-col gap-4 rounded-[20px] bg-brand p-5 md:gap-5 md:px-8 md:py-7">
       <div className="flex flex-col items-center gap-1.5 text-center">
         <h3 className="text-lg tracking-[1px] text-ink md:text-xl">
           {PODCAST.title}
@@ -29,20 +29,24 @@ export default function PodcastPlayer() {
         </p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 md:gap-6">
-        <iframe
-          key={current.id}
-          title={`NO LOOK RADIO ${current.num}「${current.title}」（Spotify）`}
-          src={`https://open.spotify.com/embed/episode/${current.id}?utm_source=generator`}
-          width="100%"
-          height="152"
-          loading="lazy"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          className="h-[152px] w-full rounded-xl"
-          style={{ border: 0 }}
-        />
+      {/* 列幅を minmax(0,1fr) にしないと、グリッドの列が一覧の長いタイトルの幅まで
+          広がり、プレーヤーごとカードの外へはみ出す（モバイルで右側が切れていた） */}
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-6">
+        <div className="w-full min-w-0 max-w-full overflow-hidden rounded-xl">
+          <iframe
+            key={current.id}
+            title={`NO LOOK RADIO ${current.num}「${current.title}」（Spotify）`}
+            src={`https://open.spotify.com/embed/episode/${current.id}?utm_source=generator`}
+            width="100%"
+            height="152"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            className="block h-[152px] w-full max-w-full"
+            style={{ border: 0 }}
+          />
+        </div>
 
-        <div className="text-left">
+        <div className="min-w-0 text-left">
           <p
             id="podcast-episodes"
             className="text-xs tracking-[1px] text-ink/70"
@@ -61,12 +65,20 @@ export default function PodcastPlayer() {
                     type="button"
                     onClick={() => setCurrentId(ep.id)}
                     aria-pressed={active}
-                    className={`flex w-full items-baseline gap-3 py-2 text-left text-sm leading-[1.6] transition-colors hover:bg-white/40 ${
+                    className={`flex w-full min-w-0 items-baseline gap-4 py-2 text-left text-sm leading-[1.6] transition-colors hover:bg-white/40 ${
                       active ? "font-bold text-ink" : "text-ink/80"
                     }`}
                   >
                     <span className="w-7 shrink-0 tabular-nums">{ep.num}</span>
-                    <span className="min-w-0 flex-1 truncate" title={ep.title}>
+                    <span
+                      className="min-w-0 flex-1 overflow-hidden [overflow-wrap:anywhere]"
+                      // 2行で省略。-webkit- 系は CSS に書くと圧縮時に消えることがあるのでインラインで当てる
+                      style={{
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                      }}
+                    >
                       {ep.title}
                     </span>
                     {active && (

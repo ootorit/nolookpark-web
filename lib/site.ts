@@ -98,7 +98,7 @@ export const TICKET_URL = "https://nolookpark2026.peatix.com";
 export const PODCAST_SHOW_URL = "https://open.spotify.com/show/03472ggQg234ZrdJ8Oim6E";
 
 /**
- * 配信済みエピソード。**新しい回を先頭に足す**（先頭の回が最初にプレーヤーに入る）。
+ * 配信済みエピソード。**新しい回を先頭に足す**。最初にプレーヤーに入るのは末尾の #1。
  * id は Spotify のエピソードURL（open.spotify.com/episode/<id>）の末尾。
  *
  * 番組まるごとの埋め込み（embed/show）は最新回1本しか出ず、過去回を選べないので、

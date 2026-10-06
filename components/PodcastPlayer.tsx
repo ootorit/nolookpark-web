@@ -10,9 +10,12 @@ import { PODCAST, PODCAST_EPISODES, PODCAST_SHOW_URL } from "@/lib/site";
  * 一覧の回を押すとプレーヤーがその回に切り替わる（ページ内で完結）。
  */
 export default function PodcastPlayer() {
-  const [currentId, setCurrentId] = useState(PODCAST_EPISODES[0]?.id);
+  // 最初は #1 を選んでおく（はじめての人には第1回から聴いてほしい）。
+  // 一覧は新しい回が先頭なので、#1 は配列の末尾
+  const [currentId, setCurrentId] = useState(PODCAST_EPISODES.at(-1)?.id);
   const current =
-    PODCAST_EPISODES.find((ep) => ep.id === currentId) ?? PODCAST_EPISODES[0];
+    PODCAST_EPISODES.find((ep) => ep.id === currentId) ??
+    PODCAST_EPISODES.at(-1);
   if (!current) return null;
 
   return (
@@ -44,7 +47,7 @@ export default function PodcastPlayer() {
             id="podcast-episodes"
             className="text-xs tracking-[1px] text-muted"
           >
-            エピソード一覧（全{PODCAST_EPISODES.length}回）
+            エピソード一覧
           </p>
           <ul
             aria-labelledby="podcast-episodes"

@@ -95,7 +95,7 @@ export const NAV_TICKET = "チケットを購入";
 export const TICKET_URL = "https://nolookpark2026.peatix.com";
 
 // ポッドキャスト「NO LOOK RADIO」（Spotify）
-export const PODCAST_SHOW_URL = "https://open.spotify.com/show/03472ggQg234ZrdJ8Oim6E";
+// 番組ページ: https://open.spotify.com/show/03472ggQg234ZrdJ8Oim6E
 
 /**
  * 配信済みエピソード。**新しい回を先頭に足す**。最初にプレーヤーに入るのは末尾の #1。

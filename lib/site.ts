@@ -113,7 +113,7 @@ export const PODCAST_EPISODES: { num: string; title: string; id: string }[] = [
 
 export const PODCAST = {
   title: "イベントの裏側を、ポッドキャストで更新中",
-  sub: "主催者のNO LOOK BROTHERS の3人が、企画の裏側やコンテンツの説明などを、ときにはノールックゲストと共にお届けします。",
+  sub: "主催者のNO LOOK BROTHERS の3人が、企画の裏側などを、ときにはノールックゲストと共にお届けします。",
 } as const;
 
 /** コンテンツ一覧。image が無い項目は「画像準備中」のプレースホルダーで出る。 */

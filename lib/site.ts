@@ -94,10 +94,22 @@ export const NAV_TICKET = "チケットを購入";
 // チケット購入先（Peatix）
 export const TICKET_URL = "https://nolookpark2026.peatix.com";
 
-// Spotify podcast embed. Replace with the real show/episode embed URL
-// (Spotify → Share → Embed → copy the src URL).
-export const SPOTIFY_EMBED_URL =
-  "https://open.spotify.com/embed/episode/4gwpEfzgdsEedyfN7abx8c?utm_source=generator";
+// ポッドキャスト「NO LOOK RADIO」（Spotify）
+export const PODCAST_SHOW_URL = "https://open.spotify.com/show/03472ggQg234ZrdJ8Oim6E";
+
+/**
+ * 配信済みエピソード。**新しい回を先頭に足す**（先頭の回が最初にプレーヤーに入る）。
+ * id は Spotify のエピソードURL（open.spotify.com/episode/<id>）の末尾。
+ *
+ * 番組まるごとの埋め込み（embed/show）は最新回1本しか出ず、過去回を選べないので、
+ * エピソード単位の埋め込みを一覧から切り替える作りにしている。
+ */
+export const PODCAST_EPISODES: { num: string; title: string; id: string }[] = [
+  { num: "#4", title: "まだまだあるぞ！NO LOOK PARKのコンテンツ紹介（後編）", id: "65ZmZpV1KgjltN1c33jqTA" },
+  { num: "#3", title: "盛りだくさん！NO LOOK PARKのコンテンツ紹介（前編）", id: "5JpphaFr2tmKClBuRJpmhq" },
+  { num: "#2", title: "触覚で遊ぶと、世界がマジックになる", id: "6HQg8WCRmcfERuWFoP5H4m" },
+  { num: "#1", title: "みえないは、もっと遊べる - NO LOOK RADIO、はじまります！", id: "4gwpEfzgdsEedyfN7abx8c" },
+];
 
 export const PODCAST = {
   title: "イベントの裏側を、ポッドキャストで更新中",

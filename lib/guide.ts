@@ -396,7 +396,7 @@ export const MAP_GUIDE: { floor: Floor; steps: string[] }[] = [
 
 export const STAMP_RALLY = {
   title: "NO LOOK PARK スタンプラリー",
-  body: "館内でスタンプラリーを実施しています。各エリアに1つずつスタンプがあるので、すべて集めて受付までお持ちください！",
+  body: "本イベントではスタンプラリーを実施しています。各エリアに1つずつスタンプがあるので、すべて集めて受付までお持ちください！",
   note: "スタンプをすべて集めたら受付へ！ 先着50名様にささやかなプレゼントが…？",
 } as const;
 

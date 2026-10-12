@@ -112,7 +112,7 @@ export default function GuidePage() {
           <div className="flex flex-col items-center gap-3 text-center">
             <h3 className="font-en text-[28px] tracking-[1px] text-ink md:text-[36px]">NO LOOK BROTHERS</h3>
             <p className="max-w-[680px] text-[15px] leading-[1.9] text-ink">
-              「見ない」を起点にアイデアを考える3人組。それぞれの得意分野を持ち寄って NO LOOK PARK を作っています。
+              「みえない」を起点にアイデアを考える3人組。それぞれの得意分野を持ち寄って NO LOOK PARK を作っています。
             </p>
           </div>
 

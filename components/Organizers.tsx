@@ -70,7 +70,7 @@ export default function Organizers() {
             NO LOOK BROTHERS
           </h3>
           <p className="max-w-[680px] text-[15px] leading-[1.9] text-ink">
-            「見ない」を起点にアイデアを考える3人組。
+            「みえない」を起点にアイデアを考える3人組。
             <br className="hidden sm:block" />
             それぞれの得意分野を持ち寄って NO LOOK PARK を作っています。
           </p>

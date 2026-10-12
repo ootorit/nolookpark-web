@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -9,6 +9,7 @@ import {
   contentsInZone,
   zoneOf,
   zoneLabel,
+  zonePath,
 } from "@/lib/guide";
 import { ZoneMark, Tag } from "@/components/guide/ZoneChip";
 
@@ -20,19 +21,21 @@ export function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
   const { slug } = await params;
   const c = contentBySlug(slug);
   if (!c) return {};
   const z = zoneOf(c.zone);
+  const { images } = (await parent).openGraph ?? {};
   return {
     title: `${c.code} ${c.title}`,
     description: `${c.catchCopy}｜${zoneLabel(z)}（${z.floor} ${z.place}）with ${c.withNames}`,
+    // OGP 画像はトップと同じ（app/guide/opengraph-image.png）。親の images を引き継ぐ
     openGraph: {
       title: `${c.title}｜NO LOOK PARK 当日ガイド`,
       description: c.catchCopy,
       type: "article",
-      images: [{ url: c.image, alt: c.alt }],
+      images,
     },
   };
 }
@@ -61,7 +64,7 @@ export default async function GuideContentPage({ params }: Props) {
               </li>
               <li aria-hidden>/</li>
               <li>
-                <Link href={`/guide#zone-${z.id}`} className="underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60">
+                <Link href={zonePath(z.id)} className="underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60">
                   {zoneLabel(z)}
                 </Link>
               </li>
@@ -162,13 +165,22 @@ export default async function GuideContentPage({ params }: Props) {
                   {z.floor} {z.place}
                 </p>
                 <p className="text-[13px] leading-[1.75] text-ink opacity-80">{z.copy}</p>
-                <Link
-                  href="/guide#map"
-                  className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-lg border-2 border-ink px-3.5 py-2 text-[12px] text-ink transition-colors hover:bg-ink hover:text-brand"
-                >
-                  <MapPin size={14} aria-hidden />
-                  会場MAPで確認する
-                </Link>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  <Link
+                    href={zonePath(z.id)}
+                    className="inline-flex w-fit items-center gap-1.5 rounded-lg border-2 border-ink px-3.5 py-2 text-[12px] text-ink transition-colors hover:bg-ink hover:text-brand"
+                  >
+                    このエリアのコンテンツ一覧
+                    <ArrowRight size={14} aria-hidden />
+                  </Link>
+                  <Link
+                    href="/guide#map"
+                    className="inline-flex w-fit items-center gap-1.5 rounded-lg border-2 border-ink px-3.5 py-2 text-[12px] text-ink transition-colors hover:bg-ink hover:text-brand"
+                  >
+                    <MapPin size={14} aria-hidden />
+                    会場MAPで確認する
+                  </Link>
+                </div>
               </div>
             </div>
           </section>

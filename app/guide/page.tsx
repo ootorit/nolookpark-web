@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Ticket, Stamp } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Ticket, Stamp } from "lucide-react";
 import { EVENT, STATEMENT_BODY, ORGANIZERS, CO_HOST, IMG } from "@/lib/site";
 import {
   ZONES,
@@ -12,6 +12,7 @@ import {
   STAMP_RALLY,
   CREDITS,
   contentsInZone,
+  zonePath,
 } from "@/lib/guide";
 import ContentCard from "@/components/guide/ContentCard";
 import { ZoneMark } from "@/components/guide/ZoneChip";
@@ -179,10 +180,10 @@ export default function GuidePage() {
                 <ZoneMark id={z.id} />
                 <div className="flex flex-col gap-1">
                   <h3 className="text-[17px] leading-snug tracking-[1px] text-ink">
-                    <a href={`#zone-${z.id}`} className="underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60">
+                    <Link href={zonePath(z.id)} className="underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60">
                       <span className="sr-only">エリア{z.id}、</span>
                       {z.name}
-                    </a>
+                    </Link>
                   </h3>
                   <p className="text-[12px] text-ink opacity-70">
                     {z.floor} {z.place}
@@ -258,6 +259,13 @@ export default function GuidePage() {
                         {z.floor} {z.place}
                       </p>
                       <p className="text-[14px] leading-[1.8] text-ink">{z.copy}</p>
+                      <Link
+                        href={zonePath(z.id)}
+                        className="mt-1 inline-flex w-fit items-center gap-1.5 text-[13px] text-ink underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
+                      >
+                        このエリアのページを見る
+                        <ArrowRight size={14} aria-hidden />
+                      </Link>
                     </div>
                   </div>
                   <ul className="grid list-none grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

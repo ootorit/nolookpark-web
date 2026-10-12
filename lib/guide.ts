@@ -434,3 +434,18 @@ export function contentByCode(code: string): GuideContent | undefined {
 export function zoneLabel(z: Zone): string {
   return `${z.id} ${z.name}`;
 }
+
+// ---- エリア別ページ（/guide/zone/[id]）----
+
+/** エリアの URL 用 id（小文字）: /guide/zone/a */
+export function zoneSlug(id: ZoneId): string {
+  return id.toLowerCase();
+}
+
+export function zoneBySlug(slug: string): Zone | undefined {
+  return ZONES.find((z) => zoneSlug(z.id) === slug);
+}
+
+export function zonePath(id: ZoneId): string {
+  return `/guide/zone/${zoneSlug(id)}`;
+}

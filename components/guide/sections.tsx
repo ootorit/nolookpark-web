@@ -184,7 +184,7 @@ export function ContentsSection({
                       {zoneLinks ? (
                         <Link
                           href={zonePath(z.id)}
-                          className="underline decoration-2 underline-offset-[6px] transition-opacity hover:opacity-60"
+                          className="underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
                         >
                           {z.name}
                         </Link>

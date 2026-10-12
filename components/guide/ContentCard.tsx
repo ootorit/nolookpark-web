@@ -16,7 +16,7 @@ export default function ContentCard({
 }) {
   return (
     <article
-      className={`relative flex flex-col overflow-hidden rounded-xl border-2 border-ink bg-white ${link ? "transition-transform focus-within:outline-2 focus-within:outline-offset-4 focus-within:outline-ink hover:-translate-y-0.5" : ""}`}
+      className={`relative flex h-full flex-col overflow-hidden rounded-xl border-2 border-ink bg-white ${link ? "transition-transform focus-within:outline-2 focus-within:outline-offset-4 focus-within:outline-ink hover:-translate-y-0.5" : ""}`}
     >
       <div className="relative aspect-[3/2] w-full bg-[#ececec]">
         <Image
@@ -33,7 +33,7 @@ export default function ContentCard({
         )}
       </div>
       <div className="flex flex-1 flex-col gap-2 px-5 pb-6 pt-5">
-        <h4 className="flex items-baseline gap-2 text-[18px] leading-snug tracking-[1px] text-ink">
+        <h4 className="flex min-h-[50px] items-baseline gap-2 text-[18px] leading-snug tracking-[1px] text-ink">
           {/* 記号（A1 など）はリーフレットに合わせて黄色 */}
           <span className="font-en text-[13px] tracking-[2px] text-brand">
             {c.code}
@@ -50,13 +50,16 @@ export default function ContentCard({
           )}
         </h4>
         <p className="text-[12px] text-ink opacity-60">by {c.withNames}</p>
-        <p className="text-[13px] leading-[1.8] text-ink">{c.lead}</p>
-        {c.ticket && (
-          <p className="mt-1 text-[12px] leading-[1.7] text-ink">
-            {c.ticket.duration ? `${c.ticket.duration}　` : ""}
-            {c.ticket.times}
-          </p>
-        )}
+        <p className="min-h-[94px] text-[13px] leading-[1.8] text-ink">{c.lead}</p>
+        {/* 整理券の行は無い場合も高さを確保して、カードの高さをそろえる */}
+        <p className="mt-1 min-h-[41px] text-[12px] leading-[1.7] text-ink">
+          {c.ticket && (
+            <>
+              {c.ticket.duration ? `${c.ticket.duration}　` : ""}
+              {c.ticket.times}
+            </>
+          )}
+        </p>
       </div>
     </article>
   );

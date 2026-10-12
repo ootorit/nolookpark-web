@@ -1,10 +1,24 @@
-import { MapPin, ArrowUpRight, Phone, TrainFront, Bus, Car } from "lucide-react";
+import {
+  MapPin,
+  ArrowUpRight,
+  Phone,
+  TrainFront,
+  Bus,
+  Car,
+  ChevronDown,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { EVENT, IMG } from "@/lib/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
-function Row({ label, children }: { label: string; children: React.ReactNode }) {
+function Row({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="flex items-start gap-5">
       {/* h-7 matches the value's first-line box (16px × 1.75) so their centers line up */}
@@ -119,19 +133,31 @@ export default function Details() {
           </div>
         </Reveal>
 
-        {/* アクセス */}
+        {/* アクセス（クリックで開く） */}
         <Reveal delay={150} className="w-full">
-          <div className="flex flex-col gap-8 rounded-2xl bg-white p-8 [outline:2px_solid_#1A1A1A] [outline-offset:-1px] md:p-10">
-            <div className="flex items-center gap-3">
-              <span className="text-lg tracking-[1px] text-ink">アクセス</span>
-              <span
-                aria-hidden
-                className="font-en text-[11px] tracking-[2px] text-ink opacity-45"
-              >
-                ACCESS
+          <details className="group w-full rounded-2xl bg-white [outline:2px_solid_#1A1A1A] [outline-offset:-1px]">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-8 py-6 [&::-webkit-details-marker]:hidden md:px-10">
+              <span className="flex flex-col gap-0.5">
+                <span className="flex items-center gap-3">
+                  <span className="text-lg tracking-[1px] text-ink">
+                    アクセス
+                  </span>
+                  <span
+                    aria-hidden
+                    className="font-en text-[11px] tracking-[2px] text-ink opacity-45"
+                  >
+                    ACCESS
+                  </span>
+                </span>
+                <span className="text-[12px] text-ink opacity-60">
+                  電話・電車・バス・車でのアクセス
+                </span>
               </span>
-            </div>
-            <div className="grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-brand transition-transform duration-300 group-open:rotate-180">
+                <ChevronDown size={18} aria-hidden />
+              </span>
+            </summary>
+            <div className="grid grid-cols-1 gap-x-10 gap-y-7 border-t-2 border-ink px-8 py-8 sm:grid-cols-2 md:px-10">
               <AccessItem icon={Phone} label="電話">
                 <a
                   href={`tel:${EVENT.venueTel.replace(/-/g, "")}`}
@@ -159,7 +185,7 @@ export default function Details() {
                 ))}
               </AccessItem>
             </div>
-          </div>
+          </details>
         </Reveal>
       </div>
     </section>

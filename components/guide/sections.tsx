@@ -1,12 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  ArrowRight,
-  ChevronDown,
-  Ticket,
-  Stamp,
-} from "lucide-react";
+import { ArrowUpRight, ChevronDown, Ticket, Stamp } from "lucide-react";
 import { EVENT } from "@/lib/site";
 import {
   ZONES,
@@ -48,7 +42,7 @@ export function WalkGuide({ defaultOpen = false }: { defaultOpen?: boolean }) {
         <span className="flex flex-col gap-0.5">
           <span className="text-[20px] tracking-[1px]">会場の歩き方</span>
           <span className="text-[12px] opacity-60">
-            地図の内容を文章で説明します（クリックで開きます）
+            地図の内容を文章で説明します
           </span>
         </span>
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-brand transition-transform duration-300 group-open:rotate-180">
@@ -89,12 +83,7 @@ export function MapSection({
   heading,
   className = `bg-brand ${SECTION}`,
   walkGuideOpen = false,
-  showZones = true,
-}: SectionProps & {
-  walkGuideOpen?: boolean;
-  /** 地図の下のエリア紹介カード（A〜F）。トップページではコンテンツ一覧に同じ説明があるので省く */
-  showZones?: boolean;
-}) {
+}: SectionProps & { walkGuideOpen?: boolean }) {
   return (
     <section
       id="map"
@@ -134,36 +123,6 @@ export function MapSection({
           ))}
         </div>
 
-        {showZones && (
-          <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
-            {ZONES.map((z) => (
-              <div
-                key={z.id}
-                className="flex items-start gap-4 rounded-xl bg-white px-5 py-5"
-              >
-                <ZoneMark id={z.id} />
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-[17px] leading-snug tracking-[1px] text-ink">
-                    <Link
-                      href={zonePath(z.id)}
-                      className="underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
-                    >
-                      <span className="sr-only">エリア{z.id}、</span>
-                      {z.name}
-                    </Link>
-                  </h3>
-                  <p className="text-[12px] text-ink opacity-70">
-                    {z.floor} {z.place}
-                  </p>
-                  <p className="text-[13px] leading-[1.75] text-ink">
-                    {z.copy}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
         <WalkGuide defaultOpen={walkGuideOpen} />
       </div>
     </section>
@@ -175,7 +134,14 @@ export function MapSection({
 export function ContentsSection({
   heading,
   className = `bg-cream ${SECTION}`,
-}: SectionProps) {
+  zoneLinks = true,
+  cardLinks = true,
+}: SectionProps & {
+  /** エリア名をエリアページ（/guide/zone/[id]）へのリンクにする */
+  zoneLinks?: boolean;
+  /** 各カードをコンテンツ個別ページへのリンクにする */
+  cardLinks?: boolean;
+}) {
   return (
     <section
       id="contents"
@@ -215,7 +181,16 @@ export function ContentsSection({
                       className="text-[24px] leading-tight tracking-[1px] text-ink"
                     >
                       <span className="sr-only">エリア{z.id}、</span>
-                      {z.name}
+                      {zoneLinks ? (
+                        <Link
+                          href={zonePath(z.id)}
+                          className="underline decoration-2 underline-offset-[6px] transition-opacity hover:opacity-60"
+                        >
+                          {z.name}
+                        </Link>
+                      ) : (
+                        z.name
+                      )}
                     </h4>
                     <p className="text-[13px] text-ink opacity-70">
                       {z.floor} {z.place}
@@ -223,19 +198,12 @@ export function ContentsSection({
                     <p className="text-[14px] leading-[1.8] text-ink">
                       {z.copy}
                     </p>
-                    <Link
-                      href={zonePath(z.id)}
-                      className="mt-1 inline-flex w-fit items-center gap-1.5 text-[13px] text-ink underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
-                    >
-                      このエリアのページを見る
-                      <ArrowRight size={14} aria-hidden />
-                    </Link>
                   </div>
                 </div>
                 <ul className="grid list-none grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {contentsInZone(z.id).map((c) => (
                     <li key={c.code}>
-                      <ContentCard c={c} />
+                      <ContentCard c={c} link={cardLinks} />
                     </li>
                   ))}
                 </ul>
@@ -253,7 +221,11 @@ export function ContentsSection({
 export function TicketsSection({
   heading,
   className = `bg-white ${SECTION}`,
-}: SectionProps) {
+  linkTitles = true,
+}: SectionProps & {
+  /** コンテンツ名を個別ページへのリンクにする（トップページではリンクなし） */
+  linkTitles?: boolean;
+}) {
   return (
     <section
       id="tickets"
@@ -275,15 +247,24 @@ export function TicketsSection({
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand text-ink">
                   <Ticket size={18} aria-hidden />
                 </span>
-                <Link
-                  href={`/guide/${c.slug}`}
-                  className="text-[17px] tracking-[1px] text-ink underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
-                >
-                  <span className="font-en mr-2 text-[12px] tracking-[2px] opacity-60">
-                    {c.code}
+                {linkTitles ? (
+                  <Link
+                    href={`/guide/${c.slug}`}
+                    className="text-[17px] tracking-[1px] text-ink underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
+                  >
+                    <span className="font-en mr-2 text-[12px] tracking-[2px] opacity-60">
+                      {c.code}
+                    </span>
+                    {c.title}
+                  </Link>
+                ) : (
+                  <span className="text-[17px] tracking-[1px] text-ink">
+                    <span className="font-en mr-2 text-[12px] tracking-[2px] opacity-60">
+                      {c.code}
+                    </span>
+                    {c.title}
                   </span>
-                  {c.title}
-                </Link>
+                )}
               </div>
               <p className="text-[14px] leading-[1.7] text-ink">
                 {c.ticket?.duration && (

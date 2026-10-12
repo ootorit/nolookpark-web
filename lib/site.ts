@@ -85,6 +85,7 @@ export const NAV_LINKS = [
   { label: "開催概要", href: "#details" },
   { label: "会場MAP", href: "#map" },
   { label: "コンテンツ", href: "#contents" },
+  { label: "整理券", href: "#tickets" },
   { label: "主催者", href: "#organizers" },
   { label: "共催・協賛", href: "#sponsors" },
   { label: "お問い合わせ", href: "#contact" },

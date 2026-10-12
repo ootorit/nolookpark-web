@@ -1,27 +1,15 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight, ArrowRight, Ticket, Stamp } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { EVENT, STATEMENT_BODY, ORGANIZERS, CO_HOST, IMG } from "@/lib/site";
-import {
-  ZONES,
-  FLOORS,
-  TICKET_CONTENTS,
-  TICKET_NOTE,
-  MAP_GUIDE,
-  MAP_IMAGES,
-  STAMP_RALLY,
-  CREDITS,
-  contentsInZone,
-  zonePath,
-} from "@/lib/guide";
-import ContentCard from "@/components/guide/ContentCard";
-import { ZoneMark } from "@/components/guide/ZoneChip";
+import { CREDITS } from "@/lib/guide";
+import { MapSection, ContentsSection, TicketsSection, StampSection } from "@/components/guide/sections";
 
+// セクションの並びはトップページ（/）と同じ: 会場MAP → コンテンツ一覧 → 整理券 → スタンプラリー
 const TOC = [
   { href: "#greeting", label: "ごあいさつ" },
-  { href: "#tickets", label: "整理券が必要なコンテンツ" },
   { href: "#map", label: "会場MAP" },
   { href: "#contents", label: "コンテンツ一覧" },
+  { href: "#tickets", label: "整理券が必要なコンテンツ" },
   { href: "#stamp", label: "スタンプラリー" },
   { href: "#organizers", label: "主催者・共催・協賛" },
 ];
@@ -108,200 +96,14 @@ export default function GuidePage() {
         </div>
       </section>
 
-      {/* ---- 整理券 ---- */}
-      <section aria-labelledby="tickets" className="bg-cream px-6 py-20 md:px-12 md:py-24">
-        <div className="mx-auto flex max-w-[820px] flex-col items-center gap-10">
-          <H2 id="tickets" jp="整理券が必要なコンテンツ" en="TICKETED CONTENTS" />
-          <p className="max-w-[640px] text-center text-[15px] leading-[1.9] text-ink">{TICKET_NOTE}</p>
-          <ul className="flex w-full flex-col gap-4">
-            {TICKET_CONTENTS.map((c) => (
-              <li
-                key={c.code}
-                className="flex flex-col gap-3 rounded-xl border-2 border-ink bg-white px-6 py-5 sm:flex-row sm:items-center sm:gap-6"
-              >
-                <div className="flex items-center gap-3 sm:w-[300px] sm:shrink-0">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand text-ink">
-                    <Ticket size={18} aria-hidden />
-                  </span>
-                  <Link
-                    href={`/guide/${c.slug}`}
-                    className="text-[17px] tracking-[1px] text-ink underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
-                  >
-                    <span className="font-en mr-2 text-[12px] tracking-[2px] opacity-60">{c.code}</span>
-                    {c.title}
-                  </Link>
-                </div>
-                <p className="text-[14px] leading-[1.7] text-ink">
-                  {c.ticket?.duration && <span className="mr-2 opacity-70">{c.ticket.duration}</span>}
-                  {c.ticket?.times}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* ---- 会場MAP ---- */}
-      <section aria-labelledby="map" className="bg-brand px-6 py-20 md:px-12 md:py-24">
-        <div className="mx-auto flex max-w-[1000px] flex-col items-center gap-10">
-          <H2 id="map" jp="会場MAP" en="VENUE MAP" />
-          <p className="max-w-[640px] text-center text-[15px] leading-[1.9] text-ink">
-            会場は {EVENT.venue} の1階と2階。エリアはA〜Fの6つです。
-            地図の内容は、下の「会場の歩き方」に文章でも書いてあります。
-          </p>
-
-          <div className="flex w-full flex-col gap-6">
-            {MAP_IMAGES.map((mi) => (
-              <figure
-                key={mi.floor}
-                className="flex w-full flex-col gap-4 rounded-xl border-2 border-ink bg-white px-4 py-5 md:px-8 md:py-7"
-              >
-                <figcaption className="flex items-center gap-3 text-ink">
-                  <span className="font-en text-[22px] tracking-[2px]">{mi.floor}</span>
-                  <span className="text-[14px] tracking-[1px]">
-                    {FLOORS.find((f) => f.id === mi.floor)?.label}の会場MAP
-                  </span>
-                </figcaption>
-                <Image
-                  src={mi.src}
-                  alt={mi.alt}
-                  width={mi.width}
-                  height={mi.height}
-                  sizes="(min-width: 1024px) 940px, 100vw"
-                  className="h-auto w-full"
-                />
-              </figure>
-            ))}
-          </div>
-
-          <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
-            {ZONES.map((z) => (
-              <div key={z.id} className="flex items-start gap-4 rounded-xl bg-white px-5 py-5">
-                <ZoneMark id={z.id} />
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-[17px] leading-snug tracking-[1px] text-ink">
-                    <Link href={zonePath(z.id)} className="underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60">
-                      <span className="sr-only">エリア{z.id}、</span>
-                      {z.name}
-                    </Link>
-                  </h3>
-                  <p className="text-[12px] text-ink opacity-70">
-                    {z.floor} {z.place}
-                  </p>
-                  <p className="text-[13px] leading-[1.75] text-ink">{z.copy}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex w-full flex-col gap-6 rounded-xl border-2 border-ink bg-white px-6 py-7 md:px-10 md:py-9">
-            <h3 className="text-[20px] tracking-[1px] text-ink">会場の歩き方</h3>
-            {MAP_GUIDE.map((m) => (
-              <div key={m.floor} className="flex flex-col gap-3">
-                <h4 className="font-en text-[15px] tracking-[2px] text-ink">
-                  {m.floor} <span className="sr-only">{FLOORS.find((f) => f.id === m.floor)?.label}</span>
-                </h4>
-                <ol className="flex list-decimal flex-col gap-2 pl-6 text-[14px] leading-[1.8] text-ink">
-                  {m.steps.map((s, i) => (
-                    <li key={i}>{s}</li>
-                  ))}
-                </ol>
-              </div>
-            ))}
-            <a
-              href={EVENT.mapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-fit items-center gap-2 rounded-lg border-2 border-ink px-4 py-2.5 text-[13px] text-ink transition-colors hover:bg-ink hover:text-brand"
-            >
-              会場までの道のりを Googleマップで見る
-              <ArrowUpRight size={14} aria-hidden />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ---- コンテンツ一覧 ---- */}
-      <section aria-labelledby="contents" className="bg-cream px-6 py-20 md:px-12 md:py-24">
-        <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-14">
-          <div className="flex flex-col items-center gap-4 text-center">
-            <H2 id="contents" jp="コンテンツ一覧" en="CONTENTS" />
-            <p className="max-w-[680px] text-[15px] leading-[1.9] text-ink">
-              全18コンテンツを、エリアごとに紹介します。
-              <br className="hidden sm:block" />
-              タイトルを押すと、それぞれの詳しい説明が読めます。
-            </p>
-          </div>
-
-          {FLOORS.map((f) => (
-            <div key={f.id} className="flex w-full flex-col gap-10">
-              <h3 className="flex items-center gap-4 text-ink">
-                <span className="font-en text-[32px] tracking-[2px]">{f.id}</span>
-                <span className="text-[15px] tracking-[1px]">{f.label}</span>
-                <span aria-hidden className="h-px flex-1 bg-ink/20" />
-              </h3>
-
-              {ZONES.filter((z) => z.floor === f.id).map((z) => (
-                <section
-                  key={z.id}
-                  id={`zone-${z.id}`}
-                  aria-labelledby={`zone-${z.id}-title`}
-                  className="flex scroll-mt-6 flex-col gap-6"
-                >
-                  <div className="flex items-start gap-4">
-                    <ZoneMark id={z.id} size="lg" />
-                    <div className="flex flex-col gap-1">
-                      <h4 id={`zone-${z.id}-title`} className="text-[24px] leading-tight tracking-[1px] text-ink">
-                        <span className="sr-only">エリア{z.id}、</span>
-                        {z.name}
-                      </h4>
-                      <p className="text-[13px] text-ink opacity-70">
-                        {z.floor} {z.place}
-                      </p>
-                      <p className="text-[14px] leading-[1.8] text-ink">{z.copy}</p>
-                      <Link
-                        href={zonePath(z.id)}
-                        className="mt-1 inline-flex w-fit items-center gap-1.5 text-[13px] text-ink underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
-                      >
-                        このエリアのページを見る
-                        <ArrowRight size={14} aria-hidden />
-                      </Link>
-                    </div>
-                  </div>
-                  <ul className="grid list-none grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {contentsInZone(z.id).map((c) => (
-                      <li key={c.code}>
-                        <ContentCard c={c} />
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              ))}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ---- スタンプラリー ---- */}
-      <section aria-labelledby="stamp" className="bg-brand px-6 py-20 md:px-12 md:py-24">
-        <div className="mx-auto flex max-w-[820px] flex-col items-center gap-8 text-center">
-          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-brand">
-            <Stamp size={30} aria-hidden />
-          </span>
-          <H2 id="stamp" jp="スタンプラリー" en="STAMP RALLY" />
-          <p className="text-[15px] leading-[1.9] text-ink">{STAMP_RALLY.body}</p>
-          <ul aria-label="スタンプのあるエリア" className="flex flex-wrap justify-center gap-3">
-            {ZONES.map((z) => (
-              <li key={z.id} className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] text-ink">
-                <ZoneMark id={z.id} size="sm" />
-                <span className="sr-only">エリア{z.id} </span>
-                {z.name}
-              </li>
-            ))}
-          </ul>
-          <p className="rounded-full bg-ink px-6 py-3 text-[14px] tracking-[1px] text-brand">{STAMP_RALLY.note}</p>
-        </div>
-      </section>
+      {/* ---- 会場MAP / コンテンツ一覧 / 整理券 / スタンプラリー（トップページと共通） ---- */}
+      <MapSection heading={<H2 id="map-title" jp="会場MAP" en="VENUE MAP" />} walkGuideOpen />
+      <ContentsSection heading={<H2 id="contents-title" jp="コンテンツ一覧" en="CONTENTS" />} />
+      <TicketsSection
+        heading={<H2 id="tickets-title" jp="整理券が必要なコンテンツ" en="TICKETED CONTENTS" />}
+        className="bg-cream px-6 py-20 md:px-12 md:py-24"
+      />
+      <StampSection heading={<H2 id="stamp-title" jp="スタンプラリー" en="STAMP RALLY" />} />
 
       {/* ---- 主催者・共催・協賛 ---- */}
       <section aria-labelledby="organizers" className="bg-white px-6 py-20 md:px-12 md:py-24">

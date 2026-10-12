@@ -86,7 +86,7 @@ export default async function GuideContentPage({ params }: Props) {
               <span className="font-en mr-3 text-[18px] tracking-[3px] opacity-60 md:text-[22px]">{c.code}</span>
               {c.title}
             </h1>
-            <p className="text-[14px] text-ink opacity-70">with {c.withNames}</p>
+            <p className="text-[14px] text-ink opacity-70">by {c.withNames}</p>
             <p className="text-[20px] leading-[1.6] tracking-[1px] text-ink md:text-[24px]">{c.catchCopy}</p>
             {c.ticket && (
               <div>
@@ -200,7 +200,7 @@ export default async function GuideContentPage({ params }: Props) {
                       <span className="font-en w-[2.5em] shrink-0 text-[13px] tracking-[2px] text-ink opacity-60">{s.code}</span>
                       <span className="flex flex-1 flex-col">
                         <span className="text-[16px] tracking-[1px] text-ink">{s.title}</span>
-                        <span className="text-[12px] text-ink opacity-60">with {s.withNames}</span>
+                        <span className="text-[12px] text-ink opacity-60">by {s.withNames}</span>
                       </span>
                       {s.ticket && <Tag tone="outline">整理券制</Tag>}
                       <ArrowRight size={16} aria-hidden className="shrink-0 text-ink" />

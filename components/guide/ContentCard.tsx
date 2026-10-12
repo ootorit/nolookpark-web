@@ -36,7 +36,7 @@ export default function ContentCard({ c }: { c: GuideContent }) {
             {c.title}
           </Link>
         </h4>
-        <p className="text-[12px] text-ink opacity-60">with {c.withNames}</p>
+        <p className="text-[12px] text-ink opacity-60">by {c.withNames}</p>
         <p className="text-[13px] leading-[1.8] text-ink">{c.lead}</p>
         {c.ticket && (
           <p className="mt-1 text-[12px] leading-[1.7] text-ink">

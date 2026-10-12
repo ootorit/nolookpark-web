@@ -83,6 +83,7 @@ export const IMG = {
 export const NAV_LINKS = [
   { label: "コンセプト", href: "#statement" },
   { label: "開催概要", href: "#details" },
+  { label: "会場MAP", href: "#map" },
   { label: "コンテンツ", href: "#contents" },
   { label: "主催者", href: "#organizers" },
   { label: "共催・協賛", href: "#sponsors" },

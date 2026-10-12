@@ -57,7 +57,7 @@ export const ZONES: Zone[] = [
     id: "F",
     name: "NO LOOK SIDEWALK",
     floor: "2F",
-    place: "ルーフバルコニー前の廊下",
+    place: "ルーフバルコニー前の渡り廊下",
     copy: "見える世界と、見えない世界をつなぐデザインを展示します。",
   },
 ];

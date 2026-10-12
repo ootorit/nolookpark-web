@@ -347,6 +347,30 @@ export const TICKET_NOTE =
 
 export const TICKET_CONTENTS = GUIDE_CONTENTS.filter((c) => c.ticket);
 
+/** 会場MAP画像（Illustrator の EVENT MAP を 4x 書き出し、Drive `2609_NOLOOKPARK_GR/4x/`） */
+export const MAP_IMAGES: {
+  floor: Floor;
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+}[] = [
+  {
+    floor: "1F",
+    src: "/images/guide/map-1f.png",
+    width: 2258,
+    height: 1450,
+    alt: "1階の見取り図。正門を入ると広場があり、その先にメインエントランス。メインエントランスのすぐ横に受付。受付のとなり、114号室の前のギャラリーが B NO LOOK GALLERY。建物の西側、110号室の前が C NO LOOK BREWERY。建物の東側、中庭の先の体育館が A NO LOOK GYM で、東門からも入れる。",
+  },
+  {
+    floor: "2F",
+    src: "/images/guide/map-2f.png",
+    width: 2015,
+    height: 958,
+    alt: "2階の見取り図。メインエントランスの階段を上がった先の廊下、206号室の前のルーフバルコニー側が F NO LOOK SIDEWALK。ブックラウンジが E NO LOOK LOUNGE。廊下の東の突き当たり、209号室が D NO LOOK 縁日。",
+  },
+];
+
 /** 会場MAPの文章による説明（スクリーンリーダー向け・画像の代替） */
 export const MAP_GUIDE: { floor: Floor; steps: string[] }[] = [
   {

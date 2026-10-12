@@ -8,6 +8,7 @@ import {
   TICKET_CONTENTS,
   TICKET_NOTE,
   MAP_GUIDE,
+  MAP_IMAGES,
   STAMP_RALLY,
   CREDITS,
   contentsInZone,
@@ -148,18 +149,29 @@ export default function GuidePage() {
             地図の内容は、下の「会場の歩き方」に文章でも書いてあります。
           </p>
 
-          <figure className="w-full overflow-hidden rounded-xl border-2 border-ink bg-brand">
-            <Image
-              src="/images/guide/map.png"
-              alt="会場MAP。1階と2階の見取り図に、A〜Fのエリアの位置と受付・エントランス・門が示されている。詳しい位置は、この下の「会場の歩き方」に書いてあります。"
-              width={2332}
-              height={2004}
-              sizes="(min-width: 1024px) 1000px, 100vw"
-              className="h-auto w-full"
-              priority={false}
-            />
-            <figcaption className="sr-only">HOME/WORK VILLAGE 会場MAP</figcaption>
-          </figure>
+          <div className="flex w-full flex-col gap-6">
+            {MAP_IMAGES.map((mi) => (
+              <figure
+                key={mi.floor}
+                className="flex w-full flex-col gap-4 rounded-xl border-2 border-ink bg-white px-4 py-5 md:px-8 md:py-7"
+              >
+                <figcaption className="flex items-center gap-3 text-ink">
+                  <span className="font-en text-[22px] tracking-[2px]">{mi.floor}</span>
+                  <span className="text-[14px] tracking-[1px]">
+                    {FLOORS.find((f) => f.id === mi.floor)?.label}の会場MAP
+                  </span>
+                </figcaption>
+                <Image
+                  src={mi.src}
+                  alt={mi.alt}
+                  width={mi.width}
+                  height={mi.height}
+                  sizes="(min-width: 1024px) 940px, 100vw"
+                  className="h-auto w-full"
+                />
+              </figure>
+            ))}
+          </div>
 
           <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
             {ZONES.map((z) => (

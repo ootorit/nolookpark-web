@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight, ChevronDown, Ticket, Stamp } from "lucide-react";
+import {
+  ArrowUpRight,
+  ArrowRight,
+  ChevronDown,
+  Ticket,
+  Stamp,
+} from "lucide-react";
 import { EVENT } from "@/lib/site";
 import {
   ZONES,
@@ -41,7 +47,9 @@ export function WalkGuide({ defaultOpen = false }: { defaultOpen?: boolean }) {
       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-ink [&::-webkit-details-marker]:hidden md:px-10 md:py-6">
         <span className="flex flex-col gap-0.5">
           <span className="text-[20px] tracking-[1px]">会場の歩き方</span>
-          <span className="text-[12px] opacity-60">地図の内容を文章で説明します（クリックで開きます）</span>
+          <span className="text-[12px] opacity-60">
+            地図の内容を文章で説明します（クリックで開きます）
+          </span>
         </span>
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-brand transition-transform duration-300 group-open:rotate-180">
           <ChevronDown size={18} aria-hidden />
@@ -51,7 +59,10 @@ export function WalkGuide({ defaultOpen = false }: { defaultOpen?: boolean }) {
         {MAP_GUIDE.map((m) => (
           <div key={m.floor} className="flex flex-col gap-3">
             <h4 className="font-en text-[15px] tracking-[2px] text-ink">
-              {m.floor} <span className="sr-only">{FLOORS.find((f) => f.id === m.floor)?.label}</span>
+              {m.floor}{" "}
+              <span className="sr-only">
+                {FLOORS.find((f) => f.id === m.floor)?.label}
+              </span>
             </h4>
             <ol className="flex list-decimal flex-col gap-2 pl-6 text-[14px] leading-[1.8] text-ink">
               {m.steps.map((s, i) => (
@@ -78,9 +89,18 @@ export function MapSection({
   heading,
   className = `bg-brand ${SECTION}`,
   walkGuideOpen = false,
-}: SectionProps & { walkGuideOpen?: boolean }) {
+  showZones = true,
+}: SectionProps & {
+  walkGuideOpen?: boolean;
+  /** 地図の下のエリア紹介カード（A〜F）。トップページではコンテンツ一覧に同じ説明があるので省く */
+  showZones?: boolean;
+}) {
   return (
-    <section id="map" aria-labelledby="map-title" className={`scroll-mt-20 ${className}`}>
+    <section
+      id="map"
+      aria-labelledby="map-title"
+      className={`scroll-mt-20 ${className}`}
+    >
       <div className="mx-auto flex max-w-[1000px] flex-col items-center gap-10">
         {heading}
         <p className="max-w-[640px] text-center text-[15px] leading-[1.9] text-ink">
@@ -95,7 +115,9 @@ export function MapSection({
               className="flex w-full flex-col gap-4 rounded-xl border-2 border-ink bg-white px-4 py-5 md:px-8 md:py-7"
             >
               <figcaption className="flex items-center gap-3 text-ink">
-                <span className="font-en text-[22px] tracking-[2px]">{mi.floor}</span>
+                <span className="font-en text-[22px] tracking-[2px]">
+                  {mi.floor}
+                </span>
                 <span className="text-[14px] tracking-[1px]">
                   {FLOORS.find((f) => f.id === mi.floor)?.label}の会場MAP
                 </span>
@@ -112,28 +134,35 @@ export function MapSection({
           ))}
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
-          {ZONES.map((z) => (
-            <div key={z.id} className="flex items-start gap-4 rounded-xl bg-white px-5 py-5">
-              <ZoneMark id={z.id} />
-              <div className="flex flex-col gap-1">
-                <h3 className="text-[17px] leading-snug tracking-[1px] text-ink">
-                  <Link
-                    href={zonePath(z.id)}
-                    className="underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
-                  >
-                    <span className="sr-only">エリア{z.id}、</span>
-                    {z.name}
-                  </Link>
-                </h3>
-                <p className="text-[12px] text-ink opacity-70">
-                  {z.floor} {z.place}
-                </p>
-                <p className="text-[13px] leading-[1.75] text-ink">{z.copy}</p>
+        {showZones && (
+          <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
+            {ZONES.map((z) => (
+              <div
+                key={z.id}
+                className="flex items-start gap-4 rounded-xl bg-white px-5 py-5"
+              >
+                <ZoneMark id={z.id} />
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-[17px] leading-snug tracking-[1px] text-ink">
+                    <Link
+                      href={zonePath(z.id)}
+                      className="underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
+                    >
+                      <span className="sr-only">エリア{z.id}、</span>
+                      {z.name}
+                    </Link>
+                  </h3>
+                  <p className="text-[12px] text-ink opacity-70">
+                    {z.floor} {z.place}
+                  </p>
+                  <p className="text-[13px] leading-[1.75] text-ink">
+                    {z.copy}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         <WalkGuide defaultOpen={walkGuideOpen} />
       </div>
@@ -143,9 +172,16 @@ export function MapSection({
 
 /* ---------------- コンテンツ一覧 ---------------- */
 
-export function ContentsSection({ heading, className = `bg-cream ${SECTION}` }: SectionProps) {
+export function ContentsSection({
+  heading,
+  className = `bg-cream ${SECTION}`,
+}: SectionProps) {
   return (
-    <section id="contents" aria-labelledby="contents-title" className={`scroll-mt-20 ${className}`}>
+    <section
+      id="contents"
+      aria-labelledby="contents-title"
+      className={`scroll-mt-20 ${className}`}
+    >
       <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-14">
         <div className="flex flex-col items-center gap-4 text-center">
           {heading}
@@ -174,14 +210,19 @@ export function ContentsSection({ heading, className = `bg-cream ${SECTION}` }: 
                 <div className="flex items-start gap-4">
                   <ZoneMark id={z.id} size="lg" />
                   <div className="flex flex-col gap-1">
-                    <h4 id={`zone-${z.id}-title`} className="text-[24px] leading-tight tracking-[1px] text-ink">
+                    <h4
+                      id={`zone-${z.id}-title`}
+                      className="text-[24px] leading-tight tracking-[1px] text-ink"
+                    >
                       <span className="sr-only">エリア{z.id}、</span>
                       {z.name}
                     </h4>
                     <p className="text-[13px] text-ink opacity-70">
                       {z.floor} {z.place}
                     </p>
-                    <p className="text-[14px] leading-[1.8] text-ink">{z.copy}</p>
+                    <p className="text-[14px] leading-[1.8] text-ink">
+                      {z.copy}
+                    </p>
                     <Link
                       href={zonePath(z.id)}
                       className="mt-1 inline-flex w-fit items-center gap-1.5 text-[13px] text-ink underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
@@ -209,12 +250,21 @@ export function ContentsSection({ heading, className = `bg-cream ${SECTION}` }: 
 
 /* ---------------- 整理券 ---------------- */
 
-export function TicketsSection({ heading, className = `bg-white ${SECTION}` }: SectionProps) {
+export function TicketsSection({
+  heading,
+  className = `bg-white ${SECTION}`,
+}: SectionProps) {
   return (
-    <section id="tickets" aria-labelledby="tickets-title" className={`scroll-mt-20 ${className}`}>
+    <section
+      id="tickets"
+      aria-labelledby="tickets-title"
+      className={`scroll-mt-20 ${className}`}
+    >
       <div className="mx-auto flex max-w-[820px] flex-col items-center gap-10">
         {heading}
-        <p className="max-w-[640px] text-center text-[15px] leading-[1.9] text-ink">{TICKET_NOTE}</p>
+        <p className="max-w-[640px] text-center text-[15px] leading-[1.9] text-ink">
+          {TICKET_NOTE}
+        </p>
         <ul className="flex w-full flex-col gap-4">
           {TICKET_CONTENTS.map((c) => (
             <li
@@ -229,12 +279,16 @@ export function TicketsSection({ heading, className = `bg-white ${SECTION}` }: S
                   href={`/guide/${c.slug}`}
                   className="text-[17px] tracking-[1px] text-ink underline decoration-dotted decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
                 >
-                  <span className="font-en mr-2 text-[12px] tracking-[2px] opacity-60">{c.code}</span>
+                  <span className="font-en mr-2 text-[12px] tracking-[2px] opacity-60">
+                    {c.code}
+                  </span>
                   {c.title}
                 </Link>
               </div>
               <p className="text-[14px] leading-[1.7] text-ink">
-                {c.ticket?.duration && <span className="mr-2 opacity-70">{c.ticket.duration}</span>}
+                {c.ticket?.duration && (
+                  <span className="mr-2 opacity-70">{c.ticket.duration}</span>
+                )}
                 {c.ticket?.times}
               </p>
             </li>
@@ -247,25 +301,40 @@ export function TicketsSection({ heading, className = `bg-white ${SECTION}` }: S
 
 /* ---------------- スタンプラリー ---------------- */
 
-export function StampSection({ heading, className = `bg-brand ${SECTION}` }: SectionProps) {
+export function StampSection({
+  heading,
+  className = `bg-brand ${SECTION}`,
+}: SectionProps) {
   return (
-    <section id="stamp" aria-labelledby="stamp-title" className={`scroll-mt-20 ${className}`}>
+    <section
+      id="stamp"
+      aria-labelledby="stamp-title"
+      className={`scroll-mt-20 ${className}`}
+    >
       <div className="mx-auto flex max-w-[820px] flex-col items-center gap-8 text-center">
         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-brand">
           <Stamp size={30} aria-hidden />
         </span>
         {heading}
         <p className="text-[15px] leading-[1.9] text-ink">{STAMP_RALLY.body}</p>
-        <ul aria-label="スタンプのあるエリア" className="flex flex-wrap justify-center gap-3">
+        <ul
+          aria-label="スタンプのあるエリア"
+          className="flex flex-wrap justify-center gap-3"
+        >
           {ZONES.map((z) => (
-            <li key={z.id} className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] text-ink">
+            <li
+              key={z.id}
+              className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] text-ink"
+            >
               <ZoneMark id={z.id} size="sm" />
               <span className="sr-only">エリア{z.id} </span>
               {z.name}
             </li>
           ))}
         </ul>
-        <p className="rounded-full bg-ink px-6 py-3 text-[14px] tracking-[1px] text-brand">{STAMP_RALLY.note}</p>
+        <p className="rounded-full bg-ink px-6 py-3 text-[14px] tracking-[1px] text-brand">
+          {STAMP_RALLY.note}
+        </p>
       </div>
     </section>
   );

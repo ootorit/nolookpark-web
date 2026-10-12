@@ -21,6 +21,7 @@ export default function Home() {
         {/* 当日ガイド（/guide）と共通のセクション。見出し id は各セクションの aria-labelledby と対応 */}
         <MapSection
           className="bg-cream px-6 py-20 md:px-12 md:py-24"
+          showZones={false}
           heading={
             <Reveal>
               <SectionHeading id="map-title" jp="会場MAP" en="VENUE MAP" />

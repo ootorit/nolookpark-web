@@ -179,7 +179,7 @@ export const GUIDE_CONTENTS: GuideContent[] = [
     code: "C1",
     slug: "off-time-bar",
     zone: "C",
-    title: "OFF TIME BAR",
+    title: "OFF T!ME BAR",
     withNames: "澤田智洋 & 高橋鴻介 & After School Brewery",
     lead: "美味しいビールを、目をOFFにして飲み比べながら、会話を楽しむバーです。",
     catchCopy: "目をOFFにして、ビールを味わおう",

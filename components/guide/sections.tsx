@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ChevronDown, Ticket, Stamp } from "lucide-react";
+import { ChevronDown, Ticket, Stamp } from "lucide-react";
 import { EVENT } from "@/lib/site";
 import {
   ZONES,
   FLOORS,
   TICKET_CONTENTS,
   TICKET_NOTE,
+  GUIDE_CONTENTS,
   MAP_GUIDE,
   MAP_IMAGES,
   STAMP_RALLY,
@@ -49,7 +50,7 @@ export function WalkGuide({ defaultOpen = false }: { defaultOpen?: boolean }) {
           <ChevronDown size={18} aria-hidden />
         </span>
       </summary>
-      <div className="flex flex-col gap-6 border-t-2 border-ink px-6 py-7 md:px-10 md:py-9">
+      <div className="flex flex-col gap-6 px-6 pb-7 pt-1 md:px-10 md:pb-9">
         {MAP_GUIDE.map((m) => (
           <div key={m.floor} className="flex flex-col gap-3">
             <h4 className="font-en text-[15px] tracking-[2px] text-ink">
@@ -65,15 +66,6 @@ export function WalkGuide({ defaultOpen = false }: { defaultOpen?: boolean }) {
             </ol>
           </div>
         ))}
-        <a
-          href={EVENT.mapUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex w-fit items-center gap-2 rounded-lg border-2 border-ink px-4 py-2.5 text-[13px] text-ink transition-colors hover:bg-ink hover:text-brand"
-        >
-          会場までの道のりを Googleマップで見る
-          <ArrowUpRight size={14} aria-hidden />
-        </a>
       </div>
     </details>
   );
@@ -152,9 +144,13 @@ export function ContentsSection({
         <div className="flex flex-col items-center gap-4 text-center">
           {heading}
           <p className="max-w-[680px] text-[15px] leading-[1.9] text-ink">
-            全18コンテンツを、エリアごとに紹介します。
-            <br className="hidden sm:block" />
-            タイトルを押すと、それぞれの詳しい説明が読めます。
+            全{GUIDE_CONTENTS.length}コンテンツを、エリアごとに紹介します。
+            {cardLinks && (
+              <>
+                <br className="hidden sm:block" />
+                タイトルを押すと、それぞれの詳しい説明が読めます。
+              </>
+            )}
           </p>
         </div>
 

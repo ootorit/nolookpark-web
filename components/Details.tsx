@@ -157,7 +157,7 @@ export default function Details() {
                 <ChevronDown size={18} aria-hidden />
               </span>
             </summary>
-            <div className="grid grid-cols-1 gap-x-10 gap-y-7 border-t-2 border-ink px-8 py-8 sm:grid-cols-2 md:px-10">
+            <div className="grid grid-cols-1 gap-x-10 gap-y-7 px-8 pb-8 pt-1 sm:grid-cols-2 md:px-10">
               <AccessItem icon={Phone} label="電話">
                 <a
                   href={`tel:${EVENT.venueTel.replace(/-/g, "")}`}

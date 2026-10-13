@@ -298,6 +298,6 @@ export const CO_HOST = {
   nameEn: "Vision Consortium",
   nameJp: "ビジョン・コンソーシアム",
   desc: "点字が誕生して200年目の2025年。視覚障害者と社会の懸け橋となるという「点字毎日」創刊時の理念を現代にアップデートし、毎日新聞社は共感する仲間たちとともに「ビジョン・コンソーシアム」を設立しました。晴眼者に対する「見えない」「見えづらい」世界の体験提供を通じて、誰もが尊重し合い、支え合うインクルーシブ社会に向けた「学び」や「気付き」を広げていきます。",
-  linkText: "mainichi.co.jp/vision-cons",
+  linkText: "mainichi.co.jp/vision-cons/",
   href: "https://www.mainichi.co.jp/vision-cons/",
 } as const;

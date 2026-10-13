@@ -30,7 +30,7 @@ export const ZONES: Zone[] = [
     name: "NO LOOK GALLERY",
     floor: "1F",
     place: "ギャラリー（受付のとなり）",
-    copy: "見えない×アート体験。全く新しい表現を体験しよう",
+    copy: "みえない×アート体験。全く新しい表現を体験しよう",
   },
   {
     id: "C",
@@ -58,7 +58,7 @@ export const ZONES: Zone[] = [
     name: "NO LOOK SIDEWALK",
     floor: "2F",
     place: "ルーフバルコニー前の渡り廊下",
-    copy: "見える世界と、見えない世界をつなぐデザインを展示します",
+    copy: "「みえる」と、「みえない」をつなぐデザインを展示します",
   },
 ];
 

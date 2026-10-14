@@ -407,7 +407,7 @@ export const CREDITS = [
   {
     label: "協力",
     value:
-      "世界ゆるスポーツ協会／FULLWONDER／MAGNET／Skyさくら／Jelly Jelly Games／乃村工藝社／After School Brewery",
+      "世界ゆるスポーツ協会／FULLWONDER／MAGNET／Skyさくら／Jelly Jelly Games／乃村工藝社／After School Brewery／浪漫花店",
   },
 ] as const;
 

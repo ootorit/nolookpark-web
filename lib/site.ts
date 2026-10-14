@@ -289,6 +289,7 @@ export const COLLABORATORS = [
   "Jelly Jelly Games",
   "乃村工藝社",
   "After School Brewery",
+  "浪漫花店",
 ] as const;
 
 // 共催団体（Organizers セクション末尾のハイライトカード）

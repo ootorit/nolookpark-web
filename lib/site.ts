@@ -101,7 +101,6 @@ export const INTERVIEWS = [
     role: "ブラインドコミュニケーター",
     video: "/videos/interview_ishii.mp4",
     poster: "/videos/interview_ishii_poster.jpg",
-    duration: "2:33",
   },
 ] as const;
 

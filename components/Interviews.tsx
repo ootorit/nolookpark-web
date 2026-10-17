@@ -68,14 +68,14 @@ export default function Interviews() {
                         playsInline
                         preload="none"
                         onPlay={() => pauseOthers(i)}
-                        aria-label={`${m.name}さんのインタビュー動画（${m.duration}・字幕入り）`}
+                        aria-label={`${m.name}さん（${m.role}）のインタビュー動画（字幕入り）`}
                         className="block aspect-[9/16] w-full object-cover"
                       />
                       {!playing && (
                         <button
                           type="button"
                           onClick={() => start(i)}
-                          aria-label={`${m.name}さんのインタビュー動画を再生（${m.duration}）`}
+                          aria-label={`${m.name}さんのインタビュー動画を再生`}
                           className="group absolute inset-0"
                         >
                           <span className="absolute left-1/2 top-[15%] flex h-16 w-16 -translate-x-1/2 items-center justify-center rounded-full bg-ink text-brand shadow-lg transition-transform group-hover:scale-110 group-focus-visible:scale-110">
@@ -84,12 +84,10 @@ export default function Interviews() {
                         </button>
                       )}
                     </div>
-                    <div className="flex flex-col gap-0.5 px-1">
-                      <span className="text-[17px] tracking-[1px] text-ink">{m.name}</span>
-                      <span className="text-[12px] tracking-[0.5px] text-ink opacity-70">
-                        {m.role}・{m.duration}
-                      </span>
-                    </div>
+                    <p className="px-1 text-ink">
+                      <span className="text-[17px] tracking-[1px]">{m.name}さん</span>
+                      <span className="text-[12px] tracking-[0.5px] opacity-70">（{m.role}）</span>
+                    </p>
                   </Reveal>
                 </li>
               );

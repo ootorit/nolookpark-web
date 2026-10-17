@@ -83,12 +83,26 @@ export const IMG = {
 export const NAV_LINKS = [
   { label: "コンセプト", href: "#statement" },
   { label: "開催概要", href: "#details" },
+  { label: "インタビュー", href: "#interviews" },
   { label: "会場MAP", href: "#map" },
   { label: "コンテンツ", href: "#contents" },
   { label: "整理券", href: "#tickets" },
   { label: "主催者", href: "#organizers" },
   { label: "共催・協賛", href: "#sponsors" },
   { label: "お問い合わせ", href: "#contact" },
+] as const;
+
+// メンバーのインタビュー動画（縦9:16・字幕入り）。1人ずつ足していく。
+// 動画は 720×1280 に縮めて public/videos/ へ（元は Dropbox「NO LOOK PARK/動画」の SNS 用 1080×1920）。
+// 表紙（poster）は動画内のタイトル画面（「◯◯さん インタビュー」）を1コマ書き出したもの。
+export const INTERVIEWS = [
+  {
+    name: "石井健介",
+    role: "ブラインドコミュニケーター",
+    video: "/videos/interview_ishii.mp4",
+    poster: "/videos/interview_ishii_poster.jpg",
+    duration: "2:33",
+  },
 ] as const;
 
 export const NAV_TICKET = "チケットを購入";

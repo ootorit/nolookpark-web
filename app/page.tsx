@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Statement from "@/components/Statement";
 import Details from "@/components/Details";
+import Interviews from "@/components/Interviews";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import {
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero />
         <Statement />
         <Details />
+        <Interviews />
         {/* 当日ガイド（/guide）と共通のセクション。見出し id は各セクションの aria-labelledby と対応 */}
         <MapSection
           className="bg-cream px-6 py-20 md:px-12 md:py-24"

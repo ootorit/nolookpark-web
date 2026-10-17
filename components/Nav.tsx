@@ -38,12 +38,12 @@ export default function Nav() {
         <div className="flex-1" />
 
         {/* Desktop links */}
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="ml-6 hidden items-center gap-3 lg:flex xl:gap-6">
           {NAV_LINKS.map((l) => (
             <a
               key={l.label}
               href={l.href}
-              className="text-[13px] tracking-[1px] text-ink transition-opacity hover:opacity-60"
+              className="whitespace-nowrap text-[13px] tracking-[1px] text-ink transition-opacity hover:opacity-60"
             >
               {l.label}
             </a>
@@ -52,7 +52,7 @@ export default function Nav() {
             href={TICKET_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-ink px-7 py-3 text-sm tracking-[1px] text-brand transition-transform hover:scale-105"
+            className="whitespace-nowrap rounded-full bg-ink px-7 py-3 text-sm tracking-[1px] text-brand transition-transform hover:scale-105"
           >
             {NAV_TICKET}
           </a>

@@ -41,9 +41,12 @@ export default function Interviews() {
           <SectionHeading id="interviews-title" jp="インタビュー" en="INTERVIEW" />
         </Reveal>
 
-        <Reveal delay={80} className="self-stretch px-6 md:self-auto">
-          <p className="max-w-[640px] text-left text-[15px] leading-[1.9] text-ink md:text-center">
-            NO LOOK PARK をつくるメンバーに、担当するコンテンツと「みえない」の楽しみ方を聞きました。動画は字幕入りです。
+        <Reveal delay={80} className="px-6">
+          {/* 短い一文なので中央揃え。文節ごとに inline-block で包み、モバイルで語の途中で折れないようにする */}
+          <p className="max-w-[640px] text-center text-[15px] leading-[1.9] text-ink md:text-base">
+            <span className="inline-block">NO LOOK PARK メンバーから</span>
+            <span className="inline-block">あなたへ贈る</span>
+            <span className="inline-block">「みえない世界の歩き方」。</span>
           </p>
         </Reveal>
 

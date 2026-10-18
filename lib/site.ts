@@ -94,13 +94,25 @@ export const NAV_LINKS = [
 
 // メンバーのインタビュー動画（縦9:16・字幕入り）。1人ずつ足していく。
 // 動画は 720×1280 に縮めて public/videos/ へ（元は Dropbox「NO LOOK PARK/動画」の SNS 用 1080×1920）。
-// 表紙（poster）は動画内のタイトル画面（「◯◯さん インタビュー」）を1コマ書き出したもの。
+// 表紙（poster）は冒頭の、本人の顔に名前と肩書きの帯が出ているカットを1コマ書き出したもの。
 export const INTERVIEWS = [
   {
     name: "石井健介",
     role: "ブラインドコミュニケーター",
     video: "/videos/interview_ishii.mp4",
     poster: "/videos/interview_ishii_poster.jpg",
+  },
+  {
+    name: "高橋鴻介",
+    role: "発明家",
+    video: "/videos/interview_takahashi.mp4",
+    poster: "/videos/interview_takahashi_poster.jpg",
+  },
+  {
+    name: "門田さつき",
+    role: "ブラインドコミュニケーター",
+    video: "/videos/interview_kadota.mp4",
+    poster: "/videos/interview_kadota_poster.jpg",
   },
 ] as const;
 

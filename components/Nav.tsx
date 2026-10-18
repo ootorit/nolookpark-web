@@ -30,16 +30,24 @@ export default function Nav() {
         aria-label="メインナビゲーション"
         className="mx-auto flex max-w-[1360px] items-center px-6 py-5 md:px-10"
       >
-        <a href="#top" className="flex items-center" aria-label="NO LOOK PARK ホーム">
+        <a
+          href="#top"
+          className="flex items-center"
+          aria-label="NO LOOK PARK ホーム"
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={IMG.logo} alt="NO LOOK PARK" className="h-11 w-11 object-contain md:h-14 md:w-14" />
+          <img
+            src={IMG.logo}
+            alt="NO LOOK PARK"
+            className="h-11 w-11 object-contain md:h-14 md:w-14"
+          />
         </a>
 
         <div className="flex-1" />
 
         {/* Desktop links */}
-        <div className="ml-6 hidden items-center gap-3 lg:flex xl:gap-6">
-          {NAV_LINKS.map((l) => (
+        <div className="ml-6 mr-3 hidden items-center gap-6 lg:flex">
+          {NAV_LINKS.filter((l) => l.primary).map((l) => (
             <a
               key={l.label}
               href={l.href}
@@ -58,11 +66,11 @@ export default function Nav() {
           </a>
         </div>
 
-        {/* Mobile toggle */}
+        {/* メニューボタン（PC・スマホ共通。PC では横に出していない項目もここから） */}
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-ink text-brand lg:hidden"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-brand"
           aria-label={open ? "メニューを閉じる" : "メニューを開く"}
           aria-expanded={open}
         >
@@ -70,9 +78,9 @@ export default function Nav() {
         </button>
       </nav>
 
-      {/* Mobile dropdown */}
+      {/* メニュー（全項目）。PC では右上に小さめのパネルで出す */}
       {open && (
-        <div className="mx-6 mb-6 rounded-2xl bg-ink px-6 py-6 lg:hidden">
+        <div className="mx-6 mb-6 rounded-2xl bg-ink px-6 py-6 lg:ml-auto lg:mr-10 lg:w-[300px]">
           <div className="flex flex-col gap-5">
             {NAV_LINKS.map((l) => (
               <a
@@ -89,7 +97,7 @@ export default function Nav() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-1 w-full rounded-full bg-brand py-3 text-center text-sm tracking-[1px] text-ink"
+              className="mt-1 w-full rounded-full bg-brand py-3 text-center text-sm tracking-[1px] text-ink lg:hidden"
             >
               {NAV_TICKET}
             </a>

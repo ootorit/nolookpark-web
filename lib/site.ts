@@ -5,7 +5,13 @@ export const EVENT = {
   heroCopy: "「みえない」を楽しみつくそう！",
   dateLabel: "2026年10月24日（土）11:00-17:00",
   // ヒーローの文字組み用（数字を大きく、年月日（土）を小さく表示）
-  dateParts: { year: "2026", month: "10", day: "24", dow: "土", time: "11:00-17:00" },
+  dateParts: {
+    year: "2026",
+    month: "10",
+    day: "24",
+    dow: "土",
+    time: "11:00-17:00",
+  },
   date: "2026年10月24日（土）",
   time: "11:00 - 17:00",
   venue: "HOME/WORK VILLAGE",
@@ -80,16 +86,19 @@ export const IMG = {
 } as const;
 
 // Order follows the actual on-page section order.
+// ナビの項目。primary は PC で常に横に出すもの（来場に直結するもの）。
+// 全項目はメニューボタン（PC・スマホ共通）の中に出す。PC で全部を横に並べると幅が足りずパツパツになるため。
 export const NAV_LINKS = [
-  { label: "コンセプト", href: "#statement" },
-  { label: "開催概要", href: "#details" },
-  { label: "インタビュー", href: "#interviews" },
-  { label: "会場MAP", href: "#map" },
-  { label: "コンテンツ", href: "#contents" },
-  { label: "整理券", href: "#tickets" },
-  { label: "主催者", href: "#organizers" },
-  { label: "共催・協賛", href: "#sponsors" },
-  { label: "お問い合わせ", href: "#contact" },
+  { label: "コンセプト", href: "#statement", primary: false },
+  { label: "開催概要", href: "#details", primary: true },
+  { label: "インタビュー", href: "#interviews", primary: true },
+  { label: "メディア掲載", href: "#media", primary: false },
+  { label: "会場MAP", href: "#map", primary: true },
+  { label: "コンテンツ", href: "#contents", primary: true },
+  { label: "整理券", href: "#tickets", primary: true },
+  { label: "主催者", href: "#organizers", primary: false },
+  { label: "共催・協賛", href: "#sponsors", primary: false },
+  { label: "お問い合わせ", href: "#contact", primary: false },
 ] as const;
 
 // メンバーのインタビュー動画（縦9:16・字幕入り）。1人ずつ足していく。
@@ -116,6 +125,23 @@ export const INTERVIEWS = [
   },
 ] as const;
 
+// メディア掲載（新しい順）。Yahoo!ニュースは毎日新聞の配信。毎日新聞側の元記事が見つかったら差し替える
+export const MEDIA_COVERAGE = [
+  {
+    media: "こここ",
+    date: "2026.10.15",
+    title:
+      "ゲーム、アート、展示、ビール……“みえない”世界を楽しもう！ 10月24日「NO LOOK PARK」開催",
+    url: "https://co-coco.jp/news/nolookpark/",
+  },
+  {
+    media: "毎日新聞（Yahoo!ニュース）",
+    date: "2026.10.14",
+    title: "「見えない」を楽しむ「ノールックパーク」東京都内で24日開催",
+    url: "https://news.yahoo.co.jp/articles/56a06ea77b60f189de839be545899e7feac4745a",
+  },
+] as const;
+
 export const NAV_TICKET = "チケットを購入";
 
 // チケット購入先（Peatix）
@@ -132,10 +158,26 @@ export const TICKET_URL = "https://nolookpark2026.peatix.com";
  * エピソード単位の埋め込みを一覧から切り替える作りにしている。
  */
 export const PODCAST_EPISODES: { num: string; title: string; id: string }[] = [
-  { num: "#4", title: "まだまだあるぞ！NO LOOK PARKのコンテンツ紹介（後編）", id: "65ZmZpV1KgjltN1c33jqTA" },
-  { num: "#3", title: "盛りだくさん！NO LOOK PARKのコンテンツ紹介（前編）", id: "5JpphaFr2tmKClBuRJpmhq" },
-  { num: "#2", title: "触覚で遊ぶと、世界がマジックになる", id: "6HQg8WCRmcfERuWFoP5H4m" },
-  { num: "#1", title: "みえないは、もっと遊べる - NO LOOK RADIO、はじまります！", id: "4gwpEfzgdsEedyfN7abx8c" },
+  {
+    num: "#4",
+    title: "まだまだあるぞ！NO LOOK PARKのコンテンツ紹介（後編）",
+    id: "65ZmZpV1KgjltN1c33jqTA",
+  },
+  {
+    num: "#3",
+    title: "盛りだくさん！NO LOOK PARKのコンテンツ紹介（前編）",
+    id: "5JpphaFr2tmKClBuRJpmhq",
+  },
+  {
+    num: "#2",
+    title: "触覚で遊ぶと、世界がマジックになる",
+    id: "6HQg8WCRmcfERuWFoP5H4m",
+  },
+  {
+    num: "#1",
+    title: "みえないは、もっと遊べる - NO LOOK RADIO、はじまります！",
+    id: "4gwpEfzgdsEedyfN7abx8c",
+  },
 ];
 
 export const PODCAST = {
@@ -299,8 +341,16 @@ export const SPONSORS: { name: string; logo?: string }[] = [
 // 共催・協賛セクション。共催は CO_HOST（Vision Consortium）を使用。
 // こちらは協賛（logo があれば画像、なければ社名テキストで表示）。
 export const SPONSOR_LOGOS: { name: string; logo?: string; href?: string }[] = [
-  { name: "参天製薬株式会社", logo: IMG.santenLogo, href: "https://www.santen.com/ja" },
-  { name: "smartschool（プラス株式会社）", logo: IMG.smartschoolLogo, href: "https://www.smartschool.jp/" },
+  {
+    name: "参天製薬株式会社",
+    logo: IMG.santenLogo,
+    href: "https://www.santen.com/ja",
+  },
+  {
+    name: "smartschool（プラス株式会社）",
+    logo: IMG.smartschoolLogo,
+    href: "https://www.smartschool.jp/",
+  },
 ];
 
 // 協力（各コンテンツを提供・制作している人・団体のクレジット）。

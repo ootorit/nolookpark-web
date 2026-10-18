@@ -126,6 +126,8 @@ export const INTERVIEWS = [
 ] as const;
 
 // メディア掲載（新しい順）。Yahoo!ニュースは毎日新聞の配信。毎日新聞側の元記事が見つかったら差し替える
+// image は記事の OGP 画像を public/images/media/ に置いたもの（外部の画像URLは期限つきで消えることがあるため）。
+// 報道写真（人物が写った新聞社の写真）は転載しない。image なしのカードは媒体名の札を出す
 export const MEDIA_COVERAGE = [
   {
     media: "こここ",
@@ -133,12 +135,14 @@ export const MEDIA_COVERAGE = [
     title:
       "ゲーム、アート、展示、ビール……“みえない”世界を楽しもう！ 10月24日「NO LOOK PARK」開催",
     url: "https://co-coco.jp/news/nolookpark/",
+    image: "/images/media/cocoo.jpg",
   },
   {
     media: "毎日新聞（Yahoo!ニュース）",
     date: "2026.10.14",
     title: "「見えない」を楽しむ「ノールックパーク」東京都内で24日開催",
     url: "https://news.yahoo.co.jp/articles/56a06ea77b60f189de839be545899e7feac4745a",
+    image: null,
   },
 ] as const;
 

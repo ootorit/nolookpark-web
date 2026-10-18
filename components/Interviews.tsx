@@ -13,6 +13,9 @@ import Reveal from "./Reveal";
  *
  * 再生前は表紙（本人の顔＋名前と肩書きの帯のカット）に再生ボタンだけを重ねる。ボタンは顔と帯を隠さないよう
  * 下の字幕の黒い帯の上に置く（黒地で見えるよう黄色。押せるのは表紙全体）。最初から controls は出さない（表紙に操作バーがかぶるため）。
+ * 全画面は縦動画を切り抜かず、左右に黄色を残して画面の高さに収める（object-contain＋全画面時の背景を黄色）。
+ * 全画面の黄色はサイトの brand（#ffd600）ではなく、再生中の動画の黄色の実測値（Chrome で #ffcf00 前後）に合わせる。
+ * 動画は色の出方がブラウザで少し違うため、境目が完全に消えないことはある。
  * 押したら controls を出して再生。動画は押すまで読み込まない（preload="none"）。1本再生したら、ほかは止める。
  */
 export default function Interviews() {
@@ -81,7 +84,7 @@ export default function Interviews() {
                           preload="none"
                           onPlay={() => pauseOthers(i)}
                           aria-label={`${m.name}さん（${m.role}）のインタビュー動画（字幕入り）`}
-                          className="block aspect-[9/16] w-full object-cover"
+                          className="block aspect-[9/16] w-full bg-brand object-contain [&:-webkit-full-screen]:bg-[#ffcf00] [&:fullscreen]:bg-[#ffcf00]"
                         />
                         {!playing && (
                           <button

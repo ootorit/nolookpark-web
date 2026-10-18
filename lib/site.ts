@@ -127,8 +127,16 @@ export const INTERVIEWS = [
 
 // メディア掲載（新しい順）。Yahoo!ニュースは毎日新聞の配信。毎日新聞側の元記事が見つかったら差し替える
 // image は記事の OGP 画像を public/images/media/ に置いたもの（外部の画像URLは期限つきで消えることがあるため）。
-// 報道写真（人物が写った新聞社の写真）は転載しない。image なしのカードは媒体名の札を出す
-export const MEDIA_COVERAGE = [
+// 新聞社が撮った報道写真は転載しない（主催の提供写真なら可）。image が null のカードは媒体名の札を出す
+export type MediaCoverage = {
+  media: string;
+  date: string;
+  title: string;
+  url: string;
+  image: string | null;
+};
+
+export const MEDIA_COVERAGE: readonly MediaCoverage[] = [
   {
     media: "こここ",
     date: "2026.10.15",
@@ -142,9 +150,10 @@ export const MEDIA_COVERAGE = [
     date: "2026.10.14",
     title: "「見えない」を楽しむ「ノールックパーク」東京都内で24日開催",
     url: "https://news.yahoo.co.jp/articles/56a06ea77b60f189de839be545899e7feac4745a",
-    image: null,
+    // 写真は主催（澤田）提供のもの
+    image: "/images/media/mainichi.jpg",
   },
-] as const;
+];
 
 export const NAV_TICKET = "チケットを購入";
 

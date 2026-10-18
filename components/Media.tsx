@@ -38,7 +38,7 @@ export default function Media() {
                         src={m.image}
                         alt=""
                         loading="lazy"
-                        className="block aspect-[40/21] w-full object-cover"
+                        className="block aspect-[40/21] w-full object-cover object-top"
                       />
                     ) : (
                       <span

@@ -94,9 +94,9 @@ export const NAV_LINKS = [
   { label: "メディア掲載", href: "#media", primary: false },
   { label: "会場MAP", href: "#map", primary: true },
   { label: "コンテンツ", href: "#contents", primary: true },
-  { label: "インタビュー", href: "#interviews", primary: true },
   { label: "整理券", href: "#tickets", primary: true },
   { label: "主催者", href: "#organizers", primary: false },
+  { label: "インタビュー", href: "#interviews", primary: true },
   { label: "共催・協賛", href: "#sponsors", primary: false },
   { label: "お問い合わせ", href: "#contact", primary: false },
 ] as const;

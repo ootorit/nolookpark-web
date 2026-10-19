@@ -42,7 +42,6 @@ export default function Home() {
             <SectionHeading id="contents-title" jp="コンテンツ" en="CONTENTS" />
           }
         />
-        <Interviews />
         <TicketsSection
           className="bg-cream px-6 py-20 md:px-12 md:py-24"
           linkTitles={false}
@@ -57,6 +56,7 @@ export default function Home() {
           }
         />
         <Organizers />
+        <Interviews />
         <SponsorsTier />
         <div aria-hidden className="h-1.5 w-full bg-brand" />
         <Contact />

@@ -107,7 +107,7 @@ export const NAV_LINKS = [
 export const INTERVIEWS = [
   {
     name: "石井健介",
-    role: "ブラインドコミュニケーター",
+    role: "ノールックコミュニケーター",
     video: "/videos/interview_ishii.mp4",
     poster: "/videos/interview_ishii_poster.jpg",
   },
@@ -119,13 +119,13 @@ export const INTERVIEWS = [
   },
   {
     name: "門田さつき",
-    role: "ブラインドコミュニケーター",
+    role: "ノールックコミュニケーター",
     video: "/videos/interview_kadota.mp4",
     poster: "/videos/interview_kadota_poster.jpg",
   },
   {
     name: "柿島光晴",
-    role: "日本視覚障害者囲碁協会 代表理事",
+    role: "ノールックコミュニケーター",
     video: "/videos/interview_kakishima.mp4",
     poster: "/videos/interview_kakishima_poster.jpg",
   },

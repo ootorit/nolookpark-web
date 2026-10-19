@@ -8,7 +8,7 @@ import Reveal from "./Reveal";
 
 /**
  * メンバーのインタビュー動画（縦9:16）。
- * モバイルは横スクロール（縦長の動画を5本積むと長くなりすぎるため）、PC は折り返して中央に並べる。
+ * モバイルは横スクロール（縦長の動画を何本も積むと長くなりすぎるため）、PC は1行3本で折り返して中央に並べる。
  * 本数が少ないうちは w-max + mx-auto で中央に寄り、はみ出したら左から横スクロールになる。
  *
  * 再生前は表紙（本人の顔＋名前と肩書きの帯のカット）に再生ボタンだけを重ねる。ボタンは顔と帯を隠さないよう
@@ -63,7 +63,7 @@ export default function Interviews() {
             画面に入ってきたカードが下から浮き上がり、上下に動いて見える */}
         <Reveal delay={160} className="w-full">
           <div className="w-full overflow-x-auto overflow-y-hidden overscroll-x-contain snap-x snap-mandatory md:overflow-visible">
-            <ul className="mx-auto flex w-max gap-5 px-6 pb-2 md:w-auto md:flex-wrap md:justify-center md:gap-7 md:px-12">
+            <ul className="mx-auto flex w-max gap-5 px-6 pb-2 md:w-auto md:max-w-[880px] md:flex-wrap md:justify-center md:gap-7 md:px-0">
               {INTERVIEWS.map((m, i) => {
                 const playing = started.has(i);
                 return (
@@ -108,7 +108,7 @@ export default function Interviews() {
                         <span className="text-[17px] tracking-[1px]">
                           {m.name}さん
                         </span>
-                        <span className="inline-block text-[12px] tracking-[0.5px] opacity-70">
+                        <span className="inline-block max-w-full text-[12px] tracking-[0.5px] opacity-70">
                           （{m.role}）
                         </span>
                       </p>

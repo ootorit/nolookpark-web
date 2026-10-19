@@ -123,6 +123,24 @@ export const INTERVIEWS = [
     video: "/videos/interview_kadota.mp4",
     poster: "/videos/interview_kadota_poster.jpg",
   },
+  {
+    name: "柿島光晴",
+    role: "日本視覚障害者囲碁協会 代表理事",
+    video: "/videos/interview_kakishima.mp4",
+    poster: "/videos/interview_kakishima_poster.jpg",
+  },
+  {
+    name: "小島淳",
+    role: "ノールックコミュニケーター",
+    video: "/videos/interview_kojima.mp4",
+    poster: "/videos/interview_kojima_poster.jpg",
+  },
+  {
+    name: "谷口正広",
+    role: "ノールックコミュニケーター",
+    video: "/videos/interview_taniguchi.mp4",
+    poster: "/videos/interview_taniguchi_poster.jpg",
+  },
 ] as const;
 
 // メディア掲載（新しい順）。Yahoo!ニュースは毎日新聞の配信。毎日新聞側の元記事が見つかったら差し替える

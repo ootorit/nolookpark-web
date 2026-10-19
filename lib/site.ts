@@ -91,10 +91,10 @@ export const IMG = {
 export const NAV_LINKS = [
   { label: "コンセプト", href: "#statement", primary: false },
   { label: "開催概要", href: "#details", primary: true },
-  { label: "インタビュー", href: "#interviews", primary: true },
   { label: "メディア掲載", href: "#media", primary: false },
   { label: "会場MAP", href: "#map", primary: true },
   { label: "コンテンツ", href: "#contents", primary: true },
+  { label: "インタビュー", href: "#interviews", primary: true },
   { label: "整理券", href: "#tickets", primary: true },
   { label: "主催者", href: "#organizers", primary: false },
   { label: "共催・協賛", href: "#sponsors", primary: false },

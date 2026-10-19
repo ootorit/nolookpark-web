@@ -37,7 +37,7 @@ export default function Interviews() {
     <section
       id="interviews"
       aria-labelledby="interviews-title"
-      className="bg-white py-20 md:py-24"
+      className="bg-brand py-20 md:py-24"
     >
       <div className="mx-auto flex max-w-[1360px] flex-col items-center gap-10 md:gap-12">
         <Reveal className="px-6">

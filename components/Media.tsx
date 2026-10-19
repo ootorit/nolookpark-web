@@ -13,7 +13,7 @@ export default function Media() {
     <section
       id="media"
       aria-labelledby="media-title"
-      className="bg-white px-6 pb-20 pt-4 md:px-12 md:pb-24"
+      className="bg-white px-6 py-20 md:px-12 md:py-24"
     >
       <div className="mx-auto flex max-w-[880px] flex-col items-center gap-8 md:gap-10">
         <Reveal>

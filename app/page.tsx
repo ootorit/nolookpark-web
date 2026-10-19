@@ -24,7 +24,6 @@ export default function Home() {
         <Hero />
         <Statement />
         <Details />
-        <Interviews />
         <Media />
         {/* 当日ガイド（/guide）と共通のセクション。見出し id は各セクションの aria-labelledby と対応 */}
         <MapSection
@@ -43,6 +42,7 @@ export default function Home() {
             <SectionHeading id="contents-title" jp="コンテンツ" en="CONTENTS" />
           }
         />
+        <Interviews />
         <TicketsSection
           className="bg-cream px-6 py-20 md:px-12 md:py-24"
           linkTitles={false}
